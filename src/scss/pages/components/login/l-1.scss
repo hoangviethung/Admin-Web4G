@@ -1,0 +1,89 @@
+.login {
+	position           : relative;
+	width              : 100%;
+	height             : 100vh;
+	overflow           : hidden;
+	background-image   : url(../assets/images/background/login.png);
+	background-size    : cover;
+	background-position: center center;
+
+
+
+	.box-form-login {
+		position : absolute;
+		top      : 50%;
+		left     : 50%;
+		width    : 480px;
+		padding  : 40px;
+		transform: translate(-50%, -50%);
+		z-index  : 50;
+
+		color        : #72767d;
+		background   : #36393f;
+		box-shadow   : 0 2px 10px 0 rgba(0, 0, 0, .2);
+		border-radius: 5px;
+
+		.title {
+			display      : flex;
+			align-items  : center;
+			flex-wrap    : wrap;
+			margin-bottom: 50px;
+
+			.logo {
+				flex         : 0 0 50%;
+				max-width    : 50%;
+				padding-right: 30px;
+				border-right : 1px solid #414245;
+			}
+
+			.content {
+				flex        : 0 0 50%;
+				max-width   : 50%;
+				padding-left: 10px;
+				font-weight : 400;
+				color       : #ffffff;
+			}
+		}
+
+		.form-group {
+			margin-bottom: 25px;
+
+			label {
+				font-size    : 14px;
+				margin-bottom: 5px;
+			}
+
+			input {
+				width        : 100%;
+				line-height  : 20px;
+				padding      : 10px;
+				color        : #dcddde;
+				border-radius: 3px;
+				background   : #303339;
+				border       : 1px solid rgb(34, 36, 40);
+			}
+
+			.eror {
+				display   : block;
+				margin-top: 10px;
+				color     : #f62d31;
+				text-align: right;
+			}
+
+			.forgot-pass {
+				color     : #ffffff;
+				margin-top: 10px;
+				font-size : 14px;
+			}
+		}
+
+		button {
+			color        : #ffffff;
+			width        : 100%;
+			border       : none;
+			line-height  : 40px;
+			border-radius: 3px;
+			background   : #677bc4;
+		}
+	}
+}

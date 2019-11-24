@@ -1,0 +1,33 @@
+block var
+
+doctype html
+
+html(lang="en")
+	head
+		title #{title}
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0, user-scalable=no")
+		meta(http-equiv="X-UA-Compatible", content="ie=edge")
+		link(rel="stylesheet", href="./css/core.min.css")
+		link(rel="stylesheet", href="./css/main.min.css")
+	body
+		#fb-root
+		#loading
+			.logo-loader
+				img(src="./assets/images/icons/loading.svg", alt="")
+			.progstat-wrapper Loading:
+				span#progstat 0
+				| %
+			#progress
+		block header
+			include _header.pug
+		block aside
+			include _aside.pug
+		main
+			block main
+			#js-page-verify(class=bodyClass hidden)
+		block footer
+			include _footer.pug
+		block scripts
+		script(type="text/javascript", src="./js/core.min.js")
+		script(type="text/javascript", src="./js/main.min.js")

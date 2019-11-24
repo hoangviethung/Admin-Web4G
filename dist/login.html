@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Login</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link rel="stylesheet" href="./css/core.min.css">
+		<link rel="stylesheet" href="./css/main.min.css">
+	</head>
+	<body>
+		<div id="loading">
+			<div class="logo-loader"><img src="./assets/images/icons/loading.svg" alt=""></div>
+			<div class="progstat-wrapper">Loading:<span id="progstat">0</span>%</div>
+			<div id="progress"></div>
+		</div>
+		<main>
+			<section class="login">
+				<div class="box-form-login">
+					<div class="title">
+						<div class="logo"><a href="http://web4gsolutions.com/"><img src="./assets/images/logo.png" alt=""></a></div>
+						<div class="content">Xin chào quản trị viên !</div>
+					</div>
+					<form action="index.html" method="method">
+						<div class="form-group">
+							<label>Tài khoản</label>
+							<input type="text">
+						</div>
+						<div class="form-group">
+							<label>Mật khẩu</label>
+							<input type="password">
+							<div class="forgot-pass"><a href="quen-mat-khau.html">Quên mật khẩu ?</a></div>
+						</div>
+						<button>Đăng nhập</button>
+					</form>
+				</div>
+			</section>
+			<div id="js-page-verify" hidden></div>
+		</main>
+		<script type="text/javascript" src="./js/core.min.js"></script>
+		<script type="text/javascript" src="./js/main.min.js"></script>
+	</body>
+</html>
