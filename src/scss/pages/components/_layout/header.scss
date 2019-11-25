@@ -1,11 +1,112 @@
 header {
-	position       : fixed;
-	display        : flex;
-	justify-content: space-between;
-	top            : 0;
-	left           : 280px;
-	width          : 100%;
-	height         : 60px;
-	background     : #343a40;
-	transition     : .2s all ease-in-out;
+	position        : fixed;
+	display         : flex;
+	align-items     : center;
+	top             : 0;
+	left            : 0;
+	right           : 0;
+	height          : 60px;
+	background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+	transition      : .2s all ease-in-out;
+	z-index         : 500;
+
+	.header-right {
+		display      : flex;
+		align-items  : center;
+		margin-left  : auto;
+		padding-right: 25px;
+
+		.accounts {
+			position    : relative;
+			display     : flex;
+			align-items : center;
+			padding     : 0 25px;
+			border-right: 2px solid rgba(125, 125, 125, .09);
+			border-left : 2px solid rgba(125, 125, 125, .09);
+
+			.avatar {
+				padding-right: 20px;
+			}
+
+			.basic-info-accounts {
+				padding-left: 25px;
+			}
+
+			.detail-info-accounts {
+				width: 400px;
+
+				.header-image {
+					position        : relative;
+					display         : flex;
+					align-items     : center;
+					width           : 100%;
+					height          : 90px;
+					padding         : 0 25px;
+					background-image: url(../assets/images/background/accounts.png);
+
+					.avatar {
+						padding-right: 10px;
+
+						&:after {
+							content: none;
+						}
+					}
+
+					.basic-info-accounts {
+						padding-left: 10px;
+
+						.name,
+						.position {
+							color: #ffffff;
+						}
+					}
+
+					.logout {
+						margin-left: auto;
+						z-index    : 1;
+
+						>a {
+							line-height: 1.5;
+						}
+					}
+
+					&:after {
+						content       : '';
+						pointer-events: none;
+						position      : absolute;
+						width         : 100%;
+						height        : 100%;
+						top           : 0;
+						left          : 0;
+						background    : #795548;
+						opacity       : .7;
+					}
+				}
+
+				.list-link {
+					padding: 10px 0 25px;
+
+					.name-list {
+						font-size  : 12px;
+						font-weight: 700;
+						color      : #6c757d;
+						padding    : 15px 25px 5px;
+					}
+
+					.link {
+						padding: 0 35px;
+
+						>a {
+							font-size: 14px;
+							color    : #6c757d;
+						}
+					}
+				}
+			}
+		}
+
+		.view-website {
+			padding-left: 25px;
+		}
+	}
 }

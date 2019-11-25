@@ -2,19 +2,34 @@ body {
 	background: #e9ecee;
 
 	main {
-		padding: 60px 0 0 280px;
+		padding   : 60px 0 0 280px;
+		transition: .5s all ease-in-out;
 	}
 
 	&.active {
 		main {
 			padding   : 60px 0 0 80px;
-			transition: .2s all ease-in-out;
+			transition: .5s all ease-in-out;
 		}
 
-		header {
-			left: 80px;
+		::-webkit-scrollbar {
+			display: none;
 		}
 	}
+}
+
+::-webkit-scrollbar-track {
+	background-color: rgba($color: #dddddd, $alpha: .5)
+}
+
+::-webkit-scrollbar {
+	width           : 5px;
+	background-color: rgba($color: #dddddd, $alpha: .5)
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius   : 2.5px;
+	background-color: rgba($color: #808080, $alpha: .5)
 }
 
 .ofc {
@@ -80,6 +95,58 @@ body {
 	}
 }
 
+.main__inner {
+	padding: 30px;
+}
+
+// HÌNH ĐẠI DIỆN
+.avatar {
+	cursor     : pointer;
+	user-select: none;
+	position   : relative;
+	z-index    : 1;
+
+	figure {
+		height       : 42px;
+		width        : 42px;
+		border-radius: 50%;
+		overflow     : hidden;
+		background   : #494e53;
+	}
+
+	&:after {
+		content   : '';
+		position  : absolute;
+		top       : 50%;
+		right     : 0;
+		width     : 10px;
+		height    : 10px;
+		transform : translateY(-50%);
+		transition: .2s all ease-in-out;
+
+		background-image : url(../assets/images/icons/arrow-sub-menu.svg);
+		background-repeat: no-repeat;
+		background-size  : cover;
+	}
+}
+
+// THÔNG TIN CƠ BẢN USER
+.basic-info-accounts {
+	z-index: 1;
+	height : 42px;
+
+	.name {
+		font-size  : 14px;
+		font-weight: 500;
+		color      : rgba(0, 0, 0, 0.8);
+	}
+
+	.position {
+		font-size: 12px;
+		color    : rgba(0, 0, 0, 0.5);
+	}
+}
+
 // CÁC NÚT PHÂN TRANG
 .pagination {
 	background     : #FFFFFF;
@@ -135,6 +202,154 @@ body {
 		&.pagination-dot {
 			a {
 				border: 0;
+			}
+		}
+	}
+}
+
+// NỘI NỘI DUNG DROPDOWNM
+.content-dropdown {
+	display      : none;
+	overflow     : hidden;
+	position     : absolute;
+	background   : #ffffff;
+	top          : 60px;
+	right        : 0;
+	box-shadow   : 0 3px 6px rgba($color: #000000, $alpha: .1);
+	border       : 1px solid rgba(0, 0, 0, 0.3);
+	border-radius: 5px;
+	z-index      : 100;
+}
+
+// TIÊU ĐỀU TRANG
+.page-title {
+	position  : relative;
+	padding   : 30px;
+	margin    : -30px -30px 30px;
+	background: rgba(255, 255, 255, 0.45);
+
+	.page-title-wrapper {
+		position   : relative;
+		display    : flex;
+		align-items: center;
+
+		.page-title-heading {
+			font-size    : 1.25rem;
+			font-weight  : 400;
+			display      : flex;
+			align-content: center;
+			align-items  : center;
+
+			.page-title-icon {
+				display      : flex;
+				align-items  : center;
+				align-content: center;
+				text-align   : center;
+				padding      : 0.83333333rem;
+				margin       : 0 30px 0 0;
+				background   : #fff;
+				box-shadow   : 0 0.46875rem 2.1875rem rgba(4, 9, 20, 0.03), 0 0.9375rem 1.40625rem rgba(4, 9, 20, 0.03), 0 0.25rem 0.53125rem rgba(4, 9, 20, 0.05), 0 0.125rem 0.1875rem rgba(4, 9, 20, 0.03);
+				border-radius: 0.25rem;
+				width        : 60px;
+				height       : 60px;
+
+				svg {
+					margin : auto;
+					width  : 32px;
+					height : 32px;
+					opacity: .6;
+				}
+			}
+
+			.page-title-content {
+
+				h3,
+				p {
+					color: rgba(0, 0, 0, 0.8);
+				}
+
+				h3 {
+					font-size  : 18px;
+					line-height: 35px;
+				}
+
+				p {
+					font-size: 14px;
+				}
+			}
+		}
+
+		.page-title-actions {
+			display    : flex;
+			margin-left: auto;
+
+			>a {
+				display    : flex;
+				align-items: center;
+				height     : 40px;
+				line-height: 40px;
+				box-shadow : 0 0.46875rem 2.1875rem rgba(4, 9, 20, 0.03), 0 0.9375rem 1.40625rem rgba(4, 9, 20, 0.03), 0 0.25rem 0.53125rem rgba(4, 9, 20, 0.05), 0 0.125rem 0.1875rem rgba(4, 9, 20, 0.03);
+				font-weight: 700;
+
+				svg {
+					width : 15px;
+					height: 15px;
+				}
+			}
+		}
+	}
+}
+
+// SEACH
+.seach {
+	.form-group {
+		margin-bottom: 0;
+
+		label {
+			color        : rgba(13, 27, 62, 0.7);
+			font-weight  : bold;
+			font-size    : 18px;
+			margin-bottom: 15px;
+		}
+
+		.form-input {
+			position: relative;
+
+			input {
+				width        : 100%;
+				border       : 0;
+				padding      : 0px 70px 0px 20px;
+				line-height  : 50px;
+				border-radius: 50px;
+				background   : rgba(0, 0, 0, 0.05);
+				color        : rgba($color: #000000, $alpha: .5);
+				transition   : .3s all ease-in-out;
+				box-shadow   : 0;
+
+				&:focus {
+					box-shadow: 0 3px 6px rgba($color: #000000, $alpha: .1);
+				}
+			}
+
+			button {
+				position     : absolute;
+				right        : 0;
+				top          : 0;
+				height       : 100%;
+				width        : 50px;
+				border-radius: 50%;
+				border       : 0;
+				background   : rgba(0, 0, 0, 0.06);
+				outline      : none;
+
+				svg {
+					position : absolute;
+					top      : 50%;
+					left     : 50%;
+					transform: translate(-50%, -50%);
+					width    : 30px;
+					height   : 30px;
+				}
 			}
 		}
 	}

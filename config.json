@@ -9,7 +9,8 @@
 			"bower_components/wow/dist/wow.js",
 			"bower_components/jquery/dist/jquery.js",
 			"bower_components/swiper/dist/js/swiper.js",
-			"bower_components/fancybox/dist/jquery.fancybox.js"
+			"bower_components/fancybox/dist/jquery.fancybox.js",
+			"bower_components/bootstrap/dist/js/bootstrap.bundle.js"
 		],
 		"css": [
 			"bower_components/wow/css/libs/animate.css",

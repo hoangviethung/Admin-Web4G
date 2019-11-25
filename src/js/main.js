@@ -89,6 +89,13 @@ function activeMenuByUrl() {
 	})
 }
 
+// HEADER
+function dropdownHeader() {
+	$('.item-click-dropdown').on('click', function() {
+		$(this).siblings('.content-dropdown').slideToggle();
+	});
+}
+
 // CONTROL SVG
 function SVG() {
 	jQuery('img.svg').each(function() {
@@ -127,17 +134,19 @@ function SVG() {
 
 // CHẠY KHI DOCUMENT SẴN SÀNG
 document.addEventListener('DOMContentLoaded', () => {
+	$('[data-toggle="tooltip"]').tooltip();
 	// LOADING
 	loading();
-	// WOW
-	new WOW().init();
 	// SVG CONTROL
 	SVG();
 	// HEADER
 	activeMenuByUrl();
+	dropdownHeader();
 	// ASIDE
 	showSubMenu_AsideMenu();
 	toogle_AsideMenu();
+	// WOW
+	new WOW().init();
 });
 
 // CHẠY KHI WINDOWN SCROLL
