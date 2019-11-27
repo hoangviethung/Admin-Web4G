@@ -47,6 +47,10 @@ body {
 
 .main__inner {
 	padding: 30px;
+
+	@media (max-width: 1024.98px) {
+		padding: 15px;
+	}
 }
 
 // HÌNH ĐẠI DIỆN
@@ -124,7 +128,6 @@ body {
 		align-items: center;
 
 		.page-title-heading {
-			font-size    : 1.25rem;
 			font-weight  : 400;
 			display      : flex;
 			align-content: center;
@@ -165,6 +168,7 @@ body {
 
 				p {
 					font-size: 14px;
+					width    : 70%;
 				}
 			}
 		}
@@ -184,6 +188,42 @@ body {
 				svg {
 					width : 15px;
 					height: 15px;
+				}
+			}
+		}
+	}
+
+	@media (max-width: 1024.98px) {
+		padding: 15px;
+		margin : -15px -15px 15px;
+
+		.page-title-wrapper {
+			.page-title-heading {
+				.page-title-icon {
+					margin: 0 15px 0 0;
+				}
+
+				.page-title-content {
+					h3 {
+						font-size  : 16px;
+						line-height: 25px;
+					}
+
+					p {
+						font-size: 12px;
+					}
+				}
+			}
+		}
+	}
+
+	@media (max-width: 767.98px) {
+		.page-title-wrapper {
+			.page-title-heading {
+				.page-title-content {
+					p {
+						display: none;
+					}
 				}
 			}
 		}
@@ -287,6 +327,14 @@ body {
 				&:hover {
 					color: #ffffff;
 				}
+			}
+		}
+	}
+
+	@media (max-width: 767.98px) {
+		.card-header {
+			.card-header-buttons {
+				display: none;
 			}
 		}
 	}

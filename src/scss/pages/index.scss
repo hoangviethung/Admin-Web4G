@@ -26,8 +26,8 @@
 					top      : 50%;
 					left     : 50%;
 					transform: translate(-50%, -50%);
-					width    : 40px;
-					height   : 40px;
+					width    : 50%;
+					height   : 50%;
 
 					path {
 						fill: #ffffffad;
@@ -43,6 +43,8 @@
 
 				.item-count {
 					margin-bottom: 5px;
+					display      : flex;
+					align-items  : center;
 
 					&:last-child {
 						margin-bottom: 0;
@@ -57,16 +59,19 @@
 					}
 
 					span {
-						font-weight : 700;
-						padding-left: 30px;
-						font-size   : 20px;
-						color       : rgba($color: #000000, $alpha: 1.0);
+						display           : -webkit-box;
+						font-size         : 20px;
+						font-weight       : 700;
+						padding-left      : 30px;
+						color             : rgba($color: #000000, $alpha: 1.0);
+						overflow          : hidden;
+						text-overflow     : ellipsis;
+						-webkit-box-orient: vertical;
+						-webkit-line-clamp: 1;
+						max-width         : 145px;
+						max-height        : 30px;
 					}
 				}
-			}
-
-			&:hover {
-				box-shadow: 0 3px 6px rgba($color: #000000, $alpha: .3) !important;
 			}
 		}
 	}
@@ -75,9 +80,76 @@
 		.list-statistical {
 			.item {
 				.count {
+					padding-left: 15px;
+
 					.item-count {
 						h5 {
 							min-width: 100px;
+						}
+
+						span {
+							padding-left: 15px;
+							max-width   : 100px;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	@media (max-width: 1024.98px) {
+		.list-statistical {
+			.item {
+				.icon {
+					flex     : 0 0 50px;
+					max-width: 50px;
+					height   : 50px;
+				}
+
+				.count {
+					.item-count {
+						h5 {
+							font-size: 12px;
+							min-width: 80px;
+						}
+
+						span {
+							font-size : 16px;
+							max-width : 70px;
+							max-height: 25px;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	@media (max-width: 767.98px) {
+		.list-statistical {
+			.item {
+				padding       : 15px;
+				flex-direction: column;
+
+				.icon {
+					width : 50px;
+					margin: 0 auto 15px;
+				}
+
+				.count {
+					padding-left: 0;
+
+					.item-count {
+						flex-direction: column;
+						margin-bottom : 10px;
+
+						h5 {
+							min-width    : unset;
+							margin-bottom: 5px;
+						}
+
+						span {
+							max-width   : 100%;
+							padding-left: 0;
 						}
 					}
 				}

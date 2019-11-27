@@ -70,9 +70,20 @@ function showSubMenu_AsideMenu() {
 
 // TOGGLE ASIDE GỌN PHÓNG TÓ
 function toogle_AsideMenu() {
+
+	if ($(window).width() < 1024) {
+		$('body, aside').addClass('active');
+	}
+
 	$('.block-logo .button-close').on('click', function() {
-		$(this).toggleClass('active');
-		$('body, aside').toggleClass('active');
+		if ($(window).width() > 1024) {
+			console.log('true');
+			$(this).toggleClass('active');
+			$('body, aside').toggleClass('active');
+		} else {
+			console.log('asdasdasd');
+
+		}
 	});
 }
 
