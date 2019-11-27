@@ -63,9 +63,10 @@ body {
 	figure {
 		height       : 42px;
 		width        : 42px;
-		border-radius: 50%;
+		border-radius: 10px;
 		overflow     : hidden;
 		background   : #494e53;
+		border       : 3px solid #ffffff;
 	}
 
 	&:after {
