@@ -99,12 +99,7 @@
 						<h5>Bài viết</h5>
 					</div>
 					<ul class="list-link">
-						<li class="link"><a href="#">Trang chủ</a></li>
-						<li class="link"><a href="#">Trang giới thiệu</a></li>
-						<li class="link"><a href="#">Trang dịch vụ</a></li>
-						<li class="link"><a href="#">Trang dịch vụ</a></li>
-						<li class="link"><a href="#">Tiện ích</a></li>
-						<li class="link"><a href="#">Tin tức</a></li>
+						<li class="link"><a href="list-post.html">Chỉnh sửa</a></li>
 					</ul>
 				</div>
 				<div class="aside-item">
@@ -242,7 +237,7 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="block-form userControl col-lg-12 mt-4">
+					<div class="block-table userControl col-lg-12 mt-4">
 						<table class="table table-bordered m-0">
 							<thead>
 								<tr>
@@ -339,27 +334,27 @@
 											<button class="btn-custom-icon item" type="button" data-toggle="modal" data-target="#popup_question">
 												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Xóa"><img class="svg" src="./assets/images/icons/delete.svg" alt="" srcset=""></div>
 											</button>
-											<!-- BOX HIỆN LÊN CÂU HỎI-->
-											<div class="modal fade" id="popup_question" aria-hidden="true">
-												<div class="modal-dialog modal-dialog-centered" role="document">
-													<div class="modal-content">
-														<div class="modal-header">
-															<h5 class="modal-title">Thông báo</h5>
-															<button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-														</div>
-														<div class="modal-body">Bạn có chắc chắn xóa</div>
-														<div class="modal-footer">
-															<button class="btn btn-danger btn-sm" type="button" data-dismiss="modal">Hủy</button>
-															<button class="btn btn-success btn-sm" type="button">Chấp nhận</button>
-														</div>
-													</div>
-												</div>
-											</div>
 										</div>
 									</td>
 								</tr>
 							</tbody>
 						</table>
+						<!-- BOX HIỆN LÊN CÂU HỎI-->
+						<div class="modal fade" id="popup_question" aria-hidden="true">
+							<div class="modal-dialog modal-dialog-centered" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title">Thông báo</h5>
+										<button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+									</div>
+									<div class="modal-body">Bạn có chắc chắn xóa</div>
+									<div class="modal-footer">
+										<button class="btn btn-danger btn-sm" type="button" data-dismiss="modal">Hủy</button>
+										<button class="btn btn-success btn-sm" type="button">Chấp nhận</button>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -367,5 +362,16 @@
 		</main>
 		<script type="text/javascript" src="./js/core.min.js"></script>
 		<script type="text/javascript" src="./js/main.min.js"></script>
+		<script src="https://cdn.ckeditor.com/ckeditor5/11.2.0/classic/ckeditor.js"></script>
+		<script>
+			ClassicEditor
+				.create( document.querySelector( '#editor' ) )
+				.then( editor => {
+					console.log( editor );
+				} )
+				.catch( error => {
+					console.error( error );
+				} );
+		</script>
 	</body>
 </html>

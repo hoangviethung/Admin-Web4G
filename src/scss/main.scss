@@ -4,8 +4,11 @@
 // LAYOUT
 @import 'pages/components/_layout/main';
 
+// TRANG CHỦ
+@import 'pages/index';
+
 // LOGIN
 @import 'pages/components/login/main';
 
-// TRANG CHỦ
-@import 'pages/index';
+// TRANG BÀI VIẾT
+@import 'pages/components/posts-site/main'

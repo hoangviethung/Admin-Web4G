@@ -1,0 +1,9 @@
+extends components/_layout/_layout.pug
+
+block var
+	- let title = 'Admin | Quản lý bài viết'
+	//- - let bodyClass = 'index-page'
+
+block main
+	include ./components/posts-site/list-post.pug
+block scripts

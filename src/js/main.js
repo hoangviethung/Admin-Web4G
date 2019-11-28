@@ -2,7 +2,6 @@
 import loading from './loading';
 import mapping from "./mapping";
 
-
 // Script Cho Tab
 class Tab {
 	selector;
@@ -148,6 +147,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	$('[data-toggle="tooltip"]').tooltip();
 	// LOADING
 	loading();
+	// TAB
+	const TABcreatePost = new Tab(".create-post .tab-container");
 	// SVG CONTROL
 	SVG();
 	// HEADER
@@ -156,8 +157,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	// ASIDE
 	showSubMenu_AsideMenu();
 	toogle_AsideMenu();
-	// WOW
-	new WOW().init();
 });
 
 // CHẠY KHI WINDOWN SCROLL

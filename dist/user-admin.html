@@ -99,12 +99,7 @@
 						<h5>Bài viết</h5>
 					</div>
 					<ul class="list-link">
-						<li class="link"><a href="#">Trang chủ</a></li>
-						<li class="link"><a href="#">Trang giới thiệu</a></li>
-						<li class="link"><a href="#">Trang dịch vụ</a></li>
-						<li class="link"><a href="#">Trang dịch vụ</a></li>
-						<li class="link"><a href="#">Tiện ích</a></li>
-						<li class="link"><a href="#">Tin tức</a></li>
+						<li class="link"><a href="list-post.html">Chỉnh sửa</a></li>
 					</ul>
 				</div>
 				<div class="aside-item">
@@ -244,19 +239,19 @@
 				<div class="row">
 					<div class="seach col-lg-4">
 						<form action="#" method="method">
-							<div class="form-group text-center">
+							<div class="form-group">
 								<div class="form-input">
-									<input type="text" placeholder="Nhập tên tài khoản cần tìm">
+									<input type="text" placeholder="Nhập từ khóa để tìm kiếm">
 									<button><img class="svg" src="./assets/images/icons/search.svg" alt="" srcset=""></button>
 								</div>
 							</div>
 						</form>
 					</div>
-					<div class="block-form col-lg-12 mt-4">
+					<div class="block-table col-lg-12 mt-4">
 						<table class="table table-bordered m-0">
 							<thead>
 								<tr>
-									<th class="text-center">#</th>
+									<th>#</th>
 									<th>Tên tài khoản</th>
 									<th>Số điện thoại</th>
 									<th>Email</th>
@@ -281,8 +276,8 @@
 									</td>
 									<td>12/11/2019 14:50</td>
 									<td>
-										<div class="form-group-custom">
-											<label class="custom-control custom-checkbox">
+										<div class="input-custom">
+											<label class="_checkbox-custom">
 												<input class="custom-control-input" type="checkbox" readonly><span class="custom-control-indicator"></span>
 											</label>
 										</div>
@@ -299,71 +294,6 @@
 											<button class="btn-custom-icon item" type="button" data-toggle="modal" data-target="#popup_question">
 												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Xóa"><img class="svg" src="./assets/images/icons/delete.svg" alt="" srcset=""></div>
 											</button>
-											<!-- BOX HIỆN LÊN FORM-->
-											<div class="modal fade" id="popup_form" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-												<div class="modal-dialog modal-dialog-centered" role="document">
-													<div class="modal-content">
-														<div class="modal-header">
-															<h5 class="modal-title">Thay đổi mật khẩu</h5>
-															<button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-														</div>
-														<div class="modal-body">
-															<form action="#" method="method">
-																<div class="form-group row">
-																	<label class="col-sm-5 col-form-label" for="staticEmail">Tài khoản</label>
-																	<div class="col-sm-7">
-																		<input class="form-control-plaintext" id="staticEmail" type="text" readonly="" value="Administrator">
-																	</div>
-																</div>
-																<div class="form-group row">
-																	<label class="col-sm-5 col-form-label">Mật khẩu cũ</label>
-																	<div class="col-sm-7">
-																		<div class="input-group input-group-sm">
-																			<input class="form-control" type="Password">
-																		</div>
-																	</div>
-																</div>
-																<div class="form-group row">
-																	<label class="col-sm-5 col-form-label">Mật khẩu mới</label>
-																	<div class="col-sm-7">
-																		<div class="input-group input-group-sm">
-																			<input class="form-control" type="Password">
-																		</div>
-																	</div>
-																</div>
-																<div class="form-group row">
-																	<label class="col-sm-5 col-form-label">Nhập lại mật khẩu mới</label>
-																	<div class="col-sm-7">
-																		<div class="input-group input-group-sm">
-																			<input class="form-control" type="Password">
-																		</div>
-																	</div>
-																</div>
-															</form>
-														</div>
-														<div class="modal-footer">
-															<button class="btn btn-danger btn-sm" type="button" data-dismiss="modal">Hủy</button>
-															<button class="btn btn-success btn-sm" type="button">Chấp nhận</button>
-														</div>
-													</div>
-												</div>
-											</div>
-											<!-- BOX HIỆN LÊN CÂU HỎI-->
-											<div class="modal fade" id="popup_question" aria-hidden="true">
-												<div class="modal-dialog modal-dialog-centered" role="document">
-													<div class="modal-content">
-														<div class="modal-header">
-															<h5 class="modal-title">Thông báo</h5>
-															<button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-														</div>
-														<div class="modal-body">Bạn có chắc chắn xóa</div>
-														<div class="modal-footer">
-															<button class="btn btn-danger btn-sm" type="button" data-dismiss="modal">Hủy</button>
-															<button class="btn btn-success btn-sm" type="button">Chấp nhận</button>
-														</div>
-													</div>
-												</div>
-											</div>
 										</div>
 									</td>
 								</tr>
@@ -381,8 +311,8 @@
 									</td>
 									<td>12/11/2019 14:50</td>
 									<td>
-										<div class="form-group-custom">
-											<label class="custom-control custom-checkbox">
+										<div class="input-custom">
+											<label class="_checkbox-custom">
 												<input class="custom-control-input" type="checkbox" readonly><span class="custom-control-indicator"></span>
 											</label>
 										</div>
@@ -399,71 +329,6 @@
 											<button class="btn-custom-icon item" type="button" data-toggle="modal" data-target="#popup_question">
 												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Xóa"><img class="svg" src="./assets/images/icons/delete.svg" alt="" srcset=""></div>
 											</button>
-											<!-- BOX HIỆN LÊN FORM-->
-											<div class="modal fade" id="popup_form" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-												<div class="modal-dialog modal-dialog-centered" role="document">
-													<div class="modal-content">
-														<div class="modal-header">
-															<h5 class="modal-title">Thay đổi mật khẩu</h5>
-															<button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-														</div>
-														<div class="modal-body">
-															<form action="#" method="method">
-																<div class="form-group row">
-																	<label class="col-sm-5 col-form-label" for="staticEmail">Tài khoản</label>
-																	<div class="col-sm-7">
-																		<input class="form-control-plaintext" id="staticEmail" type="text" readonly="" value="Administrator">
-																	</div>
-																</div>
-																<div class="form-group row">
-																	<label class="col-sm-5 col-form-label">Mật khẩu cũ</label>
-																	<div class="col-sm-7">
-																		<div class="input-group input-group-sm">
-																			<input class="form-control" type="Password">
-																		</div>
-																	</div>
-																</div>
-																<div class="form-group row">
-																	<label class="col-sm-5 col-form-label">Mật khẩu mới</label>
-																	<div class="col-sm-7">
-																		<div class="input-group input-group-sm">
-																			<input class="form-control" type="Password">
-																		</div>
-																	</div>
-																</div>
-																<div class="form-group row">
-																	<label class="col-sm-5 col-form-label">Nhập lại mật khẩu mới</label>
-																	<div class="col-sm-7">
-																		<div class="input-group input-group-sm">
-																			<input class="form-control" type="Password">
-																		</div>
-																	</div>
-																</div>
-															</form>
-														</div>
-														<div class="modal-footer">
-															<button class="btn btn-danger btn-sm" type="button" data-dismiss="modal">Hủy</button>
-															<button class="btn btn-success btn-sm" type="button">Chấp nhận</button>
-														</div>
-													</div>
-												</div>
-											</div>
-											<!-- BOX HIỆN LÊN CÂU HỎI-->
-											<div class="modal fade" id="popup_question" aria-hidden="true">
-												<div class="modal-dialog modal-dialog-centered" role="document">
-													<div class="modal-content">
-														<div class="modal-header">
-															<h5 class="modal-title">Thông báo</h5>
-															<button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-														</div>
-														<div class="modal-body">Bạn có chắc chắn xóa</div>
-														<div class="modal-footer">
-															<button class="btn btn-danger btn-sm" type="button" data-dismiss="modal">Hủy</button>
-															<button class="btn btn-success btn-sm" type="button">Chấp nhận</button>
-														</div>
-													</div>
-												</div>
-											</div>
 										</div>
 									</td>
 								</tr>
@@ -481,8 +346,8 @@
 									</td>
 									<td>12/11/2019 14:50</td>
 									<td>
-										<div class="form-group-custom">
-											<label class="custom-control custom-checkbox">
+										<div class="input-custom">
+											<label class="_checkbox-custom">
 												<input class="custom-control-input" type="checkbox" readonly><span class="custom-control-indicator"></span>
 											</label>
 										</div>
@@ -499,71 +364,6 @@
 											<button class="btn-custom-icon item" type="button" data-toggle="modal" data-target="#popup_question">
 												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Xóa"><img class="svg" src="./assets/images/icons/delete.svg" alt="" srcset=""></div>
 											</button>
-											<!-- BOX HIỆN LÊN FORM-->
-											<div class="modal fade" id="popup_form" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-												<div class="modal-dialog modal-dialog-centered" role="document">
-													<div class="modal-content">
-														<div class="modal-header">
-															<h5 class="modal-title">Thay đổi mật khẩu</h5>
-															<button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-														</div>
-														<div class="modal-body">
-															<form action="#" method="method">
-																<div class="form-group row">
-																	<label class="col-sm-5 col-form-label" for="staticEmail">Tài khoản</label>
-																	<div class="col-sm-7">
-																		<input class="form-control-plaintext" id="staticEmail" type="text" readonly="" value="Administrator">
-																	</div>
-																</div>
-																<div class="form-group row">
-																	<label class="col-sm-5 col-form-label">Mật khẩu cũ</label>
-																	<div class="col-sm-7">
-																		<div class="input-group input-group-sm">
-																			<input class="form-control" type="Password">
-																		</div>
-																	</div>
-																</div>
-																<div class="form-group row">
-																	<label class="col-sm-5 col-form-label">Mật khẩu mới</label>
-																	<div class="col-sm-7">
-																		<div class="input-group input-group-sm">
-																			<input class="form-control" type="Password">
-																		</div>
-																	</div>
-																</div>
-																<div class="form-group row">
-																	<label class="col-sm-5 col-form-label">Nhập lại mật khẩu mới</label>
-																	<div class="col-sm-7">
-																		<div class="input-group input-group-sm">
-																			<input class="form-control" type="Password">
-																		</div>
-																	</div>
-																</div>
-															</form>
-														</div>
-														<div class="modal-footer">
-															<button class="btn btn-danger btn-sm" type="button" data-dismiss="modal">Hủy</button>
-															<button class="btn btn-success btn-sm" type="button">Chấp nhận</button>
-														</div>
-													</div>
-												</div>
-											</div>
-											<!-- BOX HIỆN LÊN CÂU HỎI-->
-											<div class="modal fade" id="popup_question" aria-hidden="true">
-												<div class="modal-dialog modal-dialog-centered" role="document">
-													<div class="modal-content">
-														<div class="modal-header">
-															<h5 class="modal-title">Thông báo</h5>
-															<button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-														</div>
-														<div class="modal-body">Bạn có chắc chắn xóa</div>
-														<div class="modal-footer">
-															<button class="btn btn-danger btn-sm" type="button" data-dismiss="modal">Hủy</button>
-															<button class="btn btn-success btn-sm" type="button">Chấp nhận</button>
-														</div>
-													</div>
-												</div>
-											</div>
 										</div>
 									</td>
 								</tr>
@@ -581,8 +381,8 @@
 									</td>
 									<td>12/11/2019 14:50</td>
 									<td>
-										<div class="form-group-custom">
-											<label class="custom-control custom-checkbox">
+										<div class="input-custom">
+											<label class="_checkbox-custom">
 												<input class="custom-control-input" type="checkbox" readonly><span class="custom-control-indicator"></span>
 											</label>
 										</div>
@@ -599,71 +399,6 @@
 											<button class="btn-custom-icon item" type="button" data-toggle="modal" data-target="#popup_question">
 												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Xóa"><img class="svg" src="./assets/images/icons/delete.svg" alt="" srcset=""></div>
 											</button>
-											<!-- BOX HIỆN LÊN FORM-->
-											<div class="modal fade" id="popup_form" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-												<div class="modal-dialog modal-dialog-centered" role="document">
-													<div class="modal-content">
-														<div class="modal-header">
-															<h5 class="modal-title">Thay đổi mật khẩu</h5>
-															<button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-														</div>
-														<div class="modal-body">
-															<form action="#" method="method">
-																<div class="form-group row">
-																	<label class="col-sm-5 col-form-label" for="staticEmail">Tài khoản</label>
-																	<div class="col-sm-7">
-																		<input class="form-control-plaintext" id="staticEmail" type="text" readonly="" value="Administrator">
-																	</div>
-																</div>
-																<div class="form-group row">
-																	<label class="col-sm-5 col-form-label">Mật khẩu cũ</label>
-																	<div class="col-sm-7">
-																		<div class="input-group input-group-sm">
-																			<input class="form-control" type="Password">
-																		</div>
-																	</div>
-																</div>
-																<div class="form-group row">
-																	<label class="col-sm-5 col-form-label">Mật khẩu mới</label>
-																	<div class="col-sm-7">
-																		<div class="input-group input-group-sm">
-																			<input class="form-control" type="Password">
-																		</div>
-																	</div>
-																</div>
-																<div class="form-group row">
-																	<label class="col-sm-5 col-form-label">Nhập lại mật khẩu mới</label>
-																	<div class="col-sm-7">
-																		<div class="input-group input-group-sm">
-																			<input class="form-control" type="Password">
-																		</div>
-																	</div>
-																</div>
-															</form>
-														</div>
-														<div class="modal-footer">
-															<button class="btn btn-danger btn-sm" type="button" data-dismiss="modal">Hủy</button>
-															<button class="btn btn-success btn-sm" type="button">Chấp nhận</button>
-														</div>
-													</div>
-												</div>
-											</div>
-											<!-- BOX HIỆN LÊN CÂU HỎI-->
-											<div class="modal fade" id="popup_question" aria-hidden="true">
-												<div class="modal-dialog modal-dialog-centered" role="document">
-													<div class="modal-content">
-														<div class="modal-header">
-															<h5 class="modal-title">Thông báo</h5>
-															<button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-														</div>
-														<div class="modal-body">Bạn có chắc chắn xóa</div>
-														<div class="modal-footer">
-															<button class="btn btn-danger btn-sm" type="button" data-dismiss="modal">Hủy</button>
-															<button class="btn btn-success btn-sm" type="button">Chấp nhận</button>
-														</div>
-													</div>
-												</div>
-											</div>
 										</div>
 									</td>
 								</tr>
@@ -681,8 +416,8 @@
 									</td>
 									<td>12/11/2019 14:50</td>
 									<td>
-										<div class="form-group-custom">
-											<label class="custom-control custom-checkbox">
+										<div class="input-custom">
+											<label class="_checkbox-custom">
 												<input class="custom-control-input" type="checkbox" readonly><span class="custom-control-indicator"></span>
 											</label>
 										</div>
@@ -699,71 +434,6 @@
 											<button class="btn-custom-icon item" type="button" data-toggle="modal" data-target="#popup_question">
 												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Xóa"><img class="svg" src="./assets/images/icons/delete.svg" alt="" srcset=""></div>
 											</button>
-											<!-- BOX HIỆN LÊN FORM-->
-											<div class="modal fade" id="popup_form" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-												<div class="modal-dialog modal-dialog-centered" role="document">
-													<div class="modal-content">
-														<div class="modal-header">
-															<h5 class="modal-title">Thay đổi mật khẩu</h5>
-															<button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-														</div>
-														<div class="modal-body">
-															<form action="#" method="method">
-																<div class="form-group row">
-																	<label class="col-sm-5 col-form-label" for="staticEmail">Tài khoản</label>
-																	<div class="col-sm-7">
-																		<input class="form-control-plaintext" id="staticEmail" type="text" readonly="" value="Administrator">
-																	</div>
-																</div>
-																<div class="form-group row">
-																	<label class="col-sm-5 col-form-label">Mật khẩu cũ</label>
-																	<div class="col-sm-7">
-																		<div class="input-group input-group-sm">
-																			<input class="form-control" type="Password">
-																		</div>
-																	</div>
-																</div>
-																<div class="form-group row">
-																	<label class="col-sm-5 col-form-label">Mật khẩu mới</label>
-																	<div class="col-sm-7">
-																		<div class="input-group input-group-sm">
-																			<input class="form-control" type="Password">
-																		</div>
-																	</div>
-																</div>
-																<div class="form-group row">
-																	<label class="col-sm-5 col-form-label">Nhập lại mật khẩu mới</label>
-																	<div class="col-sm-7">
-																		<div class="input-group input-group-sm">
-																			<input class="form-control" type="Password">
-																		</div>
-																	</div>
-																</div>
-															</form>
-														</div>
-														<div class="modal-footer">
-															<button class="btn btn-danger btn-sm" type="button" data-dismiss="modal">Hủy</button>
-															<button class="btn btn-success btn-sm" type="button">Chấp nhận</button>
-														</div>
-													</div>
-												</div>
-											</div>
-											<!-- BOX HIỆN LÊN CÂU HỎI-->
-											<div class="modal fade" id="popup_question" aria-hidden="true">
-												<div class="modal-dialog modal-dialog-centered" role="document">
-													<div class="modal-content">
-														<div class="modal-header">
-															<h5 class="modal-title">Thông báo</h5>
-															<button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-														</div>
-														<div class="modal-body">Bạn có chắc chắn xóa</div>
-														<div class="modal-footer">
-															<button class="btn btn-danger btn-sm" type="button" data-dismiss="modal">Hủy</button>
-															<button class="btn btn-success btn-sm" type="button">Chấp nhận</button>
-														</div>
-													</div>
-												</div>
-											</div>
 										</div>
 									</td>
 								</tr>
@@ -781,8 +451,8 @@
 									</td>
 									<td>12/11/2019 14:50</td>
 									<td>
-										<div class="form-group-custom">
-											<label class="custom-control custom-checkbox">
+										<div class="input-custom">
+											<label class="_checkbox-custom">
 												<input class="custom-control-input" type="checkbox" readonly><span class="custom-control-indicator"></span>
 											</label>
 										</div>
@@ -799,71 +469,6 @@
 											<button class="btn-custom-icon item" type="button" data-toggle="modal" data-target="#popup_question">
 												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Xóa"><img class="svg" src="./assets/images/icons/delete.svg" alt="" srcset=""></div>
 											</button>
-											<!-- BOX HIỆN LÊN FORM-->
-											<div class="modal fade" id="popup_form" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-												<div class="modal-dialog modal-dialog-centered" role="document">
-													<div class="modal-content">
-														<div class="modal-header">
-															<h5 class="modal-title">Thay đổi mật khẩu</h5>
-															<button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-														</div>
-														<div class="modal-body">
-															<form action="#" method="method">
-																<div class="form-group row">
-																	<label class="col-sm-5 col-form-label" for="staticEmail">Tài khoản</label>
-																	<div class="col-sm-7">
-																		<input class="form-control-plaintext" id="staticEmail" type="text" readonly="" value="Administrator">
-																	</div>
-																</div>
-																<div class="form-group row">
-																	<label class="col-sm-5 col-form-label">Mật khẩu cũ</label>
-																	<div class="col-sm-7">
-																		<div class="input-group input-group-sm">
-																			<input class="form-control" type="Password">
-																		</div>
-																	</div>
-																</div>
-																<div class="form-group row">
-																	<label class="col-sm-5 col-form-label">Mật khẩu mới</label>
-																	<div class="col-sm-7">
-																		<div class="input-group input-group-sm">
-																			<input class="form-control" type="Password">
-																		</div>
-																	</div>
-																</div>
-																<div class="form-group row">
-																	<label class="col-sm-5 col-form-label">Nhập lại mật khẩu mới</label>
-																	<div class="col-sm-7">
-																		<div class="input-group input-group-sm">
-																			<input class="form-control" type="Password">
-																		</div>
-																	</div>
-																</div>
-															</form>
-														</div>
-														<div class="modal-footer">
-															<button class="btn btn-danger btn-sm" type="button" data-dismiss="modal">Hủy</button>
-															<button class="btn btn-success btn-sm" type="button">Chấp nhận</button>
-														</div>
-													</div>
-												</div>
-											</div>
-											<!-- BOX HIỆN LÊN CÂU HỎI-->
-											<div class="modal fade" id="popup_question" aria-hidden="true">
-												<div class="modal-dialog modal-dialog-centered" role="document">
-													<div class="modal-content">
-														<div class="modal-header">
-															<h5 class="modal-title">Thông báo</h5>
-															<button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-														</div>
-														<div class="modal-body">Bạn có chắc chắn xóa</div>
-														<div class="modal-footer">
-															<button class="btn btn-danger btn-sm" type="button" data-dismiss="modal">Hủy</button>
-															<button class="btn btn-success btn-sm" type="button">Chấp nhận</button>
-														</div>
-													</div>
-												</div>
-											</div>
 										</div>
 									</td>
 								</tr>
@@ -881,8 +486,8 @@
 									</td>
 									<td>12/11/2019 14:50</td>
 									<td>
-										<div class="form-group-custom">
-											<label class="custom-control custom-checkbox">
+										<div class="input-custom">
+											<label class="_checkbox-custom">
 												<input class="custom-control-input" type="checkbox" readonly><span class="custom-control-indicator"></span>
 											</label>
 										</div>
@@ -899,71 +504,6 @@
 											<button class="btn-custom-icon item" type="button" data-toggle="modal" data-target="#popup_question">
 												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Xóa"><img class="svg" src="./assets/images/icons/delete.svg" alt="" srcset=""></div>
 											</button>
-											<!-- BOX HIỆN LÊN FORM-->
-											<div class="modal fade" id="popup_form" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-												<div class="modal-dialog modal-dialog-centered" role="document">
-													<div class="modal-content">
-														<div class="modal-header">
-															<h5 class="modal-title">Thay đổi mật khẩu</h5>
-															<button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-														</div>
-														<div class="modal-body">
-															<form action="#" method="method">
-																<div class="form-group row">
-																	<label class="col-sm-5 col-form-label" for="staticEmail">Tài khoản</label>
-																	<div class="col-sm-7">
-																		<input class="form-control-plaintext" id="staticEmail" type="text" readonly="" value="Administrator">
-																	</div>
-																</div>
-																<div class="form-group row">
-																	<label class="col-sm-5 col-form-label">Mật khẩu cũ</label>
-																	<div class="col-sm-7">
-																		<div class="input-group input-group-sm">
-																			<input class="form-control" type="Password">
-																		</div>
-																	</div>
-																</div>
-																<div class="form-group row">
-																	<label class="col-sm-5 col-form-label">Mật khẩu mới</label>
-																	<div class="col-sm-7">
-																		<div class="input-group input-group-sm">
-																			<input class="form-control" type="Password">
-																		</div>
-																	</div>
-																</div>
-																<div class="form-group row">
-																	<label class="col-sm-5 col-form-label">Nhập lại mật khẩu mới</label>
-																	<div class="col-sm-7">
-																		<div class="input-group input-group-sm">
-																			<input class="form-control" type="Password">
-																		</div>
-																	</div>
-																</div>
-															</form>
-														</div>
-														<div class="modal-footer">
-															<button class="btn btn-danger btn-sm" type="button" data-dismiss="modal">Hủy</button>
-															<button class="btn btn-success btn-sm" type="button">Chấp nhận</button>
-														</div>
-													</div>
-												</div>
-											</div>
-											<!-- BOX HIỆN LÊN CÂU HỎI-->
-											<div class="modal fade" id="popup_question" aria-hidden="true">
-												<div class="modal-dialog modal-dialog-centered" role="document">
-													<div class="modal-content">
-														<div class="modal-header">
-															<h5 class="modal-title">Thông báo</h5>
-															<button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-														</div>
-														<div class="modal-body">Bạn có chắc chắn xóa</div>
-														<div class="modal-footer">
-															<button class="btn btn-danger btn-sm" type="button" data-dismiss="modal">Hủy</button>
-															<button class="btn btn-success btn-sm" type="button">Chấp nhận</button>
-														</div>
-													</div>
-												</div>
-											</div>
 										</div>
 									</td>
 								</tr>
@@ -981,8 +521,8 @@
 									</td>
 									<td>12/11/2019 14:50</td>
 									<td>
-										<div class="form-group-custom">
-											<label class="custom-control custom-checkbox">
+										<div class="input-custom">
+											<label class="_checkbox-custom">
 												<input class="custom-control-input" type="checkbox" readonly><span class="custom-control-indicator"></span>
 											</label>
 										</div>
@@ -999,71 +539,6 @@
 											<button class="btn-custom-icon item" type="button" data-toggle="modal" data-target="#popup_question">
 												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Xóa"><img class="svg" src="./assets/images/icons/delete.svg" alt="" srcset=""></div>
 											</button>
-											<!-- BOX HIỆN LÊN FORM-->
-											<div class="modal fade" id="popup_form" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-												<div class="modal-dialog modal-dialog-centered" role="document">
-													<div class="modal-content">
-														<div class="modal-header">
-															<h5 class="modal-title">Thay đổi mật khẩu</h5>
-															<button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-														</div>
-														<div class="modal-body">
-															<form action="#" method="method">
-																<div class="form-group row">
-																	<label class="col-sm-5 col-form-label" for="staticEmail">Tài khoản</label>
-																	<div class="col-sm-7">
-																		<input class="form-control-plaintext" id="staticEmail" type="text" readonly="" value="Administrator">
-																	</div>
-																</div>
-																<div class="form-group row">
-																	<label class="col-sm-5 col-form-label">Mật khẩu cũ</label>
-																	<div class="col-sm-7">
-																		<div class="input-group input-group-sm">
-																			<input class="form-control" type="Password">
-																		</div>
-																	</div>
-																</div>
-																<div class="form-group row">
-																	<label class="col-sm-5 col-form-label">Mật khẩu mới</label>
-																	<div class="col-sm-7">
-																		<div class="input-group input-group-sm">
-																			<input class="form-control" type="Password">
-																		</div>
-																	</div>
-																</div>
-																<div class="form-group row">
-																	<label class="col-sm-5 col-form-label">Nhập lại mật khẩu mới</label>
-																	<div class="col-sm-7">
-																		<div class="input-group input-group-sm">
-																			<input class="form-control" type="Password">
-																		</div>
-																	</div>
-																</div>
-															</form>
-														</div>
-														<div class="modal-footer">
-															<button class="btn btn-danger btn-sm" type="button" data-dismiss="modal">Hủy</button>
-															<button class="btn btn-success btn-sm" type="button">Chấp nhận</button>
-														</div>
-													</div>
-												</div>
-											</div>
-											<!-- BOX HIỆN LÊN CÂU HỎI-->
-											<div class="modal fade" id="popup_question" aria-hidden="true">
-												<div class="modal-dialog modal-dialog-centered" role="document">
-													<div class="modal-content">
-														<div class="modal-header">
-															<h5 class="modal-title">Thông báo</h5>
-															<button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-														</div>
-														<div class="modal-body">Bạn có chắc chắn xóa</div>
-														<div class="modal-footer">
-															<button class="btn btn-danger btn-sm" type="button" data-dismiss="modal">Hủy</button>
-															<button class="btn btn-success btn-sm" type="button">Chấp nhận</button>
-														</div>
-													</div>
-												</div>
-											</div>
 										</div>
 									</td>
 								</tr>
@@ -1081,8 +556,8 @@
 									</td>
 									<td>12/11/2019 14:50</td>
 									<td>
-										<div class="form-group-custom">
-											<label class="custom-control custom-checkbox">
+										<div class="input-custom">
+											<label class="_checkbox-custom">
 												<input class="custom-control-input" type="checkbox" readonly><span class="custom-control-indicator"></span>
 											</label>
 										</div>
@@ -1099,76 +574,76 @@
 											<button class="btn-custom-icon item" type="button" data-toggle="modal" data-target="#popup_question">
 												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Xóa"><img class="svg" src="./assets/images/icons/delete.svg" alt="" srcset=""></div>
 											</button>
-											<!-- BOX HIỆN LÊN FORM-->
-											<div class="modal fade" id="popup_form" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-												<div class="modal-dialog modal-dialog-centered" role="document">
-													<div class="modal-content">
-														<div class="modal-header">
-															<h5 class="modal-title">Thay đổi mật khẩu</h5>
-															<button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-														</div>
-														<div class="modal-body">
-															<form action="#" method="method">
-																<div class="form-group row">
-																	<label class="col-sm-5 col-form-label" for="staticEmail">Tài khoản</label>
-																	<div class="col-sm-7">
-																		<input class="form-control-plaintext" id="staticEmail" type="text" readonly="" value="Administrator">
-																	</div>
-																</div>
-																<div class="form-group row">
-																	<label class="col-sm-5 col-form-label">Mật khẩu cũ</label>
-																	<div class="col-sm-7">
-																		<div class="input-group input-group-sm">
-																			<input class="form-control" type="Password">
-																		</div>
-																	</div>
-																</div>
-																<div class="form-group row">
-																	<label class="col-sm-5 col-form-label">Mật khẩu mới</label>
-																	<div class="col-sm-7">
-																		<div class="input-group input-group-sm">
-																			<input class="form-control" type="Password">
-																		</div>
-																	</div>
-																</div>
-																<div class="form-group row">
-																	<label class="col-sm-5 col-form-label">Nhập lại mật khẩu mới</label>
-																	<div class="col-sm-7">
-																		<div class="input-group input-group-sm">
-																			<input class="form-control" type="Password">
-																		</div>
-																	</div>
-																</div>
-															</form>
-														</div>
-														<div class="modal-footer">
-															<button class="btn btn-danger btn-sm" type="button" data-dismiss="modal">Hủy</button>
-															<button class="btn btn-success btn-sm" type="button">Chấp nhận</button>
-														</div>
-													</div>
-												</div>
-											</div>
-											<!-- BOX HIỆN LÊN CÂU HỎI-->
-											<div class="modal fade" id="popup_question" aria-hidden="true">
-												<div class="modal-dialog modal-dialog-centered" role="document">
-													<div class="modal-content">
-														<div class="modal-header">
-															<h5 class="modal-title">Thông báo</h5>
-															<button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-														</div>
-														<div class="modal-body">Bạn có chắc chắn xóa</div>
-														<div class="modal-footer">
-															<button class="btn btn-danger btn-sm" type="button" data-dismiss="modal">Hủy</button>
-															<button class="btn btn-success btn-sm" type="button">Chấp nhận</button>
-														</div>
-													</div>
-												</div>
-											</div>
 										</div>
 									</td>
 								</tr>
+								<!-- BOX HIỆN LÊN FORM-->
 							</tbody>
 						</table>
+						<div class="modal fade" id="popup_form" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+							<div class="modal-dialog modal-dialog-centered" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title">Thay đổi mật khẩu</h5>
+										<button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+									</div>
+									<div class="modal-body">
+										<form action="#" method="method">
+											<div class="form-group row">
+												<label class="col-sm-5 col-form-label" for="staticEmail">Tài khoản</label>
+												<div class="col-sm-7">
+													<input class="form-control-plaintext" id="staticEmail" type="text" readonly="" value="Administrator">
+												</div>
+											</div>
+											<div class="form-group row">
+												<label class="col-sm-5 col-form-label">Mật khẩu cũ</label>
+												<div class="col-sm-7">
+													<div class="input-group input-group-sm">
+														<input class="form-control" type="Password">
+													</div>
+												</div>
+											</div>
+											<div class="form-group row">
+												<label class="col-sm-5 col-form-label">Mật khẩu mới</label>
+												<div class="col-sm-7">
+													<div class="input-group input-group-sm">
+														<input class="form-control" type="Password">
+													</div>
+												</div>
+											</div>
+											<div class="form-group row">
+												<label class="col-sm-5 col-form-label">Nhập lại mật khẩu mới</label>
+												<div class="col-sm-7">
+													<div class="input-group input-group-sm">
+														<input class="form-control" type="Password">
+													</div>
+												</div>
+											</div>
+										</form>
+									</div>
+									<div class="modal-footer">
+										<button class="btn btn-danger btn-sm" type="button" data-dismiss="modal">Hủy</button>
+										<button class="btn btn-success btn-sm" type="button">Chấp nhận</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- BOX HIỆN LÊN CÂU HỎI-->
+						<div class="modal fade" id="popup_question" aria-hidden="true">
+							<div class="modal-dialog modal-dialog-centered" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title">Thông báo</h5>
+										<button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+									</div>
+									<div class="modal-body">Bạn có chắc chắn xóa</div>
+									<div class="modal-footer">
+										<button class="btn btn-danger btn-sm" type="button" data-dismiss="modal">Hủy</button>
+										<button class="btn btn-success btn-sm" type="button">Chấp nhận</button>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -1176,5 +651,16 @@
 		</main>
 		<script type="text/javascript" src="./js/core.min.js"></script>
 		<script type="text/javascript" src="./js/main.min.js"></script>
+		<script src="https://cdn.ckeditor.com/ckeditor5/11.2.0/classic/ckeditor.js"></script>
+		<script>
+			ClassicEditor
+				.create( document.querySelector( '#editor' ) )
+				.then( editor => {
+					console.log( editor );
+				} )
+				.catch( error => {
+					console.error( error );
+				} );
+		</script>
 	</body>
 </html>

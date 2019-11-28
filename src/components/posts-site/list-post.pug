@@ -1,0 +1,141 @@
+.main__inner
+	.page-title
+		.page-title-wrapper
+			.page-title-heading
+				.page-title-icon
+					img.svg(src="./assets/images/icons/post.svg", alt="", srcset="")
+				.page-title-content
+					h3 Danh sách các bài viết
+					p Tại đây các quản trị viên có thể quản lý các bài viết trên Website với các chức năng cơ bản: thêm, xóa, sửa.
+			.page-title-actions
+				a(href="create-post.html").btn.btn-success Thêm mới
+	.row
+		.seach.col-lg-4
+			form(action="#" method="method")
+				.form-group.mb-0
+					.form-input
+						input(type="text" placeholder="Nhập từ khóa để tìm kiếm")
+						button
+							img.svg(src="./assets/images/icons/search.svg", alt="", srcset="")
+		.filter.col-lg-8
+			form(action="#" method="method")
+				.form-row
+					.col-lg-5.form-group.mb-0
+						label Ngôn ngữ
+						select.form-control.shadow-sm
+							option Vietnamese
+							option English
+							option Chinese
+					.col-lg-5.form-group.mb-0
+						label Danh mục
+						select.form-control.shadow-sm
+							option Chính
+							option Giới thiệu
+							option Dịch vụ
+							option Tiện ích
+							option Tin tức
+					.col-lg-2
+						.form-group.mb-0
+							button.btn.btn-primary.btn-sm.shadow Lọc
+		.block-table.col-lg-12.mt-4
+			table.table.table-bordered.m-0
+				thead
+					tr
+						th #
+						th Tiêu đề
+						th Đường dẫn
+						th Danh mục
+						th Ngôn ngữ
+						th Tác vụ
+				tbody
+					tr
+						td 1
+						td Chuyển đổi đơn vị
+						td /tien-ich/chuyen-doi-don-vi
+						td Tiện ích
+						td
+							.language
+								figure.shadow
+									img.ofc(src="./assets/images/nation/vietnam.svg", alt="")
+						td
+							.list-item
+								// SỬA
+								a.btn-custom-icon.item(href="create-post.html")
+									.icon(data-toggle="tooltip" data-placement="bottom" title="Sửa")
+										img.svg(src="./assets/images/icons/edit.svg", alt="", srcset="")
+								// XÓA
+								button.btn-custom-icon.item(type='button', data-toggle='modal', data-target='#popup_question')
+									.icon(data-toggle="tooltip" data-placement="bottom" title="Xóa")
+										img.svg(src="./assets/images/icons/delete.svg", alt="", srcset="")
+					tr
+						td 2
+						td Chuyển đổi đơn vị
+						td /tien-ich/chuyen-doi-don-vi
+						td Tiện ích
+						td
+							.language
+								figure.shadow
+									img.ofc(src="./assets/images/nation/china.svg", alt="")
+						td
+							.list-item
+								// SỬA
+								a.btn-custom-icon.item(href="#")
+									.icon(data-toggle="tooltip" data-placement="bottom" title="Sửa")
+										img.svg(src="./assets/images/icons/edit.svg", alt="", srcset="")
+								// XÓA
+								button.btn-custom-icon.item(type='button', data-toggle='modal', data-target='#popup_question')
+									.icon(data-toggle="tooltip" data-placement="bottom" title="Xóa")
+										img.svg(src="./assets/images/icons/delete.svg", alt="", srcset="")
+					tr
+						td 3
+						td Chuyển đổi đơn vị
+						td /tien-ich/chuyen-doi-don-vi
+						td Tiện ích
+						td
+							.language
+								figure.shadow
+									img.ofc(src="./assets/images/nation/usa.png", alt="")
+						td
+							.list-item
+								// SỬA
+								a.btn-custom-icon.item(href="#")
+									.icon(data-toggle="tooltip" data-placement="bottom" title="Sửa")
+										img.svg(src="./assets/images/icons/edit.svg", alt="", srcset="")
+								// XÓA
+								button.btn-custom-icon.item(type='button', data-toggle='modal', data-target='#popup_question')
+									.icon(data-toggle="tooltip" data-placement="bottom" title="Xóa")
+										img.svg(src="./assets/images/icons/delete.svg", alt="", srcset="")
+					tr
+						td 3
+						td Chuyển đổi đơn vị
+						td /tien-ich/chuyen-doi-don-vi
+						td Tiện ích
+						td
+							.language
+								figure.shadow
+									img.ofc(src="./assets/images/nation/korea.png", alt="")
+						td
+							.list-item
+								// SỬA
+								a.btn-custom-icon.item(href="#")
+									.icon(data-toggle="tooltip" data-placement="bottom" title="Sửa")
+										img.svg(src="./assets/images/icons/edit.svg", alt="", srcset="")
+								// XÓA
+								button.btn-custom-icon.item(type='button', data-toggle='modal', data-target='#popup_question')
+									.icon(data-toggle="tooltip" data-placement="bottom" title="Xóa")
+										img.svg(src="./assets/images/icons/delete.svg", alt="", srcset="")
+
+
+
+								// BOX HIỆN LÊN CÂU HỎI
+								#popup_question.modal.fade(aria-hidden='true')
+									.modal-dialog.modal-dialog-centered(role='document')
+										.modal-content
+											.modal-header
+												h5.modal-title Thông báo
+												button.close(type='button', data-dismiss='modal', aria-label='Close')
+													span(aria-hidden='true') ×
+											.modal-body Bạn có chắc chắn xóa
+											.modal-footer
+												button.btn.btn-danger.btn-sm(type='button', data-dismiss='modal') Hủy
+												button.btn.btn-success.btn-sm(type='button') Chấp nhận

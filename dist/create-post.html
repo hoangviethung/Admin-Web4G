@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Admin | Tạo tài khoản</title>
+		<title>Admin | Tạo bài viết</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -227,16 +227,45 @@
 				<div class="page-title">
 					<div class="page-title-wrapper">
 						<div class="page-title-heading">
-							<div class="page-title-icon"><img class="svg" src="./assets/images/icons/user-plus.svg" alt="" srcset=""></div>
+							<div class="page-title-icon"><img class="svg" src="./assets/images/icons/post.svg" alt="" srcset=""></div>
 							<div class="page-title-content">
-								<h3>Tạo tài khoản mới</h3>
-								<p>Tại đây các quản trị viên có thể thêm tài khoản mới cho quản trị viên khác và chọn bộ quyền phù hợp với từng nhóm quản trị viên.</p>
+								<h3>Tạo bài viết</h3>
+								<p>Tại đây các quản trị viên có thể quản lý các bài viết trên Website với các chức năng cơ bản: thêm, xóa, sửa.</p>
 							</div>
 						</div>
-						<div class="page-title-actions"></div>
 					</div>
 				</div>
-				<div class="row"></div>
+				<div class="row">
+					<div class="create-post shadow-sm col-lg-12">
+						<div class="tab-container">
+							<ul class="list-tab">
+								<li class="item acitve" toggle-for="item-1">Nội dung bài viết</li>
+								<li class="item" toggle-for="item-2">SEO bài viết</li>
+								<li class="item" toggle-for="item-3">Hình ảnh</li>
+							</ul>
+							<div class="tab-content">
+								<div class="content" tab-id="item-1">
+									<div class="block-form">
+										<form action="#" method="method">
+											<div class="form-group">
+												<label>Nội dung</label>
+												<div class="form-input">
+													<textarea id="editor" name="content"></textarea>
+												</div>
+											</div>
+										</form>
+									</div>
+								</div>
+								<div class="content" tab-id="item-2">
+									<h1>item 2</h1>
+								</div>
+								<div class="content" tab-id="item-3">
+									<h1>item 3</h1>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 			<div id="js-page-verify" hidden></div>
 		</main>

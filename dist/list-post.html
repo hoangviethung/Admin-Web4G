@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Admin | Tạo tài khoản</title>
+		<title>Admin | Quản lý bài viết</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -227,16 +227,172 @@
 				<div class="page-title">
 					<div class="page-title-wrapper">
 						<div class="page-title-heading">
-							<div class="page-title-icon"><img class="svg" src="./assets/images/icons/user-plus.svg" alt="" srcset=""></div>
+							<div class="page-title-icon"><img class="svg" src="./assets/images/icons/post.svg" alt="" srcset=""></div>
 							<div class="page-title-content">
-								<h3>Tạo tài khoản mới</h3>
-								<p>Tại đây các quản trị viên có thể thêm tài khoản mới cho quản trị viên khác và chọn bộ quyền phù hợp với từng nhóm quản trị viên.</p>
+								<h3>Danh sách các bài viết</h3>
+								<p>Tại đây các quản trị viên có thể quản lý các bài viết trên Website với các chức năng cơ bản: thêm, xóa, sửa.</p>
 							</div>
 						</div>
-						<div class="page-title-actions"></div>
+						<div class="page-title-actions"><a class="btn btn-success" href="create-post.html">Thêm mới</a></div>
 					</div>
 				</div>
-				<div class="row"></div>
+				<div class="row">
+					<div class="seach col-lg-4">
+						<form action="#" method="method">
+							<div class="form-group mb-0">
+								<div class="form-input">
+									<input type="text" placeholder="Nhập từ khóa để tìm kiếm">
+									<button><img class="svg" src="./assets/images/icons/search.svg" alt="" srcset=""></button>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="filter col-lg-8">
+						<form action="#" method="method">
+							<div class="form-row">
+								<div class="col-lg-5 form-group mb-0">
+									<label>Ngôn ngữ</label>
+									<select class="form-control shadow-sm">
+										<option>Vietnamese</option>
+										<option>English</option>
+										<option>Chinese</option>
+									</select>
+								</div>
+								<div class="col-lg-5 form-group mb-0">
+									<label>Danh mục</label>
+									<select class="form-control shadow-sm">
+										<option>Chính</option>
+										<option>Giới thiệu</option>
+										<option>Dịch vụ</option>
+										<option>Tiện ích</option>
+										<option>Tin tức</option>
+									</select>
+								</div>
+								<div class="col-lg-2">
+									<div class="form-group mb-0">
+										<button class="btn btn-primary btn-sm shadow">Lọc</button>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="block-table col-lg-12 mt-4">
+						<table class="table table-bordered m-0">
+							<thead>
+								<tr>
+									<th>#</th>
+									<th>Tiêu đề</th>
+									<th>Đường dẫn</th>
+									<th>Danh mục</th>
+									<th>Ngôn ngữ</th>
+									<th>Tác vụ</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>Chuyển đổi đơn vị</td>
+									<td>/tien-ich/chuyen-doi-don-vi</td>
+									<td>Tiện ích</td>
+									<td>
+										<div class="language">
+											<figure class="shadow"><img class="ofc" src="./assets/images/nation/vietnam.svg" alt=""></figure>
+										</div>
+									</td>
+									<td>
+										<div class="list-item">
+											<!-- SỬA--><a class="btn-custom-icon item" href="create-post.html">
+												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Sửa"><img class="svg" src="./assets/images/icons/edit.svg" alt="" srcset=""></div></a>
+											<!-- XÓA-->
+											<button class="btn-custom-icon item" type="button" data-toggle="modal" data-target="#popup_question">
+												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Xóa"><img class="svg" src="./assets/images/icons/delete.svg" alt="" srcset=""></div>
+											</button>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td>Chuyển đổi đơn vị</td>
+									<td>/tien-ich/chuyen-doi-don-vi</td>
+									<td>Tiện ích</td>
+									<td>
+										<div class="language">
+											<figure class="shadow"><img class="ofc" src="./assets/images/nation/china.svg" alt=""></figure>
+										</div>
+									</td>
+									<td>
+										<div class="list-item">
+											<!-- SỬA--><a class="btn-custom-icon item" href="#">
+												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Sửa"><img class="svg" src="./assets/images/icons/edit.svg" alt="" srcset=""></div></a>
+											<!-- XÓA-->
+											<button class="btn-custom-icon item" type="button" data-toggle="modal" data-target="#popup_question">
+												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Xóa"><img class="svg" src="./assets/images/icons/delete.svg" alt="" srcset=""></div>
+											</button>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td>Chuyển đổi đơn vị</td>
+									<td>/tien-ich/chuyen-doi-don-vi</td>
+									<td>Tiện ích</td>
+									<td>
+										<div class="language">
+											<figure class="shadow"><img class="ofc" src="./assets/images/nation/usa.png" alt=""></figure>
+										</div>
+									</td>
+									<td>
+										<div class="list-item">
+											<!-- SỬA--><a class="btn-custom-icon item" href="#">
+												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Sửa"><img class="svg" src="./assets/images/icons/edit.svg" alt="" srcset=""></div></a>
+											<!-- XÓA-->
+											<button class="btn-custom-icon item" type="button" data-toggle="modal" data-target="#popup_question">
+												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Xóa"><img class="svg" src="./assets/images/icons/delete.svg" alt="" srcset=""></div>
+											</button>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td>Chuyển đổi đơn vị</td>
+									<td>/tien-ich/chuyen-doi-don-vi</td>
+									<td>Tiện ích</td>
+									<td>
+										<div class="language">
+											<figure class="shadow"><img class="ofc" src="./assets/images/nation/korea.png" alt=""></figure>
+										</div>
+									</td>
+									<td>
+										<div class="list-item">
+											<!-- SỬA--><a class="btn-custom-icon item" href="#">
+												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Sửa"><img class="svg" src="./assets/images/icons/edit.svg" alt="" srcset=""></div></a>
+											<!-- XÓA-->
+											<button class="btn-custom-icon item" type="button" data-toggle="modal" data-target="#popup_question">
+												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Xóa"><img class="svg" src="./assets/images/icons/delete.svg" alt="" srcset=""></div>
+											</button>
+											<!-- BOX HIỆN LÊN CÂU HỎI-->
+											<div class="modal fade" id="popup_question" aria-hidden="true">
+												<div class="modal-dialog modal-dialog-centered" role="document">
+													<div class="modal-content">
+														<div class="modal-header">
+															<h5 class="modal-title">Thông báo</h5>
+															<button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+														</div>
+														<div class="modal-body">Bạn có chắc chắn xóa</div>
+														<div class="modal-footer">
+															<button class="btn btn-danger btn-sm" type="button" data-dismiss="modal">Hủy</button>
+															<button class="btn btn-success btn-sm" type="button">Chấp nhận</button>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
 			</div>
 			<div id="js-page-verify" hidden></div>
 		</main>

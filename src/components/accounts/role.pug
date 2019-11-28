@@ -10,7 +10,7 @@
 			.page-title-actions
 				a(href="#").btn.btn-success Thêm mới
 	.row
-		.block-form.userControl.col-lg-12.mt-4
+		.block-table.userControl.col-lg-12.mt-4
 			table.table.table-bordered.m-0
 				thead
 					tr
@@ -91,15 +91,15 @@
 								button.btn-custom-icon.item(type='button', data-toggle='modal', data-target='#popup_question')
 									.icon(data-toggle="tooltip" data-placement="bottom" title="Xóa")
 										img.svg(src="./assets/images/icons/delete.svg", alt="", srcset="")
-								// BOX HIỆN LÊN CÂU HỎI
-								#popup_question.modal.fade(aria-hidden='true')
-									.modal-dialog.modal-dialog-centered(role='document')
-										.modal-content
-											.modal-header
-												h5.modal-title Thông báo
-												button.close(type='button', data-dismiss='modal', aria-label='Close')
-													span(aria-hidden='true') ×
-											.modal-body Bạn có chắc chắn xóa
-											.modal-footer
-												button.btn.btn-danger.btn-sm(type='button', data-dismiss='modal') Hủy
-												button.btn.btn-success.btn-sm(type='button') Chấp nhận
+			// BOX HIỆN LÊN CÂU HỎI
+			#popup_question.modal.fade(aria-hidden='true')
+				.modal-dialog.modal-dialog-centered(role='document')
+					.modal-content
+						.modal-header
+							h5.modal-title Thông báo
+							button.close(type='button', data-dismiss='modal', aria-label='Close')
+								span(aria-hidden='true') ×
+						.modal-body Bạn có chắc chắn xóa
+						.modal-footer
+							button.btn.btn-danger.btn-sm(type='button', data-dismiss='modal') Hủy
+							button.btn.btn-success.btn-sm(type='button') Chấp nhận

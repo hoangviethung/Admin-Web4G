@@ -12,16 +12,16 @@
 	.row
 		.seach.col-lg-4
 			form(action="#" method="method")
-				.form-group.text-center
+				.form-group
 					.form-input
-						input(type="text" placeholder="Nhập tên tài khoản cần tìm")
+						input(type="text" placeholder="Nhập từ khóa để tìm kiếm")
 						button
 							img.svg(src="./assets/images/icons/search.svg", alt="", srcset="")
-		.block-form.col-lg-12.mt-4
+		.block-table.col-lg-12.mt-4
 			table.table.table-bordered.m-0
 				thead
 					tr
-						th.text-center #
+						th #
 						th Tên tài khoản
 						th Số điện thoại
 						th Email
@@ -43,8 +43,8 @@
 									.item.badge.badge-primary.p-2 Guest
 							td 12/11/2019 14:50
 							td
-								.form-group-custom
-									label.custom-control.custom-checkbox
+								.input-custom
+									label._checkbox-custom
 										input.custom-control-input(type='checkbox' readonly)
 										span.custom-control-indicator
 							td
@@ -61,47 +61,47 @@
 									button.btn-custom-icon.item(type='button', data-toggle='modal', data-target='#popup_question')
 										.icon(data-toggle="tooltip" data-placement="bottom" title="Xóa")
 											img.svg(src="./assets/images/icons/delete.svg", alt="", srcset="")
-									// BOX HIỆN LÊN FORM
-									#popup_form.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalCenterTitle', aria-hidden='true')
-										.modal-dialog.modal-dialog-centered(role='document')
-											.modal-content
-												.modal-header
-													h5.modal-title Thay đổi mật khẩu
-													button.close(type='button', data-dismiss='modal', aria-label='Close')
-														span(aria-hidden='true') ×
-												.modal-body
-													form(action="#" method="method")
-														.form-group.row
-															label.col-sm-5.col-form-label(for='staticEmail') Tài khoản
-															.col-sm-7
-																input#staticEmail.form-control-plaintext(type='text', readonly='', value='Administrator')
-														.form-group.row
-															label.col-sm-5.col-form-label Mật khẩu cũ
-															.col-sm-7
-																.input-group.input-group-sm
-																	input.form-control(type='Password')
-														.form-group.row
-															label.col-sm-5.col-form-label Mật khẩu mới
-															.col-sm-7
-																.input-group.input-group-sm
-																	input.form-control(type='Password')
-														.form-group.row
-															label.col-sm-5.col-form-label Nhập lại mật khẩu mới
-															.col-sm-7
-																.input-group.input-group-sm
-																	input.form-control(type='Password')
-												.modal-footer
-													button.btn.btn-danger.btn-sm(type='button', data-dismiss='modal') Hủy
-													button.btn.btn-success.btn-sm(type='button') Chấp nhận
-									// BOX HIỆN LÊN CÂU HỎI
-									#popup_question.modal.fade(aria-hidden='true')
-										.modal-dialog.modal-dialog-centered(role='document')
-											.modal-content
-												.modal-header
-													h5.modal-title Thông báo
-													button.close(type='button', data-dismiss='modal', aria-label='Close')
-														span(aria-hidden='true') ×
-												.modal-body Bạn có chắc chắn xóa
-												.modal-footer
-													button.btn.btn-danger.btn-sm(type='button', data-dismiss='modal') Hủy
-													button.btn.btn-success.btn-sm(type='button') Chấp nhận
+					// BOX HIỆN LÊN FORM
+			#popup_form.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalCenterTitle', aria-hidden='true')
+				.modal-dialog.modal-dialog-centered(role='document')
+					.modal-content
+						.modal-header
+							h5.modal-title Thay đổi mật khẩu
+							button.close(type='button', data-dismiss='modal', aria-label='Close')
+								span(aria-hidden='true') ×
+						.modal-body
+							form(action="#" method="method")
+								.form-group.row
+									label.col-sm-5.col-form-label(for='staticEmail') Tài khoản
+									.col-sm-7
+										input#staticEmail.form-control-plaintext(type='text', readonly='', value='Administrator')
+								.form-group.row
+									label.col-sm-5.col-form-label Mật khẩu cũ
+									.col-sm-7
+										.input-group.input-group-sm
+											input.form-control(type='Password')
+								.form-group.row
+									label.col-sm-5.col-form-label Mật khẩu mới
+									.col-sm-7
+										.input-group.input-group-sm
+											input.form-control(type='Password')
+								.form-group.row
+									label.col-sm-5.col-form-label Nhập lại mật khẩu mới
+									.col-sm-7
+										.input-group.input-group-sm
+											input.form-control(type='Password')
+						.modal-footer
+							button.btn.btn-danger.btn-sm(type='button', data-dismiss='modal') Hủy
+							button.btn.btn-success.btn-sm(type='button') Chấp nhận
+			// BOX HIỆN LÊN CÂU HỎI
+			#popup_question.modal.fade(aria-hidden='true')
+				.modal-dialog.modal-dialog-centered(role='document')
+					.modal-content
+						.modal-header
+							h5.modal-title Thông báo
+							button.close(type='button', data-dismiss='modal', aria-label='Close')
+								span(aria-hidden='true') ×
+						.modal-body Bạn có chắc chắn xóa
+						.modal-footer
+							button.btn.btn-danger.btn-sm(type='button', data-dismiss='modal') Hủy
+							button.btn.btn-success.btn-sm(type='button') Chấp nhận
