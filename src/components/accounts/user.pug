@@ -8,7 +8,7 @@
 					h3 Tài khoản quản trị
 					p Tại đây các quản trị viên có thể quản lý được toàn bộ tài khoản quản trị với các chức năng cơ bản: thêm, xóa, sửa.
 			.page-title-actions
-				a(href="#").btn.btn-success Thêm mới
+				a(href="create-user-admin.html").btn.btn-success Thêm mới
 	.row
 		.seach.col-lg-4
 			form(action="#" method="method")
@@ -18,52 +18,90 @@
 						button
 							img.svg(src="./assets/images/icons/search.svg", alt="", srcset="")
 		.block-form.col-lg-12.mt-4
-			table.table
+			table.table.table-bordered.m-0
 				thead
 					tr
-						th(scope='col') #
-						th(scope='col') Tên đăng nhập
-						th(scope='col') Email
-						th(scope='col') Quyền
-						th(scope='col') Trạng thái
-						th(scope='col') Tác vụ
+						th.text-center #
+						th Tên tài khoản
+						th Số điện thoại
+						th Email
+						th Thuộc bộ quyền
+						th Ngày tạo
+						th Trạng thái
+						th Tác vụ
 				tbody
-					tr
-						th(scope='row') 1
-						td Administrator
-						td abc@abc.com
-						td Admin
-						td Hoạt động
-						td.list-task
-							.item
-								a(href="#") Sửa
-							.item
-								a(href="#") Đổi Mật Khẩu
-							.item
-								a(href="#") Xóa
-					tr
-						th(scope='row') 2
-						td Administrator
-						td abc@abc.com
-						td Admin
-						td Hoạt động
-						td.list-task
-							.item
-								a(href="#") Sửa
-							.item
-								a(href="#") Đổi Mật Khẩu
-							.item
-								a(href="#") Xóa
-					tr
-						th(scope='row') 3
-						td Administrator
-						td abc@abc.com
-						td Admin
-						td Hoạt động
-						td.list-task
-							.item
-								a(href="#") Sửa
-							.item
-								a(href="#") Đổi Mật Khẩu
-							.item
-								a(href="#") Xóa
+					-for(i=1;i<10;i++)
+						tr
+							td #{i}
+							td Administrator
+							td 0969912404
+							td y.tran@web4gsolutions.com
+							td
+								.list-item
+									.item.badge.badge-primary.p-2 Admin
+									.item.badge.badge-primary.p-2 Mod
+									.item.badge.badge-primary.p-2 Guest
+							td 12/11/2019 14:50
+							td
+								.form-group-custom
+									label.custom-control.custom-checkbox
+										input.custom-control-input(type='checkbox' readonly)
+										span.custom-control-indicator
+							td
+								.list-item
+									// SỬA
+									a.btn-custom-icon.item(href="#")
+										.icon(data-toggle="tooltip" data-placement="bottom" title="Sửa")
+											img.svg(src="./assets/images/icons/edit.svg", alt="", srcset="")
+									// THAY ĐỔI MẬT KHẨU
+									button.btn-custom-icon.item(type='button', data-toggle='modal', data-target='#popup_form')
+										.icon(data-toggle="tooltip" data-placement="bottom" title="Đổi mật khẩu")
+											img.svg(src="./assets/images/icons/user-setting.svg", alt="", srcset="")
+									// XÓA
+									button.btn-custom-icon.item(type='button', data-toggle='modal', data-target='#popup_question')
+										.icon(data-toggle="tooltip" data-placement="bottom" title="Xóa")
+											img.svg(src="./assets/images/icons/delete.svg", alt="", srcset="")
+									// BOX HIỆN LÊN FORM
+									#popup_form.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalCenterTitle', aria-hidden='true')
+										.modal-dialog.modal-dialog-centered(role='document')
+											.modal-content
+												.modal-header
+													h5.modal-title Thay đổi mật khẩu
+													button.close(type='button', data-dismiss='modal', aria-label='Close')
+														span(aria-hidden='true') ×
+												.modal-body
+													form(action="#" method="method")
+														.form-group.row
+															label.col-sm-5.col-form-label(for='staticEmail') Tài khoản
+															.col-sm-7
+																input#staticEmail.form-control-plaintext(type='text', readonly='', value='Administrator')
+														.form-group.row
+															label.col-sm-5.col-form-label Mật khẩu cũ
+															.col-sm-7
+																.input-group.input-group-sm
+																	input.form-control(type='Password')
+														.form-group.row
+															label.col-sm-5.col-form-label Mật khẩu mới
+															.col-sm-7
+																.input-group.input-group-sm
+																	input.form-control(type='Password')
+														.form-group.row
+															label.col-sm-5.col-form-label Nhập lại mật khẩu mới
+															.col-sm-7
+																.input-group.input-group-sm
+																	input.form-control(type='Password')
+												.modal-footer
+													button.btn.btn-danger.btn-sm(type='button', data-dismiss='modal') Hủy
+													button.btn.btn-success.btn-sm(type='button') Chấp nhận
+									// BOX HIỆN LÊN CÂU HỎI
+									#popup_question.modal.fade(aria-hidden='true')
+										.modal-dialog.modal-dialog-centered(role='document')
+											.modal-content
+												.modal-header
+													h5.modal-title Thông báo
+													button.close(type='button', data-dismiss='modal', aria-label='Close')
+														span(aria-hidden='true') ×
+												.modal-body Bạn có chắc chắn xóa
+												.modal-footer
+													button.btn.btn-danger.btn-sm(type='button', data-dismiss='modal') Hủy
+													button.btn.btn-success.btn-sm(type='button') Chấp nhận

@@ -1,0 +1,105 @@
+.main__inner
+	.page-title
+		.page-title-wrapper
+			.page-title-heading
+				.page-title-icon
+					img.svg(src="./assets/images/icons/group-user.svg", alt="", srcset="")
+				.page-title-content
+					h3 Bộ phân quyền nhóm quản trị
+					p Tại đây các quản trị viên có thể quản lý bộ quyền của từng nhóm quản trị viên với các chức năng cơ bản: thêm, xóa, sửa.
+			.page-title-actions
+				a(href="#").btn.btn-success Thêm mới
+	.row
+		.block-form.userControl.col-lg-12.mt-4
+			table.table.table-bordered.m-0
+				thead
+					tr
+						th.text-center #
+						th Tên bộ quyền
+						th Mô tả chức năng bộ quyền
+						th Tác vụ
+				tbody
+					tr
+						td 1
+						td
+							.list-item
+								.item.badge.badge-primary.p-2 Admin
+						td Quản lý toàn bộ tất cả các chức năng hiện có trang admin
+						td
+							.list-item
+								// SỬA
+								a.btn-custom-icon.item(href="#")
+									.icon(data-toggle="tooltip" data-placement="bottom" title="Sửa")
+										img.svg(src="./assets/images/icons/edit.svg", alt="", srcset="")
+								// XÓA
+								button.btn-custom-icon.item(type='button', data-toggle='modal', data-target='#popup_question')
+									.icon(data-toggle="tooltip" data-placement="bottom" title="Xóa")
+										img.svg(src="./assets/images/icons/delete.svg", alt="", srcset="")
+								// BOX HIỆN LÊN CÂU HỎI
+								#popup_question.modal.fade(aria-hidden='true')
+									.modal-dialog.modal-dialog-centered(role='document')
+										.modal-content
+											.modal-header
+												h5.modal-title Thông báo
+												button.close(type='button', data-dismiss='modal', aria-label='Close')
+													span(aria-hidden='true') ×
+											.modal-body Bạn có chắc chắn xóa
+											.modal-footer
+												button.btn.btn-danger.btn-sm(type='button', data-dismiss='modal') Hủy
+												button.btn.btn-success.btn-sm(type='button') Chấp nhận
+					tr
+						td 2
+						td
+							.list-item
+								.item.badge.badge-primary.p-2 Mod
+						td Quản lý các bài viết của website
+						td
+							.list-item
+								// SỬA
+								a.btn-custom-icon.item(href="#")
+									.icon(data-toggle="tooltip" data-placement="bottom" title="Sửa")
+										img.svg(src="./assets/images/icons/edit.svg", alt="", srcset="")
+								// XÓA
+								button.btn-custom-icon.item(type='button', data-toggle='modal', data-target='#popup_question')
+									.icon(data-toggle="tooltip" data-placement="bottom" title="Xóa")
+										img.svg(src="./assets/images/icons/delete.svg", alt="", srcset="")
+								// BOX HIỆN LÊN CÂU HỎI
+								#popup_question.modal.fade(aria-hidden='true')
+									.modal-dialog.modal-dialog-centered(role='document')
+										.modal-content
+											.modal-header
+												h5.modal-title Thông báo
+												button.close(type='button', data-dismiss='modal', aria-label='Close')
+													span(aria-hidden='true') ×
+											.modal-body Bạn có chắc chắn xóa
+											.modal-footer
+												button.btn.btn-danger.btn-sm(type='button', data-dismiss='modal') Hủy
+												button.btn.btn-success.btn-sm(type='button') Chấp nhận
+					tr
+						td 3
+						td
+							.list-item
+								.item.badge.badge-primary.p-2 Guest
+						td Quản lý các bài viết của website
+						td
+							.list-item
+								// SỬA
+								a.btn-custom-icon.item(href="#")
+									.icon(data-toggle="tooltip" data-placement="bottom" title="Sửa")
+										img.svg(src="./assets/images/icons/edit.svg", alt="", srcset="")
+								// XÓA
+								button.btn-custom-icon.item(type='button', data-toggle='modal', data-target='#popup_question')
+									.icon(data-toggle="tooltip" data-placement="bottom" title="Xóa")
+										img.svg(src="./assets/images/icons/delete.svg", alt="", srcset="")
+								// BOX HIỆN LÊN CÂU HỎI
+								#popup_question.modal.fade(aria-hidden='true')
+									.modal-dialog.modal-dialog-centered(role='document')
+										.modal-content
+											.modal-header
+												h5.modal-title Thông báo
+												button.close(type='button', data-dismiss='modal', aria-label='Close')
+													span(aria-hidden='true') ×
+											.modal-body Bạn có chắc chắn xóa
+											.modal-footer
+												button.btn.btn-danger.btn-sm(type='button', data-dismiss='modal') Hủy
+												button.btn.btn-success.btn-sm(type='button') Chấp nhận
