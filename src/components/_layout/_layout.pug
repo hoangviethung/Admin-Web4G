@@ -28,10 +28,10 @@ html(lang="en")
 			#js-page-verify(class=bodyClass hidden)
 		block footer
 			include _footer.pug
-		block scripts
 		script(type="text/javascript", src="./js/core.min.js")
 		script(type="text/javascript", src="./js/main.min.js")
 		script(src="https://cdn.ckeditor.com/ckeditor5/11.2.0/classic/ckeditor.js")
+		block scripts
 		script.
 			ClassicEditor
 				.create( document.querySelector( '#editor' ) )

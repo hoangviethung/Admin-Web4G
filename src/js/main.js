@@ -53,6 +53,12 @@ class Tab {
 	}
 }
 
+Date.prototype.toDateInputValue = (function() {
+	var local = new Date(this);
+	local.setMinutes(this.getMinutes() - this.getTimezoneOffset());
+	return local.toJSON().slice(0, 10);
+});
+
 // SUBMENU ASIDE
 function showSubMenu_AsideMenu() {
 	$('.aside-list .aside-item').on('click', function() {
@@ -142,11 +148,55 @@ function SVG() {
 	});
 }
 
+function uploadFile() {
+	var template = document.querySelector("#template");
+	if (template) {
+		var templateNew = template.parentNode.innerHTML;
+		o.parentNode.removeChild(template);
+		var itemDropZone = new Dropzone(".upload-file", {
+			url: "/upload",
+			thumbnailWidth: 80,
+			thumbnailHeight: 80,
+			parallelUploads: 20,
+			previewTemplate: templateNew,
+			autoQueue: !1,
+			previewsContainer: "#previews",
+			clickable: ".fileinput-button"
+		});
+		i.on("addedfile", (function(e) {
+			e.previewElement.querySelector(".start").onclick = function() {
+				itemDropZone.enqueueFile(e)
+			}
+		})), itemDropZone.on("totaluploadprogress", (function(e) {
+			document.querySelector("#total-progress .progress-bar").style.width = e + "%"
+		})), itemDropZone.on("sending", (function(e) {
+			document.querySelector("#total-progress").style.opacity = "1", e.previewElement.querySelector(".start").setAttribute("disabled", "disabled")
+		})), itemDropZone.on("queuecomplete", (function(e) {
+			document.querySelector("#total-progress").style.opacity = "0"
+		})), document.querySelector("#actions .start").onclick = function() {
+			itemDropZone.enqueueFiles(i.getFilesWithStatus(Dropzone.ADDED))
+		}, document.querySelector("#actions .cancel").onclick = function() {
+			itemDropZone.removeAllFiles(!0)
+		}
+	}
+}
+
+function setDateDefault() {
+	let today = new Date().toDateInputValue();
+
+	$($('input[type=date]')).val(today);
+
+	$($('input[type=date]')).attr('min', today)
+}
+
 // CHẠY KHI DOCUMENT SẴN SÀNG
 document.addEventListener('DOMContentLoaded', () => {
 	$('[data-toggle="tooltip"]').tooltip();
 	// LOADING
 	loading();
+	// DROPZONE
+	uploadFile();
+	setDateDefault();
 	// TAB
 	const TABcreatePost = new Tab(".create-post .tab-container");
 	// SVG CONTROL
