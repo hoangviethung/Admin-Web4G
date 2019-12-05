@@ -5,7 +5,7 @@ block var
 	//- - let bodyClass = 'index-page'
 
 block main
-	include ./components/posts-site/create-post.pug
+	include ./components/posts-site/create-post
 block scripts
 	script.
 		var previewNode = document.querySelector("#template-preview");
@@ -44,7 +44,7 @@ block scripts
 				listImageDefault.append(item);
 			})
 		})
-		//
+
 		var btnCopy = Array.from(document.querySelectorAll('.file-item .btn-copy-url'));
 		btnCopy.forEach(function (btn) {
 			btn.addEventListener('click', function () {
@@ -55,7 +55,7 @@ block scripts
 				document.execCommand("copy");
 			})
 		})
-
+		
 		function deleteImage(e, param) {
 			$.ajax({
 				url: 'http://192.168.1.106/delete-image',

@@ -1,0 +1,161 @@
+.main__inner
+	.page-title
+		.page-title-wrapper
+			.page-title-heading
+				.page-title-icon
+					img.svg(src="./assets/images/icons/setting.svg", alt="", srcset="")
+				.page-title-content
+					h3 Cài đặt chung
+					p Tại đây các quản trị viên có thể chỉnh sửa và cài đặt chung cho website của mình
+	.row
+		.block-table.col-lg-12.mt-4
+			table.table.table-bordered.m-0
+				thead
+					tr
+						th #
+						th Từ khóa
+						th Giá trị
+						th.text-center Tác vụ
+				tbody
+					tr
+						td 1
+						td SmtpServer
+						td mail.npvexpress.com
+						td
+							.list-item.center
+								// SỬA
+								button.btn-custom-icon.item(type='button', data-toggle='modal', data-target='#popup_form')
+									.icon(data-toggle="tooltip" data-placement="bottom" title="Sửa")
+										img.svg(src="./assets/images/icons/edit.svg", alt="", srcset="")
+					tr
+						td 2
+						td SmtpPort
+						td 465
+						td
+							.list-item.center
+								// SỬA
+								button.btn-custom-icon.item(type='button', data-toggle='modal', data-target='#popup_form')
+									.icon(data-toggle="tooltip" data-placement="bottom" title="Sửa")
+										img.svg(src="./assets/images/icons/edit.svg", alt="", srcset="")
+					tr
+						td 3
+						td UserEmailAccountName
+						td customer-service@npvexpress.com
+						td
+							.list-item.center
+								// SỬA
+								button.btn-custom-icon.item(type='button', data-toggle='modal', data-target='#popup_form')
+									.icon(data-toggle="tooltip" data-placement="bottom" title="Sửa")
+										img.svg(src="./assets/images/icons/edit.svg", alt="", srcset="")
+					tr
+						td 4
+						td EmailAccountPassword
+						td 2019npv2019
+						td
+							.list-item.center
+								// SỬA
+								button.btn-custom-icon.item(type='button', data-toggle='modal', data-target='#popup_form')
+									.icon(data-toggle="tooltip" data-placement="bottom" title="Sửa")
+										img.svg(src="./assets/images/icons/edit.svg", alt="", srcset="")
+					tr
+						td 5
+						td EnableSsl
+						td true
+						td
+							.list-item.center
+								// SỬA
+								button.btn-custom-icon.item(type='button', data-toggle='modal', data-target='#popup_form')
+									.icon(data-toggle="tooltip" data-placement="bottom" title="Sửa")
+										img.svg(src="./assets/images/icons/edit.svg", alt="", srcset="")
+					tr
+						td 6
+						td FacebookPage
+						td https://www.facebook.com
+						td
+							.list-item.center
+								// SỬA
+								button.btn-custom-icon.item(type='button', data-toggle='modal', data-target='#popup_form')
+									.icon(data-toggle="tooltip" data-placement="bottom" title="Sửa")
+										img.svg(src="./assets/images/icons/edit.svg", alt="", srcset="")
+					tr
+						td 6
+						td PinterestPage
+						td https://www.pinterest.com
+						td
+							.list-item.center
+								// SỬA
+								button.btn-custom-icon.item(type='button', data-toggle='modal', data-target='#popup_form')
+									.icon(data-toggle="tooltip" data-placement="bottom" title="Sửa")
+										img.svg(src="./assets/images/icons/edit.svg", alt="", srcset="")
+					tr
+						td 7
+						td TwitterPage
+						td https://twitter.com/
+						td
+							.list-item.center
+								// SỬA
+								button.btn-custom-icon.item(type='button', data-toggle='modal', data-target='#popup_form')
+									.icon(data-toggle="tooltip" data-placement="bottom" title="Sửa")
+										img.svg(src="./assets/images/icons/edit.svg", alt="", srcset="")
+					tr
+						td 8
+						td EmailCC
+						td khoa.nguyen@web4gsolutions.com, linh-na@npvexpress.com
+						td
+							.list-item.center
+								// SỬA
+								button.btn-custom-icon.item(type='button', data-toggle='modal', data-target='#popup_form')
+									.icon(data-toggle="tooltip" data-placement="bottom" title="Sửa")
+										img.svg(src="./assets/images/icons/edit.svg", alt="", srcset="")
+					tr
+						td 9
+						td SiteKeyRecaptcha
+						td 6Ldl_HgUAAAAAEavOV7_7CsUQ6LyirctL9dWjfCK
+						td
+							.list-item.center
+								// SỬA
+								button.btn-custom-icon.item(type='button', data-toggle='modal', data-target='#popup_form')
+									.icon(data-toggle="tooltip" data-placement="bottom" title="Sửa")
+										img.svg(src="./assets/images/icons/edit.svg", alt="", srcset="")
+					tr
+						td 10
+						td SecretKeyRecaptcha
+						td 6Ldl_HgUAAAAALXEM2yEw34jbY0VnNLrViqGFPff
+						td
+							.list-item.center
+								// SỬA
+								button.btn-custom-icon.item(type='button', data-toggle='modal', data-target='#popup_form')
+									.icon(data-toggle="tooltip" data-placement="bottom" title="Sửa")
+										img.svg(src="./assets/images/icons/edit.svg", alt="", srcset="")
+					tr
+						td 11
+						td KeyAPIGoogleMap
+						td AIzaSyD446K2c9ddRvzCq33chkUAyZnjibJ1R3I
+						td
+							.list-item.center
+								// SỬA
+								button.btn-custom-icon.item(type='button', data-toggle='modal', data-target='#popup_form')
+									.icon(data-toggle="tooltip" data-placement="bottom" title="Sửa")
+										img.svg(src="./assets/images/icons/edit.svg", alt="", srcset="")
+			// BOX HIỆN LÊN FORM
+			#popup_form.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalCenterTitle', aria-hidden='true')
+				.modal-dialog.modal-dialog-centered(role='document')
+					.modal-content
+						.modal-header
+							h5.modal-title Thay đổi giá trị
+							button.close(type='button', data-dismiss='modal', aria-label='Close')
+								span(aria-hidden='true') ×
+						.modal-body
+							form(action="#" method="method")
+								.form-group.row
+									label.col-sm-5.col-form-label(for='staticEmail') Từ khóa
+									.col-sm-7
+										input#staticEmail.form-control-plaintext(type='text', readonly='', value='SmtpServer')
+								.form-group.row
+									label.col-sm-5.col-form-label Giá trị
+									.col-sm-7
+										.input-group.input-group-sm
+											input.form-control(type='Password')
+						.modal-footer
+							button.btn.btn-danger.btn-sm(type='button', data-dismiss='modal') Hủy
+							button.btn.btn-success.btn-sm(type='button') Cập nhật

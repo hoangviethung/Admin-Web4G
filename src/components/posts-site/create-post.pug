@@ -56,14 +56,12 @@
 											.input-group-prepend
 												span.input-group-text
 													img.svg(src="./assets/images/icons/date.svg", alt="", srcset="")
-									.form-group.col-lg-3
-										label.opacity-0 None
+									.form-group.col-lg-12
 										.input-custom.d-flex.align-items-end
 											h5 Hiển thị
 											label._checkbox-custom.mb-0
 												input.custom-control-input(type='checkbox' readonly)
 												span.custom-control-indicator
-									.form-group.col-lg-3
 										label.opacity-0 None
 										.input-custom.d-flex.align-items-end
 											h5 Nổi bật
@@ -71,13 +69,35 @@
 												input.custom-control-input(type='checkbox' readonly)
 												span.custom-control-indicator
 									.form-group.col-lg-12
-											label Example textarea
+											label Mô tả
 											textarea.form-control(rows='3')
 									.form-group.col-lg-12
 										label Nội dung
 										textarea#editor(name="content")
+									.form-group.col-lg-1
+										button.btn.btn-danger.w-100.shadow Hủy bỏ
+									.form-group.col-lg-1
+										button.btn.btn-success.w-100.shadow Thêm
 					.content(tab-id="item-2")
-						h1 SEO
+						.block-form
+							form(action="#" method="method")
+								.form-row
+									.form-group.col-lg-3
+										label Meta Title *
+										.input-group.shadow-sm
+											input.form-control(placeholder="Nhập dữ liệu")
+									.form-group.col-lg-3
+										label Meta Description *
+										.input-group.shadow-sm
+											input.form-control(placeholder="Nhập dữ liệu")
+									.form-group.col-lg-3
+										label Meta Keywords *
+										.input-group.shadow-sm
+											input.form-control(placeholder="Nhập dữ liệu")
+								.form-row
+									.form-group.col-lg-1
+										label.opacity-0 None
+										button.btn.btn-success.btn-sm.w-100.shadow Xác nhận
 					.content(tab-id="item-3")
 						.upload-file
 							#actions

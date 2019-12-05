@@ -27,8 +27,8 @@
 						th Email
 						th Thuộc bộ quyền
 						th Ngày tạo
-						th Trạng thái
-						th Tác vụ
+						th.text-center Trạng thái
+						th.text-center Tác vụ
 				tbody
 					-for(i=1;i<10;i++)
 						tr
@@ -42,13 +42,13 @@
 									.item.badge.badge-primary.p-2 Mod
 									.item.badge.badge-primary.p-2 Guest
 							td 12/11/2019 14:50
-							td
+							td.text-center
 								.input-custom
 									label._checkbox-custom
 										input.custom-control-input(type='checkbox' readonly)
 										span.custom-control-indicator
 							td
-								.list-item
+								.list-item.center
 									// SỬA
 									a.btn-custom-icon.item(href="#")
 										.icon(data-toggle="tooltip" data-placement="bottom" title="Sửa")
@@ -61,7 +61,7 @@
 									button.btn-custom-icon.item(type='button', data-toggle='modal', data-target='#popup_question')
 										.icon(data-toggle="tooltip" data-placement="bottom" title="Xóa")
 											img.svg(src="./assets/images/icons/delete.svg", alt="", srcset="")
-					// BOX HIỆN LÊN FORM
+			// BOX HIỆN LÊN FORM
 			#popup_form.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalCenterTitle', aria-hidden='true')
 				.modal-dialog.modal-dialog-centered(role='document')
 					.modal-content

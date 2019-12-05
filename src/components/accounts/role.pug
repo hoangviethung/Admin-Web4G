@@ -17,7 +17,7 @@
 						th.text-center #
 						th Tên bộ quyền
 						th Mô tả chức năng bộ quyền
-						th Tác vụ
+						th.text-center Tác vụ
 				tbody
 					tr
 						td 1
@@ -26,7 +26,7 @@
 								.item.badge.badge-primary.p-2 Admin
 						td Quản lý toàn bộ tất cả các chức năng hiện có trang admin
 						td
-							.list-item
+							.list-item.center
 								// SỬA
 								a.btn-custom-icon.item(href="#")
 									.icon(data-toggle="tooltip" data-placement="bottom" title="Sửa")
@@ -35,18 +35,6 @@
 								button.btn-custom-icon.item(type='button', data-toggle='modal', data-target='#popup_question')
 									.icon(data-toggle="tooltip" data-placement="bottom" title="Xóa")
 										img.svg(src="./assets/images/icons/delete.svg", alt="", srcset="")
-								// BOX HIỆN LÊN CÂU HỎI
-								#popup_question.modal.fade(aria-hidden='true')
-									.modal-dialog.modal-dialog-centered(role='document')
-										.modal-content
-											.modal-header
-												h5.modal-title Thông báo
-												button.close(type='button', data-dismiss='modal', aria-label='Close')
-													span(aria-hidden='true') ×
-											.modal-body Bạn có chắc chắn xóa
-											.modal-footer
-												button.btn.btn-danger.btn-sm(type='button', data-dismiss='modal') Hủy
-												button.btn.btn-success.btn-sm(type='button') Chấp nhận
 					tr
 						td 2
 						td
@@ -54,7 +42,7 @@
 								.item.badge.badge-primary.p-2 Mod
 						td Quản lý các bài viết của website
 						td
-							.list-item
+							.list-item.center
 								// SỬA
 								a.btn-custom-icon.item(href="#")
 									.icon(data-toggle="tooltip" data-placement="bottom" title="Sửa")
@@ -63,18 +51,6 @@
 								button.btn-custom-icon.item(type='button', data-toggle='modal', data-target='#popup_question')
 									.icon(data-toggle="tooltip" data-placement="bottom" title="Xóa")
 										img.svg(src="./assets/images/icons/delete.svg", alt="", srcset="")
-								// BOX HIỆN LÊN CÂU HỎI
-								#popup_question.modal.fade(aria-hidden='true')
-									.modal-dialog.modal-dialog-centered(role='document')
-										.modal-content
-											.modal-header
-												h5.modal-title Thông báo
-												button.close(type='button', data-dismiss='modal', aria-label='Close')
-													span(aria-hidden='true') ×
-											.modal-body Bạn có chắc chắn xóa
-											.modal-footer
-												button.btn.btn-danger.btn-sm(type='button', data-dismiss='modal') Hủy
-												button.btn.btn-success.btn-sm(type='button') Chấp nhận
 					tr
 						td 3
 						td
@@ -82,7 +58,7 @@
 								.item.badge.badge-primary.p-2 Guest
 						td Quản lý các bài viết của website
 						td
-							.list-item
+							.list-item.center
 								// SỬA
 								a.btn-custom-icon.item(href="#")
 									.icon(data-toggle="tooltip" data-placement="bottom" title="Sửa")

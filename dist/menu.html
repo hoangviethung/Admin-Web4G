@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Admin | Quản Lý Menu</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link rel="stylesheet" href="./css/core.min.css">
+		<link rel="stylesheet" href="./css/main.min.css">
+	</head>
+	<body>
+		<div id="fb-root"></div>
+		<div id="loading">
+			<div class="logo-loader"><img src="./assets/images/icons/loading.svg" alt=""></div>
+			<div class="progstat-wrapper">Loading:<span id="progstat">0</span>%</div>
+			<div id="progress"></div>
+		</div>
+		<header>
+			<div class="header-right">
+				<div class="accounts">
+					<div class="avatar item-click-dropdown">
+						<figure class="shadow"><img class="ofc" src="./assets/images/icons/avatar-default.svg" alt="" srcset=""></figure>
+					</div>
+					<div class="basic-info-accounts">
+						<div class="name">Administrator</div>
+						<div class="position">Quản trị viên</div>
+					</div>
+					<div class="detail-info-accounts content-dropdown">
+						<div class="header-image">
+							<div class="avatar">
+								<figure class="shadow-sm"><img class="ofc" src="./assets/images/icons/avatar-default.svg" alt="" srcset=""></figure>
+							</div>
+							<div class="basic-info-accounts">
+								<div class="name">Administrator</div>
+								<div class="position">Quản trị viên</div>
+							</div>
+							<div class="logout"><a class="badge badge-danger" href="#">Đăng xuất</a></div>
+						</div>
+						<div class="list-link">
+							<div class="name-list">TÀI KHOẢN</div>
+							<div class="link"><a href="#">Thông tin tài khoản</a></div>
+							<div class="link"><a href="#">Sửa thông tin tài khoản</a></div>
+							<div class="link"><a href="#">Cài đặt</a></div>
+							<div class="name-list">THIẾT LẬP</div>
+							<div class="link"><a href="#">Cài đặt chung</a></div>
+							<div class="link"><a href="#">Giao diện</a></div>
+						</div>
+					</div>
+				</div>
+				<div class="view-website" data-toggle="tooltip" data-placement="bottom" title="Review"><a href="/" target="_blank"><img class="svg" src="./assets/images/icons/eye.svg" alt=""></a></div>
+			</div>
+		</header>
+		<aside>
+			<div class="sidebar-background"></div>
+			<div class="block-logo">
+				<div class="logo-src"><a href="index.html"><img src="./assets/images/logo.png" alt="" srcset=""></a></div>
+				<div class="button-close"><span class="line"></span></div>
+			</div>
+			<div class="aside-list">
+				<div class="aside-item">
+					<div class="name">
+						<div class="icon"><img class="svg" src="./assets/images/icons/home.svg" alt="" srcset=""></div>
+						<h5>Trang Chủ</h5>
+					</div>
+					<ul class="list-link">
+						<li class="link"><a href="#">Banner</a></li>
+						<li class="link"><a href="#">Sản phẩm</a></li>
+						<li class="link"><a href="#">Nội dung</a></li>
+						<li class="link"><a href="#">Slider sản phẩm hot</a></li>
+					</ul>
+				</div>
+				<div class="aside-item">
+					<div class="name">
+						<div class="icon"><img class="svg" src="./assets/images/icons/pages.svg" alt="" srcset=""></div>
+						<h5>Các Trang</h5>
+					</div>
+					<ul class="list-link">
+						<li class="link"><a href="#">Giới thiệu</a></li>
+						<li class="link"><a href="#">Tin tức</a></li>
+						<li class="link"><a href="#">Liên hệ</a></li>
+						<li class="link"><a href="#">Dịch vụ</a></li>
+						<li class="link"><a href="#">Dach sách sản phẩm</a></li>
+					</ul>
+				</div>
+				<div class="aside-item">
+					<div class="name">
+						<div class="icon"><img class="svg" src="./assets/images/icons/menu.svg" alt="" srcset=""></div>
+						<h5>Menu</h5>
+					</div>
+					<ul class="list-link">
+						<li class="link"><a href="menu.html">Thiết lập</a></li>
+					</ul>
+				</div>
+				<div class="aside-item">
+					<div class="name">
+						<div class="icon"><img class="svg" src="./assets/images/icons/post.svg" alt="" srcset=""></div>
+						<h5>Bài viết</h5>
+					</div>
+					<ul class="list-link">
+						<li class="link"><a href="list-post.html">Chỉnh sửa</a></li>
+					</ul>
+				</div>
+				<div class="aside-item">
+					<div class="name">
+						<div class="icon"><img class="svg" src="./assets/images/icons/library.svg" alt="" srcset=""></div>
+						<h5>Thư Viện</h5>
+					</div>
+					<ul class="list-link">
+						<li class="link"><a href="#">Hình ảnh</a></li>
+						<li class="link"><a href="#">Video</a></li>
+					</ul>
+				</div>
+				<div class="aside-item">
+					<div class="name">
+						<div class="icon"><img class="svg" src="./assets/images/icons/partner.svg" alt="" srcset=""></div>
+						<h5>Đối Tác</h5>
+					</div>
+					<ul class="list-link">
+						<li class="link"><a href="partner.html">Kiểm tra</a></li>
+					</ul>
+				</div>
+				<div class="aside-item">
+					<div class="name">
+						<div class="icon"><img class="svg" src="./assets/images/icons/question.svg" alt="" srcset=""></div>
+						<h5>Câu hỏi thường gặp</h5>
+					</div>
+					<ul class="list-link">
+						<li class="link"><a href="#">Chỉnh sửa</a></li>
+					</ul>
+				</div>
+				<div class="aside-item">
+					<div class="name">
+						<div class="icon"><img class="svg" src="./assets/images/icons/products.svg" alt="" srcset=""></div>
+						<h5>Quản lý sản phẩm</h5>
+					</div>
+					<ul class="list-link">
+						<li class="link"><a href="#">Chỉnh sửa</a></li>
+					</ul>
+				</div>
+				<div class="aside-item">
+					<div class="name">
+						<div class="icon"><img class="svg" src="./assets/images/icons/user.svg" alt="" srcset=""></div>
+						<h5>Thành viên</h5>
+					</div>
+					<ul class="list-link">
+						<li class="link"><a href="user-admin.html">Tài khoản quản trị</a></li>
+						<li class="link"><a href="role-admin.html">Quản lí quyền</a></li>
+					</ul>
+				</div>
+				<div class="aside-item">
+					<div class="name">
+						<div class="icon"><img class="svg" src="./assets/images/icons/maps.svg" alt="" srcset=""></div>
+						<h5>Chi nhánh</h5>
+					</div>
+					<ul class="list-link">
+						<li class="link"><a href="#">Chỉnh sửa</a></li>
+					</ul>
+				</div>
+				<div class="aside-item">
+					<div class="name">
+						<div class="icon"><img class="svg" src="./assets/images/icons/mail.svg" alt="" srcset=""></div>
+						<h5>Quản lý Subcribe</h5>
+					</div>
+					<ul class="list-link">
+						<li class="link"><a href="#">Kiểm tra</a></li>
+					</ul>
+				</div>
+				<div class="aside-item">
+					<div class="name">
+						<div class="icon"><img class="svg" src="./assets/images/icons/cart.svg" alt="" srcset=""></div>
+						<h5>Quản lý đơn hàng</h5>
+					</div>
+					<ul class="list-link">
+						<li class="link"><a href="#">Kiểm tra</a></li>
+					</ul>
+				</div>
+				<div class="aside-item">
+					<div class="name">
+						<div class="icon"><img class="svg" src="./assets/images/icons/history.svg" alt="" srcset=""></div>
+						<h5>Quản lý lịch sử</h5>
+					</div>
+					<ul class="list-link">
+						<li class="link"><a href="history.html">Kiểm tra</a></li>
+					</ul>
+				</div>
+				<div class="aside-item">
+					<div class="name">
+						<div class="icon"><img class="svg" src="./assets/images/icons/setting.svg" alt="" srcset=""></div>
+						<h5>Cài Đặt</h5>
+					</div>
+					<ul class="list-link">
+						<li class="link"><a href="setting.html">Thiết lập</a></li>
+						<li class="link"><a href="resources.html">Tài nguyên</a></li>
+					</ul>
+				</div>
+				<div class="aside-item">
+					<div class="name">
+						<div class="icon"><img class="svg" src="./assets/images/icons/notification.svg" alt="" srcset=""></div>
+						<h5>Thông báo</h5>
+					</div>
+					<ul class="list-link">
+						<li class="link"><a href="#">Thiết lập</a></li>
+					</ul>
+				</div>
+			</div>
+		</aside>
+		<main>
+			<div class="main__inner">
+				<div class="page-title">
+					<div class="page-title-wrapper">
+						<div class="page-title-heading">
+							<div class="page-title-icon"><img class="svg" src="./assets/images/icons/post.svg" alt="" srcset=""></div>
+							<div class="page-title-content">
+								<h3>Quản Lý Các Loại Menu</h3>
+								<p>Tại đây các quản trị viên có thể quản lý các danh mục menu với các chức năng cơ bản: thêm, xóa, sửa.</p>
+							</div>
+						</div>
+						<div class="page-title-actions"><a class="btn btn-success" href="create-post.html">Thêm mới</a></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="seach col-lg-4">
+						<form action="#" method="method">
+							<div class="form-group mb-0">
+								<div class="form-input">
+									<input type="text" placeholder="Nhập từ khóa để tìm kiếm">
+									<button><img class="svg" src="./assets/images/icons/search.svg" alt="" srcset=""></button>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="filter col-lg-8">
+						<form action="#" method="method">
+							<div class="form-row">
+								<div class="col-lg-5 form-group mb-0">
+									<label>Ngôn ngữ</label>
+									<select class="form-control shadow-sm">
+										<option>Vietnamese</option>
+										<option>English</option>
+										<option>Chinese</option>
+									</select>
+								</div>
+								<div class="col-lg-5 form-group mb-0">
+									<label>Loại Menu</label>
+									<select class="form-control shadow-sm">
+										<option>Main Menu</option>
+										<option>Right Menu</option>
+										<option>Footer Menu</option>
+									</select>
+								</div>
+								<div class="col-lg-2">
+									<div class="form-group mb-0">
+										<button class="btn btn-primary btn-sm shadow">Lọc</button>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="block-table col-lg-12 mt-4">
+						<table class="table table-bordered m-0">
+							<thead>
+								<tr>
+									<th>#</th>
+									<th>Tên Menu</th>
+									<th>Danh mục cha ( nếu có )</th>
+									<th>Đường dẫn</th>
+									<th class="text-center">Thứ tự</th>
+									<th class="text-center">Ngôn ngữ</th>
+									<th class="text-center">Tác vụ</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>Chuyển đổi đơn vị</td>
+									<td>Tiện ích</td>
+									<td>/tien-ich/chuyen-doi-don-vi</td>
+									<td class="text-center">1</td>
+									<td>
+										<div class="language">
+											<figure class="shadow"><img class="ofc" src="./assets/images/nation/vietnam.svg" alt=""></figure>
+										</div>
+									</td>
+									<td>
+										<div class="list-item center">
+											<!-- SỬA--><a class="btn-custom-icon item" href="create-post.html">
+												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Sửa"><img class="svg" src="./assets/images/icons/edit.svg" alt="" srcset=""></div></a>
+											<!-- XÓA-->
+											<button class="btn-custom-icon item" type="button" data-toggle="modal" data-target="#popup_question">
+												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Xóa"><img class="svg" src="./assets/images/icons/delete.svg" alt="" srcset=""></div>
+											</button>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td>Chuyển đổi đơn vị</td>
+									<td>Giới thiệu</td>
+									<td>/tien-ich/chuyen-doi-don-vi</td>
+									<td class="text-center">2</td>
+									<td>
+										<div class="language">
+											<figure class="shadow"><img class="ofc" src="./assets/images/nation/china.svg" alt=""></figure>
+										</div>
+									</td>
+									<td>
+										<div class="list-item center">
+											<!-- SỬA--><a class="btn-custom-icon item" href="#">
+												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Sửa"><img class="svg" src="./assets/images/icons/edit.svg" alt="" srcset=""></div></a>
+											<!-- XÓA-->
+											<button class="btn-custom-icon item" type="button" data-toggle="modal" data-target="#popup_question">
+												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Xóa"><img class="svg" src="./assets/images/icons/delete.svg" alt="" srcset=""></div>
+											</button>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td>Chuyển đổi đơn vị</td>
+									<td>Tiện ích</td>
+									<td>/tien-ich/chuyen-doi-don-vi</td>
+									<td class="text-center">5</td>
+									<td>
+										<div class="language">
+											<figure class="shadow"><img class="ofc" src="./assets/images/nation/usa.png" alt=""></figure>
+										</div>
+									</td>
+									<td>
+										<div class="list-item center">
+											<!-- SỬA--><a class="btn-custom-icon item" href="#">
+												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Sửa"><img class="svg" src="./assets/images/icons/edit.svg" alt="" srcset=""></div></a>
+											<!-- XÓA-->
+											<button class="btn-custom-icon item" type="button" data-toggle="modal" data-target="#popup_question">
+												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Xóa"><img class="svg" src="./assets/images/icons/delete.svg" alt="" srcset=""></div>
+											</button>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td>Chuyển đổi đơn vị</td>
+									<td>Tiện ích</td>
+									<td>/tien-ich/chuyen-doi-don-vi</td>
+									<td class="text-center">4</td>
+									<td>
+										<div class="language">
+											<figure class="shadow"><img class="ofc" src="./assets/images/nation/korea.png" alt=""></figure>
+										</div>
+									</td>
+									<td>
+										<div class="list-item center">
+											<!-- SỬA--><a class="btn-custom-icon item" href="#">
+												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Sửa"><img class="svg" src="./assets/images/icons/edit.svg" alt="" srcset=""></div></a>
+											<!-- XÓA-->
+											<button class="btn-custom-icon item" type="button" data-toggle="modal" data-target="#popup_question">
+												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Xóa"><img class="svg" src="./assets/images/icons/delete.svg" alt="" srcset=""></div>
+											</button>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- BOX HIỆN LÊN CÂU HỎI-->
+						<div class="modal fade" id="popup_question" aria-hidden="true">
+							<div class="modal-dialog modal-dialog-centered" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title">Thông báo</h5>
+										<button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+									</div>
+									<div class="modal-body">Bạn có chắc chắn xóa</div>
+									<div class="modal-footer">
+										<button class="btn btn-danger btn-sm" type="button" data-dismiss="modal">Hủy</button>
+										<button class="btn btn-success btn-sm" type="button">Chấp nhận</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="js-page-verify" hidden></div>
+		</main>
+		<script type="text/javascript" src="./js/core.min.js"></script>
+		<script type="text/javascript" src="./js/main.min.js"></script>
+		<script src="https://cdn.ckeditor.com/ckeditor5/11.2.0/classic/ckeditor.js"></script>
+		<script>
+			ClassicEditor
+				.create( document.querySelector( '#editor' ) )
+				.then( editor => {
+					console.log( editor );
+				} )
+				.catch( error => {
+					console.error( error );
+				} );
+		</script>
+	</body>
+</html>
