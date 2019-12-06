@@ -15,58 +15,57 @@
 					li.item(toggle-for="item-2") SEO bài viết
 					li.item(toggle-for="item-3") Hình ảnh
 				.tab-content
-					.content(tab-id="item-1")
-						.block-form
-							form(action="#" method="method")
-								.form-row
-									.form-group.col-lg-3
-										label Danh mục cha
-										.input-group.shadow-sm
-											select.form-control
-												option Danh mục gốc
-												option Bộ dàn
-												option Bộ dàn / Bộ dàn hi-end
-									.form-group.col-lg-3
-										label Thứ tự sắp sếp *
-										.input-group.shadow-sm
-											input.form-control(type="number" placeholder="Nhập số thứ tự" min="1")
-									.form-group.col-lg-3
-										label Tên của danh mục *
-										.input-group.shadow-sm
-											input.form-control(placeholder="Nhập tên tiêu đề")
-									.form-group.col-lg-3
-										label Đường dẫn bài viết *
-										.input-group.shadow-sm
-											.input-group-prepend
-												span.input-group-text http://web4gsolutions.com/
-											input.form-control(type='text')
-									.form-group.col-lg-3
-										label Ảnh đại diện danh mục
-										.input-group.shadow-sm
-											input.form-control(placeholder="Nhập dường dẫn hình ảnh")
-									.form-group.col-lg-3
-										label Thương hiệu
-										.input-group.shadow-sm
-											select.form-control
-												option Danh mục gốc
-												option Bộ dàn
-												option Bộ dàn / Bộ dàn hi-end
-									.form-group.col-lg-12
-										.input-custom.d-flex.align-items-end
-											h5 Hiển thị
-											label._checkbox-custom.mb-0
-												input.custom-control-input(type='checkbox' readonly)
-												span.custom-control-indicator
-									.form-group.col-lg-12
-											label Mô tả
-											textarea.form-control(rows='3')
-									.form-group.col-lg-1
-										a(href="category-product.html").btn.btn-danger.w-100.shadow Hủy bỏ
-									.form-group.col-lg-1
-										button.btn.btn-success.w-100.shadow Thêm
-					.content(tab-id="item-2")
-						.block-form
-							form(action="#" method="method")
+					form(action="category-product.html" method="method")
+						.content(tab-id="item-1")
+							.block-form
+									.form-row
+										.form-group.col-lg-3
+											label Danh mục cha
+											.input-group.shadow-sm
+												select.form-control
+													option Danh mục gốc
+													option Bộ dàn
+													option Bộ dàn / Bộ dàn hi-end
+										.form-group.col-lg-3
+											label Thứ tự sắp sếp *
+											.input-group.shadow-sm
+												input.form-control(type="number" placeholder="Nhập số thứ tự" min="1")
+										.form-group.col-lg-3
+											label Tên của danh mục *
+											.input-group.shadow-sm
+												input.form-control(placeholder="Nhập tên tiêu đề")
+										.form-group.col-lg-3
+											label Đường dẫn bài viết *
+											.input-group.shadow-sm
+												.input-group-prepend
+													span.input-group-text http://web4gsolutions.com/
+												input.form-control(type='text')
+										.form-group.col-lg-3
+											label Ảnh đại diện danh mục
+											.input-group.shadow-sm
+												input.form-control(placeholder="Nhập dường dẫn hình ảnh")
+										.form-group.col-lg-3
+											label Thương hiệu
+											.input-group.shadow-sm
+												select.form-control
+													option Danh mục gốc
+													option Bộ dàn
+													option Bộ dàn / Bộ dàn hi-end
+										.form-group.col-lg-12
+											.input-custom.d-flex.align-items-end
+												h5 Hiển thị
+												label._checkbox-custom.mb-0
+													input.custom-control-input(type='checkbox' readonly)
+													span.custom-control-indicator
+										.form-group.col-lg-12
+												label Mô tả
+												textarea.form-control(rows='3')
+										.form-group.col-lg-1
+											a(href="category-product.html").btn.btn-danger.w-100.shadow Hủy bỏ
+										.form-group.col-lg-1
+											button.btn.btn-success.w-100.shadow Thêm
+						.content(tab-id="item-2")
+							.block-form
 								.form-row
 									.form-group.col-lg-3
 										label Meta Title *
