@@ -194,9 +194,9 @@
 }
 
 .block-images-small {
-	width : 100px;
-	height: 100px;
-	margin: 0 auto;
+	max-width: 100px;
+	width    : 50%;
+	margin   : 0 auto;
 
 	img {
 		border-radius: 10px;

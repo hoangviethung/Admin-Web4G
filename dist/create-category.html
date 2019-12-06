@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Admin | Quản Lý Menu</title>
+		<title>Admin | Danh mục sản phẩm</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -215,169 +215,226 @@
 				<div class="page-title">
 					<div class="page-title-wrapper">
 						<div class="page-title-heading">
-							<div class="page-title-icon"><img class="svg" src="./assets/images/icons/menu.svg" alt="" srcset=""></div>
+							<div class="page-title-icon"><img class="svg" src="./assets/images/icons/products.svg" alt="" srcset=""></div>
 							<div class="page-title-content">
-								<h3>Quản lý các loại Menu</h3>
-								<p>Tại đây các quản trị viên có thể quản lý các danh mục menu với các chức năng cơ bản: thêm, xóa, sửa.</p>
+								<h3>Tạo danh mục sản phẩm</h3>
+								<p>Tại đây các quản trị viên có thể tạo các danh mục cho các sản phẩm</p>
 							</div>
 						</div>
-						<div class="page-title-actions"><a class="btn btn-success" href="create-post.html">Thêm mới</a></div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="seach col-lg-4">
-						<form action="#" method="method">
-							<div class="form-group mb-0">
-								<div class="form-input">
-									<input type="text" placeholder="Nhập từ khóa để tìm kiếm">
-									<button><img class="svg" src="./assets/images/icons/search.svg" alt="" srcset=""></button>
-								</div>
-							</div>
-						</form>
-					</div>
-					<div class="filter col-lg-8">
-						<form action="#" method="method">
-							<div class="form-row">
-								<div class="col-lg-5 form-group mb-0">
-									<label>Ngôn ngữ</label>
-									<select class="form-control shadow-sm">
-										<option>Vietnamese</option>
-										<option>English</option>
-										<option>Chinese</option>
-									</select>
-								</div>
-								<div class="col-lg-5 form-group mb-0">
-									<label>Loại Menu</label>
-									<select class="form-control shadow-sm">
-										<option>Main Menu</option>
-										<option>Right Menu</option>
-										<option>Footer Menu</option>
-									</select>
-								</div>
-								<div class="col-lg-2">
-									<div class="form-group mb-0">
-										<button class="btn btn-primary btn-sm shadow">Lọc</button>
+					<div class="create-post shadow-sm col-lg-12">
+						<div class="tab-container">
+							<ul class="list-tab">
+								<li class="item acitve" toggle-for="item-1">Nội dung bài viết</li>
+								<li class="item" toggle-for="item-2">SEO bài viết</li>
+								<li class="item" toggle-for="item-3">Hình ảnh</li>
+							</ul>
+							<div class="tab-content">
+								<div class="content" tab-id="item-1">
+									<div class="block-form">
+										<form action="#" method="method">
+											<div class="form-row">
+												<div class="form-group col-lg-3">
+													<label>Danh mục cha</label>
+													<div class="input-group shadow-sm">
+														<select class="form-control">
+															<option>Danh mục gốc</option>
+															<option>Bộ dàn</option>
+															<option>Bộ dàn / Bộ dàn hi-end</option>
+														</select>
+													</div>
+												</div>
+												<div class="form-group col-lg-3">
+													<label>Thứ tự sắp sếp *</label>
+													<div class="input-group shadow-sm">
+														<input class="form-control" type="number" placeholder="Nhập số thứ tự" min="1">
+													</div>
+												</div>
+												<div class="form-group col-lg-3">
+													<label>Tên của danh mục *</label>
+													<div class="input-group shadow-sm">
+														<input class="form-control" placeholder="Nhập tên tiêu đề">
+													</div>
+												</div>
+												<div class="form-group col-lg-3">
+													<label>Đường dẫn bài viết *</label>
+													<div class="input-group shadow-sm">
+														<div class="input-group-prepend"><span class="input-group-text">http://web4gsolutions.com/</span></div>
+														<input class="form-control" type="text">
+													</div>
+												</div>
+												<div class="form-group col-lg-3">
+													<label>Ảnh đại diện danh mục</label>
+													<div class="input-group shadow-sm">
+														<input class="form-control" placeholder="Nhập dường dẫn hình ảnh">
+													</div>
+												</div>
+												<div class="form-group col-lg-3">
+													<label>Thương hiệu</label>
+													<div class="input-group shadow-sm">
+														<select class="form-control">
+															<option>Danh mục gốc</option>
+															<option>Bộ dàn</option>
+															<option>Bộ dàn / Bộ dàn hi-end</option>
+														</select>
+													</div>
+												</div>
+												<div class="form-group col-lg-12">
+													<div class="input-custom d-flex align-items-end">
+														<h5>Hiển thị</h5>
+														<label class="_checkbox-custom mb-0">
+															<input class="custom-control-input" type="checkbox" readonly><span class="custom-control-indicator"></span>
+														</label>
+													</div>
+												</div>
+												<div class="form-group col-lg-12">
+													<label>Mô tả</label>
+													<textarea class="form-control" rows="3"></textarea>
+												</div>
+												<div class="form-group col-lg-1"><a class="btn btn-danger w-100 shadow" href="category-product.html">Hủy bỏ</a></div>
+												<div class="form-group col-lg-1">
+													<button class="btn btn-success w-100 shadow">Thêm</button>
+												</div>
+											</div>
+										</form>
 									</div>
 								</div>
-							</div>
-						</form>
-					</div>
-					<div class="block-table col-lg-12 mt-4">
-						<table class="table table-bordered m-0">
-							<thead>
-								<tr>
-									<th>#</th>
-									<th>Tên Menu</th>
-									<th>Danh mục cha ( nếu có )</th>
-									<th>Đường dẫn</th>
-									<th class="text-center">Thứ tự</th>
-									<th class="text-center">Ngôn ngữ</th>
-									<th class="text-center">Tác vụ</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>1</td>
-									<td>Chuyển đổi đơn vị</td>
-									<td>Tiện ích</td>
-									<td>/tien-ich/chuyen-doi-don-vi</td>
-									<td class="text-center">1</td>
-									<td>
-										<div class="language">
-											<figure class="shadow"><img class="ofc" src="./assets/images/nation/vietnam.svg" alt=""></figure>
-										</div>
-									</td>
-									<td>
-										<div class="list-item center">
-											<!-- SỬA--><a class="btn-custom-icon item" href="create-post.html">
-												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Sửa"><img class="svg" src="./assets/images/icons/edit.svg" alt="" srcset=""></div></a>
-											<!-- XÓA-->
-											<button class="btn-custom-icon item" type="button" data-toggle="modal" data-target="#popup_question">
-												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Xóa"><img class="svg" src="./assets/images/icons/delete.svg" alt="" srcset=""></div>
-											</button>
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<td>2</td>
-									<td>Chuyển đổi đơn vị</td>
-									<td>Giới thiệu</td>
-									<td>/tien-ich/chuyen-doi-don-vi</td>
-									<td class="text-center">2</td>
-									<td>
-										<div class="language">
-											<figure class="shadow"><img class="ofc" src="./assets/images/nation/china.svg" alt=""></figure>
-										</div>
-									</td>
-									<td>
-										<div class="list-item center">
-											<!-- SỬA--><a class="btn-custom-icon item" href="#">
-												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Sửa"><img class="svg" src="./assets/images/icons/edit.svg" alt="" srcset=""></div></a>
-											<!-- XÓA-->
-											<button class="btn-custom-icon item" type="button" data-toggle="modal" data-target="#popup_question">
-												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Xóa"><img class="svg" src="./assets/images/icons/delete.svg" alt="" srcset=""></div>
-											</button>
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<td>3</td>
-									<td>Chuyển đổi đơn vị</td>
-									<td>Tiện ích</td>
-									<td>/tien-ich/chuyen-doi-don-vi</td>
-									<td class="text-center">5</td>
-									<td>
-										<div class="language">
-											<figure class="shadow"><img class="ofc" src="./assets/images/nation/usa.png" alt=""></figure>
-										</div>
-									</td>
-									<td>
-										<div class="list-item center">
-											<!-- SỬA--><a class="btn-custom-icon item" href="#">
-												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Sửa"><img class="svg" src="./assets/images/icons/edit.svg" alt="" srcset=""></div></a>
-											<!-- XÓA-->
-											<button class="btn-custom-icon item" type="button" data-toggle="modal" data-target="#popup_question">
-												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Xóa"><img class="svg" src="./assets/images/icons/delete.svg" alt="" srcset=""></div>
-											</button>
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<td>3</td>
-									<td>Chuyển đổi đơn vị</td>
-									<td>Tiện ích</td>
-									<td>/tien-ich/chuyen-doi-don-vi</td>
-									<td class="text-center">4</td>
-									<td>
-										<div class="language">
-											<figure class="shadow"><img class="ofc" src="./assets/images/nation/korea.png" alt=""></figure>
-										</div>
-									</td>
-									<td>
-										<div class="list-item center">
-											<!-- SỬA--><a class="btn-custom-icon item" href="#">
-												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Sửa"><img class="svg" src="./assets/images/icons/edit.svg" alt="" srcset=""></div></a>
-											<!-- XÓA-->
-											<button class="btn-custom-icon item" type="button" data-toggle="modal" data-target="#popup_question">
-												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Xóa"><img class="svg" src="./assets/images/icons/delete.svg" alt="" srcset=""></div>
-											</button>
-										</div>
-									</td>
-								</tr>
-							</tbody>
-						</table>
-						<!-- BOX HIỆN LÊN CÂU HỎI-->
-						<div class="modal fade" id="popup_question" aria-hidden="true">
-							<div class="modal-dialog modal-dialog-centered" role="document">
-								<div class="modal-content">
-									<div class="modal-header">
-										<h5 class="modal-title">Thông báo</h5>
-										<button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+								<div class="content" tab-id="item-2">
+									<div class="block-form">
+										<form action="#" method="method">
+											<div class="form-row">
+												<div class="form-group col-lg-3">
+													<label>Meta Title *</label>
+													<div class="input-group shadow-sm">
+														<input class="form-control" placeholder="Nhập dữ liệu">
+													</div>
+												</div>
+												<div class="form-group col-lg-3">
+													<label>Meta Description *</label>
+													<div class="input-group shadow-sm">
+														<input class="form-control" placeholder="Nhập dữ liệu">
+													</div>
+												</div>
+												<div class="form-group col-lg-3">
+													<label>Meta Image *</label>
+													<div class="input-group shadow-sm">
+														<input class="form-control" placeholder="Nhập dữ liệu">
+													</div>
+												</div>
+												<div class="form-group col-lg-3">
+													<label>Meta Keywords *</label>
+													<div class="input-group shadow-sm">
+														<input class="form-control" placeholder="Nhập dữ liệu">
+													</div>
+												</div>
+											</div>
+											<div class="form-row">
+												<div class="form-group col-lg-1">
+													<label class="opacity-0">None</label>
+													<button class="btn btn-success btn-sm w-100 shadow">Xác nhận</button>
+												</div>
+											</div>
+										</form>
 									</div>
-									<div class="modal-body">Bạn có chắc chắn xóa</div>
-									<div class="modal-footer">
-										<button class="btn btn-danger btn-sm" type="button" data-dismiss="modal">Hủy</button>
-										<button class="btn btn-success btn-sm" type="button">Chấp nhận</button>
+								</div>
+								<div class="content" tab-id="item-3">
+									<div class="upload-file">
+										<div id="actions">
+											<div class="upload-image-wrapper">
+												<div class="desc-how-to-upload">
+													<p>Kéo vào đây hoặc bấm để tải ảnh lên</p>
+													<button class="btn btn-secondary shadow">Tải ảnh lên</button>
+												</div>
+											</div>
+										</div>
+										<h5>Danh sách hình ảnh đã tải lên</h5>
+										<div id="list-image">
+											<div class="file-item">
+												<div class="file-item-image shadow"><img class="ofc" src="https://i.pinimg.com/564x/b0/90/f9/b090f9f37fc23003407438399879edbc.jpg"></div>
+												<div class="file-item-name">
+													<p class="name">product_1<strong class="error text-danger" data-dz-errormessage=""></strong></p>
+												</div>
+												<div class="file-item-url">
+													<input class="form-control url" readonly="" value="http://localhost:8000/test.jpg" type="text"><span class="btn btn-copy-url">
+														<svg id="Outlined" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+															<title></title>
+															<g id="Fill">
+																<path d="M24,3H20.82A3,3,0,0,0,18,1H14a3,3,0,0,0-2.82,2H8A3,3,0,0,0,5,6V26a3,3,0,0,0,3,3H24a3,3,0,0,0,3-3V6A3,3,0,0,0,24,3ZM13,4a1,1,0,0,1,1-1h4a1,1,0,0,1,1,1V5H13ZM25,26a1,1,0,0,1-1,1H8a1,1,0,0,1-1-1V6A1,1,0,0,1,8,5h3V7H21V5h3a1,1,0,0,1,1,1Z"></path>
+																<rect height="2" width="10" x="11" y="15"></rect>
+																<rect height="2" width="5" x="11" y="19"></rect>
+															</g>
+														</svg></span>
+												</div>
+												<div class="file-item-remove">
+													<button class="btn btn-danger btn-delete" onclick="deleteImage(this,'http://localhost:8000/test.jpg')"><i class="glyphicon glyphicon-trash"></i><span>Xóa</span></button>
+												</div>
+											</div>
+											<div class="file-item">
+												<div class="file-item-image shadow"><img class="ofc" src="https://i.pinimg.com/564x/b0/90/f9/b090f9f37fc23003407438399879edbc.jpg"></div>
+												<div class="file-item-name">
+													<p class="name">product_1<strong class="error text-danger" data-dz-errormessage=""></strong></p>
+												</div>
+												<div class="file-item-url">
+													<input class="form-control url" readonly="" value="http://localhost:8000/test.jpg" type="text"><span class="btn btn-copy-url">
+														<svg id="Outlined" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+															<title></title>
+															<g id="Fill">
+																<path d="M24,3H20.82A3,3,0,0,0,18,1H14a3,3,0,0,0-2.82,2H8A3,3,0,0,0,5,6V26a3,3,0,0,0,3,3H24a3,3,0,0,0,3-3V6A3,3,0,0,0,24,3ZM13,4a1,1,0,0,1,1-1h4a1,1,0,0,1,1,1V5H13ZM25,26a1,1,0,0,1-1,1H8a1,1,0,0,1-1-1V6A1,1,0,0,1,8,5h3V7H21V5h3a1,1,0,0,1,1,1Z"></path>
+																<rect height="2" width="10" x="11" y="15"></rect>
+																<rect height="2" width="5" x="11" y="19"></rect>
+															</g>
+														</svg></span>
+												</div>
+												<div class="file-item-remove">
+													<button class="btn btn-danger btn-delete" onclick="deleteImage(this,'http://localhost:8000/test.jpg')"><i class="glyphicon glyphicon-trash"></i><span>Xóa</span></button>
+												</div>
+											</div>
+											<div class="file-item">
+												<div class="file-item-image shadow"><img class="ofc" src="https://i.pinimg.com/564x/b0/90/f9/b090f9f37fc23003407438399879edbc.jpg"></div>
+												<div class="file-item-name">
+													<p class="name">product_1<strong class="error text-danger" data-dz-errormessage=""></strong></p>
+												</div>
+												<div class="file-item-url">
+													<input class="form-control url" readonly="" value="http://localhost:8000/test.jpg" type="text"><span class="btn btn-copy-url">
+														<svg id="Outlined" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+															<title></title>
+															<g id="Fill">
+																<path d="M24,3H20.82A3,3,0,0,0,18,1H14a3,3,0,0,0-2.82,2H8A3,3,0,0,0,5,6V26a3,3,0,0,0,3,3H24a3,3,0,0,0,3-3V6A3,3,0,0,0,24,3ZM13,4a1,1,0,0,1,1-1h4a1,1,0,0,1,1,1V5H13ZM25,26a1,1,0,0,1-1,1H8a1,1,0,0,1-1-1V6A1,1,0,0,1,8,5h3V7H21V5h3a1,1,0,0,1,1,1Z"></path>
+																<rect height="2" width="10" x="11" y="15"></rect>
+																<rect height="2" width="5" x="11" y="19"></rect>
+															</g>
+														</svg></span>
+												</div>
+												<div class="file-item-remove">
+													<button class="btn btn-danger btn-delete" onclick="deleteImage(this,'http://localhost:8000/test.jpg')"><i class="glyphicon glyphicon-trash"></i><span>Xóa</span></button>
+												</div>
+											</div>
+										</div>
+										<div class="d-none" id="list-image-preview"></div>
+										<div class="d-none" id="template-preview">
+											<div class="file-item">
+												<div class="file-item-image"><img data-dz-thumbnail=""></div>
+												<div class="file-item-name">
+													<p class="name" data-dz-name=""><strong class="error text-danger" data-dz-errormessage=""></strong></p>
+												</div>
+												<div class="file-item-url">
+													<input class="form-control url" readonly="" value="http://localhost:8000/test.jpg" type="text"><span class="btn btn-copy-url">
+														<svg id="Outlined" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+															<title></title>
+															<g id="Fill">
+																<path d="M24,3H20.82A3,3,0,0,0,18,1H14a3,3,0,0,0-2.82,2H8A3,3,0,0,0,5,6V26a3,3,0,0,0,3,3H24a3,3,0,0,0,3-3V6A3,3,0,0,0,24,3ZM13,4a1,1,0,0,1,1-1h4a1,1,0,0,1,1,1V5H13ZM25,26a1,1,0,0,1-1,1H8a1,1,0,0,1-1-1V6A1,1,0,0,1,8,5h3V7H21V5h3a1,1,0,0,1,1,1Z"></path>
+																<rect height="2" width="10" x="11" y="15"></rect>
+																<rect height="2" width="5" x="11" y="19"></rect>
+															</g>
+														</svg></span>
+												</div>
+												<div class="file-item-remove">
+													<button class="btn btn-danger btn-delete"><i class="glyphicon glyphicon-trash"></i><span>Xóa</span></button>
+												</div>
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>

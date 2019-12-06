@@ -112,20 +112,12 @@
 				</div>
 				<div class="aside-item">
 					<div class="name">
-						<div class="icon"><img class="svg" src="./assets/images/icons/partner.svg" alt="" srcset=""></div>
-						<h5>Đối Tác</h5>
+						<div class="icon"><img class="svg" src="./assets/images/icons/ecommerce.svg" alt="" srcset=""></div>
+						<h5>Thương mại điện tử</h5>
 					</div>
 					<ul class="list-link">
-						<li class="link"><a href="partner.html">Kiểm tra</a></li>
-					</ul>
-				</div>
-				<div class="aside-item">
-					<div class="name">
-						<div class="icon"><img class="svg" src="./assets/images/icons/question.svg" alt="" srcset=""></div>
-						<h5>Câu hỏi thường gặp</h5>
-					</div>
-					<ul class="list-link">
-						<li class="link"><a href="#">Chỉnh sửa</a></li>
+						<li class="link"><a href="category.html">Đơn đặt hàng</a></li>
+						<li class="link"><a href="category.html">Quản lí giảm giá</a></li>
 					</ul>
 				</div>
 				<div class="aside-item">
@@ -134,7 +126,10 @@
 						<h5>Quản lý sản phẩm</h5>
 					</div>
 					<ul class="list-link">
-						<li class="link"><a href="#">Chỉnh sửa</a></li>
+						<li class="link"><a href="#">Danh sách sản phẩm</a></li>
+						<li class="link"><a href="category-product.html">Danh mục sản phẩm</a></li>
+						<li class="link"><a href="#">Thuộc tính sản phẩm</a></li>
+						<li class="link"><a href="#">Thương hiệu</a></li>
 					</ul>
 				</div>
 				<div class="aside-item">
@@ -149,6 +144,15 @@
 				</div>
 				<div class="aside-item">
 					<div class="name">
+						<div class="icon"><img class="svg" src="./assets/images/icons/partner.svg" alt="" srcset=""></div>
+						<h5>Đối Tác</h5>
+					</div>
+					<ul class="list-link">
+						<li class="link"><a href="partner.html">Chỉnh sửa</a></li>
+					</ul>
+				</div>
+				<div class="aside-item">
+					<div class="name">
 						<div class="icon"><img class="svg" src="./assets/images/icons/maps.svg" alt="" srcset=""></div>
 						<h5>Chi nhánh</h5>
 					</div>
@@ -159,19 +163,12 @@
 				<div class="aside-item">
 					<div class="name">
 						<div class="icon"><img class="svg" src="./assets/images/icons/mail.svg" alt="" srcset=""></div>
-						<h5>Quản lý Subcribe</h5>
+						<h5>Phản hồi</h5>
 					</div>
 					<ul class="list-link">
-						<li class="link"><a href="#">Kiểm tra</a></li>
-					</ul>
-				</div>
-				<div class="aside-item">
-					<div class="name">
-						<div class="icon"><img class="svg" src="./assets/images/icons/cart.svg" alt="" srcset=""></div>
-						<h5>Quản lý đơn hàng</h5>
-					</div>
-					<ul class="list-link">
-						<li class="link"><a href="#">Kiểm tra</a></li>
+						<li class="link"><a href="#">Danh sách Subcribe</a></li>
+						<li class="link"><a href="#">Yêu cầu báo giá</a></li>
+						<li class="link"><a href="#">Đăng ký booking</a></li>
 					</ul>
 				</div>
 				<div class="aside-item">
@@ -185,21 +182,30 @@
 				</div>
 				<div class="aside-item">
 					<div class="name">
+						<div class="icon"><img class="svg" src="./assets/images/icons/question.svg" alt="" srcset=""></div>
+						<h5>Câu hỏi thường gặp</h5>
+					</div>
+					<ul class="list-link">
+						<li class="link"><a href="#">Chỉnh sửa</a></li>
+					</ul>
+				</div>
+				<div class="aside-item">
+					<div class="name">
+						<div class="icon"><img class="svg" src="./assets/images/icons/folder.svg" alt="" srcset=""></div>
+						<h5>Quản Lý Thư Mục</h5>
+					</div>
+					<ul class="list-link">
+						<li class="link"><a href="#">Kiểm tra</a></li>
+					</ul>
+				</div>
+				<div class="aside-item">
+					<div class="name">
 						<div class="icon"><img class="svg" src="./assets/images/icons/setting.svg" alt="" srcset=""></div>
 						<h5>Cài Đặt</h5>
 					</div>
 					<ul class="list-link">
 						<li class="link"><a href="setting.html">Thiết lập</a></li>
 						<li class="link"><a href="resources.html">Tài nguyên</a></li>
-					</ul>
-				</div>
-				<div class="aside-item">
-					<div class="name">
-						<div class="icon"><img class="svg" src="./assets/images/icons/notification.svg" alt="" srcset=""></div>
-						<h5>Thông báo</h5>
-					</div>
-					<ul class="list-link">
-						<li class="link"><a href="#">Thiết lập</a></li>
 					</ul>
 				</div>
 			</div>
@@ -424,6 +430,78 @@
 				.catch( error => {
 					console.error( error );
 				} );
+		</script>
+		<script>
+			var previewNode = document.querySelector("#template-preview");
+			var previewTemplate = previewNode.innerHTML;
+			previewNode.parentNode.removeChild(previewNode);
+			
+			var myDropzone = new Dropzone(".upload-file", { // Make the whole body a dropzone
+				url: "http://192.168.1.106/file-upload", // Set the url
+				// uploadMultiple: true,
+				previewTemplate: previewTemplate,
+				parallelUploads: 100,
+				uploadMultiple: true,
+				previewsContainer: ".upload-file #list-image-preview",
+				clickable: ".upload-file .upload-image-wrapper"
+			});
+			
+			myDropzone.on('sendingmultiple', function (res, xhr, formData) {
+				formData.append('folder', '/Upload/Banner');
+			})
+			
+			myDropzone.on('successmultiple', function (files, response) {
+				var listNewImages = Array.from(document.querySelectorAll('#list-image-preview .file-item'));
+				var listImageDefault = document.getElementById('list-image');
+				listNewImages.forEach(function (item, index) {
+					item.querySelector('.name').innerHTML = response[index].name;
+					item.querySelector('.url').value = response[index].url;
+					item.querySelector('.btn-delete').setAttribute('onclick', `deleteImage(this,'${response[index].url}')`);
+					item.querySelector('.btn-copy-url').addEventListener('click', function () {
+						var urlInput = item.querySelector('.btn-copy-url').previousSibling;
+						urlInput.select();
+						urlInput.focus();
+						urlInput.setSelectionRange(0, 99999);
+						document.execCommand("copy");
+					})
+					item.classList.remove('dz-processing', 'dz-image-preview', 'dz-success', 'dz-complete')
+					listImageDefault.append(item);
+				})
+			})
+			
+			var btnCopy = Array.from(document.querySelectorAll('.file-item .btn-copy-url'));
+			btnCopy.forEach(function (btn) {
+				btn.addEventListener('click', function () {
+					var urlInput = btn.previousSibling;
+					urlInput.select();
+					urlInput.focus();
+					urlInput.setSelectionRange(0, 99999);
+					document.execCommand("copy");
+				})
+			})
+			
+			function deleteImage(e, param) {
+				$.ajax({
+					url: 'http://192.168.1.106/delete-image',
+					data: {
+						url: param
+					},
+					type: 'post',
+					beforeSend: function () {
+						$(e).attr('disabled', 'disabled')
+					},
+					success: function (response) {
+						if (response.Code === 200) {
+							$(e).parents('.file-item').remove();
+						} else {
+							console.log(response.Message)
+						}
+					},
+					complete: function () {
+						$(e).removeAttr('disabled')
+					}
+				})
+			}
 		</script>
 	</body>
 </html>
