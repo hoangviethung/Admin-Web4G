@@ -1,0 +1,81 @@
+.main__inner
+	.page-title
+		.page-title-wrapper
+			.page-title-heading
+				.page-title-icon
+					img.svg(src="./assets/images/icons/post.svg", alt="", srcset="")
+				.page-title-content
+					h3 Danh sách Banner
+					p Tại đây các quản trị viên có thể quản lý tất cả Banner trên Website với các chức năng cơ bản: thêm, xóa, sửa.
+			.page-title-actions
+				a(href="create-banner.html").btn.btn-success Thêm mới
+	.row
+		.filter.col-lg-8
+			form(action="#" method="method")
+				.form-row
+					.col-lg-5.form-group.mb-0
+						label.text-center Ngôn ngữ
+						select.form-control.shadow-sm
+							option Vietnamese
+							option English
+							option Chinese
+					.col-lg-5.form-group.mb-0
+						label.text-center Thuộc trang
+						select.form-control.shadow-sm
+							option Tất cả
+							option Trang chủ
+							option Giới thiệu
+					.col-lg-2
+						.form-group.mb-0
+							button.btn.btn-primary.btn-sm.shadow Lọc
+		.block-table.col-lg-12.mt-4
+			table.table.table-bordered.m-0
+				thead
+					tr
+						th #
+						th Tiêu đề
+						th.text-center Hình ảnh
+						th.text-center Ghi chú
+						th.text-center Ngôn ngữ
+						th.text-center Hiển thị
+						th.text-center Tác vụ
+				tbody
+					-for(i=1;i<5;i++)
+						tr
+							td #{i}
+							td Chuyển đổi đơn vị
+							td.w-300px
+								.block-images-big
+									img.ofc(src="https://images.unsplash.com/photo-1562887085-cb16e9116582?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80", alt="", srcset="")
+							td.text-center 1 - Slide bên trái - Trang chủ
+							td
+								.language
+									figure.shadow
+										img.ofc(src="./assets/images/nation/"+i+".png", alt="")
+							td.text-center
+								.input-custom
+									label._checkbox-custom
+										input.custom-control-input(type='checkbox' readonly)
+										span.custom-control-indicator
+							td
+								.list-item.center
+									// SỬA
+									a.btn-custom-icon.item(href="create-banner.html")
+										.icon(data-toggle="tooltip" data-placement="bottom" title="Sửa")
+											img.svg(src="./assets/images/icons/edit.svg", alt="", srcset="")
+									// XÓA
+									button.popup-delete.btn-custom-icon.item(data-url="#", dataID="item-"+i, data-toggle='modal', data-target='#popup_question')
+										.icon(data-toggle="tooltip" data-placement="bottom" title="Xóa")
+											img.svg(src="./assets/images/icons/delete.svg", alt="", srcset="")
+			// BOX HIỆN LÊN CÂU HỎI
+			#popup_question.modal.fade(aria-hidden='true')
+				.modal-dialog.modal-dialog-centered(role='document')
+					.modal-content
+						.modal-header
+							h5.modal-title Thông báo
+							button.close(data-dismiss='modal', aria-label='Close')
+								span(aria-hidden='true') ×
+						.modal-body Bạn có chắc chắn xóa
+						.modal-footer
+							button.btn.btn-danger.btn-sm(data-dismiss='modal') Hủy
+							button.submit-delete.btn.btn-success.btn-sm(data-url="#") Chấp nhận

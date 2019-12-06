@@ -1,0 +1,65 @@
+.main__inner
+	.page-title
+		.page-title-wrapper
+			.page-title-heading
+				.page-title-icon
+					img.svg(src="./assets/images/icons/ecommerce.svg", alt="", srcset="")
+				.page-title-content
+					h3 Danh sách đơn hàng
+					p Tại đây các quản trị viên có thể quản lý các đơn đặt hàng.
+			.page-title-actions
+	.row
+		.filter.col-lg-12
+			form(action="#" method="method")
+				.form-row
+					.col-lg-3.form-group.mb-0
+						label.text-center Trạng thái
+						select.form-control.shadow-sm
+							option Tất cả
+							option Đang chờ xử lý
+							option Đã hủy đơn hàng
+							option Sẵn sàng giao hàng
+							option Đang giao hàng
+							option Đã hoàn thành
+				.form-row
+					.col-lg-3.form-group.mb-0
+						label.text-center Mã đơn hàng
+						.input-group.shadow-sm
+							input.form-control.form-control-sm(placeholder="Nhập mã đơn hàng")
+					.col-lg-3.form-group.mb-0
+						label.text-center Số điện thoại
+						.input-group.shadow-sm
+							input.form-control.form-control-sm(placeholder="Nhập mã số điện thoại")
+					.col-lg-3.form-group.mb-0
+						label.text-center Tên người nhận
+						.input-group.shadow-sm
+							input.form-control.form-control-sm(placeholder="Tên người nhận")
+					.col-lg-2
+						.form-group.mb-0
+							button.btn.btn-primary.btn-sm.shadow Lọc
+		.block-table.col-lg-12.mt-4
+			table.table.table-bordered.m-0
+				thead
+					tr
+						th #
+						th Mã đơn hàng
+						th Tên khách hàng
+						th Số điện thoại
+						th Thời gian đặt hàng
+						th Tình trạng đơn hàng
+						th.text-center Xem chi tiết
+				tbody
+					-for(i=1;i<5;i++)
+						tr
+							td #{i}
+							td 121910024
+							td Nguyễn Minh Khoa
+							td 0909523435
+							td 01/12/2019 00:31
+							td Đang chờ xử lý
+							td
+								.list-item.center
+									// XEM CHI TIẾT
+									a.btn-custom-icon.item(href="cart-detail.html")
+										.icon(data-toggle="tooltip" data-placement="bottom" title="Sửa")
+											img.svg(src="./assets/images/icons/eye.svg", alt="", srcset="")

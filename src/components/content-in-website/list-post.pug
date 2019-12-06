@@ -46,6 +46,7 @@
 						th Đường dẫn
 						th Danh mục
 						th.text-center Ngôn ngữ
+						th.text-center Hiển thị
 						th.text-center Tác vụ
 				tbody
 					-for(i=1;i<5;i++)
@@ -58,6 +59,11 @@
 								.language
 									figure.shadow
 										img.ofc(src="./assets/images/nation/"+i+".png", alt="")
+							td.text-center
+								.input-custom
+									label._checkbox-custom
+										input.custom-control-input(type='checkbox' readonly)
+										span.custom-control-indicator
 							td
 								.list-item.center
 									// SỬA
