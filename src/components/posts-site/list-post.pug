@@ -48,91 +48,35 @@
 						th.text-center Ngôn ngữ
 						th.text-center Tác vụ
 				tbody
-					tr
-						td 1
-						td Chuyển đổi đơn vị
-						td /tien-ich/chuyen-doi-don-vi
-						td Tiện ích
-						td
-							.language
-								figure.shadow
-									img.ofc(src="./assets/images/nation/vietnam.svg", alt="")
-						td
-							.list-item.center
-								// SỬA
-								a.btn-custom-icon.item(href="create-post.html")
-									.icon(data-toggle="tooltip" data-placement="bottom" title="Sửa")
-										img.svg(src="./assets/images/icons/edit.svg", alt="", srcset="")
-								// XÓA
-								button.btn-custom-icon.item(type='button', data-toggle='modal', data-target='#popup_question')
-									.icon(data-toggle="tooltip" data-placement="bottom" title="Xóa")
-										img.svg(src="./assets/images/icons/delete.svg", alt="", srcset="")
-					tr
-						td 2
-						td Chuyển đổi đơn vị
-						td /tien-ich/chuyen-doi-don-vi
-						td Tiện ích
-						td
-							.language
-								figure.shadow
-									img.ofc(src="./assets/images/nation/china.svg", alt="")
-						td
-							.list-item.center
-								// SỬA
-								a.btn-custom-icon.item(href="#")
-									.icon(data-toggle="tooltip" data-placement="bottom" title="Sửa")
-										img.svg(src="./assets/images/icons/edit.svg", alt="", srcset="")
-								// XÓA
-								button.btn-custom-icon.item(type='button', data-toggle='modal', data-target='#popup_question')
-									.icon(data-toggle="tooltip" data-placement="bottom" title="Xóa")
-										img.svg(src="./assets/images/icons/delete.svg", alt="", srcset="")
-					tr
-						td 3
-						td Chuyển đổi đơn vị
-						td /tien-ich/chuyen-doi-don-vi
-						td Tiện ích
-						td
-							.language
-								figure.shadow
-									img.ofc(src="./assets/images/nation/usa.png", alt="")
-						td
-							.list-item.center
-								// SỬA
-								a.btn-custom-icon.item(href="#")
-									.icon(data-toggle="tooltip" data-placement="bottom" title="Sửa")
-										img.svg(src="./assets/images/icons/edit.svg", alt="", srcset="")
-								// XÓA
-								button.btn-custom-icon.item(type='button', data-toggle='modal', data-target='#popup_question')
-									.icon(data-toggle="tooltip" data-placement="bottom" title="Xóa")
-										img.svg(src="./assets/images/icons/delete.svg", alt="", srcset="")
-					tr
-						td 3
-						td Chuyển đổi đơn vị
-						td /tien-ich/chuyen-doi-don-vi
-						td Tiện ích
-						td
-							.language
-								figure.shadow
-									img.ofc(src="./assets/images/nation/korea.png", alt="")
-						td
-							.list-item.center
-								// SỬA
-								a.btn-custom-icon.item(href="#")
-									.icon(data-toggle="tooltip" data-placement="bottom" title="Sửa")
-										img.svg(src="./assets/images/icons/edit.svg", alt="", srcset="")
-								// XÓA
-								button.btn-custom-icon.item(type='button', data-toggle='modal', data-target='#popup_question')
-									.icon(data-toggle="tooltip" data-placement="bottom" title="Xóa")
-										img.svg(src="./assets/images/icons/delete.svg", alt="", srcset="")
+					-for(i=1;i<5;i++)
+						tr
+							td #{i}
+							td Chuyển đổi đơn vị
+							td /tien-ich/chuyen-doi-don-vi
+							td Tiện ích
+							td
+								.language
+									figure.shadow
+										img.ofc(src="./assets/images/nation/"+i+".png", alt="")
+							td
+								.list-item.center
+									// SỬA
+									a.btn-custom-icon.item(href="create-post.html")
+										.icon(data-toggle="tooltip" data-placement="bottom" title="Sửa")
+											img.svg(src="./assets/images/icons/edit.svg", alt="", srcset="")
+									// XÓA
+									button.popup-delete.btn-custom-icon.item(data-url="#", dataID="item-"+i, data-toggle='modal', data-target='#popup_question')
+										.icon(data-toggle="tooltip" data-placement="bottom" title="Xóa")
+											img.svg(src="./assets/images/icons/delete.svg", alt="", srcset="")
 			// BOX HIỆN LÊN CÂU HỎI
 			#popup_question.modal.fade(aria-hidden='true')
 				.modal-dialog.modal-dialog-centered(role='document')
 					.modal-content
 						.modal-header
 							h5.modal-title Thông báo
-							button.close(type='button', data-dismiss='modal', aria-label='Close')
+							button.close(data-dismiss='modal', aria-label='Close')
 								span(aria-hidden='true') ×
 						.modal-body Bạn có chắc chắn xóa
 						.modal-footer
-							button.btn.btn-danger.btn-sm(type='button', data-dismiss='modal') Hủy
-							button.btn.btn-success.btn-sm(type='button') Chấp nhận
+							button.btn.btn-danger.btn-sm(data-dismiss='modal') Hủy
+							button.submit-delete.btn.btn-success.btn-sm(data-url="#") Chấp nhận

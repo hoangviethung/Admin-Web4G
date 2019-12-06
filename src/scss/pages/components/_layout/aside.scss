@@ -187,14 +187,14 @@ aside {
 					}
 
 					&:after {
-						content      : '';
-						width        : 2px;
-						height       : 100%;
-						background   : rgba(125, 125, 125, 0.03);
-						position     : absolute;
-						left         : 20px;
-						top          : 0;
-						border-radius: 15px;
+						content         : '';
+						width           : 2px;
+						height          : 100%;
+						background-color: rgba(200, 200, 200, .2);
+						position        : absolute;
+						left            : 20px;
+						top             : 0;
+						border-radius   : 15px;
 					}
 
 					&:hover {

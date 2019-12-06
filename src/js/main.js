@@ -59,8 +59,73 @@ Date.prototype.toDateInputValue = (function() {
 	return local.toJSON().slice(0, 10);
 });
 
+// AJAX BUTTON DELETE
+function ajaxAction() {
+	// DELETE
+	$('.popup-delete, .popup-change').on('click', function() {
+		const url = $(this).attr('data-url');
+		const productID = $(this).attr('dataID');
+
+		$.ajax({
+			type: "POST",
+			url: url,
+			data: {
+				productID: productID,
+			},
+		});
+	});
+	// SUBMIT DELETE
+	$('.submit-delete').on('click', function() {
+		const url = $(this).attr('data-url');
+		$.ajax({
+			type: "POST",
+			url: url,
+			data: {
+				code: 200,
+			},
+			error: function(response) {
+				location.reload();
+			}
+		});
+	});
+	// SUBMIT CHANGE PASSWORD
+	$('.submit-change-pass').on('click', function() {
+		const url = $(this).attr('data-url');
+		const oldpass = $('#oldpass').val();
+		const newpass = $('#newpass').val();
+		const re_newpass = $('#re_newpass').val();
+		$.ajax({
+			type: "POST",
+			url: url,
+			data: {
+				oldpass: oldpass,
+				newpass: newpass,
+				re_newpass: re_newpass,
+			},
+			error: function(response) {
+				location.reload();
+			}
+		});
+	});
+	// SUBMIT CHANGE
+	$('.submit-change-setting').on('click', function() {
+		const url = $(this).attr('data-url');
+		const settingChange = $('#settingChange').val();
+		$.ajax({
+			type: "POST",
+			url: url,
+			data: {
+				settingChange: settingChange,
+			},
+			error: function(response) {
+				location.reload();
+			}
+		});
+	});
+}
+
 // SUBMENU ASIDE
-function showSubMenu_AsideMenu() {
+function showSubAsideMenu() {
 	$('.aside-list .aside-item').on('click', function() {
 		// THIS IS 'NOT THIS'
 		const _notthis = $('.aside-list .aside-item').not(this);
@@ -74,7 +139,7 @@ function showSubMenu_AsideMenu() {
 }
 
 // TOGGLE ASIDE GỌN PHÓNG TÓ
-function toogle_AsideMenu() {
+function toogleAsideMenu() {
 
 	if ($(window).width() < 1024) {
 		$('body, aside').addClass('active');
@@ -148,6 +213,7 @@ function SVG() {
 	});
 }
 
+// UPLOAD FILE
 function uploadFile() {
 	var template = document.querySelector("#template");
 	if (template) {
@@ -181,6 +247,7 @@ function uploadFile() {
 	}
 }
 
+// CHỌN NGÀY HIỆN TẠI LÀM MẶC ĐỊNH INPUT TYPE DATE
 function setDateDefault() {
 	let today = new Date().toDateInputValue();
 
@@ -205,8 +272,10 @@ document.addEventListener('DOMContentLoaded', () => {
 	activeMenuByUrl();
 	dropdownHeader();
 	// ASIDE
-	showSubMenu_AsideMenu();
-	toogle_AsideMenu();
+	showSubAsideMenu();
+	toogleAsideMenu();
+	// AJAX
+	ajaxAction()
 });
 
 // CHẠY KHI WINDOWN SCROLL

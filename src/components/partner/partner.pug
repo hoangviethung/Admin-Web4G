@@ -32,60 +32,25 @@
 						th.text-center.w-100px Sắp sếp
 						th.text-center Tác vụ
 				tbody
-					tr
-						td 1
-						td Facebook
-						td Khách hàng
-						td.w-200px
-							.block-images-small
-								img.ofc(src="https://znews-photo.zadn.vn/w660/Uploaded/pgi_cuhpguvau/2018_08_10/danang.jpg", alt="", srcset="")
-						td.text-center 1
-						td
-							.list-item.center
-								// SỬA
-								a.btn-custom-icon.item(href="create-post.html")
-									.icon(data-toggle="tooltip" data-placement="bottom" title="Sửa")
-										img.svg(src="./assets/images/icons/edit.svg", alt="", srcset="")
-								// XÓA
-								button.btn-custom-icon.item(type='button', data-toggle='modal', data-target='#popup_question')
-									.icon(data-toggle="tooltip" data-placement="bottom" title="Xóa")
-										img.svg(src="./assets/images/icons/delete.svg", alt="", srcset="")
-					tr
-						td 2
-						td Instagram
-						td Thành viên
-						td.w-200px
-							.block-images-small
-								img.ofc(src="https://logomaster.ai/static/media/sample.c8bf2b04.svg", alt="", srcset="")
-						td.text-center 2
-						td
-							.list-item.center
-								// SỬA
-								a.btn-custom-icon.item(href="#")
-									.icon(data-toggle="tooltip" data-placement="bottom" title="Sửa")
-										img.svg(src="./assets/images/icons/edit.svg", alt="", srcset="")
-								// XÓA
-								button.btn-custom-icon.item(type='button', data-toggle='modal', data-target='#popup_question')
-									.icon(data-toggle="tooltip" data-placement="bottom" title="Xóa")
-										img.svg(src="./assets/images/icons/delete.svg", alt="", srcset="")
-					tr
-						td 3
-						td Twitter
-						td Khách hàng
-						td.w-200px
-							.block-images-small
-								img.ofc(src="https://pano.vn/wp-content/uploads/2015/09/mixed-logo.jpg", alt="", srcset="")
-						td.text-center 3
-						td
-							.list-item.center
-								// SỬA
-								a.btn-custom-icon.item(href="#")
-									.icon(data-toggle="tooltip" data-placement="bottom" title="Sửa")
-										img.svg(src="./assets/images/icons/edit.svg", alt="", srcset="")
-								// XÓA
-								button.btn-custom-icon.item(type='button', data-toggle='modal', data-target='#popup_question')
-									.icon(data-toggle="tooltip" data-placement="bottom" title="Xóa")
-										img.svg(src="./assets/images/icons/delete.svg", alt="", srcset="")
+					-for(i=1;i<5;i++)
+						tr
+							td #{i}
+							td Fanta
+							td Khách hàng
+							td.w-200px
+								.block-images-small
+									img.ofc(src="https://pano.vn/wp-content/uploads/2015/09/mixed-logo.jpg", alt="", srcset="")
+							td.text-center 1
+							td
+								.list-item.center
+									// SỬA
+									a.btn-custom-icon.item(href="create-partner.html")
+										.icon(data-toggle="tooltip" data-placement="bottom" title="Sửa")
+											img.svg(src="./assets/images/icons/edit.svg", alt="", srcset="")
+									// XÓA
+									button.popup-delete.btn-custom-icon.item(data-url="#", dataID="item-"+i, data-toggle='modal', data-target='#popup_question')
+										.icon(data-toggle="tooltip" data-placement="bottom" title="Xóa")
+											img.svg(src="./assets/images/icons/delete.svg", alt="", srcset="")
 			// BOX HIỆN LÊN CÂU HỎI
 			#popup_question.modal.fade(aria-hidden='true')
 				.modal-dialog.modal-dialog-centered(role='document')
@@ -97,4 +62,4 @@
 						.modal-body Bạn có chắc chắn xóa
 						.modal-footer
 							button.btn.btn-danger.btn-sm(type='button', data-dismiss='modal') Hủy
-							button.btn.btn-success.btn-sm(type='button') Chấp nhận
+							button.submit-delete.btn.btn-success.btn-sm(type='button') Chấp nhận

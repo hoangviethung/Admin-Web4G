@@ -157,7 +157,7 @@
 						<h5>Chi nhánh</h5>
 					</div>
 					<ul class="list-link">
-						<li class="link"><a href="#">Chỉnh sửa</a></li>
+						<li class="link"><a href="branch-offices.html">Chỉnh sửa</a></li>
 					</ul>
 				</div>
 				<div class="aside-item">
@@ -215,26 +215,16 @@
 				<div class="page-title">
 					<div class="page-title-wrapper">
 						<div class="page-title-heading">
-							<div class="page-title-icon"><img class="svg" src="./assets/images/icons/post.svg" alt="" srcset=""></div>
+							<div class="page-title-icon"><img class="svg" src="./assets/images/icons/maps.svg" alt="" srcset=""></div>
 							<div class="page-title-content">
-								<h3>Quản Lý Các Loại Menu</h3>
-								<p>Tại đây các quản trị viên có thể quản lý các danh mục menu với các chức năng cơ bản: thêm, xóa, sửa.</p>
+								<h3>Quản Lý Chi Nhánh</h3>
+								<p>Tại đây các quản trị viên có thể quản lý thông tin các chi nhánh của công ty với các chức năng cơ bản: thêm, xóa, sửa.</p>
 							</div>
 						</div>
-						<div class="page-title-actions"><a class="btn btn-success" href="create-post.html">Thêm mới</a></div>
+						<div class="page-title-actions"><a class="btn btn-success" href="create-branch-offices.html">Thêm mới</a></div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="seach col-lg-4">
-						<form action="#" method="method">
-							<div class="form-group mb-0">
-								<div class="form-input">
-									<input type="text" placeholder="Nhập từ khóa để tìm kiếm">
-									<button><img class="svg" src="./assets/images/icons/search.svg" alt="" srcset=""></button>
-								</div>
-							</div>
-						</form>
-					</div>
 					<div class="filter col-lg-8">
 						<form action="#" method="method">
 							<div class="form-row">
@@ -244,14 +234,6 @@
 										<option>Vietnamese</option>
 										<option>English</option>
 										<option>Chinese</option>
-									</select>
-								</div>
-								<div class="col-lg-5 form-group mb-0">
-									<label>Loại Menu</label>
-									<select class="form-control shadow-sm">
-										<option>Main Menu</option>
-										<option>Right Menu</option>
-										<option>Footer Menu</option>
 									</select>
 								</div>
 								<div class="col-lg-2">
@@ -267,10 +249,8 @@
 							<thead>
 								<tr>
 									<th>#</th>
-									<th>Tên Menu</th>
-									<th>Danh mục cha ( nếu có )</th>
-									<th>Đường dẫn</th>
-									<th class="text-center">Thứ tự</th>
+									<th>Tên chi nhánh</th>
+									<th>Địa chỉ</th>
 									<th class="text-center">Ngôn ngữ</th>
 									<th class="text-center">Tác vụ</th>
 								</tr>
@@ -278,21 +258,19 @@
 							<tbody>
 								<tr>
 									<td>1</td>
-									<td>Chuyển đổi đơn vị</td>
-									<td>Tiện ích</td>
-									<td>/tien-ich/chuyen-doi-don-vi</td>
-									<td class="text-center">1</td>
+									<td>Ho Chi Minh Headoffice</td>
+									<td>Floor 4, Thang Long Building, 29 Thang Long St., Ward 4, Tan Binh Dist., HCMC, Vietnam.</td>
 									<td>
 										<div class="language">
-											<figure class="shadow"><img class="ofc" src="./assets/images/nation/vietnam.svg" alt=""></figure>
+											<figure class="shadow"><img class="ofc" src="./assets/images/nation/1.png" alt=""></figure>
 										</div>
 									</td>
 									<td>
 										<div class="list-item center">
-											<!-- SỬA--><a class="btn-custom-icon item" href="create-post.html">
+											<!-- SỬA--><a class="btn-custom-icon item" href="create-branch-offices.html">
 												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Sửa"><img class="svg" src="./assets/images/icons/edit.svg" alt="" srcset=""></div></a>
 											<!-- XÓA-->
-											<button class="btn-custom-icon item" type="button" data-toggle="modal" data-target="#popup_question">
+											<button class="popup-delete btn-custom-icon item" data-url="#" dataID="item-1" data-toggle="modal" data-target="#popup_question">
 												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Xóa"><img class="svg" src="./assets/images/icons/delete.svg" alt="" srcset=""></div>
 											</button>
 										</div>
@@ -300,21 +278,19 @@
 								</tr>
 								<tr>
 									<td>2</td>
-									<td>Chuyển đổi đơn vị</td>
-									<td>Giới thiệu</td>
-									<td>/tien-ich/chuyen-doi-don-vi</td>
-									<td class="text-center">2</td>
+									<td>Ho Chi Minh Headoffice</td>
+									<td>Floor 4, Thang Long Building, 29 Thang Long St., Ward 4, Tan Binh Dist., HCMC, Vietnam.</td>
 									<td>
 										<div class="language">
-											<figure class="shadow"><img class="ofc" src="./assets/images/nation/china.svg" alt=""></figure>
+											<figure class="shadow"><img class="ofc" src="./assets/images/nation/2.png" alt=""></figure>
 										</div>
 									</td>
 									<td>
 										<div class="list-item center">
-											<!-- SỬA--><a class="btn-custom-icon item" href="#">
+											<!-- SỬA--><a class="btn-custom-icon item" href="create-branch-offices.html">
 												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Sửa"><img class="svg" src="./assets/images/icons/edit.svg" alt="" srcset=""></div></a>
 											<!-- XÓA-->
-											<button class="btn-custom-icon item" type="button" data-toggle="modal" data-target="#popup_question">
+											<button class="popup-delete btn-custom-icon item" data-url="#" dataID="item-2" data-toggle="modal" data-target="#popup_question">
 												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Xóa"><img class="svg" src="./assets/images/icons/delete.svg" alt="" srcset=""></div>
 											</button>
 										</div>
@@ -322,43 +298,39 @@
 								</tr>
 								<tr>
 									<td>3</td>
-									<td>Chuyển đổi đơn vị</td>
-									<td>Tiện ích</td>
-									<td>/tien-ich/chuyen-doi-don-vi</td>
-									<td class="text-center">5</td>
+									<td>Ho Chi Minh Headoffice</td>
+									<td>Floor 4, Thang Long Building, 29 Thang Long St., Ward 4, Tan Binh Dist., HCMC, Vietnam.</td>
 									<td>
 										<div class="language">
-											<figure class="shadow"><img class="ofc" src="./assets/images/nation/usa.png" alt=""></figure>
+											<figure class="shadow"><img class="ofc" src="./assets/images/nation/3.png" alt=""></figure>
 										</div>
 									</td>
 									<td>
 										<div class="list-item center">
-											<!-- SỬA--><a class="btn-custom-icon item" href="#">
+											<!-- SỬA--><a class="btn-custom-icon item" href="create-branch-offices.html">
 												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Sửa"><img class="svg" src="./assets/images/icons/edit.svg" alt="" srcset=""></div></a>
 											<!-- XÓA-->
-											<button class="btn-custom-icon item" type="button" data-toggle="modal" data-target="#popup_question">
+											<button class="popup-delete btn-custom-icon item" data-url="#" dataID="item-3" data-toggle="modal" data-target="#popup_question">
 												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Xóa"><img class="svg" src="./assets/images/icons/delete.svg" alt="" srcset=""></div>
 											</button>
 										</div>
 									</td>
 								</tr>
 								<tr>
-									<td>3</td>
-									<td>Chuyển đổi đơn vị</td>
-									<td>Tiện ích</td>
-									<td>/tien-ich/chuyen-doi-don-vi</td>
-									<td class="text-center">4</td>
+									<td>4</td>
+									<td>Ho Chi Minh Headoffice</td>
+									<td>Floor 4, Thang Long Building, 29 Thang Long St., Ward 4, Tan Binh Dist., HCMC, Vietnam.</td>
 									<td>
 										<div class="language">
-											<figure class="shadow"><img class="ofc" src="./assets/images/nation/korea.png" alt=""></figure>
+											<figure class="shadow"><img class="ofc" src="./assets/images/nation/4.png" alt=""></figure>
 										</div>
 									</td>
 									<td>
 										<div class="list-item center">
-											<!-- SỬA--><a class="btn-custom-icon item" href="#">
+											<!-- SỬA--><a class="btn-custom-icon item" href="create-branch-offices.html">
 												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Sửa"><img class="svg" src="./assets/images/icons/edit.svg" alt="" srcset=""></div></a>
 											<!-- XÓA-->
-											<button class="btn-custom-icon item" type="button" data-toggle="modal" data-target="#popup_question">
+											<button class="popup-delete btn-custom-icon item" data-url="#" dataID="item-4" data-toggle="modal" data-target="#popup_question">
 												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Xóa"><img class="svg" src="./assets/images/icons/delete.svg" alt="" srcset=""></div>
 											</button>
 										</div>
@@ -377,7 +349,7 @@
 									<div class="modal-body">Bạn có chắc chắn xóa</div>
 									<div class="modal-footer">
 										<button class="btn btn-danger btn-sm" type="button" data-dismiss="modal">Hủy</button>
-										<button class="btn btn-success btn-sm" type="button">Chấp nhận</button>
+										<button class="submit-delete btn btn-success btn-sm" type="button">Chấp nhận</button>
 									</div>
 								</div>
 							</div>
