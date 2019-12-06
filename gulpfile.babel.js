@@ -5,7 +5,10 @@ import {
 
 // Import tasks
 import server from "./.tasks/server";
-import jsTask from "./.tasks/script";
+import {
+	jsTask,
+	jsTask2
+} from "./.tasks/script";
 import pugTask from "./.tasks/html";
 import cssTask from "./.tasks/css";
 import jsCore from "./.tasks/core-js";
@@ -33,6 +36,7 @@ exports.default = series(
 	),
 	cssTask,
 	jsTask,
+	jsTask2,
 	pugTask,
 	server,
 )

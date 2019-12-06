@@ -5,7 +5,10 @@ import {
 } from "gulp"
 import bSync from "browser-sync";
 import jsCore from "./core-js"
-import jsTask from "./script"
+import {
+	jsTask,
+	jsTask2
+} from "./script"
 import pugTask from "./html"
 import cssCore from "./core-css"
 import cssTask from "./css"
@@ -26,10 +29,18 @@ export const server = () => {
 	})
 
 	watch([
-		"src/js/*.js"
+		"src/js/main.js",
+		"src/js/lib/**.js"
 	], {
 		delay: 750
 	}, series(jsTask));
+
+	watch([
+		'src/js/**.js',
+		'!src/js/main.js'
+	], {
+		delay: 750
+	}, series(jsTask2));
 
 	watch([
 		"src/**.pug",

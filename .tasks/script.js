@@ -11,6 +11,7 @@ import babelify from "babelify";
 import browserify from "browserify";
 import buffer from "vinyl-buffer";
 import source from "vinyl-source-stream";
+import babel from "gulp-babel";
 
 export const jsTask = () => {
 	return browserify({
@@ -40,4 +41,28 @@ export const jsTask = () => {
 		.pipe(dest('./dist/js'));
 };
 
-module.exports = jsTask;
+export const jsTask2 = () => {
+	return src([
+			'src/js/**.js',
+			'!src/js/main.js'
+		])
+		.pipe(plumber(function(err) {
+			console.log(err);
+			this.emit('end');
+		}))
+		.pipe(sourcemap.init({
+			loadMaps: true
+		}))
+		.pipe(babel())
+		.pipe(uglifyBabel())
+		.pipe(rename({
+			suffix: ".min"
+		}))
+		.pipe(sourcemap.write('.'))
+		.pipe(dest('./dist/js'));
+};
+
+module.exports = {
+	jsTask,
+	jsTask2
+};

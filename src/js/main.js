@@ -1,6 +1,6 @@
 // import here !!!
-import loading from './loading';
-import mapping from "./mapping";
+import loading from './lib/loading';
+import mapping from "./lib/mapping";
 
 // Script Cho Tab
 class Tab {
