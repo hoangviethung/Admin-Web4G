@@ -61,8 +61,8 @@ Date.prototype.toDateInputValue = (function() {
 
 // AJAX BUTTON DELETE
 function ajaxAction() {
-	// DELETE
-	$('.popup-delete, .popup-change').on('click', function() {
+	// BUTTON POPUP
+	$('.btn-popup').on('click', function() {
 		const url = $(this).attr('data-url');
 		const productID = $(this).attr('dataID');
 
