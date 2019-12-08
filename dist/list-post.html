@@ -197,7 +197,7 @@
 								<p>Tại đây các quản trị viên có thể quản lý các bài viết trên Website với các chức năng cơ bản: thêm, xóa, sửa.</p>
 							</div>
 						</div>
-						<div class="page-title-actions"><a class="btn btn-success" href="create-post.html">Thêm mới</a></div>
+						<div class="page-title-actions"><a class="btn-custom submit" href="create-post.html">Thêm mới</a></div>
 					</div>
 				</div>
 				<div class="row">
@@ -215,7 +215,7 @@
 						<form action="#" method="method">
 							<div class="form-row">
 								<div class="col-lg-5 form-group mb-0">
-									<label>Ngôn ngữ</label>
+									<label class="text-center">Ngôn ngữ</label>
 									<select class="form-control shadow-sm">
 										<option>Vietnamese</option>
 										<option>English</option>
@@ -223,7 +223,7 @@
 									</select>
 								</div>
 								<div class="col-lg-5 form-group mb-0">
-									<label>Danh mục</label>
+									<label class="text-center">Danh mục</label>
 									<select class="form-control shadow-sm">
 										<option>Chính</option>
 										<option>Giới thiệu</option>
@@ -267,7 +267,7 @@
 									<td class="text-center">
 										<div class="input-custom">
 											<label class="_checkbox-custom">
-												<input class="custom-control-input" type="checkbox" readonly><span class="custom-control-indicator"></span>
+												<input class="custom-control-input" type="checkbox" checked="checked" onclick="return false"><span class="custom-control-indicator"></span>
 											</label>
 										</div>
 									</td>
@@ -276,7 +276,7 @@
 											<!-- SỬA--><a class="btn-custom-icon item" href="create-post.html">
 												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Sửa"><img class="svg" src="./assets/images/icons/edit.svg" alt="" srcset=""></div></a>
 											<!-- XÓA-->
-											<button class="btn-popup btn-custom-icon item" data-url="#" dataID="item-1" data-toggle="modal" data-target="#popup_question">
+											<button class="btn-popup btn-custom-icon item" dataId="item-1">
 												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Xóa"><img class="svg" src="./assets/images/icons/delete.svg" alt="" srcset=""></div>
 											</button>
 										</div>
@@ -295,7 +295,7 @@
 									<td class="text-center">
 										<div class="input-custom">
 											<label class="_checkbox-custom">
-												<input class="custom-control-input" type="checkbox" readonly><span class="custom-control-indicator"></span>
+												<input class="custom-control-input" type="checkbox" checked="checked" onclick="return false"><span class="custom-control-indicator"></span>
 											</label>
 										</div>
 									</td>
@@ -304,7 +304,7 @@
 											<!-- SỬA--><a class="btn-custom-icon item" href="create-post.html">
 												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Sửa"><img class="svg" src="./assets/images/icons/edit.svg" alt="" srcset=""></div></a>
 											<!-- XÓA-->
-											<button class="btn-popup btn-custom-icon item" data-url="#" dataID="item-2" data-toggle="modal" data-target="#popup_question">
+											<button class="btn-popup btn-custom-icon item" dataId="item-2">
 												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Xóa"><img class="svg" src="./assets/images/icons/delete.svg" alt="" srcset=""></div>
 											</button>
 										</div>
@@ -323,7 +323,7 @@
 									<td class="text-center">
 										<div class="input-custom">
 											<label class="_checkbox-custom">
-												<input class="custom-control-input" type="checkbox" readonly><span class="custom-control-indicator"></span>
+												<input class="custom-control-input" type="checkbox" checked="checked" onclick="return false"><span class="custom-control-indicator"></span>
 											</label>
 										</div>
 									</td>
@@ -332,7 +332,7 @@
 											<!-- SỬA--><a class="btn-custom-icon item" href="create-post.html">
 												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Sửa"><img class="svg" src="./assets/images/icons/edit.svg" alt="" srcset=""></div></a>
 											<!-- XÓA-->
-											<button class="btn-popup btn-custom-icon item" data-url="#" dataID="item-3" data-toggle="modal" data-target="#popup_question">
+											<button class="btn-popup btn-custom-icon item" dataId="item-3">
 												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Xóa"><img class="svg" src="./assets/images/icons/delete.svg" alt="" srcset=""></div>
 											</button>
 										</div>
@@ -351,7 +351,7 @@
 									<td class="text-center">
 										<div class="input-custom">
 											<label class="_checkbox-custom">
-												<input class="custom-control-input" type="checkbox" readonly><span class="custom-control-indicator"></span>
+												<input class="custom-control-input" type="checkbox" checked="checked" onclick="return false"><span class="custom-control-indicator"></span>
 											</label>
 										</div>
 									</td>
@@ -360,7 +360,7 @@
 											<!-- SỬA--><a class="btn-custom-icon item" href="create-post.html">
 												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Sửa"><img class="svg" src="./assets/images/icons/edit.svg" alt="" srcset=""></div></a>
 											<!-- XÓA-->
-											<button class="btn-popup btn-custom-icon item" data-url="#" dataID="item-4" data-toggle="modal" data-target="#popup_question">
+											<button class="btn-popup btn-custom-icon item" dataId="item-4">
 												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Xóa"><img class="svg" src="./assets/images/icons/delete.svg" alt="" srcset=""></div>
 											</button>
 										</div>
@@ -369,17 +369,21 @@
 							</tbody>
 						</table>
 						<!-- BOX HIỆN LÊN CÂU HỎI-->
-						<div class="modal fade" id="popup_question" aria-hidden="true">
-							<div class="modal-dialog modal-dialog-centered" role="document">
-								<div class="modal-content">
-									<div class="modal-header">
-										<h5 class="modal-title">Thông báo</h5>
-										<button class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+						<div class="d-none">
+							<div class="popup-notification fancybox-content" id="popup_notification">
+								<div class="title-notification">
+									<h5>Thông báo</h5>
+									<p>Web4gsolutions xin thông báo</p>
+								</div>
+								<div class="content-notification">
+									<p>Bạn có chắc chắn xóa ?</p>
+								</div>
+								<div class="list-button">
+									<div class="item">
+										<button class="btn-custom cancel" data-fancybox-close>Hủy</button>
 									</div>
-									<div class="modal-body">Bạn có chắc chắn xóa</div>
-									<div class="modal-footer">
-										<button class="btn btn-danger btn-sm" data-dismiss="modal">Hủy</button>
-										<button class="submit-delete btn btn-success btn-sm" data-url="#">Chấp nhận</button>
+									<div class="item">
+										<button class="btn-custom submit submit-delete" data-url="#">Chấp nhận</button>
 									</div>
 								</div>
 							</div>
@@ -396,11 +400,10 @@
 			ClassicEditor
 				.create( document.querySelector( '#editor' ) )
 				.then( editor => {
-					console.log( editor );
-				} )
+				})
 				.catch( error => {
 					console.error( error );
-				} );
+				});
 		</script>
 	</body>
 </html>

@@ -8,7 +8,7 @@
 					h3 Danh mục sản phẩm
 					p Tại đây các quản trị viên có thể quản lý các danh mục của sản phẩm bằng các chức năng cơ bản như: thêm, xóa, sửa.
 			.page-title-actions
-				a(href="create-category.html").btn.btn-success Thêm mới
+				a(href="create-category.html").btn-custom.submit Thêm mới
 	.row
 		.block-table.col-lg-12.mt-4
 			table.table.table-bordered.m-0
@@ -33,22 +33,23 @@
 							td
 								.list-item.center
 									// SỬA
-									a.btn-custom-icon.item(href="create-category.html")
+									a.btn-custom-icon.item(href="create-post.html")
 										.icon(data-toggle="tooltip" data-placement="bottom" title="Sửa")
 											img.svg(src="./assets/images/icons/edit.svg", alt="", srcset="")
 									// XÓA
-									button.btn-popup.btn-custom-icon.item(data-url="#", dataID="item-"+i, data-toggle='modal', data-target='#popup_question')
+									button.btn-popup.btn-custom-icon.item(dataId="item-"+i)
 										.icon(data-toggle="tooltip" data-placement="bottom" title="Xóa")
 											img.svg(src="./assets/images/icons/delete.svg", alt="", srcset="")
 			// BOX HIỆN LÊN CÂU HỎI
-			#popup_question.modal.fade(aria-hidden='true')
-				.modal-dialog.modal-dialog-centered(role='document')
-					.modal-content
-						.modal-header
-							h5.modal-title Thông báo
-							button.close(type='button', data-dismiss='modal', aria-label='Close')
-								span(aria-hidden='true') ×
-						.modal-body Bạn có chắc chắn xóa
-						.modal-footer
-							button.btn.btn-danger.btn-sm(type='button', data-dismiss='modal') Hủy
-							button.submit-delete.btn.btn-success.btn-sm(type='button') Chấp nhận
+			.d-none
+				.popup-notification.fancybox-content#popup_notification
+					.title-notification
+						h5 Thông báo
+						p Web4gsolutions xin thông báo
+					.content-notification
+						p Bạn có chắc chắn xóa ?
+					.list-button
+						.item
+							button.btn-custom.cancel(data-fancybox-close) Hủy
+						.item
+							button.btn-custom.submit.submit-delete(data-url="#") Chấp nhận

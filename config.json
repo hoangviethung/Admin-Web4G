@@ -2,17 +2,22 @@
 	"build": true,
 	"filePath": [],
 	"vendor": {
+
 		"font": [
 			"src/fonts/**"
 		],
+
+		"css": [
+			"bower_components/dropzone/dist/dropzone.css",
+			"bower_components/bootstrap/dist/css/bootstrap.css",
+			"bower_components/fancybox/dist/jquery.fancybox.css"
+		],
+
 		"js": [
 			"bower_components/jquery/dist/jquery.js",
 			"bower_components/dropzone/dist/dropzone.js",
+			"bower_components/fancybox/dist/jquery.fancybox.min.js",
 			"bower_components/bootstrap/dist/js/bootstrap.bundle.js"
-		],
-		"css": [
-			"bower_components/bootstrap/dist/css/bootstrap.css",
-			"bower_components/dropzone/dist/dropzone.css"
 		]
 	}
 }

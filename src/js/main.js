@@ -62,18 +62,34 @@ Date.prototype.toDateInputValue = (function() {
 // AJAX BUTTON DELETE
 function ajaxAction() {
 	// BUTTON POPUP
-	$('.btn-popup').on('click', function() {
-		const url = $(this).attr('data-url');
-		const productID = $(this).attr('dataID');
+	var itemId;
 
-		$.ajax({
-			type: "POST",
-			url: url,
-			data: {
-				productID: productID,
-			},
+	$('.btn-popup[fancybox="popup_notification"]').on('click', function() {
+		itemId = $(this).attr('dataiD');
+
+		$.fancybox.open({
+			src: '#popup_notification',
+			type: 'inline',
+			opts: {
+				hash: false,
+				closeExisting: true,
+			}
 		});
 	});
+
+	$('.btn-popup[fancybox="popup_form"]').on('click', function() {
+		itemId = $(this).attr('dataiD');
+
+		$.fancybox.open({
+			src: '#popup_form',
+			type: 'inline',
+			opts: {
+				hash: false,
+				closeExisting: true,
+			}
+		});
+	});
+
 	// SUBMIT DELETE
 	$('.submit-delete').on('click', function() {
 		const url = $(this).attr('data-url');
@@ -81,13 +97,21 @@ function ajaxAction() {
 			type: "POST",
 			url: url,
 			data: {
-				code: 200,
+				itemId: itemId,
 			},
 			error: function(response) {
-				location.reload();
-			}
+				$.fancybox.close({
+					src: '#popup_notification',
+					type: 'inline',
+					opts: {
+						hash: false,
+						closeExisting: true,
+					}
+				});
+			},
 		});
 	});
+
 	// SUBMIT CHANGE PASSWORD
 	$('.submit-change-pass').on('click', function() {
 		const url = $(this).attr('data-url');
@@ -98,15 +122,18 @@ function ajaxAction() {
 			type: "POST",
 			url: url,
 			data: {
+				itemId: itemId,
 				oldpass: oldpass,
 				newpass: newpass,
 				re_newpass: re_newpass,
 			},
 			error: function(response) {
-				location.reload();
-			}
+				// location.reload();
+			},
+			success: function(data) {}
 		});
 	});
+
 	// SUBMIT CHANGE
 	$('.submit-change-setting').on('click', function() {
 		const url = $(this).attr('data-url');
