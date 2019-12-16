@@ -50,24 +50,24 @@
 							td
 								.list-item.center
 									// SỬA
-									a.btn-custom-icon.item(href="create-post.html")
+									a.btn-custom-icon.item(href="create-user.html")
 										.icon(data-toggle="tooltip" data-placement="bottom" title="Sửa")
 											img.svg(src="./assets/images/icons/edit.svg", alt="", srcset="")
 									// THAY ĐỔI MẬT KHẨU
-									button.btn-popup.btn-custom-icon.item(fancybox="popup_form" dataID="item-"+i)
+									button.btn-popup.btn-custom-icon.item(fancybox="fancybox-form-submit" dataID="item-"+i)
 										.icon(data-toggle="tooltip" data-placement="bottom" title="Đổi mật khẩu")
 											img.svg(src="./assets/images/icons/user-setting.svg", alt="", srcset="")
 									// XÓA
-									button.btn-popup.btn-custom-icon.item(fancybox="popup_notification" dataId="item-"+i)
+									button.btn-popup.btn-custom-icon.item(fancybox="fancybox-notification" dataId="item-"+i)
 										.icon(data-toggle="tooltip" data-placement="bottom" title="Xóa")
 											img.svg(src="./assets/images/icons/delete.svg", alt="", srcset="")
 			// BOX HIỆN LÊN CÂU HỎI
 			.d-none
-				.popup-notification.fancybox-content#popup_notification
-					.title-notification
+				.modal-dialog.fancybox-content#fancybox-notification
+					.title-modal
 						h5 Thông báo
 						p Web4gsolutions xin thông báo
-					.content-notification
+					.content-modal
 						p Bạn có chắc chắn xóa ?
 					.list-button
 						.item
@@ -76,11 +76,11 @@
 							button.btn-custom.submit.submit-delete(data-url="#") Chấp nhận
 			// BOX FORM HIỆN LÊN
 			.d-none
-				.popup-notification.fancybox-content#popup_form
-					.title-notification
+				.modal-dialog.fancybox-content#fancybox-form-submit
+					.title-modal
 						h5 Thay đổi mật khẩu
 						p Web4gsolutions xin thông báo
-					.content-notification
+					.content-modal
 						form(action="#" method="method")
 							.form-group.row
 								label.col-sm-5.col-form-label(for='staticEmail') Tài khoản

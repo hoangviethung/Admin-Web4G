@@ -63,12 +63,12 @@ Date.prototype.toDateInputValue = (function() {
 function ajaxAction() {
 	// BUTTON POPUP
 	var itemId;
-
-	$('.btn-popup[fancybox="popup_notification"]').on('click', function() {
+	// POPUP THÔNG BÁO
+	$('.btn-popup[fancybox=fancybox-notification]').on('click', function() {
 		itemId = $(this).attr('dataiD');
 
 		$.fancybox.open({
-			src: '#popup_notification',
+			src: '#fancybox-notification',
 			type: 'inline',
 			opts: {
 				hash: false,
@@ -77,11 +77,12 @@ function ajaxAction() {
 		});
 	});
 
-	$('.btn-popup[fancybox="popup_form"]').on('click', function() {
+	// PUP FORM
+	$('.btn-popup[fancybox="fancybox-form-submit"]').on('click', function() {
 		itemId = $(this).attr('dataiD');
 
 		$.fancybox.open({
-			src: '#popup_form',
+			src: '#fancybox-form-submit',
 			type: 'inline',
 			opts: {
 				hash: false,
@@ -99,7 +100,7 @@ function ajaxAction() {
 			data: {
 				itemId: itemId,
 			},
-			error: function(response) {
+			error: function(res) {
 				$.fancybox.close({
 					src: '#popup_notification',
 					type: 'inline',

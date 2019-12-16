@@ -46,13 +46,14 @@ button {
 	opacity: 0 !important;
 }
 
-.popup-notification {
+// MODEL POPUP
+.modal-dialog {
 	max-width    : 500px;
 	width        : 100%;
 	border-radius: 10px;
 	padding      : 40px 0;
 
-	.title-notification {
+	.title-modal {
 		padding      : 0 40px;
 		margin-bottom: 10px;
 
@@ -66,7 +67,7 @@ button {
 		}
 	}
 
-	.content-notification {
+	.content-modal {
 		padding: 20px 40px;
 		border : 1px solid #dedede;
 	}
@@ -105,6 +106,7 @@ button {
 }
 
 .btn-custom {
+	cursor        : pointer;
 	border        : none;
 	box-shadow    : none;
 	color         : #ffffff;
@@ -122,7 +124,8 @@ button {
 
 		&.submit,
 		&.cancel {
-			color: #ffffff;
+			color     : #ffffff;
+			background: red;
 		}
 	}
 
