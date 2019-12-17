@@ -8,7 +8,7 @@
 					h3 Tài khoản quản trị
 					p Tại đây các quản trị viên có thể quản lý được toàn bộ tài khoản quản trị với các chức năng cơ bản: thêm, xóa, sửa.
 			.page-title-actions
-				a(href="create-user.html").btn.btn-success Thêm mới
+				a(href="create-user.html").btn-custom.submit Thêm mới
 	.row
 		.seach.col-lg-4
 			form(action="#" method="method")
@@ -45,7 +45,7 @@
 							td.text-center
 								.input-custom
 									label._checkbox-custom
-										input.custom-control-input(type='checkbox' readonly)
+										input.custom-control-input(type='checkbox' checked="checked" onclick="return false")
 										span.custom-control-indicator
 							td
 								.list-item.center
@@ -63,7 +63,7 @@
 											img.svg(src="./assets/images/icons/delete.svg", alt="", srcset="")
 			// BOX HIỆN LÊN CÂU HỎI
 			.d-none
-				.modal-dialog.fancybox-content#fancybox-notification
+				.modal-POPUP.fancybox-content#fancybox-notification
 					.title-modal
 						h5 Thông báo
 						p Web4gsolutions xin thông báo
@@ -76,7 +76,7 @@
 							button.btn-custom.submit.submit-delete(data-url="#") Chấp nhận
 			// BOX FORM HIỆN LÊN
 			.d-none
-				.modal-dialog.fancybox-content#fancybox-form-submit
+				.modal-POPUP.fancybox-content#fancybox-form-submit
 					.title-modal
 						h5 Thay đổi mật khẩu
 						p Web4gsolutions xin thông báo

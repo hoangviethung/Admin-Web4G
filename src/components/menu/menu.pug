@@ -8,7 +8,7 @@
 					h3 Quản lý các loại Menu
 					p Tại đây các quản trị viên có thể quản lý các danh mục menu với các chức năng cơ bản: thêm, xóa, sửa.
 			.page-title-actions
-				a(href="create-menu.html").btn.btn-success Thêm mới
+				a(href="create-menu.html").btn-custom.submit Thêm mới
 	.row
 		.seach.col-lg-4
 			form(action="#" method="method")
@@ -65,16 +65,16 @@
 										.icon(data-toggle="tooltip" data-placement="bottom" title="Sửa")
 											img.svg(src="./assets/images/icons/edit.svg", alt="", srcset="")
 									// XÓA
-									button.btn-popup.btn-custom-icon.item(fancybox="popup_notification" dataId="item-"+i)
+									button.btn-popup.btn-custom-icon.item(fancybox="fancybox-notification" dataId="item-"+i)
 										.icon(data-toggle="tooltip" data-placement="bottom" title="Xóa")
 											img.svg(src="./assets/images/icons/delete.svg", alt="", srcset="")
 			// BOX HIỆN LÊN CÂU HỎI
 			.d-none
-				.popup-notification.fancybox-content#popup_notification
-					.title-notification
+				.modal-POPUP.fancybox-content#fancybox-notification
+					.title-modal
 						h5 Thông báo
 						p Web4gsolutions xin thông báo
-					.content-notification
+					.content-modal
 						p Bạn có chắc chắn xóa ?
 					.list-button
 						.item

@@ -9,3 +9,37 @@
 					p Tại đây các quản trị viên có thể thêm tài khoản mới cho quản trị viên khác và chọn bộ quyền phù hợp với từng nhóm quản trị viên.
 			.page-title-actions
 	.row
+		.block-main.shadow-sm.col-lg-12
+			.block-form
+				form(action="#" method="method")
+					.form-row
+						.form-group.col-lg-3
+							label Tên tài khoản *
+							.input-group.shadow-sm
+								input.form-control(placeholder="Nhập tên tài khoản")
+					.form-row
+						.form-group.col-lg-3
+							label Email *
+							.input-group.shadow-sm
+								input.form-control(placeholder="Nhập địa chỉ email")
+					.form-row
+						.form-group.col-lg-3
+							label Mật khẩu *
+							.input-group.shadow-sm
+								input.form-control(type='text' placeholder="Nhập mật khẩu")
+					.form-row
+						.form-group.col-lg-3
+							label Nhập lại mật khẩu
+							.input-group.shadow-sm
+								input.form-control(type='text' placeholder="Nhập lập mật khẩu")
+					.form-row
+						.form-group.col-lg-3
+							.input-custom.d-flex.align-items-center
+								h5 Kích hoạt *
+								label._checkbox-custom.mb-0
+									input.custom-control-input(type='checkbox')
+									span.custom-control-indicator
+					.form-row
+						.form-group.col-lg-3
+							a(href="#").btn-custom.cancel Hủy
+							button.btn-custom.submit Thêm

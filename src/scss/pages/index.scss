@@ -606,6 +606,10 @@
 			input {
 				font-size: 14px;
 			}
+
+			textarea {
+				font-size: 14px;
+			}
 		}
 
 		.ck-editor__editable {
@@ -641,7 +645,7 @@
 	}
 }
 
-.create-post {
+.block-main {
 	background   : #ffffff;
 	border-radius: 5px;
 	padding      : 30px 15px;

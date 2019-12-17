@@ -8,11 +8,35 @@
 					h3 Thêm Menu
 					p Tại đây các quản trị viên có thể thêm các menu ở đây.
 			.page-title-actions
-	.block-form
-		.form-row
-			.col-lg-3.form-group
-				label Ngôn ngữ
-				select.form-control.shadow-sm
-					option Vietnamese
-					option English
-					option Chinese
+	.row
+		.block-main.shadow-sm.col-lg-12
+			.block-form
+				form(action="#" method="method")
+					.form-row
+						.form-group.col-lg-4
+							label Ngôn ngữ
+							.input-group.shadow-sm
+								select.form-control
+									option Vietnamese
+									option English
+									option Chinese
+						.form-group.col-lg-4
+							label Menu
+							.input-group.shadow-sm
+								select.form-control
+									option Main Menu
+									option Right Menu
+									option Footer Menu
+									option Danh mục cha
+						.form-group.col-lg-4
+							label Danh mục cha
+							.input-group.shadow-sm
+								select.form-control
+									option Vietnamese
+									option English
+									option Chinese
+					.form-row
+						.form-group.col-lg-3
+							.input-group.shadow-sm
+							label Vị trí
+							.input-group.shadow-sm

@@ -293,7 +293,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	uploadFile();
 	setDateDefault();
 	// TAB
-	const TABcreatePost = new Tab(".create-post .tab-container");
+	const blockMainTab = new Tab(".block-main .tab-container");
 	// SVG CONTROL
 	SVG();
 	// HEADER

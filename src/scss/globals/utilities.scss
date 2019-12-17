@@ -47,7 +47,7 @@ button {
 }
 
 // MODEL POPUP
-.modal-dialog {
+.modal-POPUP {
 	max-width    : 500px;
 	width        : 100%;
 	border-radius: 10px;
@@ -121,12 +121,6 @@ button {
 	&:hover {
 		color          : #ffffff;
 		text-decoration: none;
-
-		&.submit,
-		&.cancel {
-			color     : #ffffff;
-			background: red;
-		}
 	}
 
 	&.cancel {
