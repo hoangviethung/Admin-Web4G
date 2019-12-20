@@ -103,6 +103,7 @@ function ajaxAction() {
 			url: url,
 			data: data,
 			error: function(res) {
+				let resCode = 200;
 				$.fancybox.close({
 					src: '#popup_notification',
 					type: 'inline',
@@ -111,9 +112,14 @@ function ajaxAction() {
 						closeExisting: true,
 					}
 				});
+				// if (resCode === 200) {
+				// 	location.reload();
+				// }
 			},
-			success: function(data) {
-				location.reload();
+			success: function(res) {
+				if (res.Code === 200) {
+					location.reload();
+				}
 			}
 		});
 	});
@@ -134,8 +140,10 @@ function ajaxAction() {
 			url: url,
 			data: data,
 			error: function(response) {},
-			success: function(data) {
-				location.reload();
+			success: function(res) {
+				if (res.Code === 200) {
+					location.reload();
+				}
 			}
 		});
 	});
@@ -151,8 +159,10 @@ function ajaxAction() {
 			type: "POST",
 			url: url,
 			data: data,
-			success: function(data) {
-				location.reload();
+			success: function(res) {
+				if (res.Code === 200) {
+					location.reload();
+				}
 			}
 		});
 	});
