@@ -112,6 +112,9 @@ function ajaxAction() {
 					}
 				});
 			},
+			success: function(data) {
+				location.reload();
+			}
 		});
 	});
 
