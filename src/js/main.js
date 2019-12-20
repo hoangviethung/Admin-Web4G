@@ -130,9 +130,7 @@ function ajaxAction() {
 			type: "POST",
 			url: url,
 			data: data,
-			error: function(response) {
-
-			},
+			error: function(response) {},
 			success: function(data) {
 				location.reload();
 			}
@@ -143,13 +141,14 @@ function ajaxAction() {
 	$('.submit-change-setting').on('click', function() {
 		const url = $(this).attr('data-url');
 		const settingChange = $('#settingChange').val();
+		const data = {};
+		data[dataFieldName] = itemId;
+		data['settingChange'] = settingChange;
 		$.ajax({
 			type: "POST",
 			url: url,
-			data: {
-				settingChange: settingChange,
-			},
-			error: function(response) {
+			data: data,
+			success: function(data) {
 				location.reload();
 			}
 		});

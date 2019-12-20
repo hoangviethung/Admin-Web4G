@@ -25,28 +25,29 @@
 							td
 								.list-item.center
 									// SỬA
-									button.btn-popup.btn-custom-icon.item(data-url="#", dataID="item-"+i, data-toggle='modal', data-target='#popup_form')
-										.icon(data-toggle="tooltip" data-placement="bottom" title="Sửa")
-											img.svg(src="./assets/images/icons/edit.svg", alt="", srcset="")
-			// BOX HIỆN LÊN FORM
-			#popup_form.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalCenterTitle', aria-hidden='true')
-				.modal-dialog.modal-dialog-centered(role='document')
-					.modal-content
-						.modal-header
-							h5.modal-title Thay đổi giá trị
-							button.close(type='button', data-dismiss='modal', aria-label='Close')
-								span(aria-hidden='true') ×
-						.modal-body
-							form(action="#" method="method")
-								.form-group.row
-									label.col-sm-5.col-form-label(for='staticEmail') Từ khóa
-									.col-sm-7
-										input#staticEmail.form-control-plaintext(type='text', readonly='', value='SmtpServer')
-								.form-group.row
-									label.col-sm-5.col-form-label Giá trị
-									.col-sm-7
-										.input-group.input-group-sm
-											input#settingChange.form-control(type='text')
-						.modal-footer
-							button.btn.btn-danger.btn-sm(type='button', data-dismiss='modal') Hủy
-							button.submit-change-setting.btn.btn-success.btn-sm(data-url="#") Cập nhật
+									button.btn-popup.btn-custom-icon.item(fancybox="fancybox-form-submit" dataFieldName="itemID" dataID="item-"+i)
+										.icon(data-toggle="tooltip" data-placement="bottom" title="Đổi mật khẩu")
+											img.svg(src="./assets/images/icons/user-setting.svg", alt="", srcset="")
+				// BOX FORM HIỆN LÊN
+			.d-none
+				.modal-POPUP.fancybox-content#fancybox-form-submit
+					.title-modal
+						h5 Chỉnh sửa cài đặt
+						p Web4gsolutions xin thông báo
+					.content-modal
+						form(action="#" method="method")
+							.form-group.row
+								label.col-sm-5.col-form-label Từ khóa
+								.col-sm-7
+									.input-group.input-group-sm
+										input.form-control-plaintext(type='text', readonly='', value='SmtpServer')
+							.form-group.row
+								label.col-sm-5.col-form-label Giá trị
+								.col-sm-7
+									.input-group.input-group-sm
+										input#settingChange.form-control(type='text')
+					.list-button
+						.item
+							button.btn-custom.cancel(data-fancybox-close) Hủy
+						.item
+							button.btn-custom.submit.submit-change-setting(data-url="#") Cập nhật
