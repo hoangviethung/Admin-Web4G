@@ -68,6 +68,7 @@ function ajaxAction() {
 	$('.btn-popup[fancybox=fancybox-notification]').on('click', function() {
 		itemId = $(this).attr('dataiD');
 		dataFieldName = $(this).attr('dataFieldName');
+
 		$.fancybox.open({
 			src: '#fancybox-notification',
 			type: 'inline',
@@ -81,7 +82,7 @@ function ajaxAction() {
 	// PUP FORM
 	$('.btn-popup[fancybox="fancybox-form-submit"]').on('click', function() {
 		itemId = $(this).attr('dataiD');
-
+		dataFieldName = $(this).attr('dataFieldName');
 		$.fancybox.open({
 			src: '#fancybox-form-submit',
 			type: 'inline',
@@ -122,17 +123,19 @@ function ajaxAction() {
 		const re_newpass = $('#re_newpass').val();
 		const data = {};
 		data[dataFieldName] = itemId;
-		data[oldpass] = oldpass;
-		data[newpass] = newpass;
-		data[re_newpass] = re_newpass;
+		data['oldpass'] = oldpass;
+		data['newpass'] = newpass;
+		data['re_newpass'] = re_newpass;
 		$.ajax({
 			type: "POST",
 			url: url,
 			data: data,
 			error: function(response) {
-				// location.reload();
+
 			},
-			success: function(data) {}
+			success: function(data) {
+				location.reload();
+			}
 		});
 	});
 
