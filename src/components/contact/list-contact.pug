@@ -1,0 +1,49 @@
+.main__inner
+	.page-title
+		.page-title-wrapper
+			.page-title-heading
+				.page-title-icon
+					img.svg(src="./assets/images/icons/mail.svg", alt="", srcset="")
+				.page-title-content
+					h3 Danh sách người liên hệ
+					p Tại đây các quản trị viên có thể quản lý thông tin người liên hệ với website với các chức năng cơ bản: xem chi tiết, xóa.
+	.row
+		.block-table.col-lg-12.mt-4
+			table.table.table-bordered.m-0
+				thead
+					tr
+						th #
+						th Tên
+						th Địa chỉ Email
+						th.text-center Thời gian liên hệ
+						th.text-center Tác vụ
+				tbody
+					-for(i=1;i<5;i++)
+						tr
+							td #{i}
+							td Vũ Hoàng Sơn
+							td hoangviet.hung.009@gmail.com
+							td.text-center 20/12/2019 14:35
+							td
+								.list-item.center
+									// XEM CHI TIẾT
+									a.btn-custom-icon.item(href="contact-detail.html")
+										.icon(data-toggle="tooltip" data-placement="bottom" title="Xem chi tiết")
+											img.svg(src="./assets/images/icons/eye.svg", alt="", srcset="")
+									// XÓA
+									button.btn-popup.btn-custom-icon.item(fancybox="fancybox-notification" dataId="item-"+i)
+										.icon(data-toggle="tooltip" data-placement="bottom" title="Xóa")
+											img.svg(src="./assets/images/icons/delete.svg", alt="", srcset="")
+			// BOX HIỆN LÊN CÂU HỎI
+			.d-none
+				.modal-POPUP.fancybox-content#fancybox-notification
+					.title-modal
+						h5 Thông báo
+						p Web4gsolutions xin thông báo
+					.content-modal
+						p Bạn có chắc chắn xóa ?
+					.list-button
+						.item
+							button.btn-custom.cancel(data-fancybox-close) Hủy
+						.item
+							button.btn-custom.submit.submit-delete(data-url="#") Chấp nhận

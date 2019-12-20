@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Admin | Danh sách mã giảm giá</title>
+		<title>Admin | Danh liên hệ</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -192,13 +192,113 @@
 				<div class="page-title">
 					<div class="page-title-wrapper">
 						<div class="page-title-heading">
-							<div class="page-title-icon"><img class="svg" src="./assets/images/icons/ecommerce.svg" alt="" srcset=""></div>
+							<div class="page-title-icon"><img class="svg" src="./assets/images/icons/mail.svg" alt="" srcset=""></div>
 							<div class="page-title-content">
-								<h3>Danh sách các mã giảm giá</h3>
-								<p>Tại đây các quản trị viên có thể quản lý các mã giảm giá với bằng các chức năng cơ bảng: thêm, xóa, sửa.</p>
+								<h3>Danh sách người liên hệ</h3>
+								<p>Tại đây các quản trị viên có thể quản lý thông tin người liên hệ với website với các chức năng cơ bản: xem chi tiết, xóa.</p>
 							</div>
 						</div>
-						<div class="page-title-actions"><a class="btn btn-success" href="create-sale.html">Thêm mới</a></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="block-table col-lg-12 mt-4">
+						<table class="table table-bordered m-0">
+							<thead>
+								<tr>
+									<th>#</th>
+									<th>Tên</th>
+									<th>Địa chỉ Email</th>
+									<th class="text-center">Thời gian liên hệ</th>
+									<th class="text-center">Tác vụ</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>Vũ Hoàng Sơn</td>
+									<td>hoangviet.hung.009@gmail.com</td>
+									<td class="text-center">20/12/2019 14:35</td>
+									<td>
+										<div class="list-item center">
+											<!-- XEM CHI TIẾT--><a class="btn-custom-icon item" href="contact-detail.html">
+												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Xem chi tiết"><img class="svg" src="./assets/images/icons/eye.svg" alt="" srcset=""></div></a>
+											<!-- XÓA-->
+											<button class="btn-popup btn-custom-icon item" fancybox="fancybox-notification" dataId="item-1">
+												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Xóa"><img class="svg" src="./assets/images/icons/delete.svg" alt="" srcset=""></div>
+											</button>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td>Vũ Hoàng Sơn</td>
+									<td>hoangviet.hung.009@gmail.com</td>
+									<td class="text-center">20/12/2019 14:35</td>
+									<td>
+										<div class="list-item center">
+											<!-- XEM CHI TIẾT--><a class="btn-custom-icon item" href="contact-detail.html">
+												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Xem chi tiết"><img class="svg" src="./assets/images/icons/eye.svg" alt="" srcset=""></div></a>
+											<!-- XÓA-->
+											<button class="btn-popup btn-custom-icon item" fancybox="fancybox-notification" dataId="item-2">
+												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Xóa"><img class="svg" src="./assets/images/icons/delete.svg" alt="" srcset=""></div>
+											</button>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td>Vũ Hoàng Sơn</td>
+									<td>hoangviet.hung.009@gmail.com</td>
+									<td class="text-center">20/12/2019 14:35</td>
+									<td>
+										<div class="list-item center">
+											<!-- XEM CHI TIẾT--><a class="btn-custom-icon item" href="contact-detail.html">
+												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Xem chi tiết"><img class="svg" src="./assets/images/icons/eye.svg" alt="" srcset=""></div></a>
+											<!-- XÓA-->
+											<button class="btn-popup btn-custom-icon item" fancybox="fancybox-notification" dataId="item-3">
+												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Xóa"><img class="svg" src="./assets/images/icons/delete.svg" alt="" srcset=""></div>
+											</button>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>4</td>
+									<td>Vũ Hoàng Sơn</td>
+									<td>hoangviet.hung.009@gmail.com</td>
+									<td class="text-center">20/12/2019 14:35</td>
+									<td>
+										<div class="list-item center">
+											<!-- XEM CHI TIẾT--><a class="btn-custom-icon item" href="contact-detail.html">
+												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Xem chi tiết"><img class="svg" src="./assets/images/icons/eye.svg" alt="" srcset=""></div></a>
+											<!-- XÓA-->
+											<button class="btn-popup btn-custom-icon item" fancybox="fancybox-notification" dataId="item-4">
+												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Xóa"><img class="svg" src="./assets/images/icons/delete.svg" alt="" srcset=""></div>
+											</button>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- BOX HIỆN LÊN CÂU HỎI-->
+						<div class="d-none">
+							<div class="modal-POPUP fancybox-content" id="fancybox-notification">
+								<div class="title-modal">
+									<h5>Thông báo</h5>
+									<p>Web4gsolutions xin thông báo</p>
+								</div>
+								<div class="content-modal">
+									<p>Bạn có chắc chắn xóa ?</p>
+								</div>
+								<div class="list-button">
+									<div class="item">
+										<button class="btn-custom cancel" data-fancybox-close>Hủy</button>
+									</div>
+									<div class="item">
+										<button class="btn-custom submit submit-delete" data-url="#">Chấp nhận</button>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
