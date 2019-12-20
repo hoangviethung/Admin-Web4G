@@ -63,10 +63,11 @@ Date.prototype.toDateInputValue = (function() {
 function ajaxAction() {
 	// BUTTON POPUP
 	var itemId;
+	var dataFieldName;
 	// POPUP THÔNG BÁO
 	$('.btn-popup[fancybox=fancybox-notification]').on('click', function() {
 		itemId = $(this).attr('dataiD');
-
+		dataFieldName = $(this).attr('dataFieldName');
 		$.fancybox.open({
 			src: '#fancybox-notification',
 			type: 'inline',
@@ -94,12 +95,12 @@ function ajaxAction() {
 	// SUBMIT DELETE
 	$('.submit-delete').on('click', function() {
 		const url = $(this).attr('data-url');
+		const data = {};
+		data[dataFieldName] = itemId;
 		$.ajax({
 			type: "POST",
 			url: url,
-			data: {
-				itemId: itemId,
-			},
+			data: data,
 			error: function(res) {
 				$.fancybox.close({
 					src: '#popup_notification',
@@ -119,15 +120,15 @@ function ajaxAction() {
 		const oldpass = $('#oldpass').val();
 		const newpass = $('#newpass').val();
 		const re_newpass = $('#re_newpass').val();
+		const data = {};
+		data[dataFieldName] = itemId;
+		data[oldpass] = oldpass;
+		data[newpass] = newpass;
+		data[re_newpass] = re_newpass;
 		$.ajax({
 			type: "POST",
 			url: url,
-			data: {
-				itemId: itemId,
-				oldpass: oldpass,
-				newpass: newpass,
-				re_newpass: re_newpass,
-			},
+			data: data,
 			error: function(response) {
 				// location.reload();
 			},
