@@ -22,3 +22,51 @@
 							label Mô tả
 							.input-group
 								textarea.form-control(rows='3' placeholder="Nhập mô tả về bộ quyền")
+					.form-row
+						.form-group.col-lg-3
+							a(href="/").btn-custom.cancel Hủy
+							button.btn-custom.submit Thêm
+			.block-table
+				table.table.table-bordered.m-0
+					thead
+						tr
+							th #
+							th Tên tài khoản
+							th Số điện thoại
+							th Email
+							th Thuộc bộ quyền
+							th Ngày tạo
+							th.text-center Trạng thái
+							th.text-center Tác vụ
+					tbody
+						-for(i=1;i<5;i++)
+							tr
+								td #{i}
+								td Administrator
+								td 0969912404
+								td y.tran@web4gsolutions.com
+								td
+									.list-item
+										.item.badge.badge-primary.p-2 Admin
+										.item.badge.badge-primary.p-2 Mod
+										.item.badge.badge-primary.p-2 Guest
+								td 12/11/2019 14:50
+								td.text-center
+									.input-custom
+										label._checkbox-custom
+											input.custom-control-input(type='checkbox' checked="checked" onclick="return false")
+											span.custom-control-indicator
+								td
+									.list-item.center
+										// SỬA
+										a.btn-custom-icon.item(href="create-user.html")
+											.icon(data-toggle="tooltip" data-placement="bottom" title="Sửa")
+												img.svg(src="./assets/images/icons/edit.svg", alt="", srcset="")
+										// THAY ĐỔI MẬT KHẨU
+										button.btn-popup.btn-custom-icon.item(fancybox="fancybox-form-submit" dataFieldName="userID" dataID="item-"+i)
+											.icon(data-toggle="tooltip" data-placement="bottom" title="Đổi mật khẩu")
+												img.svg(src="./assets/images/icons/user-setting.svg", alt="", srcset="")
+										// XÓA
+										button.btn-popup.btn-custom-icon.item(fancybox="fancybox-notification" dataFieldName="userID" dataId="item-"+i)
+											.icon(data-toggle="tooltip" data-placement="bottom" title="Xóa")
+												img.svg(src="./assets/images/icons/delete.svg", alt="", srcset="")
