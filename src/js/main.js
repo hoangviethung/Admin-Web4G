@@ -306,6 +306,13 @@ function setDateDefault() {
 	$($('input[type=date]')).attr('min', today)
 }
 
+function checkboxAllRow() {
+	$('.table-multiple-checkbox')
+	$('.checkAllRow').on('click', function() {
+		
+	})
+}
+
 // CHẠY KHI DOCUMENT SẴN SÀNG
 document.addEventListener('DOMContentLoaded', () => {
 	$('[data-toggle="tooltip"]').tooltip();
@@ -326,6 +333,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	toogleAsideMenu();
 	// AJAX
 	ajaxAction()
+	// CHECK ALL ROW
+	checkboxAllRow();
 });
 
 // CHẠY KHI WINDOWN SCROLL
