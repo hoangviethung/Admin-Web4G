@@ -201,7 +201,7 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="create-post shadow-sm col-lg-12">
+					<div class="block-main shadow-sm col-lg-12">
 						<div class="tab-container">
 							<ul class="list-tab">
 								<li class="item acitve" toggle-for="item-1">Nội dung bài viết</li>
@@ -258,6 +258,8 @@
 														</select>
 													</div>
 												</div>
+											</div>
+											<div class="form-row">
 												<div class="form-group col-lg-12">
 													<div class="input-custom d-flex align-items-end">
 														<h5>Hiển thị</h5>
@@ -266,13 +268,16 @@
 														</label>
 													</div>
 												</div>
-												<div class="form-group col-lg-12">
+												<div class="form-group col-lg-6">
 													<label>Mô tả</label>
-													<textarea class="form-control" rows="3"></textarea>
+													<div class="input-group shadow-sm">
+														<textarea class="form-control" rows="5"></textarea>
+													</div>
 												</div>
-												<div class="form-group col-lg-1"><a class="btn btn-danger w-100 shadow" href="category-product.html">Hủy bỏ</a></div>
-												<div class="form-group col-lg-1">
-													<button class="btn btn-success w-100 shadow">Thêm</button>
+											</div>
+											<div class="form-row">
+												<div class="form-group col-lg-2"><a class="btn-custom cancel" href="/">Hủy</a>
+													<button class="btn-custom submit">Thêm</button>
 												</div>
 											</div>
 										</div>
@@ -421,7 +426,6 @@
 		</main>
 		<script type="text/javascript" src="./js/core.min.js"></script>
 		<script type="text/javascript" src="./js/main.min.js"></script>
-		<script src="https://cdn.ckeditor.com/ckeditor5/11.2.0/classic/ckeditor.js"></script>
 		<script src="./js/drop-zone.min.js"></script>
 		<script>
 			ClassicEditor

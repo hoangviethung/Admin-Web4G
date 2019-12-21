@@ -5,5 +5,121 @@
 				.page-title-icon
 					img.svg(src="./assets/images/icons/ecommerce.svg", alt="", srcset="")
 				.page-title-content
-					h3 Chi tiết đơn hàng
+					h3 Quản lý đơn hàng
 					p Tại đây các quản trị viên có thể xem chi tiết đơn hàng.
+	.row
+		.block-main.shadow-sm.col-lg-12
+			//- THÔNG TIN CHUNG CỦA ĐƠN HÀNG
+			.block-form
+				.form-row
+					.form-group.col-lg-3
+						label Mã đơn hàng
+						.input-group.shadow-sm
+							input.form-control(value="121910023" readonly)
+					.form-group.col-lg-3
+						label Tên người nhận hàng
+						.input-group.shadow-sm
+							input.form-control(value="Vũ Hoàng Sơn" readonly)
+					.form-group.col-lg-3
+						label Thời gian đặt hàng
+						.input-group.shadow-sm
+							input.form-control(value="12/13/2019 9:56:41 AM" readonly)
+				.form-row
+					.form-group.col-lg-3
+						label Tình trạng đơn hàng
+						.input-group.shadow-sm
+							input.form-control(value="Sẵn sàng giao hàng" readonly)
+					.form-group.col-lg-3
+						label Số điện thoại nhận hàng
+						.input-group.shadow-sm
+							input.form-control(value="0987654321" readonly)
+					.form-group.col-lg-3
+						label Thời gian xử lý đơn hàng gần nhất
+						.input-group.shadow-sm
+							input.form-control(value="12/13/2019 9:56:41 AM" readonly)
+				.form-row
+					.form-group.col-lg-3
+						label Phương thức thanh toán
+						.input-group.shadow-sm
+							input.form-control(value="Thanh toán trực tuyến" readonly)
+					.form-group.col-lg-3
+						label Địa chỉ nhận hàng
+						.input-group.shadow-sm
+							input.form-control(value="549/29 Nguyễn Đình Chiểu" readonly)
+				.form-row
+					.form-group.col-lg-3
+						label Tình trạng thanh toán
+						.input-group.shadow-sm
+							input.form-control(value="Đã thanh toán" readonly)
+					.form-group.col-lg-3
+						label Số điện thoại người tạo
+						.input-group.shadow-sm
+							input.form-control(value="0987654321" readonly)
+				.form-row
+					.form-group.col-lg-6
+						label Ghi chú đơn hàng
+						.input-group.shadow-sm
+							textarea.form-control(rows='5' readonly) Chỉ giảo hàng buổi sáng không giao hàng buổi tối
+			//- THÔNG TIN CHI TIẾT ĐƠN HÀNG
+			.block-table
+				table.table.table-bordered.m-0
+					thead
+						tr
+							th #
+							th Tên sản phẩm
+							th Mã sản phẩm
+							th Đơn giá
+							th Số lượng
+							th Thành tiền
+							th Ghi chú
+					tbody
+						tr
+							td 1
+							td Yamaha WXC-50
+							td WXC-50
+							td 7,490,000
+							td 1
+							td 7,490,000
+							td
+						tr
+							td(colspan=3).left
+								.list-item
+									p.item Mã giảm giá:
+									p.item Bạn của Hùng
+							td(colspan=2).left
+								.list-item
+									p.item Số tiền được giảm:
+									p.item 10,000,0000
+							td 10,000,0000
+							td
+						tr
+							td.left(colspan=5) Phí vận chuyển (Thứ hai, 01/01/0001):
+							td 225,501
+							td
+						tr
+							td.left.bold(colspan=5).bold Tổng hóa đơn:
+							td.bold 7,490,000
+							td
+			//- CẬP NHẬT ĐƠN HÀNG
+			.block-form.mt-5
+				form(action="/" method="method")
+					.form-row
+						.form-group.col-lg-3
+							label Trạng thái đơn hàng
+							.input-group.shadow-sm
+								select.form-control
+									ooption Tất cả
+									option Đang chờ xử lý
+									option Đã hủy đơn hàng
+									option Sẵn sàng giao hàng
+									option Đang giao hàng
+									option Đã hoàn thành
+					.form-row
+						.form-group.col-lg-6
+							label Ghi chú đơn hàng
+							.input-group.shadow-sm
+								textarea.form-control(rows='5')
+					.form-row
+						.form-group.col-lg-2
+							a(href="/").btn-custom.cancel Hủy
+							button.btn-custom.submit Thêm

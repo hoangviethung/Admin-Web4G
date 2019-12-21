@@ -525,6 +525,14 @@
 				&:first-child {
 					text-align: center;
 				}
+
+				&.left {
+					text-align: left;
+				}
+
+				&.bold {
+					font-weight: 700;
+				}
 			}
 		}
 	}
@@ -625,8 +633,8 @@
 		height     : 50px;
 
 		label {
-			flex     : 0 0 30%;
-			max-width: 30%;
+			flex     : 0 0 40%;
+			max-width: 40%;
 			font-size: 13px;
 		}
 
@@ -648,11 +656,7 @@
 .block-main {
 	background   : #ffffff;
 	border-radius: 5px;
-	padding      : 30px 15px;
-
-	.block-form {
-		margin-top: 15px;
-	}
+	padding      : 30px;
 }
 
 .login {

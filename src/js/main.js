@@ -61,7 +61,6 @@ Date.prototype.toDateInputValue = (function() {
 
 // AJAX BUTTON DELETE
 function ajaxAction() {
-	// BUTTON POPUP
 	var itemId;
 	var dataFieldName;
 	// POPUP THÔNG BÁO
@@ -112,9 +111,6 @@ function ajaxAction() {
 						closeExisting: true,
 					}
 				});
-				// if (resCode === 200) {
-				// 	location.reload();
-				// }
 			},
 			success: function(res) {
 				if (res.Code === 200) {
@@ -148,7 +144,7 @@ function ajaxAction() {
 		});
 	});
 
-	// SUBMIT CHANGE
+	// SUBMIT CHANGE SETTING
 	$('.submit-change-setting').on('click', function() {
 		const url = $(this).attr('data-url');
 		const settingChange = $('#settingChange').val();
@@ -159,6 +155,16 @@ function ajaxAction() {
 			type: "POST",
 			url: url,
 			data: data,
+			error: function(res) {
+				$.fancybox.close({
+					src: '#fancybox-form-submit',
+					type: 'inline',
+					opts: {
+						hash: false,
+						closeExisting: true,
+					}
+				});
+			},
 			success: function(res) {
 				if (res.Code === 200) {
 					location.reload();

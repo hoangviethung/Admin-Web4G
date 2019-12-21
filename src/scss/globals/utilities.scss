@@ -46,6 +46,67 @@ button {
 	opacity: 0 !important;
 }
 
+.pagination {
+	width          : 100%;
+	display        : flex;
+	justify-content: flex-end;
+	padding        : 30px 15px;
+
+	@media (max-width: 1024.98px) {
+		padding        : 20px 0;
+		justify-content: center;
+	}
+
+	li {
+		margin: 0 10px;
+
+		@media (max-width: 1024.98px) {
+			margin: 0 5px;
+		}
+
+		a {
+			display        : flex;
+			justify-content: center;
+			align-items    : center;
+			height         : 30px;
+			width          : 30px;
+			color          : #000000;
+			border-radius  : 5px;
+			font-weight    : 400;
+			font-size      : 12px;
+			background     : #dddddd;
+			border         : 1px solid #FFFFFF;
+			transition     : all .2s cubic-bezier(.2, .5, .5, .8);
+		}
+
+		&:hover {
+			a {
+				text-decoration: none;
+				color          : #FFFFFF;
+				background     : #000000;
+			}
+		}
+
+		&:last-child {
+			margin: 0 0 0 10px;
+		}
+
+		&.active {
+			a {
+				color          : #FFFFFF;
+				background     : #000000;
+				text-decoration: underline;
+			}
+		}
+
+		&.pagination-dot {
+			a {
+				border: 0;
+			}
+		}
+	}
+}
+
 // MODEL POPUP
 .modal-POPUP {
 	max-width    : 500px;
@@ -68,8 +129,9 @@ button {
 	}
 
 	.content-modal {
-		padding: 20px 40px;
-		border : 1px solid #dedede;
+		padding  : 20px 40px;
+		border   : 1px solid #dedede;
+		font-size: 14px;
 	}
 
 	.list-button {

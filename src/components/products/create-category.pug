@@ -8,7 +8,7 @@
 					h3 Tạo danh mục sản phẩm
 					p Tại đây các quản trị viên có thể tạo các danh mục cho sản phẩm
 	.row
-		.create-post.shadow-sm.col-lg-12
+		.block-main.shadow-sm.col-lg-12
 			.tab-container
 				ul.list-tab
 					li.item(toggle-for="item-1").acitve Nội dung bài viết
@@ -18,52 +18,54 @@
 					form(action="category-product.html" method="method")
 						.content(tab-id="item-1")
 							.block-form
-									.form-row
-										.form-group.col-lg-3
-											label Danh mục cha
-											.input-group.shadow-sm
-												select.form-control
-													option Danh mục gốc
-													option Bộ dàn
-													option Bộ dàn / Bộ dàn hi-end
-										.form-group.col-lg-3
-											label Thứ tự sắp sếp *
-											.input-group.shadow-sm
-												input.form-control(type="number" placeholder="Nhập số thứ tự" min="1")
-										.form-group.col-lg-3
-											label Tên của danh mục *
-											.input-group.shadow-sm
-												input.form-control(placeholder="Nhập tên tiêu đề")
-										.form-group.col-lg-3
-											label Đường dẫn bài viết *
-											.input-group.shadow-sm
-												.input-group-prepend
-													span.input-group-text http://web4gsolutions.com/
-												input.form-control(type='text')
-										.form-group.col-lg-3
-											label Ảnh đại diện danh mục
-											.input-group.shadow-sm
-												input.form-control(placeholder="Nhập dường dẫn hình ảnh")
-										.form-group.col-lg-3
-											label Thương hiệu
-											.input-group.shadow-sm
-												select.form-control
-													option Danh mục gốc
-													option Bộ dàn
-													option Bộ dàn / Bộ dàn hi-end
-										.form-group.col-lg-12
-											.input-custom.d-flex.align-items-end
-												h5 Hiển thị
-												label._checkbox-custom.mb-0
-													input.custom-control-input(type='checkbox' readonly)
-													span.custom-control-indicator
-										.form-group.col-lg-12
-												label Mô tả
-												textarea.form-control(rows='3')
-										.form-group.col-lg-1
-											a(href="category-product.html").btn.btn-danger.w-100.shadow Hủy bỏ
-										.form-group.col-lg-1
-											button.btn.btn-success.w-100.shadow Thêm
+								.form-row
+									.form-group.col-lg-3
+										label Danh mục cha
+										.input-group.shadow-sm
+											select.form-control
+												option Danh mục gốc
+												option Bộ dàn
+												option Bộ dàn / Bộ dàn hi-end
+									.form-group.col-lg-3
+										label Thứ tự sắp sếp *
+										.input-group.shadow-sm
+											input.form-control(type="number" placeholder="Nhập số thứ tự" min="1")
+									.form-group.col-lg-3
+										label Tên của danh mục *
+										.input-group.shadow-sm
+											input.form-control(placeholder="Nhập tên tiêu đề")
+									.form-group.col-lg-3
+										label Đường dẫn bài viết *
+										.input-group.shadow-sm
+											.input-group-prepend
+												span.input-group-text http://web4gsolutions.com/
+											input.form-control(type='text')
+									.form-group.col-lg-3
+										label Ảnh đại diện danh mục
+										.input-group.shadow-sm
+											input.form-control(placeholder="Nhập dường dẫn hình ảnh")
+									.form-group.col-lg-3
+										label Thương hiệu
+										.input-group.shadow-sm
+											select.form-control
+												option Danh mục gốc
+												option Bộ dàn
+												option Bộ dàn / Bộ dàn hi-end
+								.form-row
+									.form-group.col-lg-12
+										.input-custom.d-flex.align-items-end
+											h5 Hiển thị
+											label._checkbox-custom.mb-0
+												input.custom-control-input(type='checkbox' readonly)
+												span.custom-control-indicator
+									.form-group.col-lg-6
+										label Mô tả
+										.input-group.shadow-sm
+											textarea.form-control(rows='5')
+								.form-row
+									.form-group.col-lg-2
+										a(href="/").btn-custom.cancel Hủy
+										button.btn-custom.submit Thêm
 						.content(tab-id="item-2")
 							.block-form
 								.form-row

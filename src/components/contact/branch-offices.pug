@@ -48,18 +48,20 @@
 										.icon(data-toggle="tooltip" data-placement="bottom" title="Sửa")
 											img.svg(src="./assets/images/icons/edit.svg", alt="", srcset="")
 									// XÓA
-									button.btn-popup.btn-custom-icon.item(data-url="#", dataID="item-"+i, data-toggle='modal', data-target='#popup_question')
+									button.btn-popup.btn-custom-icon.item(fancybox="fancybox-notification" dataFieldName="branchID" dataId="item-"+i)
 										.icon(data-toggle="tooltip" data-placement="bottom" title="Xóa")
 											img.svg(src="./assets/images/icons/delete.svg", alt="", srcset="")
+		include ../_global/_pagination.pug
 			// BOX HIỆN LÊN CÂU HỎI
-			#popup_question.modal.fade(aria-hidden='true')
-				.modal-dialog.modal-dialog-centered(role='document')
-					.modal-content
-						.modal-header
-							h5.modal-title Thông báo
-							button.close(type='button', data-dismiss='modal', aria-label='Close')
-								span(aria-hidden='true') ×
-						.modal-body Bạn có chắc chắn xóa
-						.modal-footer
-							button.btn.btn-danger.btn-sm(type='button', data-dismiss='modal') Hủy
-							button.submit-delete.btn.btn-success.btn-sm(type='button') Chấp nhận
+			.d-none
+				.modal-POPUP.fancybox-content#fancybox-notification
+					.title-modal
+						h5 Thông báo
+						p Web4gsolutions xin thông báo
+					.content-modal
+						p Bạn có chắc chắn xóa ?
+					.list-button
+						.item
+							button.btn-custom.cancel(data-fancybox-close) Hủy
+						.item
+							button.btn-custom.submit.submit-delete(data-url="#") Chấp nhận

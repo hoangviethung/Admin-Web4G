@@ -252,11 +252,11 @@
 											<!-- SỬA--><a class="btn-custom-icon item" href="create-user.html">
 												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Sửa"><img class="svg" src="./assets/images/icons/edit.svg" alt="" srcset=""></div></a>
 											<!-- THAY ĐỔI MẬT KHẨU-->
-											<button class="btn-popup btn-custom-icon item" fancybox="fancybox-form-submit" dataFieldName="itemID" dataID="item-1">
+											<button class="btn-popup btn-custom-icon item" fancybox="fancybox-form-submit" dataFieldName="userID" dataID="item-1">
 												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Đổi mật khẩu"><img class="svg" src="./assets/images/icons/user-setting.svg" alt="" srcset=""></div>
 											</button>
 											<!-- XÓA-->
-											<button class="btn-popup btn-custom-icon item" fancybox="fancybox-notification" dataFieldName="name" dataId="item-1">
+											<button class="btn-popup btn-custom-icon item" fancybox="fancybox-notification" dataFieldName="userID" dataId="item-1">
 												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Xóa"><img class="svg" src="./assets/images/icons/delete.svg" alt="" srcset=""></div>
 											</button>
 										</div>
@@ -287,11 +287,11 @@
 											<!-- SỬA--><a class="btn-custom-icon item" href="create-user.html">
 												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Sửa"><img class="svg" src="./assets/images/icons/edit.svg" alt="" srcset=""></div></a>
 											<!-- THAY ĐỔI MẬT KHẨU-->
-											<button class="btn-popup btn-custom-icon item" fancybox="fancybox-form-submit" dataFieldName="itemID" dataID="item-2">
+											<button class="btn-popup btn-custom-icon item" fancybox="fancybox-form-submit" dataFieldName="userID" dataID="item-2">
 												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Đổi mật khẩu"><img class="svg" src="./assets/images/icons/user-setting.svg" alt="" srcset=""></div>
 											</button>
 											<!-- XÓA-->
-											<button class="btn-popup btn-custom-icon item" fancybox="fancybox-notification" dataFieldName="name" dataId="item-2">
+											<button class="btn-popup btn-custom-icon item" fancybox="fancybox-notification" dataFieldName="userID" dataId="item-2">
 												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Xóa"><img class="svg" src="./assets/images/icons/delete.svg" alt="" srcset=""></div>
 											</button>
 										</div>
@@ -322,11 +322,11 @@
 											<!-- SỬA--><a class="btn-custom-icon item" href="create-user.html">
 												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Sửa"><img class="svg" src="./assets/images/icons/edit.svg" alt="" srcset=""></div></a>
 											<!-- THAY ĐỔI MẬT KHẨU-->
-											<button class="btn-popup btn-custom-icon item" fancybox="fancybox-form-submit" dataFieldName="itemID" dataID="item-3">
+											<button class="btn-popup btn-custom-icon item" fancybox="fancybox-form-submit" dataFieldName="userID" dataID="item-3">
 												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Đổi mật khẩu"><img class="svg" src="./assets/images/icons/user-setting.svg" alt="" srcset=""></div>
 											</button>
 											<!-- XÓA-->
-											<button class="btn-popup btn-custom-icon item" fancybox="fancybox-notification" dataFieldName="name" dataId="item-3">
+											<button class="btn-popup btn-custom-icon item" fancybox="fancybox-notification" dataFieldName="userID" dataId="item-3">
 												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Xóa"><img class="svg" src="./assets/images/icons/delete.svg" alt="" srcset=""></div>
 											</button>
 										</div>
@@ -357,11 +357,11 @@
 											<!-- SỬA--><a class="btn-custom-icon item" href="create-user.html">
 												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Sửa"><img class="svg" src="./assets/images/icons/edit.svg" alt="" srcset=""></div></a>
 											<!-- THAY ĐỔI MẬT KHẨU-->
-											<button class="btn-popup btn-custom-icon item" fancybox="fancybox-form-submit" dataFieldName="itemID" dataID="item-4">
+											<button class="btn-popup btn-custom-icon item" fancybox="fancybox-form-submit" dataFieldName="userID" dataID="item-4">
 												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Đổi mật khẩu"><img class="svg" src="./assets/images/icons/user-setting.svg" alt="" srcset=""></div>
 											</button>
 											<!-- XÓA-->
-											<button class="btn-popup btn-custom-icon item" fancybox="fancybox-notification" dataFieldName="name" dataId="item-4">
+											<button class="btn-popup btn-custom-icon item" fancybox="fancybox-notification" dataFieldName="userID" dataId="item-4">
 												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Xóa"><img class="svg" src="./assets/images/icons/delete.svg" alt="" srcset=""></div>
 											</button>
 										</div>
@@ -443,13 +443,22 @@
 							</div>
 						</div>
 					</div>
+					<ul class="pagination">
+						<li class="pagination-prev"><a href="#"><span><</span></a></li>
+						<li><a href="#">1</a></li>
+						<li class="active"><a href="#">2</a></li>
+						<li><a href="#">3</a></li>
+						<li><a href="#">4</a></li>
+						<li class="pagination-dot"><a href="#">...</a></li>
+						<li><a href="#">98</a></li>
+						<li class="pagination-next"><a href="#"><span>></span></a></li>
+					</ul>
 				</div>
 			</div>
 			<div id="js-page-verify" hidden></div>
 		</main>
 		<script type="text/javascript" src="./js/core.min.js"></script>
 		<script type="text/javascript" src="./js/main.min.js"></script>
-		<script src="https://cdn.ckeditor.com/ckeditor5/11.2.0/classic/ckeditor.js"></script>
 		<script>
 			ClassicEditor
 				.create( document.querySelector( '#editor' ) )

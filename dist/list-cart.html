@@ -207,14 +207,16 @@
 							<div class="form-row">
 								<div class="col-lg-3 form-group mb-0">
 									<label class="text-center">Trạng thái</label>
-									<select class="form-control shadow-sm">
-										<option>Tất cả</option>
-										<option>Đang chờ xử lý</option>
-										<option>Đã hủy đơn hàng</option>
-										<option>Sẵn sàng giao hàng</option>
-										<option>Đang giao hàng</option>
-										<option>Đã hoàn thành</option>
-									</select>
+									<div class="input-group">
+										<select class="form-control shadow-sm">
+											<option>Tất cả</option>
+											<option>Đang chờ xử lý</option>
+											<option>Đã hủy đơn hàng</option>
+											<option>Sẵn sàng giao hàng</option>
+											<option>Đang giao hàng</option>
+											<option>Đã hoàn thành</option>
+										</select>
+									</div>
 								</div>
 							</div>
 							<div class="form-row">
@@ -269,6 +271,10 @@
 										<div class="list-item center">
 											<!-- XEM CHI TIẾT--><a class="btn-custom-icon item" href="cart-detail.html">
 												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Xem chi tiết"><img class="svg" src="./assets/images/icons/eye.svg" alt="" srcset=""></div></a>
+											<!-- XÓA-->
+											<button class="btn-popup btn-custom-icon item" fancybox="fancybox-notification" dataFieldName="cartID" dataId="item-1">
+												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Xóa"><img class="svg" src="./assets/images/icons/delete.svg" alt="" srcset=""></div>
+											</button>
 										</div>
 									</td>
 								</tr>
@@ -283,6 +289,10 @@
 										<div class="list-item center">
 											<!-- XEM CHI TIẾT--><a class="btn-custom-icon item" href="cart-detail.html">
 												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Xem chi tiết"><img class="svg" src="./assets/images/icons/eye.svg" alt="" srcset=""></div></a>
+											<!-- XÓA-->
+											<button class="btn-popup btn-custom-icon item" fancybox="fancybox-notification" dataFieldName="cartID" dataId="item-2">
+												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Xóa"><img class="svg" src="./assets/images/icons/delete.svg" alt="" srcset=""></div>
+											</button>
 										</div>
 									</td>
 								</tr>
@@ -297,6 +307,10 @@
 										<div class="list-item center">
 											<!-- XEM CHI TIẾT--><a class="btn-custom-icon item" href="cart-detail.html">
 												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Xem chi tiết"><img class="svg" src="./assets/images/icons/eye.svg" alt="" srcset=""></div></a>
+											<!-- XÓA-->
+											<button class="btn-popup btn-custom-icon item" fancybox="fancybox-notification" dataFieldName="cartID" dataId="item-3">
+												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Xóa"><img class="svg" src="./assets/images/icons/delete.svg" alt="" srcset=""></div>
+											</button>
 										</div>
 									</td>
 								</tr>
@@ -311,19 +325,52 @@
 										<div class="list-item center">
 											<!-- XEM CHI TIẾT--><a class="btn-custom-icon item" href="cart-detail.html">
 												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Xem chi tiết"><img class="svg" src="./assets/images/icons/eye.svg" alt="" srcset=""></div></a>
+											<!-- XÓA-->
+											<button class="btn-popup btn-custom-icon item" fancybox="fancybox-notification" dataFieldName="cartID" dataId="item-4">
+												<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Xóa"><img class="svg" src="./assets/images/icons/delete.svg" alt="" srcset=""></div>
+											</button>
 										</div>
 									</td>
 								</tr>
 							</tbody>
 						</table>
+						<!-- BOX HIỆN LÊN CÂU HỎI-->
+						<div class="d-none">
+							<div class="modal-POPUP fancybox-content" id="fancybox-notification">
+								<div class="title-modal">
+									<h5>Thông báo</h5>
+									<p>Web4gsolutions xin thông báo</p>
+								</div>
+								<div class="content-modal">
+									<p>Bạn có chắc chắn xóa ?</p>
+								</div>
+								<div class="list-button">
+									<div class="item">
+										<button class="btn-custom cancel" data-fancybox-close>Hủy</button>
+									</div>
+									<div class="item">
+										<button class="btn-custom submit submit-delete" data-url="#">Chấp nhận</button>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
+					<ul class="pagination">
+						<li class="pagination-prev"><a href="#"><span><</span></a></li>
+						<li><a href="#">1</a></li>
+						<li class="active"><a href="#">2</a></li>
+						<li><a href="#">3</a></li>
+						<li><a href="#">4</a></li>
+						<li class="pagination-dot"><a href="#">...</a></li>
+						<li><a href="#">98</a></li>
+						<li class="pagination-next"><a href="#"><span>></span></a></li>
+					</ul>
 				</div>
 			</div>
 			<div id="js-page-verify" hidden></div>
 		</main>
 		<script type="text/javascript" src="./js/core.min.js"></script>
 		<script type="text/javascript" src="./js/main.min.js"></script>
-		<script src="https://cdn.ckeditor.com/ckeditor5/11.2.0/classic/ckeditor.js"></script>
 		<script>
 			ClassicEditor
 				.create( document.querySelector( '#editor' ) )

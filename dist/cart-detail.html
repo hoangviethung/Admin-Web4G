@@ -194,9 +194,175 @@
 						<div class="page-title-heading">
 							<div class="page-title-icon"><img class="svg" src="./assets/images/icons/ecommerce.svg" alt="" srcset=""></div>
 							<div class="page-title-content">
-								<h3>Chi tiết đơn hàng</h3>
+								<h3>Quản lý đơn hàng</h3>
 								<p>Tại đây các quản trị viên có thể xem chi tiết đơn hàng.</p>
 							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="block-main shadow-sm col-lg-12">
+						<div class="block-form">
+							<div class="form-row">
+								<div class="form-group col-lg-3">
+									<label>Mã đơn hàng</label>
+									<div class="input-group shadow-sm">
+										<input class="form-control" value="121910023" readonly>
+									</div>
+								</div>
+								<div class="form-group col-lg-3">
+									<label>Tên người nhận hàng</label>
+									<div class="input-group shadow-sm">
+										<input class="form-control" value="Vũ Hoàng Sơn" readonly>
+									</div>
+								</div>
+								<div class="form-group col-lg-3">
+									<label>Thời gian đặt hàng</label>
+									<div class="input-group shadow-sm">
+										<input class="form-control" value="12/13/2019 9:56:41 AM" readonly>
+									</div>
+								</div>
+							</div>
+							<div class="form-row">
+								<div class="form-group col-lg-3">
+									<label>Tình trạng đơn hàng</label>
+									<div class="input-group shadow-sm">
+										<input class="form-control" value="Sẵn sàng giao hàng" readonly>
+									</div>
+								</div>
+								<div class="form-group col-lg-3">
+									<label>Số điện thoại nhận hàng</label>
+									<div class="input-group shadow-sm">
+										<input class="form-control" value="0987654321" readonly>
+									</div>
+								</div>
+								<div class="form-group col-lg-3">
+									<label>Thời gian xử lý đơn hàng gần nhất</label>
+									<div class="input-group shadow-sm">
+										<input class="form-control" value="12/13/2019 9:56:41 AM" readonly>
+									</div>
+								</div>
+							</div>
+							<div class="form-row">
+								<div class="form-group col-lg-3">
+									<label>Phương thức thanh toán</label>
+									<div class="input-group shadow-sm">
+										<input class="form-control" value="Thanh toán trực tuyến" readonly>
+									</div>
+								</div>
+								<div class="form-group col-lg-3">
+									<label>Địa chỉ nhận hàng</label>
+									<div class="input-group shadow-sm">
+										<input class="form-control" value="549/29 Nguyễn Đình Chiểu" readonly>
+									</div>
+								</div>
+							</div>
+							<div class="form-row">
+								<div class="form-group col-lg-3">
+									<label>Tình trạng thanh toán</label>
+									<div class="input-group shadow-sm">
+										<input class="form-control" value="Đã thanh toán" readonly>
+									</div>
+								</div>
+								<div class="form-group col-lg-3">
+									<label>Số điện thoại người tạo</label>
+									<div class="input-group shadow-sm">
+										<input class="form-control" value="0987654321" readonly>
+									</div>
+								</div>
+							</div>
+							<div class="form-row">
+								<div class="form-group col-lg-6">
+									<label>Ghi chú đơn hàng</label>
+									<div class="input-group shadow-sm">
+										<textarea class="form-control" rows="5" readonly>Chỉ giảo hàng buổi sáng không giao hàng buổi tối</textarea>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="block-table">
+							<table class="table table-bordered m-0">
+								<thead>
+									<tr>
+										<th>#</th>
+										<th>Tên sản phẩm</th>
+										<th>Mã sản phẩm</th>
+										<th>Đơn giá</th>
+										<th>Số lượng</th>
+										<th>Thành tiền</th>
+										<th>Ghi chú</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>1</td>
+										<td>Yamaha WXC-50</td>
+										<td>WXC-50</td>
+										<td>7,490,000</td>
+										<td>1</td>
+										<td>7,490,000</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td class="left" colspan="3">
+											<div class="list-item">
+												<p class="item">Mã giảm giá:</p>
+												<p class="item">Bạn của Hùng</p>
+											</div>
+										</td>
+										<td class="left" colspan="2">
+											<div class="list-item">
+												<p class="item">Số tiền được giảm:</p>
+												<p class="item">10,000,0000</p>
+											</div>
+										</td>
+										<td>10,000,0000</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td class="left" colspan="5">Phí vận chuyển (Thứ hai, 01/01/0001):</td>
+										<td>225,501</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td class="left bold bold" colspan="5">Tổng hóa đơn:</td>
+										<td class="bold">7,490,000</td>
+										<td></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="block-form mt-5">
+							<form action="/" method="method">
+								<div class="form-row">
+									<div class="form-group col-lg-3">
+										<label>Trạng thái đơn hàng</label>
+										<div class="input-group shadow-sm">
+											<select class="form-control">
+												<ooption>Tất cả</ooption>
+												<option>Đang chờ xử lý</option>
+												<option>Đã hủy đơn hàng</option>
+												<option>Sẵn sàng giao hàng</option>
+												<option>Đang giao hàng</option>
+												<option>Đã hoàn thành</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="form-group col-lg-6">
+										<label>Ghi chú đơn hàng</label>
+										<div class="input-group shadow-sm">
+											<textarea class="form-control" rows="5"></textarea>
+										</div>
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="form-group col-lg-2"><a class="btn-custom cancel" href="/">Hủy</a>
+										<button class="btn-custom submit">Thêm</button>
+									</div>
+								</div>
+							</form>
 						</div>
 					</div>
 				</div>
@@ -205,7 +371,6 @@
 		</main>
 		<script type="text/javascript" src="./js/core.min.js"></script>
 		<script type="text/javascript" src="./js/main.min.js"></script>
-		<script src="https://cdn.ckeditor.com/ckeditor5/11.2.0/classic/ckeditor.js"></script>
 		<script>
 			ClassicEditor
 				.create( document.querySelector( '#editor' ) )

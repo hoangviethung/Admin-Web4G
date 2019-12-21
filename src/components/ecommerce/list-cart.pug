@@ -14,13 +14,14 @@
 				.form-row
 					.col-lg-3.form-group.mb-0
 						label.text-center Trạng thái
-						select.form-control.shadow-sm
-							option Tất cả
-							option Đang chờ xử lý
-							option Đã hủy đơn hàng
-							option Sẵn sàng giao hàng
-							option Đang giao hàng
-							option Đã hoàn thành
+						.input-group
+							select.form-control.shadow-sm
+								option Tất cả
+								option Đang chờ xử lý
+								option Đã hủy đơn hàng
+								option Sẵn sàng giao hàng
+								option Đang giao hàng
+								option Đã hoàn thành
 				.form-row
 					.col-lg-3.form-group.mb-0
 						label.text-center Mã đơn hàng
@@ -63,3 +64,21 @@
 									a.btn-custom-icon.item(href="cart-detail.html")
 										.icon(data-toggle="tooltip" data-placement="bottom" title="Xem chi tiết")
 											img.svg(src="./assets/images/icons/eye.svg", alt="", srcset="")
+									// XÓA
+									button.btn-popup.btn-custom-icon.item(fancybox="fancybox-notification" dataFieldName="cartID" dataId="item-"+i)
+										.icon(data-toggle="tooltip" data-placement="bottom" title="Xóa")
+											img.svg(src="./assets/images/icons/delete.svg", alt="", srcset="")
+			// BOX HIỆN LÊN CÂU HỎI
+			.d-none
+				.modal-POPUP.fancybox-content#fancybox-notification
+					.title-modal
+						h5 Thông báo
+						p Web4gsolutions xin thông báo
+					.content-modal
+						p Bạn có chắc chắn xóa ?
+					.list-button
+						.item
+							button.btn-custom.cancel(data-fancybox-close) Hủy
+						.item
+							button.btn-custom.submit.submit-delete(data-url="#") Chấp nhận
+		include ../_global/_pagination.pug

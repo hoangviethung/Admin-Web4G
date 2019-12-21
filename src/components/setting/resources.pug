@@ -25,9 +25,9 @@
 							td
 								.list-item.center
 									// SỬA
-									button.btn-popup.btn-custom-icon.item(fancybox="fancybox-form-submit" dataFieldName="itemID" dataID="item-"+i)
-										.icon(data-toggle="tooltip" data-placement="bottom" title="Đổi mật khẩu")
-											img.svg(src="./assets/images/icons/user-setting.svg", alt="", srcset="")
+									button.btn-popup.btn-custom-icon.item(fancybox="fancybox-form-submit" dataFieldName="settingID" dataID="item-"+i)
+										.icon(data-toggle="tooltip" data-placement="bottom" title="Chỉnh sửa")
+											img.svg(src="./assets/images/icons/edit.svg", alt="", srcset="")
 			// BOX FORM HIỆN LÊN
 			.d-none
 				.modal-POPUP.fancybox-content#fancybox-form-submit
@@ -51,3 +51,4 @@
 							button.btn-custom.cancel(data-fancybox-close) Hủy
 						.item
 							button.btn-custom.submit.submit-change-setting(data-url="#") Cập nhật
+		include ../_global/_pagination.pug
