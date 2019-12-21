@@ -730,9 +730,15 @@
 			}
 
 			.forgot-pass {
+				text-align: right;
 				color     : #ffffff;
-				margin-top: 10px;
 				font-size : 14px;
+
+				&:hover {
+					>a {
+						color: #ffffff;
+					}
+				}
 			}
 		}
 

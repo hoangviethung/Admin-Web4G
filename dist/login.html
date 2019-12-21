@@ -21,14 +21,33 @@
 					<div class="content">Xin chào quản trị viên !</div>
 				</div>
 				<form action="index.html" method="method">
-					<div class="form-group">
-						<label>Tài khoản</label>
-						<input type="text">
-					</div>
-					<div class="form-group">
-						<label>Mật khẩu</label>
-						<input type="password">
-						<div class="forgot-pass"><a href="quen-mat-khau.html">Quên mật khẩu ?</a></div>
+					<div class="form-row">
+						<div class="form-group col-lg-12">
+							<label>Tài khoản</label>
+							<input type="text">
+							<!-- span.eror Sai tài khoản-->
+						</div>
+						<div class="form-group col-lg-12">
+							<label>Mật khẩu</label>
+							<input type="password">
+							<!-- span.eror Sai mật khẩu-->
+						</div>
+						<div class="form-group col-lg-6 d-flex justify-content-between">
+							<label>Duy trì đăng nhập</label>
+							<div class="input-custom">
+								<div class="_checkbox-normal">
+									<input id="remember" type="checkbox">
+									<label for="remember">
+										<svg viewBox="0,0,50,50">
+											<path d="M5 30 L 20 45 L 45 5"></path>
+										</svg>
+									</label>
+								</div>
+							</div>
+						</div>
+						<div class="form-group col-lg-6">
+							<div class="forgot-pass"><a href="quen-mat-khau.html">Quên mật khẩu ?</a></div>
+						</div>
 					</div>
 					<button>Đăng nhập
 						<div id="js-page-verify" hidden></div>

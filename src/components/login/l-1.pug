@@ -6,14 +6,24 @@ section.login
 					img(src="./assets/images/logo.png", alt="")
 			.content Xin chào quản trị viên !
 		form(action="index.html" method="method")
-			.form-group
-				label Tài khoản
-				input(type="text")
-				//- span.eror Sai tài khoản
-			.form-group
-				label Mật khẩu
-				input(type="password")
-				//- span.eror Sai mật khẩu
-				.forgot-pass
-					a(href="quen-mat-khau.html") Quên mật khẩu ?
+			.form-row
+				.form-group.col-lg-12
+					label Tài khoản
+					input(type="text")
+					// span.eror Sai tài khoản
+				.form-group.col-lg-12
+					label Mật khẩu
+					input(type="password")
+					// span.eror Sai mật khẩu
+				.form-group.col-lg-6.d-flex.justify-content-between
+					label Duy trì đăng nhập
+					.input-custom
+						._checkbox-normal
+							input#remember(type="checkbox")
+							label(for="remember")
+								svg(viewBox=[0, 0, 50, 50].join( ))
+									path(d="M5 30 L 20 45 L 45 5")
+				.form-group.col-lg-6
+					.forgot-pass
+						a(href="quen-mat-khau.html") Quên mật khẩu ?
 			button Đăng nhập
