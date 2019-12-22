@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Admin | Tạo bài viết</title>
+		<title>Admin | Tỏng hợp</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -177,15 +177,6 @@
 				</div>
 				<div class="aside-item">
 					<div class="name">
-						<div class="icon"><img class="svg" src="./assets/images/icons/document.svg" alt="" srcset=""></div>
-						<h5>Document</h5>
-					</div>
-					<ul class="list-link">
-						<li class="link"><a href="document.html">Xem</a></li>
-					</ul>
-				</div>
-				<div class="aside-item">
-					<div class="name">
 						<div class="icon"><img class="svg" src="./assets/images/icons/setting.svg" alt="" srcset=""></div>
 						<h5>Cài Đặt</h5>
 					</div>
@@ -203,8 +194,8 @@
 						<div class="page-title-heading">
 							<div class="page-title-icon"><img class="svg" src="./assets/images/icons/post.svg" alt="" srcset=""></div>
 							<div class="page-title-content">
-								<h3>Tạo bài viết</h3>
-								<p>Tại đây các quản trị viên có thể quản lý các bài viết trên Website với các chức năng cơ bản: thêm, xóa, sửa.</p>
+								<h3>Document ADMIN</h3>
+								<p>Tại đây các Developer Web4gsolutions có thể tham khảo các Components hiện có để dễ dàng giàn trang.</p>
 							</div>
 						</div>
 					</div>
@@ -214,60 +205,45 @@
 						<div class="tab-container">
 							<ul class="list-tab">
 								<li class="item acitve" toggle-for="item-1">Nội dung bài viết</li>
-								<li class="item" toggle-for="item-2">SEO bài viết</li>
-								<li class="item" toggle-for="item-3">Hình ảnh</li>
+								<li class="item" toggle-for="item-2">Hình ảnh</li>
 							</ul>
 							<div class="tab-content">
-								<form action="list-post.html" method="method">
-									<div class="content" tab-id="item-1">
-										<div class="block-form">
+								<div class="content" tab-id="item-1">
+									<div class="block-form">
+										<form action="list-post.html" method="method">
 											<div class="form-row">
 												<div class="form-group col-lg-3">
-													<label>Ngôn ngữ</label>
+													<label>Vị trí hiển thị *</label>
 													<div class="input-group shadow-sm">
 														<select class="form-control">
-															<option>Vietnamese</option>
-															<option>English</option>
-															<option>Chinese</option>
+															<option>Bên phải - Trang chủ</option>
+															<option>Giữ - Trang chủ</option>
+															<option>Trang giới thiệu</option>
 														</select>
 													</div>
 												</div>
 												<div class="form-group col-lg-3">
-													<label>Danh mục</label>
-													<div class="input-group shadow-sm">
-														<select class="form-control shadow-sm">
-															<option>Chính</option>
-															<option>Giới thiệu</option>
-															<option>Dịch vụ</option>
-															<option>Tiện ích</option>
-															<option>Tin tức</option>
-														</select>
-													</div>
-												</div>
-												<div class="form-group col-lg-3">
-													<label>Tên tiêu đề bài viết *</label>
+													<label>Tiêu đề Banner *</label>
 													<div class="input-group shadow-sm">
 														<input class="form-control" placeholder="Nhập tên tiêu đề">
 													</div>
 												</div>
 												<div class="form-group col-lg-3">
-													<label>Đường dẫn bài viết *</label>
-													<div class="input-group shadow-sm">
-														<div class="input-group-prepend"><span class="input-group-text">http://web4gsolutions.com/</span></div>
-														<input class="form-control" type="text">
-													</div>
-												</div>
-												<div class="form-group col-lg-3">
-													<label>Ảnh đại diện bài viết</label>
+													<label>Hình Banner</label>
 													<div class="input-group shadow-sm">
 														<input class="form-control" placeholder="Nhập dường dẫn hình ảnh">
 													</div>
 												</div>
 												<div class="form-group col-lg-3">
-													<label>Ngày đăng</label>
+													<label>Link liên kết</label>
 													<div class="input-group shadow-sm">
-														<input class="form-control" type="date">
-														<div class="input-group-prepend"><span class="input-group-text"><img class="svg" src="./assets/images/icons/date.svg" alt="" srcset=""></span></div>
+														<input class="form-control" type="text" placeholder="Nhập liên liên kết">
+													</div>
+												</div>
+												<div class="form-group col-lg-3">
+													<label>Thứ tự</label>
+													<div class="input-group shadow-sm">
+														<input class="form-control" type="number" min="1" value="0">
 													</div>
 												</div>
 												<div class="form-group col-lg-12">
@@ -277,62 +253,19 @@
 															<input class="custom-control-input" type="checkbox" readonly><span class="custom-control-indicator"></span>
 														</label>
 													</div>
-													<label class="opacity-0">None</label>
-													<div class="input-custom d-flex align-items-end">
-														<h5>Nổi bật</h5>
-														<label class="_checkbox-custom mb-0">
-															<input class="custom-control-input" type="checkbox" readonly><span class="custom-control-indicator"></span>
-														</label>
-													</div>
-												</div>
-												<div class="form-group col-lg-12">
-													<label>Mô tả</label>
-													<div class="input-group shadow-sm">
-														<textarea class="form-control" rows="5"></textarea>
-													</div>
 												</div>
 												<div class="form-group col-lg-12">
 													<label>Nội dung</label>
 													<textarea id="editor" name="content"></textarea>
 												</div>
-												<div class="form-group col-lg-2"><a class="btn-custom cancel" href="/">Hủy</a>
+												<div class="form-group col-lg-2"><a class="btn-custom cancel" href="list-banner.html">Hủy</a>
 													<button class="btn-custom submit">Thêm</button>
 												</div>
 											</div>
-										</div>
+										</form>
 									</div>
-									<div class="content" tab-id="item-2">
-										<div class="block-form">
-											<div class="form-row">
-												<div class="form-group col-lg-3">
-													<label>Meta Title *</label>
-													<div class="input-group shadow-sm">
-														<input class="form-control" placeholder="Nhập dữ liệu">
-													</div>
-												</div>
-												<div class="form-group col-lg-3">
-													<label>Meta Description *</label>
-													<div class="input-group shadow-sm">
-														<input class="form-control" placeholder="Nhập dữ liệu">
-													</div>
-												</div>
-												<div class="form-group col-lg-3">
-													<label>Meta Keywords *</label>
-													<div class="input-group shadow-sm">
-														<input class="form-control" placeholder="Nhập dữ liệu">
-													</div>
-												</div>
-											</div>
-											<div class="form-row">
-												<div class="form-group col-lg-1">
-													<label class="opacity-0">None</label>
-													<button class="btn btn-success btn-sm w-100 shadow">Xác nhận</button>
-												</div>
-											</div>
-										</div>
-									</div>
-								</form>
-								<div class="content" tab-id="item-3">
+								</div>
+								<div class="content" tab-id="item-2">
 									<div class="upload-file">
 										<div id="actions">
 											<div class="upload-image-wrapper">
@@ -440,7 +373,6 @@
 		<script type="text/javascript" src="./js/core.min.js"></script>
 		<script type="text/javascript" src="./js/main.min.js"></script>
 		<script src="https://cdn.ckeditor.com/ckeditor5/11.2.0/classic/ckeditor.js"></script>
-		<script src="./js/drop-zone.min.js"></script>
 		<script>
 			ClassicEditor
 				.create( document.querySelector( '#editor' ) )

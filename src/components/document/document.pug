@@ -1,0 +1,217 @@
+.main__inner
+	.page-title
+		.page-title-wrapper
+			.page-title-heading
+				.page-title-icon
+					img.svg(src="./assets/images/icons/document.svg", alt="", srcset="")
+				.page-title-content
+					h3 Document
+					p Tại đây các Developer Web4gsolutions có thể tham khảo các Components hiện có để dễ dàng tạo trang.
+	.row
+		.block-main.shadow-sm.col-lg-12
+			.tab-container
+				ul.list-tab
+					li.item(toggle-for="item-1").acitve Components
+					li.item(toggle-for="item-2") Ck-Editor
+					li.item(toggle-for="item-3") Table and Task in table
+					li.item(toggle-for="item-4") Drop-zone
+				.tab-content
+					// Components in Website
+					.content(tab-id="item-1")
+						.block-form
+							.form-row
+								.form-group.col-lg-3
+									label Select Option (Normal)
+									.input-group.shadow-sm
+										select.form-control
+											option Select 1
+											option Select 2
+											option Select 3
+								// XUỐNG DÒNG NHANH = div(class="w-100")
+								.w-100
+								.form-group.col-lg-3
+									label Input Type Text
+									.input-group.shadow-sm
+										input.form-control(placeholder="Input Type Text")
+								// XUỐNG DÒNG NHANH = div(class="w-100")
+								.w-100
+								.form-group.col-lg-3
+									label Input Type Number
+									.input-group.shadow-sm
+										input.form-control(type='number' min="1" value="0")
+								// XUỐNG DÒNG NHANH = div(class="w-100")
+								.w-100
+								.form-group.col-lg-3
+									label Input Type Date ( Mặc định - Hiện tại )
+									.input-group.shadow-sm
+										input.form-control(type='date')
+										.input-group-prepend
+											span.input-group-text
+												img.svg(src="./assets/images/icons/date.svg", alt="", srcset="")
+								// XUỐNG DÒNG NHANH = div(class="w-100")
+								.w-100
+								.form-group.col-lg-3
+									label Input Type Link
+									.input-group.shadow-sm
+										.input-group-prepend
+											span.input-group-text http://web4gsolutions.com/
+										input.form-control(type='text')
+								// XUỐNG DÒNG NHANH = div(class="w-100")
+								.w-100
+								.form-group.col-lg-3
+									.input-custom
+										h5.mb-3 Check Box Custom 1
+										label._checkbox-custom.mb-0
+											input.custom-control-input(type='checkbox' readonly)
+											span.custom-control-indicator
+								// XUỐNG DÒNG NHANH = div(class="w-100")
+								.w-100
+								.form-group.col-lg-2
+									label Check Box Custom 2 (Màu mặc định)
+									.input-custom
+										._checkbox-normal
+											input#_checkbox-1(type="checkbox")
+											label(for="_checkbox-1")
+												svg(viewBox=[0, 0, 50, 50].join( ))
+													path(d="M5 30 L 20 45 L 45 5")
+								.form-group.col-lg-2
+									label Check Box Custom 2 (Màu Login)
+									.input-custom
+										._checkbox-normal.login-form
+											input#_checkbox-2(type="checkbox")
+											label(for="_checkbox-2")
+												svg(viewBox=[0, 0, 50, 50].join( ))
+													path(d="M5 30 L 20 45 L 45 5")
+								.w-100
+								.form-group.text-right.col-lg-12
+									label Thanh phân trang ( Mặc đinh năm bên góc tay phải )
+									include ../_global/_pagination.pug
+					.content(tab-id="item-2")
+						.block-form
+							.form-group
+								label Nội dung
+								textarea#editor(name="content")
+					.content(tab-id="item-3")
+						.seach.col-lg-4
+							form(action="#" method="method")
+								.form-group
+									.form-input
+										input(type="text" placeholder="Nhập từ khóa để tìm kiếm")
+										button
+											img.svg(src="./assets/images/icons/search.svg", alt="", srcset="")
+						.filter.col-lg-12
+							form(action="#" method="method")
+								.form-row
+									.col-lg-3.form-group
+										label.text-center Select Option (Normal)
+										.input-group.shadow-sm
+											select.form-control
+												option Select 1
+												option Select 2
+												option Select 3
+									.w-100
+									.col-lg-3.form-group
+										label.text-center Input Type Text
+										.input-group.shadow-sm
+											input.form-control.form-control-sm(placeholder="Input Type Text")
+									.col-lg-3.form-group
+										label.text-center Input Type Number
+										.input-group.shadow-sm
+											input.form-control.form-control-sm(type="number" placeholder="Input Type Number")
+									.col-lg-3.form-group
+										label.text-center Tên người nhận
+										.input-group.shadow-sm
+											input.form-control.form-control-sm(placeholder="Tên người nhận")
+									.col-lg-2
+										.form-group.mb-0
+											button.btn.btn-primary.btn-sm.shadow Lọc
+					.content(tab-id="item-4")
+						.upload-file
+							#actions
+								.upload-image-wrapper
+									.desc-how-to-upload
+										p Kéo vào đây hoặc bấm để tải ảnh lên
+										button.btn.btn-secondary.shadow Tải ảnh lên
+							h5 Danh sách hình ảnh đã tải lên
+							#list-image
+								.file-item
+									.file-item-image.shadow
+										img.ofc(src='https://i.pinimg.com/564x/b0/90/f9/b090f9f37fc23003407438399879edbc.jpg')
+									.file-item-name
+										p.name
+											| product_1
+											strong.error.text-danger(data-dz-errormessage='')
+									.file-item-url
+										input.form-control.url(readonly='', value='http://localhost:8000/test.jpg', type='text')
+										span.btn.btn-copy-url
+											svg#Outlined(viewBox='0 0 32 32', xmlns='http://www.w3.org/2000/svg')
+												title
+												g#Fill
+													path(d='M24,3H20.82A3,3,0,0,0,18,1H14a3,3,0,0,0-2.82,2H8A3,3,0,0,0,5,6V26a3,3,0,0,0,3,3H24a3,3,0,0,0,3-3V6A3,3,0,0,0,24,3ZM13,4a1,1,0,0,1,1-1h4a1,1,0,0,1,1,1V5H13ZM25,26a1,1,0,0,1-1,1H8a1,1,0,0,1-1-1V6A1,1,0,0,1,8,5h3V7H21V5h3a1,1,0,0,1,1,1Z')
+													rect(height='2', width='10', x='11', y='15')
+													rect(height='2', width='5', x='11', y='19')
+									.file-item-remove
+										button.btn.btn-danger.btn-delete(onclick="deleteImage(this,'http://localhost:8000/test.jpg')")
+											i.glyphicon.glyphicon-trash
+											span Xóa
+								.file-item
+									.file-item-image.shadow
+										img.ofc(src='https://i.pinimg.com/564x/b0/90/f9/b090f9f37fc23003407438399879edbc.jpg')
+									.file-item-name
+										p.name
+											| product_1
+											strong.error.text-danger(data-dz-errormessage='')
+									.file-item-url
+										input.form-control.url(readonly='', value='http://localhost:8000/test.jpg', type='text')
+										span.btn.btn-copy-url
+											svg#Outlined(viewBox='0 0 32 32', xmlns='http://www.w3.org/2000/svg')
+												title
+												g#Fill
+													path(d='M24,3H20.82A3,3,0,0,0,18,1H14a3,3,0,0,0-2.82,2H8A3,3,0,0,0,5,6V26a3,3,0,0,0,3,3H24a3,3,0,0,0,3-3V6A3,3,0,0,0,24,3ZM13,4a1,1,0,0,1,1-1h4a1,1,0,0,1,1,1V5H13ZM25,26a1,1,0,0,1-1,1H8a1,1,0,0,1-1-1V6A1,1,0,0,1,8,5h3V7H21V5h3a1,1,0,0,1,1,1Z')
+													rect(height='2', width='10', x='11', y='15')
+													rect(height='2', width='5', x='11', y='19')
+									.file-item-remove
+										button.btn.btn-danger.btn-delete(onclick="deleteImage(this,'http://localhost:8000/test.jpg')")
+											i.glyphicon.glyphicon-trash
+											span Xóa
+								.file-item
+									.file-item-image.shadow
+										img.ofc(src='https://i.pinimg.com/564x/b0/90/f9/b090f9f37fc23003407438399879edbc.jpg')
+									.file-item-name
+										p.name
+											| product_1
+											strong.error.text-danger(data-dz-errormessage='')
+									.file-item-url
+										input.form-control.url(readonly='', value='http://localhost:8000/test.jpg', type='text')
+										span.btn.btn-copy-url
+											svg#Outlined(viewBox='0 0 32 32', xmlns='http://www.w3.org/2000/svg')
+												title
+												g#Fill
+													path(d='M24,3H20.82A3,3,0,0,0,18,1H14a3,3,0,0,0-2.82,2H8A3,3,0,0,0,5,6V26a3,3,0,0,0,3,3H24a3,3,0,0,0,3-3V6A3,3,0,0,0,24,3ZM13,4a1,1,0,0,1,1-1h4a1,1,0,0,1,1,1V5H13ZM25,26a1,1,0,0,1-1,1H8a1,1,0,0,1-1-1V6A1,1,0,0,1,8,5h3V7H21V5h3a1,1,0,0,1,1,1Z')
+													rect(height='2', width='10', x='11', y='15')
+													rect(height='2', width='5', x='11', y='19')
+									.file-item-remove
+										button.btn.btn-danger.btn-delete(onclick="deleteImage(this,'http://localhost:8000/test.jpg')")
+											i.glyphicon.glyphicon-trash
+											span Xóa
+							#list-image-preview.d-none
+							#template-preview.d-none
+								.file-item
+									.file-item-image
+										img(data-dz-thumbnail='')
+									.file-item-name
+										p.name(data-dz-name='')
+											strong.error.text-danger(data-dz-errormessage='')
+									.file-item-url
+										input.form-control.url(readonly='', value='http://localhost:8000/test.jpg', type='text')
+										span.btn.btn-copy-url
+											svg#Outlined(viewBox='0 0 32 32', xmlns='http://www.w3.org/2000/svg')
+												title
+												g#Fill
+													path(d='M24,3H20.82A3,3,0,0,0,18,1H14a3,3,0,0,0-2.82,2H8A3,3,0,0,0,5,6V26a3,3,0,0,0,3,3H24a3,3,0,0,0,3-3V6A3,3,0,0,0,24,3ZM13,4a1,1,0,0,1,1-1h4a1,1,0,0,1,1,1V5H13ZM25,26a1,1,0,0,1-1,1H8a1,1,0,0,1-1-1V6A1,1,0,0,1,8,5h3V7H21V5h3a1,1,0,0,1,1,1Z')
+													rect(height='2', width='10', x='11', y='15')
+													rect(height='2', width='5', x='11', y='19')
+									.file-item-remove
+										button.btn.btn-danger.btn-delete
+											i.glyphicon.glyphicon-trash
+											span Xóa

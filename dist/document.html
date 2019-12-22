@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Admin | Tạo bài viết</title>
+		<title>Admin | Document</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -201,10 +201,10 @@
 				<div class="page-title">
 					<div class="page-title-wrapper">
 						<div class="page-title-heading">
-							<div class="page-title-icon"><img class="svg" src="./assets/images/icons/post.svg" alt="" srcset=""></div>
+							<div class="page-title-icon"><img class="svg" src="./assets/images/icons/document.svg" alt="" srcset=""></div>
 							<div class="page-title-content">
-								<h3>Tạo bài viết</h3>
-								<p>Tại đây các quản trị viên có thể quản lý các bài viết trên Website với các chức năng cơ bản: thêm, xóa, sửa.</p>
+								<h3>Document</h3>
+								<p>Tại đây các Developer Web4gsolutions có thể tham khảo các Components hiện có để dễ dàng tạo trang.</p>
 							</div>
 						</div>
 					</div>
@@ -213,126 +213,176 @@
 					<div class="block-main shadow-sm col-lg-12">
 						<div class="tab-container">
 							<ul class="list-tab">
-								<li class="item acitve" toggle-for="item-1">Nội dung bài viết</li>
-								<li class="item" toggle-for="item-2">SEO bài viết</li>
-								<li class="item" toggle-for="item-3">Hình ảnh</li>
+								<li class="item acitve" toggle-for="item-1">Components</li>
+								<li class="item" toggle-for="item-2">Ck-Editor</li>
+								<li class="item" toggle-for="item-3">Table and Task in table</li>
+								<li class="item" toggle-for="item-4">Drop-zone</li>
 							</ul>
 							<div class="tab-content">
-								<form action="list-post.html" method="method">
-									<div class="content" tab-id="item-1">
-										<div class="block-form">
+								<!-- Components in Website-->
+								<div class="content" tab-id="item-1">
+									<div class="block-form">
+										<div class="form-row">
+											<div class="form-group col-lg-3">
+												<label>Select Option (Normal)</label>
+												<div class="input-group shadow-sm">
+													<select class="form-control">
+														<option>Select 1</option>
+														<option>Select 2</option>
+														<option>Select 3</option>
+													</select>
+												</div>
+											</div>
+											<!-- XUỐNG DÒNG NHANH = div(class="w-100")-->
+											<div class="w-100"></div>
+											<div class="form-group col-lg-3">
+												<label>Input Type Text</label>
+												<div class="input-group shadow-sm">
+													<input class="form-control" placeholder="Input Type Text">
+												</div>
+											</div>
+											<!-- XUỐNG DÒNG NHANH = div(class="w-100")-->
+											<div class="w-100"></div>
+											<div class="form-group col-lg-3">
+												<label>Input Type Number</label>
+												<div class="input-group shadow-sm">
+													<input class="form-control" type="number" min="1" value="0">
+												</div>
+											</div>
+											<!-- XUỐNG DÒNG NHANH = div(class="w-100")-->
+											<div class="w-100"></div>
+											<div class="form-group col-lg-3">
+												<label>Input Type Date ( Mặc định - Hiện tại )</label>
+												<div class="input-group shadow-sm">
+													<input class="form-control" type="date">
+													<div class="input-group-prepend"><span class="input-group-text"><img class="svg" src="./assets/images/icons/date.svg" alt="" srcset=""></span></div>
+												</div>
+											</div>
+											<!-- XUỐNG DÒNG NHANH = div(class="w-100")-->
+											<div class="w-100"></div>
+											<div class="form-group col-lg-3">
+												<label>Input Type Link</label>
+												<div class="input-group shadow-sm">
+													<div class="input-group-prepend"><span class="input-group-text">http://web4gsolutions.com/</span></div>
+													<input class="form-control" type="text">
+												</div>
+											</div>
+											<!-- XUỐNG DÒNG NHANH = div(class="w-100")-->
+											<div class="w-100"></div>
+											<div class="form-group col-lg-3">
+												<div class="input-custom">
+													<h5 class="mb-3">Check Box Custom 1</h5>
+													<label class="_checkbox-custom mb-0">
+														<input class="custom-control-input" type="checkbox" readonly><span class="custom-control-indicator"></span>
+													</label>
+												</div>
+											</div>
+											<!-- XUỐNG DÒNG NHANH = div(class="w-100")-->
+											<div class="w-100"></div>
+											<div class="form-group col-lg-2">
+												<label>Check Box Custom 2 (Màu mặc định)</label>
+												<div class="input-custom">
+													<div class="_checkbox-normal">
+														<input id="_checkbox-1" type="checkbox">
+														<label for="_checkbox-1">
+															<svg viewBox="0,0,50,50">
+																<path d="M5 30 L 20 45 L 45 5"></path>
+															</svg>
+														</label>
+													</div>
+												</div>
+											</div>
+											<div class="form-group col-lg-2">
+												<label>Check Box Custom 2 (Màu Login)</label>
+												<div class="input-custom">
+													<div class="_checkbox-normal login-form">
+														<input id="_checkbox-2" type="checkbox">
+														<label for="_checkbox-2">
+															<svg viewBox="0,0,50,50">
+																<path d="M5 30 L 20 45 L 45 5"></path>
+															</svg>
+														</label>
+													</div>
+												</div>
+											</div>
+											<div class="w-100"></div>
+											<div class="form-group text-right col-lg-12">
+												<label>Thanh phân trang ( Mặc đinh năm bên góc tay phải )</label>
+												<ul class="pagination">
+													<li class="pagination-prev"><a href="#"><span><</span></a></li>
+													<li><a href="#">1</a></li>
+													<li class="active"><a href="#">2</a></li>
+													<li><a href="#">3</a></li>
+													<li><a href="#">4</a></li>
+													<li class="pagination-dot"><a href="#">...</a></li>
+													<li><a href="#">98</a></li>
+													<li class="pagination-next"><a href="#"><span>></span></a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="content" tab-id="item-2">
+									<div class="block-form">
+										<div class="form-group">
+											<label>Nội dung</label>
+											<textarea id="editor" name="content"></textarea>
+										</div>
+									</div>
+								</div>
+								<div class="content" tab-id="item-3">
+									<div class="seach col-lg-4">
+										<form action="#" method="method">
+											<div class="form-group">
+												<div class="form-input">
+													<input type="text" placeholder="Nhập từ khóa để tìm kiếm">
+													<button><img class="svg" src="./assets/images/icons/search.svg" alt="" srcset=""></button>
+												</div>
+											</div>
+										</form>
+									</div>
+									<div class="filter col-lg-12">
+										<form action="#" method="method">
 											<div class="form-row">
-												<div class="form-group col-lg-3">
-													<label>Ngôn ngữ</label>
+												<div class="col-lg-3 form-group">
+													<label class="text-center">Select Option (Normal)</label>
 													<div class="input-group shadow-sm">
 														<select class="form-control">
-															<option>Vietnamese</option>
-															<option>English</option>
-															<option>Chinese</option>
+															<option>Select 1</option>
+															<option>Select 2</option>
+															<option>Select 3</option>
 														</select>
 													</div>
 												</div>
-												<div class="form-group col-lg-3">
-													<label>Danh mục</label>
+												<div class="w-100"></div>
+												<div class="col-lg-3 form-group">
+													<label class="text-center">Input Type Text</label>
 													<div class="input-group shadow-sm">
-														<select class="form-control shadow-sm">
-															<option>Chính</option>
-															<option>Giới thiệu</option>
-															<option>Dịch vụ</option>
-															<option>Tiện ích</option>
-															<option>Tin tức</option>
-														</select>
+														<input class="form-control form-control-sm" placeholder="Input Type Text">
 													</div>
 												</div>
-												<div class="form-group col-lg-3">
-													<label>Tên tiêu đề bài viết *</label>
+												<div class="col-lg-3 form-group">
+													<label class="text-center">Input Type Number</label>
 													<div class="input-group shadow-sm">
-														<input class="form-control" placeholder="Nhập tên tiêu đề">
+														<input class="form-control form-control-sm" type="number" placeholder="Input Type Number">
 													</div>
 												</div>
-												<div class="form-group col-lg-3">
-													<label>Đường dẫn bài viết *</label>
+												<div class="col-lg-3 form-group">
+													<label class="text-center">Tên người nhận</label>
 													<div class="input-group shadow-sm">
-														<div class="input-group-prepend"><span class="input-group-text">http://web4gsolutions.com/</span></div>
-														<input class="form-control" type="text">
+														<input class="form-control form-control-sm" placeholder="Tên người nhận">
 													</div>
 												</div>
-												<div class="form-group col-lg-3">
-													<label>Ảnh đại diện bài viết</label>
-													<div class="input-group shadow-sm">
-														<input class="form-control" placeholder="Nhập dường dẫn hình ảnh">
+												<div class="col-lg-2">
+													<div class="form-group mb-0">
+														<button class="btn btn-primary btn-sm shadow">Lọc</button>
 													</div>
-												</div>
-												<div class="form-group col-lg-3">
-													<label>Ngày đăng</label>
-													<div class="input-group shadow-sm">
-														<input class="form-control" type="date">
-														<div class="input-group-prepend"><span class="input-group-text"><img class="svg" src="./assets/images/icons/date.svg" alt="" srcset=""></span></div>
-													</div>
-												</div>
-												<div class="form-group col-lg-12">
-													<div class="input-custom d-flex align-items-end">
-														<h5>Hiển thị</h5>
-														<label class="_checkbox-custom mb-0">
-															<input class="custom-control-input" type="checkbox" readonly><span class="custom-control-indicator"></span>
-														</label>
-													</div>
-													<label class="opacity-0">None</label>
-													<div class="input-custom d-flex align-items-end">
-														<h5>Nổi bật</h5>
-														<label class="_checkbox-custom mb-0">
-															<input class="custom-control-input" type="checkbox" readonly><span class="custom-control-indicator"></span>
-														</label>
-													</div>
-												</div>
-												<div class="form-group col-lg-12">
-													<label>Mô tả</label>
-													<div class="input-group shadow-sm">
-														<textarea class="form-control" rows="5"></textarea>
-													</div>
-												</div>
-												<div class="form-group col-lg-12">
-													<label>Nội dung</label>
-													<textarea id="editor" name="content"></textarea>
-												</div>
-												<div class="form-group col-lg-2"><a class="btn-custom cancel" href="/">Hủy</a>
-													<button class="btn-custom submit">Thêm</button>
 												</div>
 											</div>
-										</div>
+										</form>
 									</div>
-									<div class="content" tab-id="item-2">
-										<div class="block-form">
-											<div class="form-row">
-												<div class="form-group col-lg-3">
-													<label>Meta Title *</label>
-													<div class="input-group shadow-sm">
-														<input class="form-control" placeholder="Nhập dữ liệu">
-													</div>
-												</div>
-												<div class="form-group col-lg-3">
-													<label>Meta Description *</label>
-													<div class="input-group shadow-sm">
-														<input class="form-control" placeholder="Nhập dữ liệu">
-													</div>
-												</div>
-												<div class="form-group col-lg-3">
-													<label>Meta Keywords *</label>
-													<div class="input-group shadow-sm">
-														<input class="form-control" placeholder="Nhập dữ liệu">
-													</div>
-												</div>
-											</div>
-											<div class="form-row">
-												<div class="form-group col-lg-1">
-													<label class="opacity-0">None</label>
-													<button class="btn btn-success btn-sm w-100 shadow">Xác nhận</button>
-												</div>
-											</div>
-										</div>
-									</div>
-								</form>
-								<div class="content" tab-id="item-3">
+								</div>
+								<div class="content" tab-id="item-4">
 									<div class="upload-file">
 										<div id="actions">
 											<div class="upload-image-wrapper">
@@ -440,7 +490,6 @@
 		<script type="text/javascript" src="./js/core.min.js"></script>
 		<script type="text/javascript" src="./js/main.min.js"></script>
 		<script src="https://cdn.ckeditor.com/ckeditor5/11.2.0/classic/ckeditor.js"></script>
-		<script src="./js/drop-zone.min.js"></script>
 		<script>
 			ClassicEditor
 				.create( document.querySelector( '#editor' ) )
