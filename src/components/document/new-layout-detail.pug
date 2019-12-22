@@ -1,0 +1,26 @@
+.main__inner
+	.page-title
+		.page-title-wrapper
+			.page-title-heading
+				.page-title-icon
+					img.svg(src="./assets/images/icons/document.svg", alt="", srcset="")
+				.page-title-content
+					h3 Tên Trang Chi Tiết
+					p Mô tả trang chi tiết
+	.row
+		.block-main.shadow-sm.col-lg-12
+			p Layout trang chi tiết nếu không có TAB
+		.block-main.shadow-sm.col-lg-12.mt-5
+			p.mb-5 Layout trang chi tiết có TAB
+			.tab-container
+				ul.list-tab
+					li.item(toggle-for="item-1").acitve Tab-1
+					li.item(toggle-for="item-2") Tab-2
+					li.item(toggle-for="item-3") Tab-3
+				.tab-content
+					.content(tab-id="item-1")
+						p Content Tab 1
+					.content(tab-id="item-2")
+						p Content Tab 2
+					.content(tab-id="item-3")
+						p Content Tab 3

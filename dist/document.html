@@ -207,6 +207,7 @@
 								<p>Tại đây các Developer Web4gsolutions có thể tham khảo các Components hiện có để dễ dàng tạo trang.</p>
 							</div>
 						</div>
+						<div class="page-title-actions"><a class="btn-custom submit" href="new-layout.html">XEM LAYOUT MẪU</a></div>
 					</div>
 				</div>
 				<div class="row">
@@ -216,7 +217,7 @@
 								<li class="item acitve" toggle-for="item-1">Components</li>
 								<li class="item" toggle-for="item-2">Ck-Editor</li>
 								<li class="item" toggle-for="item-3">Table and Task in table</li>
-								<li class="item" toggle-for="item-4">Drop-zone</li>
+								<li class="item" toggle-for="item-4">Drop-Zone</li>
 							</ul>
 							<div class="tab-content">
 								<!-- Components in Website-->
@@ -305,6 +306,13 @@
 													</div>
 												</div>
 											</div>
+											<!-- XUỐNG DÒNG NHANH = div(class="w-100")-->
+											<div class="w-100">
+												<label>Buttons</label>
+												<div class="form-group col-lg-2"></div><a class="btn-custom cancel" href="/">Hủy</a>
+												<button class="btn-custom submit">Thêm</button>
+											</div>
+											<!-- XUỐNG DÒNG NHANH = div(class="w-100")-->
 											<div class="w-100"></div>
 											<div class="form-group text-right col-lg-12">
 												<label>Thanh phân trang ( Mặc đinh năm bên góc tay phải )</label>
@@ -322,6 +330,7 @@
 										</div>
 									</div>
 								</div>
+								<!-- CK-Editor-->
 								<div class="content" tab-id="item-2">
 									<div class="block-form">
 										<div class="form-group">
@@ -330,6 +339,7 @@
 										</div>
 									</div>
 								</div>
+								<!-- BẢNG-->
 								<div class="content" tab-id="item-3">
 									<div class="seach col-lg-4">
 										<form action="#" method="method">
@@ -367,12 +377,6 @@
 														<input class="form-control form-control-sm" type="number" placeholder="Input Type Number">
 													</div>
 												</div>
-												<div class="col-lg-3 form-group">
-													<label class="text-center">Tên người nhận</label>
-													<div class="input-group shadow-sm">
-														<input class="form-control form-control-sm" placeholder="Tên người nhận">
-													</div>
-												</div>
 												<div class="col-lg-2">
 													<div class="form-group mb-0">
 														<button class="btn btn-primary btn-sm shadow">Lọc</button>
@@ -381,7 +385,271 @@
 											</div>
 										</form>
 									</div>
+									<div class="block-table col-lg-12 mt-4">
+										<table class="table table-bordered m-0">
+											<thead>
+												<tr>
+													<th># (auto center)</th>
+													<th>textalign : left</th>
+													<th class="text-center">textalign : center</th>
+													<th class="text-center">Hình ảnh</th>
+													<th class="text-center">Tag</th>
+													<th class="text-center">Ngôn ngữ</th>
+													<th class="text-center">Hiển thị</th>
+													<th class="text-center">Tác vụ</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>1</td>
+													<td>textalign : left</td>
+													<td class="text-center"> textalign : center</td>
+													<td class="w-300px">
+														<div class="block-images-big"><img class="ofc" src="https://images.unsplash.com/photo-1562887085-cb16e9116582?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1489&amp;q=80" alt="" srcset=""></div>
+													</td>
+													<td>
+														<div class="list-item center">
+															<div class="item badge badge-primary p-2">Admin</div>
+															<div class="item badge badge-primary p-2">Mod</div>
+															<div class="item badge badge-primary p-2">Guest</div>
+														</div>
+													</td>
+													<td>
+														<div class="language">
+															<figure class="shadow"><img class="ofc" src="./assets/images/nation/1.png" alt=""></figure>
+														</div>
+													</td>
+													<td class="text-center">
+														<div class="input-custom">
+															<label class="_checkbox-custom">
+																<input class="custom-control-input" type="checkbox" checked="checked" onclick="return false"><span class="custom-control-indicator"></span>
+															</label>
+														</div>
+													</td>
+													<td>
+														<div class="list-item center">
+															<!-- XEM CHI TIẾT--><a class="btn-custom-icon item" href="#">
+																<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Xem chi tiết"><img class="svg" src="./assets/images/icons/eye.svg" alt="" srcset=""></div></a>
+															<!-- SỬA ĐI LINK SANG TRANG SỬA--><a class="btn-custom-icon item" href="#">
+																<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Sửa"><img class="svg" src="./assets/images/icons/edit.svg" alt="" srcset=""></div></a>
+															<!-- THAY ĐỔI MẬT KHẨU (HIỆN POPUP)-->
+															<button class="btn-popup btn-custom-icon item" fancybox="fancybox-form-submit" dataFieldName="testID" dataID="item-1">
+																<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Đổi mật khẩu"><img class="svg" src="./assets/images/icons/user-setting.svg" alt="" srcset=""></div>
+															</button>
+															<!-- XÓA (HIỆN POPUP)-->
+															<button class="btn-popup btn-custom-icon item" fancybox="fancybox-notification" dataFieldName="testID" dataId="item-1">
+																<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Xóa"><img class="svg" src="./assets/images/icons/delete.svg" alt="" srcset=""></div>
+															</button>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>textalign : left</td>
+													<td class="text-center"> textalign : center</td>
+													<td class="w-300px">
+														<div class="block-images-big"><img class="ofc" src="https://images.unsplash.com/photo-1562887085-cb16e9116582?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1489&amp;q=80" alt="" srcset=""></div>
+													</td>
+													<td>
+														<div class="list-item center">
+															<div class="item badge badge-primary p-2">Admin</div>
+															<div class="item badge badge-primary p-2">Mod</div>
+															<div class="item badge badge-primary p-2">Guest</div>
+														</div>
+													</td>
+													<td>
+														<div class="language">
+															<figure class="shadow"><img class="ofc" src="./assets/images/nation/2.png" alt=""></figure>
+														</div>
+													</td>
+													<td class="text-center">
+														<div class="input-custom">
+															<label class="_checkbox-custom">
+																<input class="custom-control-input" type="checkbox" checked="checked" onclick="return false"><span class="custom-control-indicator"></span>
+															</label>
+														</div>
+													</td>
+													<td>
+														<div class="list-item center">
+															<!-- XEM CHI TIẾT--><a class="btn-custom-icon item" href="#">
+																<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Xem chi tiết"><img class="svg" src="./assets/images/icons/eye.svg" alt="" srcset=""></div></a>
+															<!-- SỬA ĐI LINK SANG TRANG SỬA--><a class="btn-custom-icon item" href="#">
+																<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Sửa"><img class="svg" src="./assets/images/icons/edit.svg" alt="" srcset=""></div></a>
+															<!-- THAY ĐỔI MẬT KHẨU (HIỆN POPUP)-->
+															<button class="btn-popup btn-custom-icon item" fancybox="fancybox-form-submit" dataFieldName="testID" dataID="item-2">
+																<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Đổi mật khẩu"><img class="svg" src="./assets/images/icons/user-setting.svg" alt="" srcset=""></div>
+															</button>
+															<!-- XÓA (HIỆN POPUP)-->
+															<button class="btn-popup btn-custom-icon item" fancybox="fancybox-notification" dataFieldName="testID" dataId="item-2">
+																<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Xóa"><img class="svg" src="./assets/images/icons/delete.svg" alt="" srcset=""></div>
+															</button>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td>3</td>
+													<td>textalign : left</td>
+													<td class="text-center"> textalign : center</td>
+													<td class="w-300px">
+														<div class="block-images-big"><img class="ofc" src="https://images.unsplash.com/photo-1562887085-cb16e9116582?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1489&amp;q=80" alt="" srcset=""></div>
+													</td>
+													<td>
+														<div class="list-item center">
+															<div class="item badge badge-primary p-2">Admin</div>
+															<div class="item badge badge-primary p-2">Mod</div>
+															<div class="item badge badge-primary p-2">Guest</div>
+														</div>
+													</td>
+													<td>
+														<div class="language">
+															<figure class="shadow"><img class="ofc" src="./assets/images/nation/3.png" alt=""></figure>
+														</div>
+													</td>
+													<td class="text-center">
+														<div class="input-custom">
+															<label class="_checkbox-custom">
+																<input class="custom-control-input" type="checkbox" checked="checked" onclick="return false"><span class="custom-control-indicator"></span>
+															</label>
+														</div>
+													</td>
+													<td>
+														<div class="list-item center">
+															<!-- XEM CHI TIẾT--><a class="btn-custom-icon item" href="#">
+																<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Xem chi tiết"><img class="svg" src="./assets/images/icons/eye.svg" alt="" srcset=""></div></a>
+															<!-- SỬA ĐI LINK SANG TRANG SỬA--><a class="btn-custom-icon item" href="#">
+																<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Sửa"><img class="svg" src="./assets/images/icons/edit.svg" alt="" srcset=""></div></a>
+															<!-- THAY ĐỔI MẬT KHẨU (HIỆN POPUP)-->
+															<button class="btn-popup btn-custom-icon item" fancybox="fancybox-form-submit" dataFieldName="testID" dataID="item-3">
+																<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Đổi mật khẩu"><img class="svg" src="./assets/images/icons/user-setting.svg" alt="" srcset=""></div>
+															</button>
+															<!-- XÓA (HIỆN POPUP)-->
+															<button class="btn-popup btn-custom-icon item" fancybox="fancybox-notification" dataFieldName="testID" dataId="item-3">
+																<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Xóa"><img class="svg" src="./assets/images/icons/delete.svg" alt="" srcset=""></div>
+															</button>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td>4</td>
+													<td>textalign : left</td>
+													<td class="text-center"> textalign : center</td>
+													<td class="w-300px">
+														<div class="block-images-big"><img class="ofc" src="https://images.unsplash.com/photo-1562887085-cb16e9116582?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1489&amp;q=80" alt="" srcset=""></div>
+													</td>
+													<td>
+														<div class="list-item center">
+															<div class="item badge badge-primary p-2">Admin</div>
+															<div class="item badge badge-primary p-2">Mod</div>
+															<div class="item badge badge-primary p-2">Guest</div>
+														</div>
+													</td>
+													<td>
+														<div class="language">
+															<figure class="shadow"><img class="ofc" src="./assets/images/nation/4.png" alt=""></figure>
+														</div>
+													</td>
+													<td class="text-center">
+														<div class="input-custom">
+															<label class="_checkbox-custom">
+																<input class="custom-control-input" type="checkbox" checked="checked" onclick="return false"><span class="custom-control-indicator"></span>
+															</label>
+														</div>
+													</td>
+													<td>
+														<div class="list-item center">
+															<!-- XEM CHI TIẾT--><a class="btn-custom-icon item" href="#">
+																<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Xem chi tiết"><img class="svg" src="./assets/images/icons/eye.svg" alt="" srcset=""></div></a>
+															<!-- SỬA ĐI LINK SANG TRANG SỬA--><a class="btn-custom-icon item" href="#">
+																<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Sửa"><img class="svg" src="./assets/images/icons/edit.svg" alt="" srcset=""></div></a>
+															<!-- THAY ĐỔI MẬT KHẨU (HIỆN POPUP)-->
+															<button class="btn-popup btn-custom-icon item" fancybox="fancybox-form-submit" dataFieldName="testID" dataID="item-4">
+																<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Đổi mật khẩu"><img class="svg" src="./assets/images/icons/user-setting.svg" alt="" srcset=""></div>
+															</button>
+															<!-- XÓA (HIỆN POPUP)-->
+															<button class="btn-popup btn-custom-icon item" fancybox="fancybox-notification" dataFieldName="testID" dataId="item-4">
+																<div class="icon" data-toggle="tooltip" data-placement="bottom" title="Xóa"><img class="svg" src="./assets/images/icons/delete.svg" alt="" srcset=""></div>
+															</button>
+														</div>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+										<!-- BOX HIỆN LÊN CÂU HỎI-->
+										<div class="d-none">
+											<div class="modal-POPUP fancybox-content" id="fancybox-notification">
+												<div class="title-modal">
+													<h5>Thông báo</h5>
+													<p>Web4gsolutions xin thông báo</p>
+												</div>
+												<div class="content-modal">
+													<p>Bạn có chắc chắn xóa ?</p>
+												</div>
+												<div class="list-button">
+													<div class="item">
+														<button class="btn-custom cancel" data-fancybox-close>Hủy</button>
+													</div>
+													<div class="item">
+														<button class="btn-custom submit submit-delete" data-url="#">Chấp nhận</button>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- BOX FORM HIỆN LÊN-->
+										<div class="d-none">
+											<div class="modal-POPUP fancybox-content" id="fancybox-form-submit">
+												<div class="title-modal">
+													<h5>Thay đổi mật khẩu</h5>
+													<p>Web4gsolutions xin thông báo</p>
+												</div>
+												<div class="content-modal">
+													<form action="#" method="method">
+														<div class="form-group row">
+															<label class="col-sm-5 col-form-label" for="staticEmail">Tài khoản</label>
+															<div class="col-sm-7">
+																<div class="input-group input-group-sm">
+																	<input class="form-control-plaintext" type="text" readonly="" value="Administrator">
+																</div>
+															</div>
+														</div>
+														<div class="form-group row">
+															<label class="col-sm-5 col-form-label">Mật khẩu cũ</label>
+															<div class="col-sm-7">
+																<div class="input-group input-group-sm">
+																	<input class="form-control" id="oldpass" type="Password">
+																</div>
+															</div>
+														</div>
+														<div class="form-group row">
+															<label class="col-sm-5 col-form-label">Mật khẩu mới</label>
+															<div class="col-sm-7">
+																<div class="input-group input-group-sm">
+																	<input class="form-control" id="newpass" type="Password">
+																</div>
+															</div>
+														</div>
+														<div class="form-group row">
+															<label class="col-sm-5 col-form-label">Nhập lại mật khẩu mới</label>
+															<div class="col-sm-7">
+																<div class="input-group input-group-sm">
+																	<input class="form-control" id="re_newpass" type="Password">
+																</div>
+															</div>
+														</div>
+													</form>
+												</div>
+												<div class="list-button">
+													<div class="item">
+														<button class="btn-custom cancel" data-fancybox-close>Hủy</button>
+													</div>
+													<div class="item">
+														<button class="btn-custom submit submit-change-pass" data-url="#">Cập nhật</button>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
 								</div>
+								<!-- DROPZONE-->
 								<div class="content" tab-id="item-4">
 									<div class="upload-file">
 										<div id="actions">
@@ -490,6 +758,7 @@
 		<script type="text/javascript" src="./js/core.min.js"></script>
 		<script type="text/javascript" src="./js/main.min.js"></script>
 		<script src="https://cdn.ckeditor.com/ckeditor5/11.2.0/classic/ckeditor.js"></script>
+		<script src="./js/drop-zone.min.js"></script>
 		<script>
 			ClassicEditor
 				.create( document.querySelector( '#editor' ) )

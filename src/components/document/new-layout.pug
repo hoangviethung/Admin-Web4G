@@ -1,0 +1,35 @@
+.main__inner
+	.page-title
+		.page-title-wrapper
+			.page-title-heading
+				.page-title-icon
+					img.svg(src="./assets/images/icons/document.svg", alt="", srcset="")
+				.page-title-content
+					h3 Tên Trang
+					p Mô tả
+			// CÁC BUTTON CHUYỂN TRANG (NẾU CÓ)
+			.page-title-actions
+				a(href="new-layout-detail.html").btn-custom.submit TRANG CHI TIẾT
+	.row
+		.block-table.col-lg-12
+			p.mb-5 Layout trang danh sách dữ liệu
+			table.table.table-bordered.m-0
+				thead
+					tr
+						th #
+						th Demo
+						th Demo
+						th Demo
+						th Demo
+						th Demo
+						th Demo
+				tbody
+					-for(i=1;i<5;i++)
+						tr
+							td #{i}
+							td Demo
+							td Demo
+							td Demo
+							td Demo
+							td Demo
+							td Demo

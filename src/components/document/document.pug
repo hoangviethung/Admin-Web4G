@@ -7,6 +7,8 @@
 				.page-title-content
 					h3 Document
 					p Tại đây các Developer Web4gsolutions có thể tham khảo các Components hiện có để dễ dàng tạo trang.
+			.page-title-actions
+				a(href="new-layout.html").btn-custom.submit XEM LAYOUT MẪU
 	.row
 		.block-main.shadow-sm.col-lg-12
 			.tab-container
@@ -14,7 +16,7 @@
 					li.item(toggle-for="item-1").acitve Components
 					li.item(toggle-for="item-2") Ck-Editor
 					li.item(toggle-for="item-3") Table and Task in table
-					li.item(toggle-for="item-4") Drop-zone
+					li.item(toggle-for="item-4") Drop-Zone
 				.tab-content
 					// Components in Website
 					.content(tab-id="item-1")
@@ -82,15 +84,24 @@
 											label(for="_checkbox-2")
 												svg(viewBox=[0, 0, 50, 50].join( ))
 													path(d="M5 30 L 20 45 L 45 5")
+								// XUỐNG DÒNG NHANH = div(class="w-100")
+								.w-100
+									label Buttons
+									.form-group.col-lg-2
+									a(href="/").btn-custom.cancel Hủy
+									button.btn-custom.submit Thêm
+								// XUỐNG DÒNG NHANH = div(class="w-100")
 								.w-100
 								.form-group.text-right.col-lg-12
 									label Thanh phân trang ( Mặc đinh năm bên góc tay phải )
 									include ../_global/_pagination.pug
+					// CK-Editor
 					.content(tab-id="item-2")
 						.block-form
 							.form-group
 								label Nội dung
 								textarea#editor(name="content")
+					// BẢNG
 					.content(tab-id="item-3")
 						.seach.col-lg-4
 							form(action="#" method="method")
@@ -118,13 +129,109 @@
 										label.text-center Input Type Number
 										.input-group.shadow-sm
 											input.form-control.form-control-sm(type="number" placeholder="Input Type Number")
-									.col-lg-3.form-group
-										label.text-center Tên người nhận
-										.input-group.shadow-sm
-											input.form-control.form-control-sm(placeholder="Tên người nhận")
 									.col-lg-2
 										.form-group.mb-0
 											button.btn.btn-primary.btn-sm.shadow Lọc
+						.block-table.col-lg-12.mt-4
+							table.table.table-bordered.m-0
+								thead
+									tr
+										th # (auto center)
+										th textalign : left
+										th.text-center textalign : center
+										th.text-center Hình ảnh
+										th.text-center Tag
+										th.text-center Ngôn ngữ
+										th.text-center Hiển thị
+										th.text-center Tác vụ
+								tbody
+									-for(i=1;i<5;i++)
+										tr
+											td #{i}
+											td textalign : left
+											td.text-center  textalign : center
+											td.w-300px
+												.block-images-big
+													img.ofc(src="https://images.unsplash.com/photo-1562887085-cb16e9116582?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80", alt="", srcset="")
+											td
+												.list-item.center
+													.item.badge.badge-primary.p-2 Admin
+													.item.badge.badge-primary.p-2 Mod
+													.item.badge.badge-primary.p-2 Guest
+											td
+												.language
+													figure.shadow
+														img.ofc(src="./assets/images/nation/"+i+".png", alt="")
+											td.text-center
+												.input-custom
+													label._checkbox-custom
+														input.custom-control-input(type='checkbox' checked="checked" onclick="return false")
+														span.custom-control-indicator
+											td
+												.list-item.center
+													// XEM CHI TIẾT
+													a.btn-custom-icon.item(href="#")
+														.icon(data-toggle="tooltip" data-placement="bottom" title="Xem chi tiết")
+															img.svg(src="./assets/images/icons/eye.svg", alt="", srcset="")
+													// SỬA ĐI LINK SANG TRANG SỬA
+													a.btn-custom-icon.item(href="#")
+														.icon(data-toggle="tooltip" data-placement="bottom" title="Sửa")
+															img.svg(src="./assets/images/icons/edit.svg", alt="", srcset="")
+													// THAY ĐỔI MẬT KHẨU (HIỆN POPUP)
+													button.btn-popup.btn-custom-icon.item(fancybox="fancybox-form-submit" dataFieldName="testID" dataID="item-"+i)
+														.icon(data-toggle="tooltip" data-placement="bottom" title="Đổi mật khẩu")
+															img.svg(src="./assets/images/icons/user-setting.svg", alt="", srcset="")
+													// XÓA (HIỆN POPUP)
+													button.btn-popup.btn-custom-icon.item(fancybox="fancybox-notification" dataFieldName="testID" dataId="item-"+i)
+														.icon(data-toggle="tooltip" data-placement="bottom" title="Xóa")
+															img.svg(src="./assets/images/icons/delete.svg", alt="", srcset="")
+							// BOX HIỆN LÊN CÂU HỎI
+							.d-none
+								.modal-POPUP.fancybox-content#fancybox-notification
+									.title-modal
+										h5 Thông báo
+										p Web4gsolutions xin thông báo
+									.content-modal
+										p Bạn có chắc chắn xóa ?
+									.list-button
+										.item
+											button.btn-custom.cancel(data-fancybox-close) Hủy
+										.item
+											button.btn-custom.submit.submit-delete(data-url="#") Chấp nhận
+							// BOX FORM HIỆN LÊN
+							.d-none
+								.modal-POPUP.fancybox-content#fancybox-form-submit
+									.title-modal
+										h5 Thay đổi mật khẩu
+										p Web4gsolutions xin thông báo
+									.content-modal
+										form(action="#" method="method")
+											.form-group.row
+												label.col-sm-5.col-form-label(for='staticEmail') Tài khoản
+												.col-sm-7
+													.input-group.input-group-sm
+														input.form-control-plaintext(type='text', readonly='', value='Administrator')
+											.form-group.row
+												label.col-sm-5.col-form-label Mật khẩu cũ
+												.col-sm-7
+													.input-group.input-group-sm
+														input#oldpass.form-control(type='Password')
+											.form-group.row
+												label.col-sm-5.col-form-label Mật khẩu mới
+												.col-sm-7
+													.input-group.input-group-sm
+														input#newpass.form-control(type='Password')
+											.form-group.row
+												label.col-sm-5.col-form-label Nhập lại mật khẩu mới
+												.col-sm-7
+													.input-group.input-group-sm
+														input#re_newpass.form-control(type='Password')
+									.list-button
+										.item
+											button.btn-custom.cancel(data-fancybox-close) Hủy
+										.item
+											button.btn-custom.submit.submit-change-pass(data-url="#") Cập nhật
+					// DROPZONE
 					.content(tab-id="item-4")
 						.upload-file
 							#actions
