@@ -307,12 +307,13 @@ function setDateDefault() {
 }
 
 function checkboxAllRow() {
-	$('.table-multiple-checkbox')
-	$('.checkAllRow').on('click', function() {
-		
+	$('input[type-checkbox="all-row"]').on('click', function() {
+		let thisRow = $(this).parents('tr');
+		thisRow.find('input[type="checkbox"').attr('checked', function(index, attr) {
+			return attr == 'checked' ? null : 'checked';
+		});
 	})
 }
-
 // CHẠY KHI DOCUMENT SẴN SÀNG
 document.addEventListener('DOMContentLoaded', () => {
 	$('[data-toggle="tooltip"]').tooltip();
