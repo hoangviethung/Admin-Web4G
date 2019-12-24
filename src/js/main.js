@@ -321,7 +321,8 @@ function checkboxAllRow() {
 
 function multipleSelect() {
 	$("._select-custom").select2({
-		tags: true
+		tags: true,
+		theme: "classic",
 	});
 }
 // CHẠY KHI DOCUMENT SẴN SÀNG
