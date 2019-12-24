@@ -7,7 +7,8 @@ import bSync from "browser-sync";
 import jsCore from "./core-js"
 import {
 	jsTask,
-	jsTask2
+	jsTask2,
+	jsTask3
 } from "./script"
 import pugTask from "./html"
 import cssCore from "./core-css"
@@ -41,6 +42,12 @@ export const server = () => {
 	], {
 		delay: 750
 	}, series(jsTask2));
+
+	watch([
+		'src/js/ckeditor.js',
+	], {
+		delay: 750
+	}, series(jsTask3));
 
 	watch([
 		"src/**.pug",

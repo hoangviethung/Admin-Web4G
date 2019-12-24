@@ -17,6 +17,7 @@
     "jquery": "3.4.1",
     "bootstrap": "^4.3.1",
     "dropzone": "^5.5.0",
-    "fancybox": "@fancyapps/fancybox#^3.5.7"
+    "fancybox": "^3.5.7",
+    "select2": "^4.0.12"
   }
 }

@@ -33,7 +33,7 @@
 					-for(i=1;i<5;i++)
 						tr
 							td #{i}
-							td Administrator
+							td(datavalue="Administrator") Administrator
 							td 0969912404
 							td y.tran@web4gsolutions.com
 							td
@@ -54,7 +54,7 @@
 										.icon(data-toggle="tooltip" data-placement="bottom" title="Sửa")
 											img.svg(src="./assets/images/icons/edit.svg", alt="", srcset="")
 									// THAY ĐỔI MẬT KHẨU
-									button.btn-popup.btn-custom-icon.item(fancybox="fancybox-form-submit" dataFieldName="userID" dataID="item-"+i)
+									button.btn-popup.btn-custom-icon.item(fancybox="fancybox-form-submit", dataFieldName="userID" dataID="item-"+i)
 										.icon(data-toggle="tooltip" data-placement="bottom" title="Đổi mật khẩu")
 											img.svg(src="./assets/images/icons/user-setting.svg", alt="", srcset="")
 									// XÓA
@@ -83,10 +83,10 @@
 					.content-modal
 						form(action="#" method="method")
 							.form-group.row
-								label.col-sm-5.col-form-label(for='staticEmail') Tài khoản
+								label.col-sm-5.col-form-label Tài khoản
 								.col-sm-7
 									.input-group.input-group-sm
-										input.form-control-plaintext(type='text', readonly='', value='Administrator')
+										input#dataValue.form-control-plaintext(type='text', readonly)
 							.form-group.row
 								label.col-sm-5.col-form-label Mật khẩu cũ
 								.col-sm-7

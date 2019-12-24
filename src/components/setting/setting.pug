@@ -25,7 +25,7 @@
 							td
 								.list-item.center
 									// SỬA
-									button.btn-popup.btn-custom-icon.item(fancybox="fancybox-form-submit" dataFieldName="settingID" dataID="item-"+i)
+									button.btn-popup.btn-custom-icon.item(fancybox="fancybox-form-submit" dataFieldName="settingID" dataID="item-"+i dataValue="SmtpServer")
 										.icon(data-toggle="tooltip" data-placement="bottom" title="Chỉnh sửa")
 											img.svg(src="./assets/images/icons/edit.svg", alt="", srcset="")
 			// BOX FORM HIỆN LÊN
@@ -40,7 +40,7 @@
 								label.col-sm-5.col-form-label Từ khóa
 								.col-sm-7
 									.input-group.input-group-sm
-										input.form-control-plaintext(type='text', readonly='', value='SmtpServer')
+										input#dataValue.form-control-plaintext(type='text', readonly)
 							.form-group.row
 								label.col-sm-5.col-form-label Giá trị
 								.col-sm-7

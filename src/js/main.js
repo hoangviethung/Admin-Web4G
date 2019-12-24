@@ -62,6 +62,7 @@ Date.prototype.toDateInputValue = (function() {
 // AJAX BUTTON DELETE
 function ajaxAction() {
 	var itemId;
+	var dataValue;
 	var dataFieldName;
 	// POPUP THÔNG BÁO
 	$('.btn-popup[fancybox=fancybox-notification]').on('click', function() {
@@ -82,6 +83,10 @@ function ajaxAction() {
 	$('.btn-popup[fancybox="fancybox-form-submit"]').on('click', function() {
 		itemId = $(this).attr('dataiD');
 		dataFieldName = $(this).attr('dataFieldName');
+		dataValue = $(this).parents('td[dataValue]').val();
+		console.log(dataValue);
+
+		$('#fancybox-form-submit #dataValue').val(dataValue);
 		$.fancybox.open({
 			src: '#fancybox-form-submit',
 			type: 'inline',
@@ -135,7 +140,6 @@ function ajaxAction() {
 			type: "POST",
 			url: url,
 			data: data,
-			error: function(response) {},
 			success: function(res) {
 				if (res.Code === 200) {
 					location.reload();
@@ -314,6 +318,12 @@ function checkboxAllRow() {
 		});
 	})
 }
+
+function multipleSelect() {
+	$("._select-custom").select2({
+		tags: true
+	});
+}
 // CHẠY KHI DOCUMENT SẴN SÀNG
 document.addEventListener('DOMContentLoaded', () => {
 	$('[data-toggle="tooltip"]').tooltip();
@@ -322,6 +332,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	// DROPZONE
 	uploadFile();
 	setDateDefault();
+	multipleSelect();
 	// TAB
 	const blockMainTab = new Tab(".block-main .tab-container");
 	// SVG CONTROL

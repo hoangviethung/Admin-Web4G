@@ -44,7 +44,8 @@ export const jsTask = () => {
 export const jsTask2 = () => {
 	return src([
 			'src/js/**.js',
-			'!src/js/main.js'
+			'!src/js/main.js',
+			'!src/js/ckeditor.js'
 		])
 		.pipe(plumber(function(err) {
 			console.log(err);
@@ -62,7 +63,15 @@ export const jsTask2 = () => {
 		.pipe(dest('./dist/js'));
 };
 
+export const jsTask3 = () => {
+	return src([
+			'src/js/ckeditor.js'
+		])
+		.pipe(dest('./dist/js'));
+};
+
 module.exports = {
 	jsTask,
-	jsTask2
+	jsTask2,
+	jsTask3
 };

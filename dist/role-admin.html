@@ -337,11 +337,13 @@
 		</main>
 		<script type="text/javascript" src="./js/core.min.js"></script>
 		<script type="text/javascript" src="./js/main.min.js"></script>
-		<script src="https://cdn.ckeditor.com/ckeditor5/11.2.0/classic/ckeditor.js"></script>
+		<script type="text/javascript" src="./js/ckeditor.js"></script>
 		<script>
 			ClassicEditor
 				.create( document.querySelector( '#editor' ) )
 				.then( editor => {
+					
+					console.log(editor.config)
 				})
 				.catch( error => {
 					console.error( error );

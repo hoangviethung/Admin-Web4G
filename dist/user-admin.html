@@ -238,7 +238,7 @@
 							<tbody>
 								<tr>
 									<td>1</td>
-									<td>Administrator</td>
+									<td datavalue="Administrator">Administrator</td>
 									<td>0969912404</td>
 									<td>y.tran@web4gsolutions.com</td>
 									<td>
@@ -273,7 +273,7 @@
 								</tr>
 								<tr>
 									<td>2</td>
-									<td>Administrator</td>
+									<td datavalue="Administrator">Administrator</td>
 									<td>0969912404</td>
 									<td>y.tran@web4gsolutions.com</td>
 									<td>
@@ -308,7 +308,7 @@
 								</tr>
 								<tr>
 									<td>3</td>
-									<td>Administrator</td>
+									<td datavalue="Administrator">Administrator</td>
 									<td>0969912404</td>
 									<td>y.tran@web4gsolutions.com</td>
 									<td>
@@ -343,7 +343,7 @@
 								</tr>
 								<tr>
 									<td>4</td>
-									<td>Administrator</td>
+									<td datavalue="Administrator">Administrator</td>
 									<td>0969912404</td>
 									<td>y.tran@web4gsolutions.com</td>
 									<td>
@@ -408,10 +408,10 @@
 								<div class="content-modal">
 									<form action="#" method="method">
 										<div class="form-group row">
-											<label class="col-sm-5 col-form-label" for="staticEmail">Tài khoản</label>
+											<label class="col-sm-5 col-form-label">Tài khoản</label>
 											<div class="col-sm-7">
 												<div class="input-group input-group-sm">
-													<input class="form-control-plaintext" type="text" readonly="" value="Administrator">
+													<input class="form-control-plaintext" id="dataValue" type="text" readonly>
 												</div>
 											</div>
 										</div>
@@ -468,11 +468,13 @@
 		</main>
 		<script type="text/javascript" src="./js/core.min.js"></script>
 		<script type="text/javascript" src="./js/main.min.js"></script>
-		<script src="https://cdn.ckeditor.com/ckeditor5/11.2.0/classic/ckeditor.js"></script>
+		<script type="text/javascript" src="./js/ckeditor.js"></script>
 		<script>
 			ClassicEditor
 				.create( document.querySelector( '#editor' ) )
 				.then( editor => {
+					
+					console.log(editor.config)
 				})
 				.catch( error => {
 					console.error( error );
