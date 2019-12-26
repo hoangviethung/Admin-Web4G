@@ -178,6 +178,13 @@ function ajaxAction() {
 	});
 }
 
+function returnDataCheckBox() {
+	$('input[type="checkbox"]').each(function() {
+		$(this).on('click', function(e) {
+			$(this).val(e.target.checked)
+		})
+	})
+}
 // SUBMENU ASIDE
 function showSubAsideMenu() {
 	$('.aside-list .aside-item').on('click', function() {
@@ -348,6 +355,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	ajaxAction()
 	// CHECK ALL ROW
 	checkboxAllRow();
+	returnDataCheckBox();
 });
 
 // CHẠY KHI WINDOWN SCROLL
