@@ -178,13 +178,22 @@ function ajaxAction() {
 	});
 }
 
+// RETURN DATA CHECKBOX
 function returnDataCheckBox() {
 	$('input[type="checkbox"]').each(function() {
 		$(this).on('click', function(e) {
-			$(this).val(e.target.checked)
+			if ($(this).val() === 'true' || $(this).val() === 'false') {
+				$(this).val(e.target.checked)
+			}
 		})
 	})
 }
+
+// AJAX CHECKBOX
+function ajaxCheckBox() {
+
+}
+
 // SUBMENU ASIDE
 function showSubAsideMenu() {
 	$('.aside-list .aside-item').on('click', function() {
