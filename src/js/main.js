@@ -178,6 +178,19 @@ function ajaxAction() {
 	});
 }
 
+// AJAX CHECKBOX
+function ajaxCheckBox() {
+	$('._checkbox-custom').on('change', function() {
+		const url = $(this).attr('data-url');
+		$.ajax({
+			type: "POST",
+			url: url,
+			data: {},
+			success: function(response) {}
+		});
+	});
+}
+
 // RETURN DATA CHECKBOX
 function returnDataCheckBox() {
 	$('input[type="checkbox"]').each(function() {
@@ -189,10 +202,8 @@ function returnDataCheckBox() {
 	})
 }
 
-// AJAX CHECKBOX
-function ajaxCheckBox() {
-
-}
+// GET URL PAGE
+function setUrlTypeLink() {}
 
 // SUBMENU ASIDE
 function showSubAsideMenu() {
@@ -341,6 +352,7 @@ function multipleSelect() {
 		theme: "classic",
 	});
 }
+
 // CHẠY KHI DOCUMENT SẴN SÀNG
 document.addEventListener('DOMContentLoaded', () => {
 	$('[data-toggle="tooltip"]').tooltip();
@@ -361,9 +373,11 @@ document.addEventListener('DOMContentLoaded', () => {
 	showSubAsideMenu();
 	toogleAsideMenu();
 	// AJAX
-	ajaxAction()
+	ajaxAction();
+	ajaxCheckBox();
 	// CHECK ALL ROW
 	checkboxAllRow();
+	// RETUEN DATA CHECK BOX CUSTOM 2
 	returnDataCheckBox();
 });
 

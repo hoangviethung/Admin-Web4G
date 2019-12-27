@@ -16,7 +16,8 @@
 					li.item(toggle-for="item-1").acitve Components
 					li.item(toggle-for="item-2") Ck-Editor
 					li.item(toggle-for="item-3") Table and Task in table
-					li.item(toggle-for="item-4") Drop-Zone
+					li.item(toggle-for="item-4") Popup Normal (Can Custom)
+					li.item(toggle-for="item-5") Drop-Zone
 				.tab-content
 					// Components in Website
 					.content(tab-id="item-1")
@@ -55,7 +56,7 @@
 								.form-group.col-lg-3
 									label Input Type Link
 									.input-group.shadow-sm
-										.input-group-prepend
+										.input-group-prepend.set-url
 											span.input-group-text http://web4gsolutions.com/
 										input.form-control(type='text')
 								// XUỐNG DÒNG NHANH = div(class="w-100")
@@ -81,7 +82,7 @@
 								.form-group.col-lg-2
 									label Check Box Custom 2 (Màu mặc định)
 									.input-custom
-										._checkbox-normal
+										._checkbox-normal(data-url="#")
 											input#_checkbox-1(type="checkbox")
 											label(for="_checkbox-1")
 												svg(viewBox=[0, 0, 50, 50].join( ))
@@ -195,54 +196,11 @@
 													button.btn-popup.btn-custom-icon.item(fancybox="fancybox-notification" dataFieldName="testID" dataId="item-"+i)
 														.icon(data-toggle="tooltip" data-placement="bottom" title="Xóa")
 															img.svg(src="./assets/images/icons/delete.svg", alt="", srcset="")
-							// BOX HIỆN LÊN CÂU HỎI
-							.d-none
-								.modal-POPUP.fancybox-content#fancybox-notification
-									.title-modal
-										h5 Thông báo
-										p Web4gsolutions xin thông báo
-									.content-modal
-										p Bạn có chắc chắn xóa ?
-									.list-button
-										.item
-											button.btn-custom.cancel(data-fancybox-close) Hủy
-										.item
-											button.btn-custom.submit.submit-delete(data-url="#") Chấp nhận
-							// BOX FORM HIỆN LÊN
-							.d-none
-								.modal-POPUP.fancybox-content#fancybox-form-submit
-									.title-modal
-										h5 Thay đổi mật khẩu
-										p Web4gsolutions xin thông báo
-									.content-modal
-										form(action="#" method="method")
-											.form-group.row
-												label.col-sm-5.col-form-label(for='staticEmail') Tài khoản
-												.col-sm-7
-													.input-group.input-group-sm
-														input.form-control-plaintext(type='text', readonly='', value='Administrator')
-											.form-group.row
-												label.col-sm-5.col-form-label Mật khẩu cũ
-												.col-sm-7
-													.input-group.input-group-sm
-														input#oldpass.form-control(type='Password')
-											.form-group.row
-												label.col-sm-5.col-form-label Mật khẩu mới
-												.col-sm-7
-													.input-group.input-group-sm
-														input#newpass.form-control(type='Password')
-											.form-group.row
-												label.col-sm-5.col-form-label Nhập lại mật khẩu mới
-												.col-sm-7
-													.input-group.input-group-sm
-														input#re_newpass.form-control(type='Password')
-									.list-button
-										.item
-											button.btn-custom.cancel(data-fancybox-close) Hủy
-										.item
-											button.btn-custom.submit.submit-change-pass(data-url="#") Cập nhật
-					// DROPZONE
+					// POPUP BÌNH THƯỜNG CÓ THỂ CUSTOM
 					.content(tab-id="item-4")
+						button.btn-popup.btn-custom.submit.item(data-fancybox data-src="#yourID") Popup
+					// DROPZONE
+					.content(tab-id="item-5")
 						.upload-file
 							#actions
 								.upload-image-wrapper
@@ -332,3 +290,67 @@
 										button.btn.btn-danger.btn-delete
 											i.glyphicon.glyphicon-trash
 											span Xóa
+		// BOX HIỆN LÊN CÂU HỎI
+		.d-none
+			.modal-POPUP.fancybox-content#fancybox-notification
+				.title-modal
+					h5 Thông báo
+					p Web4gsolutions xin thông báo
+				.content-modal
+					p Bạn có chắc chắn xóa ?
+				.list-button
+					.item
+						button.btn-custom.cancel(data-fancybox-close) Hủy
+					.item
+						button.btn-custom.submit.submit-delete(data-url="#") Chấp nhận
+		// BOX FORM HIỆN LÊN
+		.d-none
+			.modal-POPUP.fancybox-content#fancybox-form-submit
+				.title-modal
+					h5 Thay đổi mật khẩu
+					p Web4gsolutions xin thông báo
+				.content-modal
+					form(action="#" method="method")
+						.form-group.row
+							label.col-sm-5.col-form-label(for='staticEmail') Tài khoản
+							.col-sm-7
+								.input-group.input-group-sm
+									input.form-control-plaintext(type='text', readonly='', value='Administrator')
+						.form-group.row
+							label.col-sm-5.col-form-label Mật khẩu cũ
+							.col-sm-7
+								.input-group.input-group-sm
+									input#oldpass.form-control(type='Password')
+						.form-group.row
+							label.col-sm-5.col-form-label Mật khẩu mới
+							.col-sm-7
+								.input-group.input-group-sm
+									input#newpass.form-control(type='Password')
+						.form-group.row
+							label.col-sm-5.col-form-label Nhập lại mật khẩu mới
+							.col-sm-7
+								.input-group.input-group-sm
+									input#re_newpass.form-control(type='Password')
+				.list-button
+					.item
+						button.btn-custom.cancel(data-fancybox-close) Hủy
+					.item
+						button.btn-custom.submit.submit-change-pass(data-url="#") Cập nhật
+		// POPUP BÌNH THƯỜNG (CÓ THỂ CUSTOM)
+		.d-none
+			.modal-POPUP.fancybox-content#yourID
+				form(action="/" method="method")
+					.title-modal
+						h5 Name Form
+						p Web4gsolutions xin thông báo
+					.content-modal
+						.form-group.row
+							label.col-sm-5.col-form-label(for='staticEmail') Tài khoản
+							.col-sm-7
+								.input-group.input-group-sm
+									input.form-control(type='text')
+					.list-button
+						.item
+							button.btn-custom.cancel(data-fancybox-close) Hủy
+						.item
+							button.btn-custom.submit Cập nhật
