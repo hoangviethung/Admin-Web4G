@@ -180,13 +180,22 @@ function ajaxAction() {
 
 // AJAX CHECKBOX
 function ajaxCheckBox() {
-	$('._checkbox-custom').on('change', function() {
+	$('._checkbox-custom input[type="checkbox"]').on('change', function() {
 		const url = $(this).attr('data-url');
+		let IsActive = $(this).attr('IsActive');
+		if ($(this).attr('IsActive') === "false") {
+			IsActive = "true";
+			$(this).attr('IsActive', 'true');
+		} else {
+			IsActive = "false";
+			$(this).attr('IsActive', 'false');
+		}
 		$.ajax({
 			type: "POST",
 			url: url,
-			data: {},
-			success: function(response) {}
+			data: {
+				IsActive: IsActive,
+			},
 		});
 	});
 }
