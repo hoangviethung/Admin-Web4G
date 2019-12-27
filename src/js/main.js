@@ -225,6 +225,20 @@ function showSubAsideMenu() {
 	});
 }
 
+// ACTIVE ITEM MENU BY URL
+function activeMenuByUrl() {
+	const url = window.location.pathname;
+	const listLink = $('.aside-item .list-link a');
+	listLink.each(function() {
+		let allHref = $(this).attr('href');
+
+		if (url === (allHref)) {
+			$(this).parents('.aside-item').addClass('active');
+			$(this).parents('.list-link').slideToggle();
+		}
+	})
+}
+
 // TOGGLE ASIDE GỌN PHÓNG TÓ
 function toogleAsideMenu() {
 
@@ -234,7 +248,6 @@ function toogleAsideMenu() {
 
 	$('.block-logo .button-close').on('click', function() {
 		if ($(window).width() > 1024) {
-			console.log('true');
 			$(this).toggleClass('active');
 			$('body, aside').toggleClass('active');
 		} else {
@@ -242,19 +255,6 @@ function toogleAsideMenu() {
 
 		}
 	});
-}
-
-// ACTIVE ITEM MENU BY URL
-function activeMenuByUrl() {
-	var url = window.location.href.split('/').pop();
-
-	let listNavItem = $('.nav-item a');
-	listNavItem.each(function() {
-		let currenUrl = $(this).attr('href');
-		if (url.includes(currenUrl)) {
-			$(this).parents('.nav-item').addClass('active');
-		}
-	})
 }
 
 // HEADER
