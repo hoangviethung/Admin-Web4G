@@ -53,12 +53,6 @@ class Tab {
 	}
 }
 
-Date.prototype.toDateInputValue = (function() {
-	var local = new Date(this);
-	local.setMinutes(this.getMinutes() - this.getTimezoneOffset());
-	return local.toJSON().slice(0, 10);
-});
-
 // AJAX BUTTON DELETE
 function ajaxAction() {
 	var itemId;
@@ -212,7 +206,10 @@ function returnDataCheckBox() {
 }
 
 // GET URL PAGE
-function setUrlTypeLink() {}
+function setUrlTypeLink() {
+	const url = window.location.protocol + '//' + window.location.host + '/';
+	$('.url-default span.input-group-text').html(url)
+}
 
 // SUBMENU ASIDE
 function showSubAsideMenu() {
@@ -337,15 +334,6 @@ function uploadFile() {
 	}
 }
 
-// CHỌN NGÀY HIỆN TẠI LÀM MẶC ĐỊNH INPUT TYPE DATE
-function setDateDefault() {
-	let today = new Date().toDateInputValue();
-
-	$($('input[type=date]')).val(today);
-
-	$($('input[type=date]')).attr('min', today)
-}
-
 function checkboxAllRow() {
 	$('input[type-checkbox="all-row"]').on('click', function() {
 		let thisRow = $(this).parents('tr');
@@ -369,7 +357,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	loading();
 	// DROPZONE
 	uploadFile();
-	setDateDefault();
 	multipleSelect();
 	// TAB
 	const blockMainTab = new Tab(".block-main .tab-container");
@@ -388,6 +375,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	checkboxAllRow();
 	// RETUEN DATA CHECK BOX CUSTOM 2
 	returnDataCheckBox();
+	// URL Default
+	setUrlTypeLink();
 });
 
 // CHẠY KHI WINDOWN SCROLL
