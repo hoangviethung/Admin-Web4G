@@ -54,57 +54,11 @@
 										.icon(data-toggle="tooltip" data-placement="bottom" title="Sửa")
 											img.svg(src="./assets/images/icons/edit.svg", alt="", srcset="")
 									// THAY ĐỔI MẬT KHẨU
-									button.btn-popup.btn-custom-icon.item(fancybox="fancybox-form-submit", dataFieldName="userID" dataID="item-"+i)
+									button.btn-popup.btn-custom-icon.item(fancybox="fancybox-change-pass", dataFieldName="userID" dataID="item-"+i)
 										.icon(data-toggle="tooltip" data-placement="bottom" title="Đổi mật khẩu")
 											img.svg(src="./assets/images/icons/user-setting.svg", alt="", srcset="")
 									// XÓA
 									button.btn-popup.btn-custom-icon.item(fancybox="fancybox-notification" dataFieldName="userID" dataId="item-"+i)
 										.icon(data-toggle="tooltip" data-placement="bottom" title="Xóa")
 											img.svg(src="./assets/images/icons/delete.svg", alt="", srcset="")
-			// BOX HIỆN LÊN CÂU HỎI
-			.d-none
-				.modal-POPUP.fancybox-content#fancybox-notification
-					.title-modal
-						h5 Thông báo
-						p Web4gsolutions xin thông báo
-					.content-modal
-						p Bạn có chắc chắn xóa ?
-					.list-button
-						.item
-							button.btn-custom.cancel(data-fancybox-close) Hủy
-						.item
-							button.btn-custom.submit.submit-delete(data-url="#") Chấp nhận
-			// BOX FORM HIỆN LÊN
-			.d-none
-				.modal-POPUP.fancybox-content#fancybox-form-submit
-					.title-modal
-						h5 Thay đổi mật khẩu
-						p Web4gsolutions xin thông báo
-					.content-modal
-						form(action="#" method="method")
-							.form-group.row
-								label.col-sm-5.col-form-label Tài khoản
-								.col-sm-7
-									.input-group.input-group-sm
-										input#dataValue.form-control-plaintext(type='text', readonly)
-							.form-group.row
-								label.col-sm-5.col-form-label Mật khẩu cũ
-								.col-sm-7
-									.input-group.input-group-sm
-										input#oldpass.form-control(type='Password')
-							.form-group.row
-								label.col-sm-5.col-form-label Mật khẩu mới
-								.col-sm-7
-									.input-group.input-group-sm
-										input#newpass.form-control(type='Password')
-							.form-group.row
-								label.col-sm-5.col-form-label Nhập lại mật khẩu mới
-								.col-sm-7
-									.input-group.input-group-sm
-										input#re_newpass.form-control(type='Password')
-					.list-button
-						.item
-							button.btn-custom.cancel(data-fancybox-close) Hủy
-						.item
-							button.btn-custom.submit.submit-change-pass(data-url="#") Cập nhật
 		include ../_global/_pagination.pug

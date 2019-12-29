@@ -209,52 +209,6 @@
 					// DROPZONE
 					.content(tab-id="item-5")
 						iframe(src="./dropzone.html",frameborder="0", width="100%" height="1000px")
-		// BOX HIỆN LÊN CÂU HỎI
-		.d-none
-			.modal-POPUP.fancybox-content#fancybox-notification
-				.title-modal
-					h5 Thông báo
-					p Web4gsolutions xin thông báo
-				.content-modal
-					p Bạn có chắc chắn xóa ?
-				.list-button
-					.item
-						button.btn-custom.cancel(data-fancybox-close) Hủy
-					.item
-						button.btn-custom.submit.submit-delete(data-url="#") Chấp nhận
-		// BOX FORM HIỆN LÊN
-		.d-none
-			.modal-POPUP.fancybox-content#fancybox-form-submit
-				.title-modal
-					h5 Thay đổi mật khẩu
-					p Web4gsolutions xin thông báo
-				.content-modal
-					form(action="#" method="method")
-						.form-group.row
-							label.col-sm-5.col-form-label(for='staticEmail') Tài khoản
-							.col-sm-7
-								.input-group.input-group-sm
-									input.form-control-plaintext(type='text', readonly='', value='Administrator')
-						.form-group.row
-							label.col-sm-5.col-form-label Mật khẩu cũ
-							.col-sm-7
-								.input-group.input-group-sm
-									input#oldpass.form-control(type='Password')
-						.form-group.row
-							label.col-sm-5.col-form-label Mật khẩu mới
-							.col-sm-7
-								.input-group.input-group-sm
-									input#newpass.form-control(type='Password')
-						.form-group.row
-							label.col-sm-5.col-form-label Nhập lại mật khẩu mới
-							.col-sm-7
-								.input-group.input-group-sm
-									input#re_newpass.form-control(type='Password')
-				.list-button
-					.item
-						button.btn-custom.cancel(data-fancybox-close) Hủy
-					.item
-						button.btn-custom.submit.submit-change-pass(data-url="#") Cập nhật
 		// POPUP BÌNH THƯỜNG (CÓ THỂ CUSTOM)
 		.d-none
 			.modal-POPUP.fancybox-content#yourID
@@ -273,4 +227,3 @@
 							button.btn-custom.cancel(data-fancybox-close) Hủy
 						.item
 							button.btn-custom.submit Cập nhật
-		

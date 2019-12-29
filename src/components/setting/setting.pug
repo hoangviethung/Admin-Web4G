@@ -25,30 +25,7 @@
 							td
 								.list-item.center
 									// SỬA
-									button.btn-popup.btn-custom-icon.item(fancybox="fancybox-form-submit" dataFieldName="settingID" dataID="item-"+i dataValue="SmtpServer")
+									button.btn-popup.btn-custom-icon.item
 										.icon(data-toggle="tooltip" data-placement="bottom" title="Chỉnh sửa")
 											img.svg(src="./assets/images/icons/edit.svg", alt="", srcset="")
-			// BOX FORM HIỆN LÊN
-			.d-none
-				.modal-POPUP.fancybox-content#fancybox-form-submit
-					.title-modal
-						h5 Chỉnh sửa cài đặt
-						p Web4gsolutions xin thông báo
-					.content-modal
-						form(action="#" method="method")
-							.form-group.row
-								label.col-sm-5.col-form-label Từ khóa
-								.col-sm-7
-									.input-group.input-group-sm
-										input#dataValue.form-control-plaintext(type='text', readonly)
-							.form-group.row
-								label.col-sm-5.col-form-label Giá trị
-								.col-sm-7
-									.input-group.input-group-sm
-										input#settingChange.form-control(type='text')
-					.list-button
-						.item
-							button.btn-custom.cancel(data-fancybox-close) Hủy
-						.item
-							button.btn-custom.submit.submit-change-setting(data-url="#") Cập nhật
 		include ../_global/_pagination.pug

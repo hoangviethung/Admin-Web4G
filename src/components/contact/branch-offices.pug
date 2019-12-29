@@ -52,16 +52,3 @@
 										.icon(data-toggle="tooltip" data-placement="bottom" title="Xóa")
 											img.svg(src="./assets/images/icons/delete.svg", alt="", srcset="")
 		include ../_global/_pagination.pug
-			// BOX HIỆN LÊN CÂU HỎI
-			.d-none
-				.modal-POPUP.fancybox-content#fancybox-notification
-					.title-modal
-						h5 Thông báo
-						p Web4gsolutions xin thông báo
-					.content-modal
-						p Bạn có chắc chắn xóa ?
-					.list-button
-						.item
-							button.btn-custom.cancel(data-fancybox-close) Hủy
-						.item
-							button.btn-custom.submit.submit-delete(data-url="#") Chấp nhận
