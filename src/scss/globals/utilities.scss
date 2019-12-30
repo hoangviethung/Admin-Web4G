@@ -337,7 +337,8 @@ button {
 	}
 }
 
-.error-text {
+.field-validation-error {
+	width     : 100%;
 	font-size : 13px;
 	display   : block;
 	margin-top: 10px;
@@ -348,7 +349,7 @@ button {
 input,
 select,
 textarea {
-	&.error {
+	&.input-validation-error {
 		color : red;
 		border: 1px solid red;
 
