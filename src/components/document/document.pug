@@ -57,7 +57,7 @@
 									label Bắt lỗi
 									.input-group.shadow-sm
 										input.input-validation-error.form-control(placeholder="Hãy nhập sai")
-										span.field-validation-error Sai mật khẩu
+									span.field-validation-error Sai mật khẩu
 								// XUỐNG DÒNG NHANH = div(class="w-100")
 								.w-100
 								.form-group.col-lg-3
@@ -86,7 +86,7 @@
 											option(value="1") 4
 								// XUỐNG DÒNG NHANH = div(class="w-100")
 								.w-100
-								.form-group.col-lg-2
+								.form-group.col-lg-3
 									label Check Box Custom 2 (Màu mặc định)
 									.input-custom
 										._checkbox-normal(data-url="#")
@@ -94,12 +94,20 @@
 											label(for="_checkbox-1")
 												svg(viewBox=[0, 0, 50, 50].join( ))
 													path(d="M5 30 L 20 45 L 45 5")
-								.form-group.col-lg-2
+								.form-group.col-lg-3
 									label Check Box Custom 2 (Màu Login)
 									.input-custom
 										._checkbox-normal.login-form
 											input#_checkbox-2(type="checkbox")
 											label(for="_checkbox-2")
+												svg(viewBox=[0, 0, 50, 50].join( ))
+													path(d="M5 30 L 20 45 L 45 5")
+								.form-group.col-lg-3
+									label Check Box kiểu dữ liệu Boolean
+									.input-custom
+										._checkbox-normal
+											input#_checkbox-3(data-value="false" type="checkbox")
+											label(for="_checkbox-3")
 												svg(viewBox=[0, 0, 50, 50].join( ))
 													path(d="M5 30 L 20 45 L 45 5")
 								// XUỐNG DÒNG NHANH = div(class="w-100")

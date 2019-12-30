@@ -235,8 +235,8 @@ function ajaxCheckBox() {
 function returnDataCheckBox() {
 	$('input[type="checkbox"]').each(function() {
 		$(this).on('click', function(e) {
-			if ($(this).val() === 'true' || $(this).val() === 'false') {
-				$(this).val(e.target.checked)
+			if ($(this).attr('data-value') === 'true' || $(this).attr('data-value') === 'false') {
+				$(this).attr('data-value', e.target.checked)
 			}
 		})
 	})
