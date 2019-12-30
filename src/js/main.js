@@ -233,11 +233,10 @@ function ajaxCheckBox() {
 
 // RETURN DATA CHECKBOX
 function returnDataCheckBox() {
-	$('input[type="checkbox"]').each(function() {
+	$('._checkbox-normal.boolean input[type="checkbox"]').each(function() {
 		$(this).on('click', function(e) {
-			if ($(this).attr('data-value') === 'true' || $(this).attr('data-value') === 'false') {
-				$(this).attr('data-value', e.target.checked)
-			}
+			$(this).val(e.target.checked)
+			console.log($(this).val());
 		})
 	})
 }
