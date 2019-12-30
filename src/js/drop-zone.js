@@ -5,7 +5,7 @@ var dataFolder = $('#dataFolder').attr('data-folder');
 var url = $('#dataFolder').attr('data-url');
 
 var myDropzone = new Dropzone(".upload-file", { // Make the whole body a dropzone
-	url: "http://192.168.1.106/file-upload", // Set the url
+	url: url, // Set the url
 	// uploadMultiple: true,
 	previewTemplate: previewTemplate,
 	parallelUploads: 100,
