@@ -2,8 +2,8 @@
 import loading from './lib/loading';
 import mapping from "./lib/mapping";
 
-// Script Cho Tab
-class Tab {
+// Script Cho TAB CHÍNH
+class MainTAB {
 	selector;
 	titleList;
 	contentList;
@@ -31,6 +31,57 @@ class Tab {
 				});
 				Array.prototype.forEach.call(this.contentList, (tabContentElement) => {
 					if (tabContentElement.attributes["tab-id"].value != tabTarget) {
+						tabContentElement.style.display = "none"
+						tabContentElement.classList.remove("show")
+					}
+				});
+				targetDOM.style.display = "block",
+					setTimeout(() => {
+						targetDOM.classList.add("show")
+					}, 50);
+			})
+		})
+	}
+
+	activeFirstTab() {
+		this.titleList[0].click();
+	}
+
+	init() {
+		this.runTabWhenClicked();
+		this.activeFirstTab();
+	}
+}
+
+// Script Cho TAB CON
+class SubTAB {
+	selector;
+	titleList;
+	contentList;
+
+	constructor(selector) {
+		this.selector = document.querySelector(selector);
+		if (this.selector) {
+			this.titleList = this.selector.querySelectorAll("[subtab-toggle-for]")
+			this.contentList = this.selector.querySelectorAll("[sub-tab-id]")
+			this.init();
+		}
+	}
+
+	runTabWhenClicked() {
+		Array.prototype.forEach.call(this.titleList, (element, index) => {
+			element.addEventListener("click", e => {
+				e.preventDefault();
+				const tabTarget = element.attributes["subtab-toggle-for"].value;
+				const targetDOM = this.selector.querySelector(`[sub-tab-id='${tabTarget}']`);
+				element.classList.add("active");
+				Array.prototype.forEach.call(this.titleList, (eleClicked, eleClickedIndex) => {
+					if (eleClickedIndex != index) {
+						eleClicked.classList.remove("active")
+					}
+				});
+				Array.prototype.forEach.call(this.contentList, (tabContentElement) => {
+					if (tabContentElement.attributes["sub-tab-id"].value != tabTarget) {
 						tabContentElement.style.display = "none"
 						tabContentElement.classList.remove("show")
 					}
@@ -367,7 +418,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	loading();
 	multipleSelect();
 	// TAB
-	const blockMainTab = new Tab(".block-main .tab-container");
+	const blockMainTab = new MainTAB(".block-main .tab-container");
+	const blockSubTab = new SubTAB(".block-subTab .tab-container");
 	// SVG CONTROL
 	SVG();
 	// HEADER

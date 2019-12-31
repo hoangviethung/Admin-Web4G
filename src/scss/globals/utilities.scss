@@ -256,79 +256,6 @@ button {
 	}
 
 	._checkbox-normal {
-		position: relative;
-		width   : 25px;
-		height  : 25px;
-
-		input[type=checkbox] {
-			position: absolute;
-			opacity : 0;
-			width   : 100%;
-			height  : 100%;
-			top     : 0;
-			left    : 0;
-
-			&:checked+label svg path {
-				stroke-dashoffset: 0;
-			}
-
-			&:focus+label {
-				transform: scale(1.03);
-			}
-		}
-
-		input[type=checkbox]+label {
-			cursor       : pointer;
-			position     : absolute;
-			top          : 0;
-			left         : 0;
-			width        : 100%;
-			height       : 100%;
-			border       : 2px solid #28a745;
-			border-radius: 5px;
-			transition   : all .2s ease;
-
-			&:active {
-				transform    : scale(1.05);
-				border-radius: 30px;
-			}
-
-			svg {
-				position      : absolute;
-				top           : 50%;
-				left          : 50%;
-				transform     : translate(-50%, -50%);
-				width         : 15px;
-				height        : 15px;
-				pointer-events: none;
-
-				path {
-					fill             : none;
-					stroke           : #28a745;
-					stroke-width     : 3px;
-					stroke-linecap   : round;
-					stroke-linejoin  : round;
-					stroke-dasharray : 100;
-					stroke-dashoffset: 100;
-					transition       : all 350ms cubic-bezier(1, 0, .37, .91);
-				}
-			}
-		}
-
-		&.login-form {
-			input[type=checkbox]+label {
-				border: 2px solid #677bc4;
-
-				svg {
-					path {
-						stroke: #677bc4;
-					}
-				}
-			}
-		}
-	}
-
-	._checkbox-boolean {
 		cursor  : pointer;
 		position: relative;
 		height  : 25px;
@@ -346,19 +273,47 @@ button {
 			left               : 0;
 			width              : 100%;
 			height             : 100%;
-			-webkit-appearance : none;
-			-moz-appearance    : none;
-			-o-appearance      : none;
 			appearance         : none;
 			border             : 2px solid #28a745;
 			border-radius      : 5px;
 			outline            : none;
 			transition-duration: 0.3s;
 			cursor             : pointer;
+
+			&:active {
+				transform    : scale(1.05);
+				border-radius: 30px;
+			}
+
+			&:after {
+				content       : '\2713';
+				position      : absolute;
+				width         : 50%;
+				height        : 50%;
+				transform     : translate(-50%, -50%);
+				top           : 30%;
+				left          : 50%;
+				pointer-events: none;
+				opacity       : 0;
+				color         : #28a745;
+				transition    : .3s all ease-in-out;
+			}
 		}
 
 		input:checked {
-			background-color: #34495E;
+			&:after {
+				opacity: 1;
+			}
+		}
+
+		&.color-2 {
+			input {
+				border: 2px solid #677bc4;
+
+				&:after {
+					color: #677bc4;
+				}
+			}
 		}
 	}
 
