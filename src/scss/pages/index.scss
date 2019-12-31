@@ -439,6 +439,33 @@
 			}
 		}
 	}
+
+	&.table-input {
+		.form-group {
+			margin-bottom: 0;
+
+			.input-group {
+				.input-group-text {
+					font-size: 14px;
+
+					svg {
+						width  : 20px;
+						height : 20px;
+						opacity: .6;
+					}
+				}
+
+				select {
+					font-size: 14px;
+					cursor   : pointer;
+				}
+
+				input {
+					font-size: 14px;
+				}
+			}
+		}
+	}
 }
 
 .block-form {

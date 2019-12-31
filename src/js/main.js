@@ -241,6 +241,14 @@ function returnDataCheckBox() {
 	})
 }
 
+// TẠO THÊM 1 DÒNG MỚI TABLE INPUT
+function createRowTableInput() {
+	$('.table-input table thead tr th .submit').on('click', function() {
+		const newRow = $(this).parents('thead').siblings('tbody').find('tr').last();
+		console.log(newRow);
+	})
+}
+
 // GET URL PAGE
 function setUrlTypeLink() {
 	const url = window.location.protocol + '//' + window.location.host + '/';
@@ -377,6 +385,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	returnDataCheckBox();
 	// URL Default
 	setUrlTypeLink();
+	// TẠO THÊM 1 DÒNG MỚI TABLE INPUT
+	createRowTableInput();
 });
 
 // CHẠY KHI WINDOWN SCROLL

@@ -332,12 +332,10 @@
 											<div class="form-group col-lg-3">
 												<label>Check Box kiểu dữ liệu Boolean</label>
 												<div class="input-custom">
-													<div class="_checkbox-normal boolean">
-														<input id="_checkbox-3" type="checkbox">
-														<label for="_checkbox-3">
-															<svg viewBox="0,0,50,50">
-																<path d="M5 30 L 20 45 L 45 5"></path>
-															</svg>
+													<div class="_checkbox-boolean">
+														<label>
+															<input value="true" type="checkbox">
+															<input hidden value="false" type="checkbox">
 														</label>
 													</div>
 												</div>
@@ -614,39 +612,176 @@
 								</div>
 								<!-- TABLE INPUT-->
 								<div class="content" tab-id="item-4">
-									<div class="block-table col-lg-12 mt-4">
+									<div class="block-table table-input col-lg-12 mt-4">
 										<table class="table table-bordered m-0">
 											<thead>
 												<tr>
 													<th>#</th>
 													<th class="text-center">Tên</th>
-													<th class="text-center">textalign : center</th>
-													<th class="text-center">Hình ảnh</th>
-													<th class="text-center">Tag</th>
-													<th class="text-center">Ngôn ngữ</th>
-													<th class="text-center">Hiển thị</th>
+													<th class="text-center">Đường dẫn hình</th>
+													<th class="text-center">Alt</th>
+													<th class="text-center">Thứ tự</th>
+													<th class="text-center">
+														<button class="btn-custom submit">THÊM</button>
+													</th>
 												</tr>
 											</thead>
 											<tbody>
 												<tr>
 													<td>1</td>
-													<td class="text-center">textalign : left</td>
-													<td class="text-center">textalign : center</td>
+													<td>
+														<div class="form-group">
+															<div class="input-group shadow-sm">
+																<input class="form-control" placeholder="Input Type Text">
+															</div>
+														</div>
+													</td>
+													<td>
+														<div class="form-group">
+															<div class="input-group shadow-sm">
+																<input class="form-control" placeholder="Input Type Text">
+															</div>
+														</div>
+													</td>
+													<td>
+														<div class="form-group">
+															<div class="input-group shadow-sm">
+																<input class="form-control" placeholder="Input Type Text">
+															</div>
+														</div>
+													</td>
+													<td>
+														<div class="form-group">
+															<div class="input-group shadow-sm">
+																<select class="form-control">
+																	<option>Select 1</option>
+																	<option>Select 2</option>
+																	<option>Select 3</option>
+																</select>
+															</div>
+														</div>
+													</td>
+													<td class="text-center">
+														<!-- XÓA (HIỆN POPUP)-->
+														<button class="btn-popup btn-custom cancel" fancybox="fancybox-notification" dataFieldName="testID" dataId="item-1">xóa</button>
+													</td>
 												</tr>
 												<tr>
 													<td>2</td>
-													<td class="text-center">textalign : left</td>
-													<td class="text-center">textalign : center</td>
+													<td>
+														<div class="form-group">
+															<div class="input-group shadow-sm">
+																<input class="form-control" placeholder="Input Type Text">
+															</div>
+														</div>
+													</td>
+													<td>
+														<div class="form-group">
+															<div class="input-group shadow-sm">
+																<input class="form-control" placeholder="Input Type Text">
+															</div>
+														</div>
+													</td>
+													<td>
+														<div class="form-group">
+															<div class="input-group shadow-sm">
+																<input class="form-control" placeholder="Input Type Text">
+															</div>
+														</div>
+													</td>
+													<td>
+														<div class="form-group">
+															<div class="input-group shadow-sm">
+																<select class="form-control">
+																	<option>Select 1</option>
+																	<option>Select 2</option>
+																	<option>Select 3</option>
+																</select>
+															</div>
+														</div>
+													</td>
+													<td class="text-center">
+														<!-- XÓA (HIỆN POPUP)-->
+														<button class="btn-popup btn-custom cancel" fancybox="fancybox-notification" dataFieldName="testID" dataId="item-2">xóa</button>
+													</td>
 												</tr>
 												<tr>
 													<td>3</td>
-													<td class="text-center">textalign : left</td>
-													<td class="text-center">textalign : center</td>
+													<td>
+														<div class="form-group">
+															<div class="input-group shadow-sm">
+																<input class="form-control" placeholder="Input Type Text">
+															</div>
+														</div>
+													</td>
+													<td>
+														<div class="form-group">
+															<div class="input-group shadow-sm">
+																<input class="form-control" placeholder="Input Type Text">
+															</div>
+														</div>
+													</td>
+													<td>
+														<div class="form-group">
+															<div class="input-group shadow-sm">
+																<input class="form-control" placeholder="Input Type Text">
+															</div>
+														</div>
+													</td>
+													<td>
+														<div class="form-group">
+															<div class="input-group shadow-sm">
+																<select class="form-control">
+																	<option>Select 1</option>
+																	<option>Select 2</option>
+																	<option>Select 3</option>
+																</select>
+															</div>
+														</div>
+													</td>
+													<td class="text-center">
+														<!-- XÓA (HIỆN POPUP)-->
+														<button class="btn-popup btn-custom cancel" fancybox="fancybox-notification" dataFieldName="testID" dataId="item-3">xóa</button>
+													</td>
 												</tr>
 												<tr>
 													<td>4</td>
-													<td class="text-center">textalign : left</td>
-													<td class="text-center">textalign : center</td>
+													<td>
+														<div class="form-group">
+															<div class="input-group shadow-sm">
+																<input class="form-control" placeholder="Input Type Text">
+															</div>
+														</div>
+													</td>
+													<td>
+														<div class="form-group">
+															<div class="input-group shadow-sm">
+																<input class="form-control" placeholder="Input Type Text">
+															</div>
+														</div>
+													</td>
+													<td>
+														<div class="form-group">
+															<div class="input-group shadow-sm">
+																<input class="form-control" placeholder="Input Type Text">
+															</div>
+														</div>
+													</td>
+													<td>
+														<div class="form-group">
+															<div class="input-group shadow-sm">
+																<select class="form-control">
+																	<option>Select 1</option>
+																	<option>Select 2</option>
+																	<option>Select 3</option>
+																</select>
+															</div>
+														</div>
+													</td>
+													<td class="text-center">
+														<!-- XÓA (HIỆN POPUP)-->
+														<button class="btn-popup btn-custom cancel" fancybox="fancybox-notification" dataFieldName="testID" dataId="item-4">xóa</button>
+													</td>
 												</tr>
 											</tbody>
 										</table>

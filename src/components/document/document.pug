@@ -106,11 +106,10 @@
 								.form-group.col-lg-3
 									label Check Box kiểu dữ liệu Boolean
 									.input-custom
-										._checkbox-normal.boolean
-											input#_checkbox-3(type="checkbox")
-											label(for="_checkbox-3")
-												svg(viewBox=[0, 0, 50, 50].join( ))
-													path(d="M5 30 L 20 45 L 45 5")
+										._checkbox-boolean
+											label
+												input(value="true" type="checkbox")
+												input(hidden value="false" type="checkbox")
 								// XUỐNG DÒNG NHANH = div(class="w-100")
 								.w-100
 									label Buttons
@@ -214,23 +213,43 @@
 															img.svg(src="./assets/images/icons/delete.svg", alt="", srcset="")
 					// TABLE INPUT
 					.content(tab-id="item-4")
-						.block-table.col-lg-12.mt-4
+						.block-table.table-input.col-lg-12.mt-4
 							table.table.table-bordered.m-0
 								thead
 									tr
 										th #
 										th.text-center Tên
-										th.text-center textalign : center
-										th.text-center Hình ảnh
-										th.text-center Tag
-										th.text-center Ngôn ngữ
-										th.text-center Hiển thị
+										th.text-center Đường dẫn hình
+										th.text-center Alt
+										th.text-center Thứ tự
+										th.text-center
+											button.btn-custom.submit THÊM
 								tbody
 									-for(i=1;i<5;i++)
 										tr
 											td #{i}
-											td.text-center textalign : left
-											td.text-center textalign : center
+											td
+												.form-group
+													.input-group.shadow-sm
+														input.form-control(placeholder="Input Type Text")
+											td
+												.form-group
+													.input-group.shadow-sm
+														input.form-control(placeholder="Input Type Text")
+											td
+												.form-group
+													.input-group.shadow-sm
+														input.form-control(placeholder="Input Type Text")
+											td
+												.form-group
+													.input-group.shadow-sm
+														select.form-control
+															option Select 1
+															option Select 2
+															option Select 3
+											td.text-center
+												// XÓA (HIỆN POPUP)
+												button.btn-popup.btn-custom.cancel(fancybox="fancybox-notification" dataFieldName="testID" dataId="item-"+i) xóa
 					// POPUP BÌNH THƯỜNG CÓ THỂ CUSTOM
 					.content(tab-id="item-5")
 						button.btn-popup.btn-custom.submit.item(data-fancybox data-src="#yourID") Popup
