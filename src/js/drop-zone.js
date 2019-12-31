@@ -2,10 +2,9 @@ var previewNode = document.querySelector("#template-preview");
 var previewTemplate = previewNode.innerHTML;
 previewNode.parentNode.removeChild(previewNode);
 var dataFolder = $('#dataFolder').attr('data-folder');
-var url = $('#dataFolder').attr('data-url');
 
 var myDropzone = new Dropzone(".upload-file", { // Make the whole body a dropzone
-	url: url, // Set the url
+	url: '/file-upload', // Set the url
 	// uploadMultiple: true,
 	previewTemplate: previewTemplate,
 	parallelUploads: 100,
@@ -50,7 +49,7 @@ btnCopy.forEach(function(btn) {
 
 function deleteImage(e, param) {
 	$.ajax({
-		url: url,
+		url: '/delete-image',
 		data: {
 			url: param
 		},
@@ -77,7 +76,7 @@ if (template) {
 	var templateNew = template.parentNode.innerHTML;
 	o.parentNode.removeChild(template);
 	var itemDropZone = new Dropzone(".upload-file", {
-		url: url,
+		url: '/file-upload',
 		thumbnailWidth: 80,
 		thumbnailHeight: 80,
 		parallelUploads: 20,

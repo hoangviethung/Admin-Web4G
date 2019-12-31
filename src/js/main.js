@@ -390,9 +390,9 @@ function checkboxAllRow() {
 		let thisRow = $(this).parents('tr');
 		thisRow.each(function() {
 			const allCheckBox = $(this).find('input[type=checkbox]');
-			if (allCheckBox.attr('checked') == null) {
-				allCheckBox.attr('checked', 'checked')
-			}
+			allCheckBox.attr('checked', function(attr) {
+				return attr == null ? null : 'checked';
+			});
 		})
 	})
 }
