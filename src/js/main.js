@@ -282,16 +282,6 @@ function ajaxCheckBox() {
 	});
 }
 
-// RETURN DATA CHECKBOX
-function returnDataCheckBox() {
-	$('._checkbox-normal.boolean input[type="checkbox"]').each(function() {
-		$(this).on('click', function(e) {
-			$(this).val(e.target.checked)
-			console.log($(this).val());
-		})
-	})
-}
-
 // TẠO THÊM 1 DÒNG MỚI TABLE INPUT
 function createRowTableInput() {
 	$('.table-input table thead tr th .submit').on('click', function() {
@@ -399,7 +389,10 @@ function checkboxAllRow() {
 	$('input[type-checkbox="all-row"]').on('click', function() {
 		let thisRow = $(this).parents('tr');
 		thisRow.each(function() {
-			$(this).find('label').click();
+			const allCheckBox = $(this).find('input[type=checkbox]');
+			if (allCheckBox.attr('checked') == null) {
+				allCheckBox.attr('checked', 'checked')
+			}
 		})
 	})
 }
@@ -433,8 +426,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	ajaxCheckBox();
 	// CHECK ALL ROW
 	checkboxAllRow();
-	// RETUEN DATA CHECK BOX CUSTOM 2
-	returnDataCheckBox();
 	// URL Default
 	setUrlTypeLink();
 	// TẠO THÊM 1 DÒNG MỚI TABLE INPUT
