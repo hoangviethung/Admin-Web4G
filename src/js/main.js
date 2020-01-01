@@ -168,6 +168,7 @@ function ajaxFancybox() {
 	$('.btn-popup[fancybox="fancybox-change-pass"]').on('click', function() {
 		itemId = $(this).attr('dataiD');
 		dataFieldName = $(this).attr('dataFieldName');
+		const dataValue = $(this).parents('td').siblings('td[data-value]').attr('data-value');
 		const html =
 			`<div class="modal-POPUP fancybox-content" id="fancybox-change-pass">
 				<div class="title-modal">
@@ -179,8 +180,8 @@ function ajaxFancybox() {
 						<div class="form-group row">
 							<label class="col-sm-5 col-form-label" for="staticEmail">Tài khoản</label>
 							<div class="col-sm-7">
-								<div class="input-group input-group-sm">
-									<input class="form-control-plaintext" type="text" readonly="" value="Administrator">
+								<div class="input-group input-group-sm old-value">
+									<input class="form-control-plaintext" type="text" readonly="" value="">
 								</div>
 							</div>
 						</div>
@@ -220,6 +221,7 @@ function ajaxFancybox() {
 				</div>
 			</div>`
 		$("body").append(html);
+		$('#fancybox-change-pass .old-value input').val(dataValue)
 		$.fancybox.open({
 			src: '#fancybox-change-pass',
 			type: 'inline',
@@ -246,7 +248,7 @@ function ajaxFancybox() {
 								if (res.Code === 200) {
 									location.reload();
 								} else {
-									console.log('Thay đổi mật khẩu thất bại');
+									alert('Thay đổi mật khẩu thất bại');
 								}
 							}
 						});
@@ -316,8 +318,7 @@ function activeMenuByUrl() {
 	const listLink = $('.aside-item .list-link a');
 	listLink.each(function() {
 		let allHref = $(this).attr('href');
-
-		if (url === (allHref)) {
+		if (url.indexOf(allHref) !== -1) {
 			$(this).parents('.aside-item').addClass('active');
 			$(this).parents('.list-link').slideToggle();
 		}
@@ -335,9 +336,6 @@ function toogleAsideMenu() {
 		if ($(window).width() > 1024) {
 			$(this).toggleClass('active');
 			$('body, aside').toggleClass('active');
-		} else {
-			console.log('asdasdasd');
-
 		}
 	});
 }
@@ -387,11 +385,12 @@ function SVG() {
 
 function checkboxAllRow() {
 	$('input[type-checkbox="all-row"]').on('click', function() {
+		const _this = $(this).val();
 		let thisRow = $(this).parents('tr');
 		thisRow.each(function() {
 			const allCheckBox = $(this).find('input[type=checkbox]');
 			allCheckBox.attr('checked', function(attr) {
-				return attr == null ? null : 'checked';
+				return attr == 'null' ? null : 'checked';
 			});
 		})
 	})
