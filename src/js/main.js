@@ -108,10 +108,12 @@ class SubTAB {
 function ajaxFancybox() {
 	var itemId;
 	var dataFieldName;
+	var dataURL;
 	// POPUP THÔNG BÁO
 	$('.btn-popup[fancybox=fancybox-notification]').on('click', function() {
 		itemId = $(this).attr('dataiD');
 		dataFieldName = $(this).attr('dataFieldName');
+		dataURL = $(this).attr('data-url');
 		const html =
 			`<div class="modal-POPUP fancybox-content" id="fancybox-notification">
 				<div class="title-modal">
@@ -126,7 +128,7 @@ function ajaxFancybox() {
 						<button class="btn-custom cancel" data-fancybox-close>Hủy</button>
 					</div>
 					<div class="item">
-						<button class="btn-custom submit submit-delete" data-url="#">Chấp nhận</button>
+						<button class="btn-custom submit submit-delete">Chấp nhận</button>
 					</div>
 				</div>
 			</div>`
@@ -140,12 +142,11 @@ function ajaxFancybox() {
 				beforeShow: function() {
 					// SUBMIT DELETE
 					$('.submit-delete').on('click', function() {
-						const url = $(this).attr('data-url');
 						const data = {};
 						data[dataFieldName] = itemId;
 						$.ajax({
 							type: "POST",
-							url: url,
+							url: dataURL,
 							data: data,
 							success: function(res) {
 								if (res.Code === 200) {
@@ -168,6 +169,7 @@ function ajaxFancybox() {
 	$('.btn-popup[fancybox="fancybox-change-pass"]').on('click', function() {
 		itemId = $(this).attr('dataiD');
 		dataFieldName = $(this).attr('dataFieldName');
+		dataURL = $(this).attr('data-url');
 		const dataValue = $(this).parents('td').siblings('td[data-value]').attr('data-value');
 		const html =
 			`<div class="modal-POPUP fancybox-content" id="fancybox-change-pass">
