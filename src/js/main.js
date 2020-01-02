@@ -113,7 +113,7 @@ function ajaxFancybox() {
 	$('.btn-popup[fancybox=fancybox-notification]').on('click', function() {
 		itemId = $(this).attr('dataiD');
 		dataFieldName = $(this).attr('dataFieldName');
-		dataURL = $(this).attr('data-url');
+		dataURL = $(this).attr('dataUrl');
 		const html =
 			`<div class="modal-POPUP fancybox-content" id="fancybox-notification">
 				<div class="title-modal">
@@ -169,7 +169,7 @@ function ajaxFancybox() {
 	$('.btn-popup[fancybox="fancybox-change-pass"]').on('click', function() {
 		itemId = $(this).attr('dataiD');
 		dataFieldName = $(this).attr('dataFieldName');
-		dataURL = $(this).attr('data-url');
+		dataURL = $(this).attr('dataUrl');
 		const dataValue = $(this).parents('td').siblings('td[data-value]').attr('data-value');
 		const html =
 			`<div class="modal-POPUP fancybox-content" id="fancybox-change-pass">
