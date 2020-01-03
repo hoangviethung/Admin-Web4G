@@ -21,8 +21,8 @@ myDropzone.on('successmultiple', function(files, response) {
 	var listNewImages = Array.from(document.querySelectorAll('#list-image-preview .file-item'));
 	var listImageDefault = document.getElementById('list-image');
 	listNewImages.forEach(function(item, index) {
-		item.querySelector('.name').innerHTML = response[index].name;
-		item.querySelector('.url').value = response[index].url;
+		item.querySelector('.name').innerHTML = response[index].Name;
+		item.querySelector('.url').value = response[index].Link;
 		item.querySelector('.btn-delete').setAttribute('onclick', `deleteImage(this,'${response[index].url}')`);
 		item.querySelector('.btn-copy-url').addEventListener('click', function() {
 			var urlInput = item.querySelector('.btn-copy-url').previousSibling;
