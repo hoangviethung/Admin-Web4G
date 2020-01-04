@@ -404,6 +404,15 @@ function multipleSelect() {
 	});
 }
 
+function CKEditorReplace() {
+	let CkEditorList = document.querySelectorAll('.ck-editor');
+	CkEditorList.forEach(item => {
+		let itemId = item.getAttribute('id');
+		const editor = CKEDITOR.replace(itemId, {
+			filebrowserBrowseUrl: '/Admin/HomeAdmin/CkfinderPopup',
+		});
+	})
+}
 
 function DatePickerInit() {
 	$('.date-picker').each(function() {
@@ -437,6 +446,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	setUrlTypeLink();
 	// TẠO THÊM 1 DÒNG MỚI TABLE INPUT
 	createRowTableInput();
+	// CKEditor
+	CKEditorReplace();
 	// Date time picker
 	DatePickerInit();
 });
