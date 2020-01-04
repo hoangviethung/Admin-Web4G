@@ -47,6 +47,7 @@ export const jsTask2 = () => {
 			'!src/js/main.js',
 			'!src/js/ckeditor.js',
 			'!src/js/config.js',
+			'!src/js/build-config.js',
 			'!src/js/styles.js'
 		])
 		.pipe(plumber(function(err) {
@@ -70,6 +71,7 @@ export const jsTask3 = (cb) => {
 			'src/js/ckeditor.js',
 			'src/js/config.js',
 			'src/js/styles.js',
+			'src/js/build-config.js',
 			'src/js/contents.css'
 		])
 		.pipe(dest('./dist/js'));
