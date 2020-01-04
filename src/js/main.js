@@ -1,6 +1,5 @@
 // import here !!!
 import loading from './lib/loading';
-import mapping from "./lib/mapping";
 
 // Script Cho TAB CHÍNH
 class MainTAB {
@@ -409,9 +408,15 @@ function CKEditorReplace() {
 	let CkEditorList = document.querySelectorAll('.ck-editor');
 	CkEditorList.forEach(item => {
 		let itemId = item.getAttribute('id');
-		CKEDITOR.replace(itemId, {
-
+		const editor = CKEDITOR.replace(itemId,{
+			filebrowserBrowseUrl: '/Admin/HomeAdmin/CkfinderPopup',
 		});
+	})
+}
+
+function DatePickerInit() {
+	$('.date-picker').each(function() {
+		$(this).datetimepicker();
 	})
 }
 
@@ -443,6 +448,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	createRowTableInput();
 	// Thay Textarea với class "ck-editor" thành CkEditor
 	CKEditorReplace();
+	// Date time picker
+	DatePickerInit();
 });
 
 // CHẠY KHI WINDOWN SCROLL
