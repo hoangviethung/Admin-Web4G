@@ -405,6 +405,16 @@ function multipleSelect() {
 	});
 }
 
+function CKEditorReplace() {
+	let CkEditorList = document.querySelectorAll('.ck-editor');
+	CkEditorList.forEach(item => {
+		let itemId = item.getAttribute('id');
+		CKEDITOR.replace(itemId, {
+
+		});
+	})
+}
+
 // CHẠY KHI DOCUMENT SẴN SÀNG
 document.addEventListener('DOMContentLoaded', () => {
 	$('[data-toggle="tooltip"]').tooltip();
@@ -431,6 +441,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	setUrlTypeLink();
 	// TẠO THÊM 1 DÒNG MỚI TABLE INPUT
 	createRowTableInput();
+	// Thay Textarea với class "ck-editor" thành CkEditor
+	CKEditorReplace();
 });
 
 // CHẠY KHI WINDOWN SCROLL
