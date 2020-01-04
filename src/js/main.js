@@ -405,7 +405,7 @@ function multipleSelect() {
 }
 
 function CKEditorReplace() {
-	let CkEditorList = document.querySelectorAll('.ck-editor');
+	let CkEditorList = document.querySelectorAll('.ckeditor');
 	CkEditorList.forEach(item => {
 		let itemId = item.getAttribute('id');
 		const editor = CKEDITOR.replace(itemId,{
