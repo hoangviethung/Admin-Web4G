@@ -464,8 +464,10 @@ function CKEditorReplace() {
 }
 
 function DatePickerInit() {
-	$('.date-picker').each(function() {
-		$(this).datetimepicker();
+	$(".date-picker").flatpickr({
+		enableTime: true,
+		dateFormat: "Y-m-d H:i",
+		time_24hr: true,
 	})
 }
 

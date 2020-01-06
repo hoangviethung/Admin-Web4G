@@ -13,7 +13,9 @@
 			"bower_components/fancybox/dist/jquery.fancybox.css",
 			"bower_components/select2/dist/css/select2.css",
 			"bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker-standalone.css",
-			"bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css"
+			"bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css",
+			"bower_components/flatpickr/dist/flatpickr.css",
+			"bower_components/flatpickr/dist/themes/material_blue.css"
 		],
 
 		"js": [
@@ -23,7 +25,7 @@
 			"bower_components/dropzone/dist/dropzone.js",
 			"bower_components/select2/dist/js/select2.js",
 			"bower_components/moment/moment.js",
-			"bower_components/eonasdan-bootstrap-datetimepicker/src/js/bootstrap-datetimepicker.js"
+			"bower_components/flatpickr/dist/flatpickr.js"
 		]
 	}
 }
