@@ -48,10 +48,10 @@
 								.form-group.col-lg-3
 									label Input Type Date
 									.input-group.shadow-sm
-										input.form-control(type='date')
-										.input-group-prepend
-											span.input-group-text
-												img.svg(src="./assets/images/icons/date.svg", alt="", srcset="")
+										input.form-control.date-picker
+										//- .input-group-prepend
+										//- 	span.input-group-text
+										//- 		img.svg(src="./assets/images/icons/date.svg", alt="", srcset="")
 								// XUỐNG DÒNG NHANH = div(class="w-100")
 								.w-100
 								.form-group.col-lg-3
@@ -115,7 +115,7 @@
 						.block-form
 							.form-group
 								label Nội dung
-								textarea#editor(name="content")
+								textarea.ck-editor#ckeditor-1(name="ckeditor-1")
 					// BẢNG
 					.content(tab-id="item-3")
 						.seach.col-lg-4

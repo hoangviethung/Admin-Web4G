@@ -1,6 +1,5 @@
 // import here !!!
 import loading from './lib/loading';
-import mapping from "./lib/mapping";
 
 // Script Cho TAB CHÍNH
 class MainTAB {
@@ -386,14 +385,63 @@ function SVG() {
 }
 
 function checkboxAllRow() {
-	$('input[type-checkbox="all-row"]').on('click', function() {
-		const _this = $(this).val();
-		let thisRow = $(this).parents('tr');
-		thisRow.each(function() {
-			const allCheckBox = $(this).find('input[type=checkbox]');
-			allCheckBox.attr('checked', function(attr) {
-				return attr == 'null' ? null : 'checked';
-			});
+	$('.role-row').each(function() {
+		const row = $(this);
+		if (row.find('input[type=checkbox]').length > 0) {
+			row.addClass('role-checkbox')
+		}
+	})
+
+
+	$(".role-checkbox").each(function() {
+		const row = $(this);
+		const inputCheckAll = row.find('.check-all');
+		const inputView = row.find('.view');
+		const inputAdd = row.find('.add');
+		const inputEdit = row.find('.edit');
+		const inputDelete = row.find('.delete');
+
+		const getRowState = () => {
+			return {
+				checkAll: inputCheckAll[0].checked,
+				view: inputView[0].checked,
+				add: inputAdd[0].checked,
+				edit: inputEdit[0].checked,
+				delete: inputDelete[0].checked,
+			}
+		}
+
+		inputCheckAll.on('change', function(e) {
+			if (e.currentTarget.checked) {
+				inputView.attr('checked', 'checked');
+				inputAdd.attr('checked', 'checked');
+				inputEdit.attr('checked', 'checked');
+				inputDelete.attr('checked', 'checked');
+				inputView[0].checked = true;
+				inputAdd[0].checked = true;
+				inputEdit[0].checked = true;
+				inputDelete[0].checked = true;
+			} else {
+				inputView.removeAttr('checked');
+				inputAdd.removeAttr('checked');
+				inputEdit.removeAttr('checked');
+				inputDelete.removeAttr('checked');
+				inputView[0].checked = false;
+				inputAdd[0].checked = false;
+				inputEdit[0].checked = false;
+				inputDelete[0].checked = false;
+			}
+		})
+
+		row.find('input[type=checkbox]').not('.check-all').on('change', function(e) {
+			const rowState = getRowState();
+			if (rowState.view && rowState.add && rowState.edit && rowState.delete) {
+				inputCheckAll.attr('checked', 'checked');
+				inputCheckAll[0].checked = true;
+			} else {
+				inputCheckAll.removeAttr('checked');
+				inputCheckAll[0].checked = false;
+			}
 		})
 	})
 }
@@ -403,6 +451,24 @@ function multipleSelect() {
 		tags: true,
 		theme: "classic",
 	});
+}
+
+function CKEditorReplace() {
+	let CkEditorList = document.querySelectorAll('.ck-editor');
+	CkEditorList.forEach(item => {
+		let itemId = item.getAttribute('id');
+		const editor = CKEDITOR.replace(itemId, {
+			filebrowserBrowseUrl: '/Admin/HomeAdmin/CkfinderPopup',
+		});
+	})
+}
+
+function DatePickerInit() {
+	$(".date-picker").flatpickr({
+		enableTime: true,
+		dateFormat: "Y-m-d H:i",
+		time_24hr: true,
+	})
 }
 
 // CHẠY KHI DOCUMENT SẴN SÀNG
@@ -431,6 +497,10 @@ document.addEventListener('DOMContentLoaded', () => {
 	setUrlTypeLink();
 	// TẠO THÊM 1 DÒNG MỚI TABLE INPUT
 	createRowTableInput();
+	// CKEditor
+	CKEditorReplace();
+	// Date time picker
+	DatePickerInit();
 });
 
 // CHẠY KHI WINDOWN SCROLL
