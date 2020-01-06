@@ -472,6 +472,41 @@ function DatePickerInit() {
 	})
 }
 
+function getFileNameWhenChooseFileUpload() {
+	$('input[type=file]').on('change', function(e) {
+
+		const thisInputFile = $(this);
+		const fileName = e.originalEvent.srcElement.files[0].name;
+		const fileNameExtension = fileName.split('.')[fileName.split('.').length - 1];
+		if (fileNameExtension != "xls" && fileNameExtension != "xlsx") {
+			thisInputFile.parents('.file-upload').find('.file-upload-notice').html('Vui lòng chọn file Excel');
+			thisInputFile.replaceWith(thisInputFile.val('').clone(true));
+		} else {
+			thisInputFile.parents('.file-upload').find('.file-upload-notice').html(fileName);
+		}
+	})
+
+	$('.btn-upload').on('click', function(e) {
+		e.preventDefault();
+		const thisButton = $(this);
+		const url = thisButton.attr('data-url');
+		const files = thisButton.parents('.file-upload').find('input[type=file]')[0].files[0];
+		const formData = new FormData();
+		formData.append('files', files)
+		$.ajax({
+			url: url,
+			type: 'POST',
+			data: formData,
+			cache: false,
+			contentType: false,
+			processData: false,
+			success: function(data, textStatus, jqXHR) {
+				debugger;
+			},
+		})
+	})
+}
+
 // CHẠY KHI DOCUMENT SẴN SÀNG
 document.addEventListener('DOMContentLoaded', () => {
 	$('[data-toggle="tooltip"]').tooltip();
@@ -502,6 +537,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	CKEditorReplace();
 	// Date time picker
 	DatePickerInit();
+	// lấy file name khi chọn file upload
+	getFileNameWhenChooseFileUpload();
 });
 
 // CHẠY KHI WINDOWN SCROLL

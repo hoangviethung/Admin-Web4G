@@ -102,9 +102,19 @@
 								// XUỐNG DÒNG NHANH = div(class="w-100")
 								.w-100
 									label Buttons
-									.form-group.col-lg-2
+								.form-group.col-lg-3
 									a(href="/").btn-custom.cancel Hủy
 									button.btn-custom.submit Thêm
+								// XUỐNG DÒNG NHANH = div(class="w-100")
+								.w-100
+								.form-group.col-lg-3
+									label Upload file
+									.input-custom
+										.file-upload
+											label.btn.btn-success.btn-custom Chọn file để upload
+												input.input-file(type="file")
+											span.file-upload-notice
+											button.btn.btn-primary.btn-custom.btn-upload(data-url="/test") Upload
 								// XUỐNG DÒNG NHANH = div(class="w-100")
 								.w-100
 								.form-group.text-right.col-lg-12
