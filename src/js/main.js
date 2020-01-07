@@ -458,6 +458,8 @@ function CKEditorReplace() {
 	CkEditorList.forEach(item => {
 		let itemId = item.getAttribute('id');
 		const editor = CKEDITOR.replace(itemId, {
+			// want to  freely enter any HTML content in source mode without any limitations.
+			allowedContent: true,
 			filebrowserBrowseUrl: '/Admin/HomeAdmin/CkfinderPopup',
 		});
 	})
