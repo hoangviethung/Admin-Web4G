@@ -304,7 +304,7 @@ function setUrlTypeLink() {
 	}
 
 	$('.chooseUrlPage').on('change', function() {
-		const valueUrl = $(this).val();
+		const valueUrl = $('.chooseUrlPage option:selected').attr('data-url');
 		$('.url-default').siblings('input').attr('data-url', valueUrl);
 		$('.url-default span.input-group-text').html(url + valueUrl.slice(1));
 	});
