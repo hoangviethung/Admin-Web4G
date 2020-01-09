@@ -211,18 +211,46 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="seach col-lg-4">
-						<form action="#" method="method">
-							<div class="form-group">
-								<div class="form-input">
-									<input type="text" placeholder="Nhập từ khóa để tìm kiếm">
-									<button><img class="svg" src="./assets/images/icons/search.svg" alt="" srcset=""></button>
+					<div class="block-table col-lg-12">
+						<div class="filter">
+							<form action="#" method="method">
+								<div class="form-row">
+									<div class="col-lg-3 form-group">
+										<label>Hiển thị</label>
+										<div class="input-group shadow-sm">
+											<select class="form-control">
+												<option>10</option>
+												<option>15</option>
+												<option>20</option>
+												<option>30</option>
+												<option>40</option>
+												<option>Tất cả</option>
+											</select>
+										</div>
+									</div>
+									<div class="col-lg-3 form-group">
+										<label>Danh mục</label>
+										<div class="input-group shadow-sm">
+											<select class="form-control">
+												<option>Chính</option>
+												<option>Giới thiệu</option>
+												<option>Dịch vụ</option>
+												<option>Tiện ích</option>
+												<option>Tin tức</option>
+											</select>
+										</div>
+									</div>
+									<div class="col-lg-3 form-group">
+										<label>Tìm kiếm</label>
+										<div class="input-group shadow-sm">
+											<input class="form-control" placeholder="Tìm kiếm">
+										</div>
+									</div>
 								</div>
-							</div>
-						</form>
-					</div>
-					<div class="block-table col-lg-12 mt-4">
-						<table class="table table-bordered m-0">
+								<button class="btn btn-primary btn-sm shadow">Xác nhận</button>
+							</form>
+						</div>
+						<table class="table table-bordered table-striped">
 							<thead>
 								<tr>
 									<th>#</th>
@@ -308,17 +336,17 @@
 								</tr>
 							</tbody>
 						</table>
+						<ul class="pagination">
+							<li class="pagination-prev"><a href="#"><span>Quay lại</span></a></li>
+							<li><a href="#">1</a></li>
+							<li class="active"><a href="#">2</a></li>
+							<li><a href="#">3</a></li>
+							<li><a href="#">4</a></li>
+							<li class="pagination-dot"><a href="#">...</a></li>
+							<li><a href="#">981</a></li>
+							<li class="pagination-next"><a href="#"><span>Tiếp theo</span></a></li>
+						</ul>
 					</div>
-					<ul class="pagination">
-						<li class="pagination-prev"><a href="#"><span><</span></a></li>
-						<li><a href="#">1</a></li>
-						<li class="active"><a href="#">2</a></li>
-						<li><a href="#">3</a></li>
-						<li><a href="#">4</a></li>
-						<li class="pagination-dot"><a href="#">...</a></li>
-						<li><a href="#">98</a></li>
-						<li class="pagination-next"><a href="#"><span>></span></a></li>
-					</ul>
 				</div>
 			</div>
 			<div id="js-page-verify" hidden></div>

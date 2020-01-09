@@ -211,52 +211,46 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="filter col-lg-12">
-						<form action="#" method="method">
-							<div class="form-row">
-								<div class="col-lg-3 form-group mb-0">
-									<label class="text-center">Trạng thái</label>
-									<div class="input-group">
-										<select class="form-control shadow-sm">
-											<option>Tất cả</option>
-											<option>Đang chờ xử lý</option>
-											<option>Đã hủy đơn hàng</option>
-											<option>Sẵn sàng giao hàng</option>
-											<option>Đang giao hàng</option>
-											<option>Đã hoàn thành</option>
-										</select>
+					<div class="block-table col-lg-12">
+						<div class="filter">
+							<form action="#" method="method">
+								<div class="form-row">
+									<div class="col-lg-3 form-group">
+										<label>Hiển thị</label>
+										<div class="input-group shadow-sm">
+											<select class="form-control">
+												<option>10</option>
+												<option>15</option>
+												<option>20</option>
+												<option>30</option>
+												<option>40</option>
+												<option>Tất cả</option>
+											</select>
+										</div>
+									</div>
+									<div class="col-lg-3 form-group">
+										<label>Danh mục</label>
+										<div class="input-group shadow-sm">
+											<select class="form-control">
+												<option>Chính</option>
+												<option>Giới thiệu</option>
+												<option>Dịch vụ</option>
+												<option>Tiện ích</option>
+												<option>Tin tức</option>
+											</select>
+										</div>
+									</div>
+									<div class="col-lg-3 form-group">
+										<label>Tìm kiếm</label>
+										<div class="input-group shadow-sm">
+											<input class="form-control" placeholder="Tìm kiếm">
+										</div>
 									</div>
 								</div>
-							</div>
-							<div class="form-row">
-								<div class="col-lg-3 form-group mb-0">
-									<label class="text-center">Mã đơn hàng</label>
-									<div class="input-group shadow-sm">
-										<input class="form-control form-control-sm" placeholder="Nhập mã đơn hàng">
-									</div>
-								</div>
-								<div class="col-lg-3 form-group mb-0">
-									<label class="text-center">Số điện thoại</label>
-									<div class="input-group shadow-sm">
-										<input class="form-control form-control-sm" placeholder="Nhập mã số điện thoại">
-									</div>
-								</div>
-								<div class="col-lg-3 form-group mb-0">
-									<label class="text-center">Tên người nhận</label>
-									<div class="input-group shadow-sm">
-										<input class="form-control form-control-sm" placeholder="Tên người nhận">
-									</div>
-								</div>
-								<div class="col-lg-2">
-									<div class="form-group mb-0">
-										<button class="btn btn-primary btn-sm shadow">Lọc</button>
-									</div>
-								</div>
-							</div>
-						</form>
-					</div>
-					<div class="block-table col-lg-12 mt-4">
-						<table class="table table-bordered m-0">
+								<button class="btn btn-primary btn-sm shadow">Xác nhận</button>
+							</form>
+						</div>
+						<table class="table table-bordered table-striped">
 							<thead>
 								<tr>
 									<th>#</th>
@@ -265,7 +259,7 @@
 									<th>Số điện thoại</th>
 									<th>Thời gian đặt hàng</th>
 									<th>Tình trạng đơn hàng</th>
-									<th class="text-center">Xem chi tiết</th>
+									<th class="text-center">Tác vụ</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -343,17 +337,17 @@
 								</tr>
 							</tbody>
 						</table>
+						<ul class="pagination">
+							<li class="pagination-prev"><a href="#"><span>Quay lại</span></a></li>
+							<li><a href="#">1</a></li>
+							<li class="active"><a href="#">2</a></li>
+							<li><a href="#">3</a></li>
+							<li><a href="#">4</a></li>
+							<li class="pagination-dot"><a href="#">...</a></li>
+							<li><a href="#">981</a></li>
+							<li class="pagination-next"><a href="#"><span>Tiếp theo</span></a></li>
+						</ul>
 					</div>
-					<ul class="pagination">
-						<li class="pagination-prev"><a href="#"><span><</span></a></li>
-						<li><a href="#">1</a></li>
-						<li class="active"><a href="#">2</a></li>
-						<li><a href="#">3</a></li>
-						<li><a href="#">4</a></li>
-						<li class="pagination-dot"><a href="#">...</a></li>
-						<li><a href="#">98</a></li>
-						<li class="pagination-next"><a href="#"><span>></span></a></li>
-					</ul>
 				</div>
 			</div>
 			<div id="js-page-verify" hidden></div>

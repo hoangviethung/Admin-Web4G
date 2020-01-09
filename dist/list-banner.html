@@ -211,35 +211,46 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="filter col-lg-8">
-						<form action="#" method="method">
-							<div class="form-row">
-								<div class="col-lg-5 form-group mb-0">
-									<label class="text-center">Ngôn ngữ</label>
-									<select class="form-control shadow-sm">
-										<option>Vietnamese</option>
-										<option>English</option>
-										<option>Chinese</option>
-									</select>
-								</div>
-								<div class="col-lg-5 form-group mb-0">
-									<label class="text-center">Thuộc trang</label>
-									<select class="form-control shadow-sm">
-										<option>Tất cả</option>
-										<option>Trang chủ</option>
-										<option>Giới thiệu</option>
-									</select>
-								</div>
-								<div class="col-lg-2">
-									<div class="form-group mb-0">
-										<button class="btn btn-primary btn-sm shadow">Lọc</button>
+					<div class="block-table col-lg-12">
+						<div class="filter">
+							<form action="#" method="method">
+								<div class="form-row">
+									<div class="col-lg-3 form-group">
+										<label>Hiển thị</label>
+										<div class="input-group shadow-sm">
+											<select class="form-control">
+												<option>10</option>
+												<option>15</option>
+												<option>20</option>
+												<option>30</option>
+												<option>40</option>
+												<option>Tất cả</option>
+											</select>
+										</div>
+									</div>
+									<div class="col-lg-3 form-group">
+										<label>Danh mục</label>
+										<div class="input-group shadow-sm">
+											<select class="form-control">
+												<option>Chính</option>
+												<option>Giới thiệu</option>
+												<option>Dịch vụ</option>
+												<option>Tiện ích</option>
+												<option>Tin tức</option>
+											</select>
+										</div>
+									</div>
+									<div class="col-lg-3 form-group">
+										<label>Tìm kiếm</label>
+										<div class="input-group shadow-sm">
+											<input class="form-control" placeholder="Tìm kiếm">
+										</div>
 									</div>
 								</div>
-							</div>
-						</form>
-					</div>
-					<div class="block-table col-lg-12 mt-4">
-						<table class="table table-bordered m-0">
+								<button class="btn btn-primary btn-sm shadow">Xác nhận</button>
+							</form>
+						</div>
+						<table class="table table-bordered table-striped">
 							<thead>
 								<tr>
 									<th>#</th>
@@ -255,7 +266,7 @@
 								<tr>
 									<td>1</td>
 									<td>Chuyển đổi đơn vị</td>
-									<td class="w-300px">
+									<td class="w-150px">
 										<div class="block-images-big"><img class="ofc" src="https://images.unsplash.com/photo-1562887085-cb16e9116582?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1489&amp;q=80" alt="" srcset=""></div>
 									</td>
 									<td class="text-center">1 - Slide bên trái - Trang chủ</td>
@@ -285,7 +296,7 @@
 								<tr>
 									<td>2</td>
 									<td>Chuyển đổi đơn vị</td>
-									<td class="w-300px">
+									<td class="w-150px">
 										<div class="block-images-big"><img class="ofc" src="https://images.unsplash.com/photo-1562887085-cb16e9116582?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1489&amp;q=80" alt="" srcset=""></div>
 									</td>
 									<td class="text-center">1 - Slide bên trái - Trang chủ</td>
@@ -315,7 +326,7 @@
 								<tr>
 									<td>3</td>
 									<td>Chuyển đổi đơn vị</td>
-									<td class="w-300px">
+									<td class="w-150px">
 										<div class="block-images-big"><img class="ofc" src="https://images.unsplash.com/photo-1562887085-cb16e9116582?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1489&amp;q=80" alt="" srcset=""></div>
 									</td>
 									<td class="text-center">1 - Slide bên trái - Trang chủ</td>
@@ -345,7 +356,7 @@
 								<tr>
 									<td>4</td>
 									<td>Chuyển đổi đơn vị</td>
-									<td class="w-300px">
+									<td class="w-150px">
 										<div class="block-images-big"><img class="ofc" src="https://images.unsplash.com/photo-1562887085-cb16e9116582?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1489&amp;q=80" alt="" srcset=""></div>
 									</td>
 									<td class="text-center">1 - Slide bên trái - Trang chủ</td>
@@ -374,17 +385,17 @@
 								</tr>
 							</tbody>
 						</table>
+						<ul class="pagination">
+							<li class="pagination-prev"><a href="#"><span>Quay lại</span></a></li>
+							<li><a href="#">1</a></li>
+							<li class="active"><a href="#">2</a></li>
+							<li><a href="#">3</a></li>
+							<li><a href="#">4</a></li>
+							<li class="pagination-dot"><a href="#">...</a></li>
+							<li><a href="#">981</a></li>
+							<li class="pagination-next"><a href="#"><span>Tiếp theo</span></a></li>
+						</ul>
 					</div>
-					<ul class="pagination">
-						<li class="pagination-prev"><a href="#"><span><</span></a></li>
-						<li><a href="#">1</a></li>
-						<li class="active"><a href="#">2</a></li>
-						<li><a href="#">3</a></li>
-						<li><a href="#">4</a></li>
-						<li class="pagination-dot"><a href="#">...</a></li>
-						<li><a href="#">98</a></li>
-						<li class="pagination-next"><a href="#"><span>></span></a></li>
-					</ul>
 				</div>
 			</div>
 			<div id="js-page-verify" hidden></div>

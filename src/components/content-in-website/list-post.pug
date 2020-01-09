@@ -10,26 +10,34 @@
 			.page-title-actions
 				a(href="create-post.html").btn-custom.submit Thêm mới
 	.row
-		.block-table.col-lg-12
+		.block-table.shadow-sm.col-lg-12
 			.filter
 				form(action="#" method="method")
-					.col-lg-2.form-group.mb-0
-						label Hiển thị
-						select.form-control.shadow-sm
-							option 10
-							option 15
-							option 20
-							option 30
-							option 40
-							option Tất cả
-					.col-lg-5.form-group.mb-0
-						label.text-center Danh mục
-						select.form-control.shadow-sm
-							option Chính
-							option Giới thiệu
-							option Dịch vụ
-							option Tiện ích
-							option Tin tức
+					.form-row
+						.col-lg-3.form-group
+							label Hiển thị
+							.input-group.shadow-sm
+								select.form-control
+									option 10
+									option 15
+									option 20
+									option 30
+									option 40
+									option Tất cả
+						.col-lg-3.form-group
+							label Danh mục
+							.input-group.shadow-sm
+								select.form-control
+									option Chính
+									option Giới thiệu
+									option Dịch vụ
+									option Tiện ích
+									option Tin tức
+						.col-lg-3.form-group
+							label Tìm kiếm
+							.input-group.shadow-sm
+								input.form-control(placeholder="Tìm kiếm")
+					button.btn.btn-primary.btn-sm.shadow Xác nhận
 			table.table.table-bordered.table-striped
 				thead
 					tr

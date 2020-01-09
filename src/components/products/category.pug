@@ -10,8 +10,8 @@
 			.page-title-actions
 				a(href="create-category.html").btn-custom.submit Thêm mới
 	.row
-		.block-table.col-lg-12.mt-4
-			table.table.table-bordered.m-0
+		.block-table.col-lg-12
+			table.table.table-bordered.table-striped
 				thead
 					tr
 						th #
@@ -40,4 +40,4 @@
 									button.btn-popup.btn-custom-icon.item(fancybox="fancybox-notification" dataFieldName="categoryID" dataId="item-"+i)
 										.icon(data-toggle="tooltip" data-placement="bottom" title="Xóa")
 											img.svg(src="./assets/images/icons/delete.svg", alt="", srcset="")
-		include ../_global/_pagination.pug
+			include ../_global/_pagination.pug

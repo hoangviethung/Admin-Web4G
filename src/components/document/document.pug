@@ -132,28 +132,35 @@
 								textarea.ck-editor#ckeditor-1(name="ckeditor-1")
 					// BẢNG
 					.content(tab-id="item-3")
-						.seach.col-lg-4
-							form(action="#" method="method")
-								.form-group
-									.form-input
-										input(type="text" placeholder="Nhập từ khóa để tìm kiếm")
-										button
-											img.svg(src="./assets/images/icons/search.svg", alt="", srcset="")
-						.filter.col-lg-12
-							form(action="#" method="method")
-								.form-row
-									.col-lg-3.form-group
-										label.text-center Select Option (Normal)
-										.input-group.shadow-sm
-											select.form-control
-												option Select 1
-												option Select 2
-												option Select 3
-									.col-lg-2
-										.form-group.mb-0
-											button.btn.btn-primary.btn-sm.shadow Lọc
-						.block-table.col-lg-12.mt-4
-							table.table.table-bordered.m-0
+						.block-table.col-lg-12
+							.filter
+								form(action="#" method="method")
+									.form-row
+										.col-lg-3.form-group
+											label Hiển thị
+											.input-group.shadow-sm
+												select.form-control
+													option 10
+													option 15
+													option 20
+													option 30
+													option 40
+													option Tất cả
+										.col-lg-3.form-group
+											label Danh mục
+											.input-group.shadow-sm
+												select.form-control
+													option Chính
+													option Giới thiệu
+													option Dịch vụ
+													option Tiện ích
+													option Tin tức
+										.col-lg-3.form-group
+											label Tìm kiếm
+											.input-group.shadow-sm
+												input.form-control(placeholder="Tìm kiếm")
+									button.btn.btn-primary.btn-sm.shadow Xác nhận
+							table.table.table-bordered.table-striped
 								thead
 									tr
 										th # (auto center)
@@ -170,7 +177,7 @@
 											td #{i}
 											td(data-fileName="false", data-value="false", data-isReadonly="false") textalign : left
 											td.text-center  textalign : center
-											td.w-300px
+											td.w-150px
 												.block-images-big
 													img.ofc(src="https://images.unsplash.com/photo-1562887085-cb16e9116582?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80", alt="", srcset="")
 											td
