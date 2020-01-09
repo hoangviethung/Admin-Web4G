@@ -299,7 +299,7 @@ function setUrlTypeLink() {
 	$('.url-default span.input-group-text').html(url);
 	let dataUrl = $('.url-default').siblings('input').attr('data-url');
 
-	if (dataUrl.length > 0) {
+	if (dataUrl && dataUrl.length > 0) {
 		$('.url-default span.input-group-text').html(url + dataUrl.slice(1));
 	}
 
