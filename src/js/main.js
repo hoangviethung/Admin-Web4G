@@ -297,8 +297,7 @@ function createRowTableInput() {
 function setUrlTypeLink() {
 	const url = window.location.protocol + '//' + window.location.host + '/';
 	$('.url-default span.input-group-text').html(url);
-	let dataUrl = $('.url-default').siblings('input').attr('data-url');
-
+	let dataUrl = $('.chooseUrlPage option:selected').attr('data-url');
 	if (dataUrl && dataUrl.length > 0) {
 		$('.url-default span.input-group-text').html(url + dataUrl.slice(1));
 	}
