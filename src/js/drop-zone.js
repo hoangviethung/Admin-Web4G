@@ -1,6 +1,6 @@
 var previewNode = document.querySelector("#template-preview");
 var previewTemplate = previewNode.innerHTML;
-previewNode.parentNode.removeChild(previewNode);
+// previewNode.parentNode.removeChild(previewNode);
 var dataFolder = $('#dataFolder').attr('data-folder');
 
 var myDropzone = new Dropzone(".upload-file", { // Make the whole body a dropzone
@@ -23,7 +23,7 @@ myDropzone.on('successmultiple', function(files, response) {
 	listNewImages.forEach(function(item, index) {
 		item.querySelector('.name').innerHTML = response[index].Name;
 		item.querySelector('.url').value = response[index].Link;
-		item.querySelector('.btn-delete').setAttribute('onclick', `deleteImage(this,'${response[index].url}')`);
+		item.querySelector('.btn-delete').setAttribute('onclick', `deleteImage(this,'${response[index].Link}')`);
 		item.querySelector('.btn-copy-url').addEventListener('click', function() {
 			var urlInput = item.querySelector('.btn-copy-url').previousSibling;
 			urlInput.select();

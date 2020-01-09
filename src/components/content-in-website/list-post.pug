@@ -10,22 +10,18 @@
 			.page-title-actions
 				a(href="create-post.html").btn-custom.submit Thêm mới
 	.row
-		.seach.col-lg-4
-			form(action="#" method="method")
-				.form-group.mb-0
-					.form-input
-						input(type="text" placeholder="Nhập từ khóa để tìm kiếm")
-						button
-							img.svg(src="./assets/images/icons/search.svg", alt="", srcset="")
-		.filter.col-lg-8
-			form(action="#" method="method")
-				.form-row
-					.col-lg-5.form-group.mb-0
-						label.text-center Ngôn ngữ
+		.block-table.col-lg-12
+			.filter
+				form(action="#" method="method")
+					.col-lg-2.form-group.mb-0
+						label Hiển thị
 						select.form-control.shadow-sm
-							option Vietnamese
-							option English
-							option Chinese
+							option 10
+							option 15
+							option 20
+							option 30
+							option 40
+							option Tất cả
 					.col-lg-5.form-group.mb-0
 						label.text-center Danh mục
 						select.form-control.shadow-sm
@@ -34,11 +30,7 @@
 							option Dịch vụ
 							option Tiện ích
 							option Tin tức
-					.col-lg-2
-						.form-group.mb-0
-							button.btn.btn-primary.btn-sm.shadow Lọc
-		.block-table.col-lg-12.mt-4
-			table.table.table-bordered.m-0
+			table.table.table-bordered.table-striped
 				thead
 					tr
 						th #
@@ -74,4 +66,4 @@
 									button.btn-popup.btn-custom-icon.item(fancybox="fancybox-notification" dataFieldName="postID" dataId="item-"+i)
 										.icon(data-toggle="tooltip" data-placement="bottom" title="Xóa")
 											img.svg(src="./assets/images/icons/delete.svg", alt="", srcset="")
-		include ../_global/_pagination.pug
+			include ../_global/_pagination.pug

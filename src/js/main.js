@@ -296,7 +296,12 @@ function createRowTableInput() {
 // GET URL PAGE
 function setUrlTypeLink() {
 	const url = window.location.protocol + '//' + window.location.host + '/';
-	$('.url-default span.input-group-text').html(url)
+	$('.url-default span.input-group-text').html(url);
+	let dataUrl = $('.url-default').siblings('input').eq(0).attr('data-url');
+
+	// if (dataUrl.length > 0) {
+	// 	$('.url-default span.input-group-text').html(url + dataUrl);
+	// }
 }
 
 // SUBMENU ASIDE
