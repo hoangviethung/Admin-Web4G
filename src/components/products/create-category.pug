@@ -31,14 +31,17 @@
 										.input-group.shadow-sm
 											input.form-control(type="number" placeholder="Nhập số thứ tự" min="1")
 									.form-group.col-lg-3
-										label Tên của danh mục *
+										label Danh mục
 										.input-group.shadow-sm
-											input.form-control(placeholder="Nhập tên tiêu đề")
+											select.form-control.chooseUrlPage
+												option(data-url="/trangchu") Trang chủ
+												option(selected data-url="/gioithieu") Giới thiệu
+												option(data-url="/lienhe") Liên hệ
 									.form-group.col-lg-3
-										label Đường dẫn bài viết *
+										label Đường dẫn
 										.input-group.shadow-sm
-											.input-group-prepend
-												span.input-group-text http://web4gsolutions.com/
+											.input-group-prepend.url-default
+												span.input-group-text
 											input.form-control(type='text')
 									.form-group.col-lg-3
 										label Ảnh đại diện danh mục

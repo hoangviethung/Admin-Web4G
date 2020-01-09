@@ -29,21 +29,19 @@
 									.form-group.col-lg-3
 										label Danh mục
 										.input-group.shadow-sm
-											select.form-control.shadow-sm
-												option Chính
-												option Giới thiệu
-												option Dịch vụ
-												option Tiện ích
-												option Tin tức
+											select.form-control.chooseUrlPage
+												option(data-url="/trangchu") Trang chủ
+												option(selected data-url="/gioithieu") Giới thiệu
+												option(data-url="/lienhe") Liên hệ
 									.form-group.col-lg-3
 										label Tên tiêu đề bài viết *
 										.input-group.shadow-sm
 											input.form-control(placeholder="Nhập tên tiêu đề")
 									.form-group.col-lg-3
-										label Đường dẫn bài viết *
+										label Đường dẫn
 										.input-group.shadow-sm
-											.input-group-prepend
-												span.input-group-text http://web4gsolutions.com/
+											.input-group-prepend.url-default
+												span.input-group-text
 											input.form-control(type='text')
 									.form-group.col-lg-3
 										label Ảnh đại diện bài viết
@@ -52,10 +50,7 @@
 									.form-group.col-lg-3
 										label Ngày đăng
 										.input-group.shadow-sm
-											input.form-control(type='date')
-											.input-group-prepend
-												span.input-group-text
-													img.svg(src="./assets/images/icons/date.svg", alt="", srcset="")
+											input.form-control.date-picker
 									.form-group.col-lg-12
 										.input-custom.d-flex.align-items-end
 											h5 Hiển thị
@@ -74,7 +69,7 @@
 											textarea.form-control(rows='5')
 									.form-group.col-lg-12
 										label Nội dung
-										textarea#editor(name="content")
+										textarea.ck-editor#ckeditor-1(name="ckeditor-1")
 									.form-group.col-lg-2
 										a(href="/").btn-custom.cancel Hủy
 										button.btn-custom.submit Thêm

@@ -235,12 +235,10 @@
 												<div class="form-group col-lg-3">
 													<label>Danh mục</label>
 													<div class="input-group shadow-sm">
-														<select class="form-control shadow-sm">
-															<option>Chính</option>
-															<option>Giới thiệu</option>
-															<option>Dịch vụ</option>
-															<option>Tiện ích</option>
-															<option>Tin tức</option>
+														<select class="form-control chooseUrlPage">
+															<option data-url="/trangchu">Trang chủ</option>
+															<option selected data-url="/gioithieu">Giới thiệu</option>
+															<option data-url="/lienhe">Liên hệ</option>
 														</select>
 													</div>
 												</div>
@@ -251,9 +249,9 @@
 													</div>
 												</div>
 												<div class="form-group col-lg-3">
-													<label>Đường dẫn bài viết *</label>
+													<label>Đường dẫn</label>
 													<div class="input-group shadow-sm">
-														<div class="input-group-prepend"><span class="input-group-text">http://web4gsolutions.com/</span></div>
+														<div class="input-group-prepend url-default"><span class="input-group-text"></span></div>
 														<input class="form-control" type="text">
 													</div>
 												</div>
@@ -266,8 +264,7 @@
 												<div class="form-group col-lg-3">
 													<label>Ngày đăng</label>
 													<div class="input-group shadow-sm">
-														<input class="form-control" type="date">
-														<div class="input-group-prepend"><span class="input-group-text"><img class="svg" src="./assets/images/icons/date.svg" alt="" srcset=""></span></div>
+														<input class="form-control date-picker">
 													</div>
 												</div>
 												<div class="form-group col-lg-12">
@@ -293,7 +290,7 @@
 												</div>
 												<div class="form-group col-lg-12">
 													<label>Nội dung</label>
-													<textarea id="editor" name="content"></textarea>
+													<textarea class="ck-editor" id="ckeditor-1" name="ckeditor-1"></textarea>
 												</div>
 												<div class="form-group col-lg-2"><a class="btn-custom cancel" href="/">Hủy</a>
 													<button class="btn-custom submit">Thêm</button>
