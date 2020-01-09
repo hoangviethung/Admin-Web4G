@@ -297,11 +297,17 @@ function createRowTableInput() {
 function setUrlTypeLink() {
 	const url = window.location.protocol + '//' + window.location.host + '/';
 	$('.url-default span.input-group-text').html(url);
-	let dataUrl = $('.url-default').siblings('input').eq(0).attr('data-url');
+	let dataUrl = $('.url-default').siblings('input').attr('data-url');
 
-	// if (dataUrl.length > 0) {
-	// 	$('.url-default span.input-group-text').html(url + dataUrl);
-	// }
+	if (dataUrl.length > 0) {
+		$('.url-default span.input-group-text').html(url + dataUrl.slice(1));
+	}
+
+	$('.chooseUrlPage').on('change', function() {
+		const valueUrl = $(this).val();
+		$('.url-default').siblings('input').attr('data-url', valueUrl);
+		$('.url-default span.input-group-text').html(url + valueUrl.slice(1));
+	});
 }
 
 // SUBMENU ASIDE
