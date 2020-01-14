@@ -180,6 +180,14 @@ button {
 	&.submit {
 		background-color: #28a745;
 	}
+
+	.icon {
+		svg {
+			fill  : #ffffff;
+			width : 20px;
+			height: 20px;
+		}
+	}
 }
 
 .input-custom {
@@ -340,53 +348,9 @@ textarea {
 	background: white;
 }
 
-// .flatpickr-months {
-
-// 	.flatpickr-prev-month,
-// 	.flatpickr-next-month {
-// 		&:hover {
-// 			svg {
-// 				fill: white;
-// 			}
-// 		}
-// 	}
-// }
-
-// span.flatpickr-weekday,
-// .flatpickr-weekdays,
-// .flatpickr-months .flatpickr-month {
-// 	background-color: #3f6ad8;
-// }
-
-// .flatpickr-current-month {
-// 	font-size: 18px;
-// 	font-size: 100%;
-
-// 	.flatpickr-monthDropdown-months {
-// 		background-color: #3f6ad8;
-// 	}
-// }
-
-// .flatpickr-current-month .flatpickr-monthDropdown-months,
-// .flatpickr-current-month input.cur-year {
-// 	&:hover {
-// 		background-color: lighten(#3f6ad8, 3%);
-// 	}
-// }
-
-// .flatpickr-current-month .flatpickr-monthDropdown-months .flatpickr-monthDropdown-month {
-// 	background-color: lighten(#3f6ad8, 3%);
-// }
-
 span.flatpickr-weekday {
 	color: white;
 }
-
-// .flatpickr-day {
-// 	display        : inline-flex;
-// 	align-items    : center;
-// 	justify-content: center;
-// }
 
 ::-webkit-scrollbar-track {
 	background-color: rgba($color: #000000, $alpha: .1)
