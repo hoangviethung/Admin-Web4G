@@ -520,21 +520,14 @@ function getFileNameWhenChooseFileUpload() {
 }
 
 function notifyAdmin() {
-	// TẠO BIẾN ĐỂ TEST
-	// const data = [{
-	// code: 200,
-	// mess: 'Thành công'
-	// }]
-	// $('#notify-json').val(JSON.stringify(data));
-	// GET VALUTE VỀ
 	const notifyValue = JSON.parse($('#notify-json').val());
 	// KIỂM TRA ĐIỀU KIỆN ĐỂ HIỆN
-	if (notifyValue[0].code === 200) {
+	if (Number(notifyValue.Code) === 200) {
 		$.notify({
 			// options
 			icon: 'glyphicon glyphicon-warning-sign',
 			title: 'Web4gsolutions xin thông báo: ',
-			message: notifyValue[0].mess,
+			message: notifyValue.Message,
 			url: '/',
 			target: '_blank'
 		}, {
@@ -576,12 +569,12 @@ function notifyAdmin() {
 				'<a href="{3}" target="{4}" data-notify="url"></a>' +
 				'</div>'
 		});
-	} else if (notifyValue[0].code === 400) {
+	} else {
 		$.notify({
 			// options
 			icon: 'glyphicon glyphicon-warning-sign',
 			title: 'Web4gsolutions xin thông báo: ',
-			message: notifyValue[0].mess,
+			message: notifyValue[0].Message,
 			url: '/',
 			target: '_blank'
 		}, {
