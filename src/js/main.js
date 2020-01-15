@@ -519,12 +519,120 @@ function getFileNameWhenChooseFileUpload() {
 	})
 }
 
+function notifyAdmin() {
+	// TẠO BIẾN ĐỂ TEST
+	const data = [{
+		code: 200,
+		mess: 'Thành công'
+	}]
+	// GET VALUTE VỀ
+	$('#notify-json').val(JSON.stringify(data));
+	const notifyValue = JSON.parse($('#notify-json').val());
+	// KIỂM TRA ĐIỀU KIỆN ĐỂ HIỆN
+	if (notifyValue[0].code === 200) {
+		$.notify({
+			// options
+			icon: 'glyphicon glyphicon-warning-sign',
+			title: 'Web4gsolutions xin thông báo: ',
+			message: notifyValue[0].mess,
+			url: '/',
+			target: '_blank'
+		}, {
+			// settings
+			element: 'body',
+			position: null,
+			type: "success",
+			allow_dismiss: true,
+			newest_on_top: false,
+			showProgressbar: false,
+			placement: {
+				from: "top",
+				align: "right"
+			},
+			offset: 20,
+			spacing: 10,
+			z_index: 1031,
+			delay: 5000,
+			timer: 1000,
+			url_target: '_blank',
+			mouse_over: null,
+			animate: {
+				enter: 'animated fadeInDown',
+				exit: 'animated fadeOutUp'
+			},
+			onShow: null,
+			onShown: null,
+			onClose: null,
+			onClosed: null,
+			icon_type: 'class',
+			template: '<div data-notify="container" class="col-xs-11 col-sm-3 alert alert-{0}" role="alert">' +
+				'<button type="button" aria-hidden="true" class="close" data-notify="dismiss">×</button>' +
+				'<span data-notify="icon"></span> ' +
+				'<span data-notify="title">{1}</span> ' +
+				'<span data-notify="message">{2}</span>' +
+				'<div class="progress" data-notify="progressbar">' +
+				'<div class="progress-bar progress-bar-{0}" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>' +
+				'</div>' +
+				'<a href="{3}" target="{4}" data-notify="url"></a>' +
+				'</div>'
+		});
+	} else if (notifyValue[0].code === 400) {
+		$.notify({
+			// options
+			icon: 'glyphicon glyphicon-warning-sign',
+			title: 'Web4gsolutions xin thông báo: ',
+			message: notifyValue[0].mess,
+			url: '/',
+			target: '_blank'
+		}, {
+			// settings
+			element: 'body',
+			position: null,
+			type: "danger",
+			allow_dismiss: true,
+			newest_on_top: false,
+			showProgressbar: false,
+			placement: {
+				from: "top",
+				align: "right"
+			},
+			offset: 20,
+			spacing: 10,
+			z_index: 1031,
+			delay: 5000,
+			timer: 1000,
+			url_target: '_blank',
+			mouse_over: null,
+			animate: {
+				enter: 'animated fadeInDown',
+				exit: 'animated fadeOutUp'
+			},
+			onShow: null,
+			onShown: null,
+			onClose: null,
+			onClosed: null,
+			icon_type: 'class',
+			template: '<div data-notify="container" class="col-xs-11 col-sm-3 alert alert-{0}" role="alert">' +
+				'<button type="button" aria-hidden="true" class="close" data-notify="dismiss">×</button>' +
+				'<span data-notify="icon"></span> ' +
+				'<span data-notify="title">{1}</span> ' +
+				'<span data-notify="message">{2}</span>' +
+				'<div class="progress" data-notify="progressbar">' +
+				'<div class="progress-bar progress-bar-{0}" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>' +
+				'</div>' +
+				'<a href="{3}" target="{4}" data-notify="url"></a>' +
+				'</div>'
+		});
+	}
+}
+
 // CHẠY KHI DOCUMENT SẴN SÀNG
 document.addEventListener('DOMContentLoaded', () => {
 	$('[data-toggle="tooltip"]').tooltip();
 	// LOADING
 	loading();
 	multipleSelect();
+	notifyAdmin();
 	// TAB
 	const blockMainTab = new MainTAB(".block-main .tab-container");
 	const blockSubTab = new SubTAB(".block-subTab .tab-container");

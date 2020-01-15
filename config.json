@@ -25,7 +25,8 @@
 			"bower_components/dropzone/dist/dropzone.js",
 			"bower_components/select2/dist/js/select2.js",
 			"bower_components/moment/moment.js",
-			"bower_components/flatpickr/dist/flatpickr.js"
+			"bower_components/flatpickr/dist/flatpickr.js",
+			"bower_components/remarkable-bootstrap-notify/dist/bootstrap-notify.js"
 		]
 	}
 }

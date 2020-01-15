@@ -19,6 +19,7 @@
     "dropzone": "^5.5.0",
     "fancybox": "^3.5.7",
     "select2": "^4.0.12",
-    "flatpickr": "^4.6.3"
+    "flatpickr": "^4.6.3",
+    "remarkable-bootstrap-notify": "^3.1.3"
   }
 }
