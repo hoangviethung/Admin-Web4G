@@ -521,10 +521,10 @@ function getFileNameWhenChooseFileUpload() {
 
 function notifyAdmin() {
 	// TẠO BIẾN ĐỂ TEST
-	const data = [{
-		code: 200,
-		mess: 'Thành công'
-	}]
+	// const data = [{
+	// 	code: 200,
+	// 	mess: 'Thành công'
+	// }]
 	// GET VALUTE VỀ
 	$('#notify-json').val(JSON.stringify(data));
 	const notifyValue = JSON.parse($('#notify-json').val());
