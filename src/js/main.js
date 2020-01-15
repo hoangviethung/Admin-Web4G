@@ -522,11 +522,11 @@ function getFileNameWhenChooseFileUpload() {
 function notifyAdmin() {
 	// TẠO BIẾN ĐỂ TEST
 	// const data = [{
-	// 	code: 200,
-	// 	mess: 'Thành công'
+	// code: 200,
+	// mess: 'Thành công'
 	// }]
+	// $('#notify-json').val(JSON.stringify(data));
 	// GET VALUTE VỀ
-	$('#notify-json').val(JSON.stringify(data));
 	const notifyValue = JSON.parse($('#notify-json').val());
 	// KIỂM TRA ĐIỀU KIỆN ĐỂ HIỆN
 	if (notifyValue[0].code === 200) {
