@@ -319,31 +319,29 @@ function showSubAsideMenu() {
 		$(this).find('.list-link').slideToggle();
 		$(this).toggleClass('active');
 		// RESET ALL NOT THIS
+		$('.aside-list .aside-item__multi-level .list-link-level--1').slideUp();
 		_notthis.find('.list-link').slideUp();
 		_notthis.removeClass('active');
 	});
 	// MENU ĐA CẤP
 	$('.aside-list .aside-item__multi-level .name').on('click', function() {
-		// THIS IS 'NOT THIS
-		const _notthis = $('.aside-list .aside-item__multi-level .name').not(this);
 		// SHOW SUB MENU AND ADD CLASS ACTIVE
 		$(this).siblings('.list-link-level--1').slideToggle();
 		$(this).parents('.aside-item__multi-level').toggleClass('active');
 		// RESET ALL NOT THIS
-
+		$('.aside-list .aside-item .list-link').slideUp();
+		$(this).parent().siblings('.aside-item__multi-level').find('.list-link-level--1').slideUp();
+		$(this).parent().siblings('.aside-item__multi-level').find('.list-link-level--2').slideUp();
+		$('.aside-item__multi-level .list-link-level--1 .name-link-level--1').not(this).removeClass('active');
 	});
 	// MỞ MENU CẤP 2
 	$('.aside-item__multi-level .list-link-level--1 .name-link-level--1').on('click', function() {
-		// THIS IS 'NOT THIS
-		const _notthis = $('.aside-item__multi-level .list-link-level--1 .name-link-level--1').not(this);
-		// console.log(_notthis[0].nextElementSibling);
-		
 		// SHOW SUB MENU AND ADD CLASS ACTIVE
 		$(this).siblings('.list-link-level--2').slideToggle();
-		$(this).parents('.list-link-level--1').toggleClass('active');
+		$(this).toggleClass('active');
 		// RESET ALL NOT THIS
-		// _notthis.nextElementSibling.slideUp();
-		_notthis.parents('.list-link-level--1').removeClass('active');
+		$('.aside-item__multi-level .list-link-level--1 .name-link-level--1').not(this).removeClass('active');
+		$(this).parent().siblings('.link-level--1').find('.list-link-level--2').slideUp();
 	});
 }
 

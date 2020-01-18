@@ -342,6 +342,12 @@ aside {
 							background-size  : cover;
 						}
 
+						&.active {
+							&:after {
+								transform: translateY(-50%) rotate(180deg);
+							}
+						}
+
 						@media (min-width: 1025px) {
 							&:hover {
 								background-color: rgba(200, 200, 200, .2);
