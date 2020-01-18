@@ -42,6 +42,25 @@ button {
 	font-family    : 'object-fit: cover, object-position: center';
 }
 
+.lcl {
+	overflow          : hidden;
+	display           : -webkit-box;
+	text-overflow     : ellipsis;
+	-webkit-box-orient: vertical;
+
+	&-1 {
+		-webkit-line-clamp: 1;
+	}
+
+	&-2 {
+		-webkit-line-clamp: 2;
+	}
+
+	&-3 {
+		-webkit-line-clamp: 3;
+	}
+}
+
 .opacity-0 {
 	opacity: 0 !important;
 }
