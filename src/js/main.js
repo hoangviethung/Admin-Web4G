@@ -346,16 +346,38 @@ function showSubAsideMenu() {
 }
 
 // ACTIVE ITEM MENU BY URL
+
+function checkAsideItemMultiLevel() {
+	const url = window.location.pathname;
+	const listLink = $('.aside-list a');
+}
+
 function activeMenuByUrl() {
 	const url = window.location.pathname;
-	const listLink = $('.aside-item .list-link a');
+	const listLink = $('.aside-list a');
+	// document.cookie = "SiteId=2; expires=Thu, 04 Feb 2020 12:00:00 UTC; path=/";
+
+	// if (document.cookie.indexOf('SiteId') >= 0) {
+	// }
 	listLink.each(function() {
 		let allHref = $(this).attr('href');
-		if (url.indexOf(allHref) !== -1) {
-			$(this).parents('.aside-item').addClass('active');
-			$(this).parents('.list-link').slideToggle();
+		if (url.includes(allHref)) {
+			if (document.cookie.indexOf('SiteId') >= 0) {
+				document.cookie.split('; ').forEach(item => {
+					if (item.indexOf('SiteId') === 0) {
+						$('[data-siteid="' + item.split('=')[1] + '"]').addClass('acitve');
+						$('[data-siteid="' + item.split('=')[1] + '"]').find('.list-link-level--1').slideDown();
+					}
+				})
+				$(this).parents('.list-link-level--2').slideDown();
+				$(this).parents('.list-link-level--2').siblings('.name-link-level--1').addClass('active');
+			} else {
+				$(this).parents('.aside-item').addClass('active');
+				$(this).parents('.list-link').slideToggle();
+			}
 		}
 	})
+
 }
 
 // TOGGLE ASIDE GỌN PHÓNG TÓ
