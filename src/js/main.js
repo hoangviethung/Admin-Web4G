@@ -361,7 +361,8 @@ function activeMenuByUrl() {
 	// }
 	listLink.each(function() {
 		let allHref = $(this).attr('href');
-		if (url.includes(allHref)) {
+		console.log(allHref.includes(url))
+		if (allHref.includes(url)) {
 			if (document.cookie.indexOf('SiteId') >= 0) {
 				document.cookie.split('; ').forEach(item => {
 					if (item.indexOf('SiteId') === 0) {
@@ -377,7 +378,6 @@ function activeMenuByUrl() {
 			}
 		}
 	})
-
 }
 
 // TOGGLE ASIDE GỌN PHÓNG TÓ
