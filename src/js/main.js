@@ -346,11 +346,10 @@ function showSubAsideMenu() {
 }
 
 // ACTIVE ITEM MENU BY URL
-
 function activeMenuByUrl() {
 	const url = window.location.pathname;
-	document.cookie = "SiteId=1; expires=Thu, 04 Feb 2020 12:00:00 UTC; path=/";
-
+	// TEST COOKIE //
+	// document.cookie = "SiteId=1; expires=Thu, 04 Feb 2020 12:00:00 UTC; path=/";
 	if (document.cookie.indexOf('SiteId') >= 0) {
 		document.cookie.split('; ').forEach(item => {
 			if (item.indexOf('SiteId') === 0) {
@@ -378,7 +377,6 @@ function activeMenuByUrl() {
 			}
 		})
 	}
-
 }
 
 // TOGGLE ASIDE GỌN PHÓNG TÓ
@@ -447,7 +445,6 @@ function checkboxAllRow() {
 		}
 	})
 
-
 	$(".role-checkbox").each(function() {
 		const row = $(this);
 		const inputCheckAll = row.find('.check-all');
@@ -498,6 +495,14 @@ function checkboxAllRow() {
 				inputCheckAll[0].checked = false;
 			}
 		})
+	})
+}
+
+function multipCheckBoxByAttr() {
+	$('body').each(function(indexOf) {
+		if($('._checkbox-normal[data-checkbox]').length > 0) {
+			console.log('Okay');
+		}
 	})
 }
 
@@ -692,6 +697,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	ajaxCheckBox();
 	// CHECK ALL ROW
 	checkboxAllRow();
+	// CHECK ALL BY ATTR
+	multipCheckBoxByAttr();
 	// URL Default
 	setUrlTypeLink();
 	// TẠO THÊM 1 DÒNG MỚI TABLE INPUT
