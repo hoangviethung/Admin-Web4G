@@ -347,37 +347,38 @@ function showSubAsideMenu() {
 
 // ACTIVE ITEM MENU BY URL
 
-function checkAsideItemMultiLevel() {
-	const url = window.location.pathname;
-	const listLink = $('.aside-list a');
-}
-
 function activeMenuByUrl() {
 	const url = window.location.pathname;
-	const listLink = $('.aside-list a');
-	// document.cookie = "SiteId=2; expires=Thu, 04 Feb 2020 12:00:00 UTC; path=/";
+	document.cookie = "SiteId=1; expires=Thu, 04 Feb 2020 12:00:00 UTC; path=/";
 
-	// if (document.cookie.indexOf('SiteId') >= 0) {
-	// }
-	listLink.each(function() {
-		let allHref = $(this).attr('href');
-		console.log(allHref.includes(url))
-		if (allHref.includes(url)) {
-			if (document.cookie.indexOf('SiteId') >= 0) {
-				document.cookie.split('; ').forEach(item => {
-					if (item.indexOf('SiteId') === 0) {
-						$('[data-siteid="' + item.split('=')[1] + '"]').addClass('acitve');
-						$('[data-siteid="' + item.split('=')[1] + '"]').find('.list-link-level--1').slideDown();
+	if (document.cookie.indexOf('SiteId') >= 0) {
+		document.cookie.split('; ').forEach(item => {
+			if (item.indexOf('SiteId') === 0) {
+
+				$('[data-siteid="' + item.split('=')[1] + '"]').addClass('acitve');
+				$('[data-siteid="' + item.split('=')[1] + '"]').find('.list-link-level--1').slideDown();
+
+				const listLinkChild = $('[data-siteid="' + item.split('=')[1] + '"] a');
+				listLinkChild.each(function() {
+					let allHref = $(this).attr('href');
+					if (allHref.includes(url)) {
+						$(this).parents('.list-link-level--2').slideDown();
+						$(this).parents('.list-link-level--2').siblings('.name-link-level--1').addClass('active');
 					}
 				})
-				$(this).parents('.list-link-level--2').slideDown();
-				$(this).parents('.list-link-level--2').siblings('.name-link-level--1').addClass('active');
-			} else {
+			}
+		})
+	} else {
+		const listLink = $('.aside-list a');
+		listLink.each(function() {
+			let allHref = $(this).attr('href');
+			if (allHref.includes(url)) {
 				$(this).parents('.aside-item').addClass('active');
 				$(this).parents('.list-link').slideToggle();
 			}
-		}
-	})
+		})
+	}
+
 }
 
 // TOGGLE ASIDE GỌN PHÓNG TÓ
