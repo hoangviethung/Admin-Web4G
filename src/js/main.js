@@ -499,11 +499,60 @@ function checkboxAllRow() {
 }
 
 function multipCheckBoxByAttr() {
-	$('body').each(function(indexOf) {
-		if($('._checkbox-normal[data-checkbox]').length > 0) {
-			console.log('Okay');
-		}
-	})
+	// CHECK TẤT CẢ
+	function checkAll() {
+		$('.check-all[data-checkbox-group]').each(function(index) {
+			const _this = $(this);
+			// LẤY HẾT TẤT CẢ TÊN NHÓM CHECK
+			const nameAllGroup = _this.attr('data-checkbox-group');
+			// CHỌN CHÍNH XÁC TÊN NHÓM
+			const thisNameGroup = $('[data-checkbox-group=' + nameAllGroup + ']');
+			// HÀM CHECK ALL
+			_this.on('change', function(e) {
+				if (e.currentTarget.checked) {
+					thisNameGroup.each(function() {
+						$(this).attr('checked', "checked");
+						$(this)[0].checked = true;
+					})
+				} else {
+					thisNameGroup.each(function() {
+						$(this).removeAttr('checked', "checked");
+						$(this)[0].checked = false;
+					})
+				}
+			})
+		})
+	}
+	// KIỂM TRA TRẠNG THÁI NHÓM CHECK
+	function getState() {
+		$('[data-checkbox-group]').each(function() {
+			const _this = $(this);
+			// HÀM CHECK TRANG THÁI
+			_this.on('change', function() {
+				let temp = 0;
+				// LẤY HẾT TẤT CẢ TÊN NHÓM CHECK
+				const nameAllGroup = _this.attr('data-checkbox-group');
+				// CHỌN CHÍNH XÁC TÊN NHÓM
+				const thisNameGroup = $('[data-checkbox-group=' + nameAllGroup + ']').not('.check-all');
+				// TỔNG SỐ LƯỢNG CÁC Ô CHECKBOX
+				const quantity = thisNameGroup.length;
+				// LẤY SỐ LƯỢNG CÁC Ô ĐÃ CHECK
+				thisNameGroup.each(function() {
+					if ($(this)[0].checked === true) {
+						temp++;
+					}
+				})
+				if (temp === quantity) {
+					$('.check-all[data-checkbox-group=' + nameAllGroup + ']')[0].checked = true;
+				} else {
+					$('.check-all[data-checkbox-group=' + nameAllGroup + ']')[0].checked = false;
+				}
+			})
+		})
+	}
+
+	checkAll();
+	getState();
 }
 
 function multipleSelect() {
