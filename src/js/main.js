@@ -471,6 +471,25 @@ function checkboxAllRow() {
 			return obj;
 		}
 
+		let checkAll = true;
+		if (inputView.length > 0) {
+			checkAll = checkAll && inputView[0].checked
+		}
+		if (inputAdd.length > 0) {
+			checkAll = checkAll && inputAdd[0].checked
+		}
+		if (inputEdit.length > 0) {
+			checkAll = checkAll && inputEdit[0].checked
+		}
+		if (inputDelete.length > 0) {
+			checkAll = checkAll && inputDelete[0].checked
+		}
+
+		if (checkAll) {
+			inputCheckAll.checked = true;
+			inputCheckAll.attr('checked', 'checked')
+		}
+
 		inputCheckAll.on('change', function(e) {
 			Object.keys(getRowState()).forEach(key => {
 				if (e.currentTarget.checked) {
