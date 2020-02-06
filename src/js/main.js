@@ -454,40 +454,73 @@ function checkboxAllRow() {
 		const inputDelete = row.find('.delete');
 
 		const getRowState = () => {
-			return {
-				checkAll: inputCheckAll[0].checked,
-				view: inputView[0].checked,
-				add: inputAdd[0].checked,
-				edit: inputEdit[0].checked,
-				delete: inputDelete[0].checked,
+			let obj = {};
+			obj['checkAll'] = inputCheckAll[0].checked;
+			if (inputView.length > 0) {
+				obj['view'] = inputView[0].checked;
 			}
+			if (inputAdd.length > 0) {
+				obj['add'] = inputAdd[0].checked;
+			}
+			if (inputEdit.length > 0) {
+				obj['edit'] = inputEdit[0].checked;
+			}
+			if (inputDelete.length > 0) {
+				obj['delete'] = inputDelete[0].checked;
+			}
+			return obj;
 		}
 
 		inputCheckAll.on('change', function(e) {
-			if (e.currentTarget.checked) {
-				inputView.attr('checked', 'checked');
-				inputAdd.attr('checked', 'checked');
-				inputEdit.attr('checked', 'checked');
-				inputDelete.attr('checked', 'checked');
-				inputView[0].checked = true;
-				inputAdd[0].checked = true;
-				inputEdit[0].checked = true;
-				inputDelete[0].checked = true;
-			} else {
-				inputView.removeAttr('checked');
-				inputAdd.removeAttr('checked');
-				inputEdit.removeAttr('checked');
-				inputDelete.removeAttr('checked');
-				inputView[0].checked = false;
-				inputAdd[0].checked = false;
-				inputEdit[0].checked = false;
-				inputDelete[0].checked = false;
-			}
+			Object.keys(getRowState()).forEach(key => {
+				if (e.currentTarget.checked) {
+					if (key === 'view') {
+						inputView.attr('checked', 'checked');
+						inputView[0].checked = true;
+					}
+					if (key === 'add') {
+						inputAdd.attr('checked', 'checked');
+						inputAdd[0].checked = true;
+					}
+					if (key === 'edit') {
+						inputEdit.attr('checked', 'checked');
+						inputEdit[0].checked = true;
+					}
+					if (key === 'delete') {
+						inputDelete.attr('checked', 'checked');
+						inputDelete[0].checked = true;
+					}
+				} else {
+					if (key === 'view') {
+						inputView.removeAttr('checked');
+						inputView[0].checked = false;
+					}
+					if (key === 'add') {
+						inputAdd.removeAttr('checked');
+						inputAdd[0].checked = false;
+					}
+					if (key === 'edit') {
+						inputEdit.removeAttr('checked');
+						inputEdit[0].checked = false;
+					}
+					if (key === 'delete') {
+						inputDelete.removeAttr('checked');
+						inputDelete[0].checked = false;
+					}
+				}
+			})
 		})
 
 		row.find('input[type=checkbox]').not('.check-all').on('change', function(e) {
 			const rowState = getRowState();
-			if (rowState.view && rowState.add && rowState.edit && rowState.delete) {
+			let check = true;
+			Object.values(rowState).forEach((value, index) => {
+				if (index !== 0) {
+					check = check && value
+				}
+			})
+
+			if (check) {
 				inputCheckAll.attr('checked', 'checked');
 				inputCheckAll[0].checked = true;
 			} else {
