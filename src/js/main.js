@@ -217,7 +217,7 @@ function ajaxFancybox() {
 						<button class="btn-custom cancel" data-fancybox-close>Hủy</button>
 					</div>
 					<div class="item">
-						<button class="btn-custom submit submit-change-pass" data-url="#">Cập nhật</button>
+						<button class="btn-custom submit submit-change-pass">Cập nhật</button>
 					</div>
 				</div>
 			</div>`
@@ -232,7 +232,6 @@ function ajaxFancybox() {
 				beforeShow: function() {
 					// SUBMIT CHANGE PASSWORD
 					$('.submit-change-pass').on('click', function() {
-						const url = $(this).attr('data-url');
 						const oldpass = $('#oldpass').val();
 						const newpass = $('#newpass').val();
 						const re_newpass = $('#re_newpass').val();
@@ -243,7 +242,7 @@ function ajaxFancybox() {
 						data['re_newpass'] = re_newpass;
 						$.ajax({
 							type: "POST",
-							url: url,
+							url: dataURL,
 							data: data,
 							success: function(res) {
 								if (res.Code === 200) {
