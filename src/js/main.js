@@ -169,6 +169,7 @@ function ajaxFancybox() {
 		itemId = $(this).attr('dataiD');
 		dataFieldName = $(this).attr('dataFieldName');
 		dataURL = $(this).attr('dataUrl');
+
 		const dataValue = $(this).parents('td').siblings('td[data-value]').attr('data-value');
 		const html =
 			`<div class="modal-POPUP fancybox-content" id="fancybox-change-pass">
