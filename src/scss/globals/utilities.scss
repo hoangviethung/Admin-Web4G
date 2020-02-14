@@ -617,7 +617,7 @@ span.flatpickr-weekday {
 			}
 		}
 
-		.card-header-buttons {
+		.card-header-actions {
 			margin-left: auto;
 
 			>a,
@@ -627,14 +627,6 @@ span.flatpickr-weekday {
 				font-weight: 700;
 				line-height: 30px;
 				padding    : 0 10px;
-			}
-		}
-	}
-
-	@media (max-width: 767.98px) {
-		.card-header {
-			.card-header-buttons {
-				display: none;
 			}
 		}
 	}
@@ -1187,5 +1179,14 @@ span.flatpickr-weekday {
 				margin-bottom: 0;
 			}
 		}
+	}
+}
+
+.list-preview-buttons {
+	display  : flex;
+	flex-wrap: wrap;
+
+	button {
+		margin: 5px;
 	}
 }

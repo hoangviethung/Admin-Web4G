@@ -9,11 +9,11 @@
 
 		"css": [
 			"bower_components/dropzone/dist/dropzone.css",
+			"bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css",
+			"bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker-standalone.css",
 			"bower_components/bootstrap/dist/css/bootstrap.css",
 			"bower_components/fancybox/dist/jquery.fancybox.css",
 			"bower_components/select2/dist/css/select2.css",
-			"bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker-standalone.css",
-			"bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css",
 			"bower_components/flatpickr/dist/flatpickr.css",
 			"bower_components/flatpickr/dist/themes/material_blue.css"
 		],
