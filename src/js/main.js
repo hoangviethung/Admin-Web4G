@@ -1,6 +1,3 @@
-// import here !!!
-import loading from './lib/loading';
-
 // Script Cho TAB CHÍNH
 class MainTAB {
 	selector;
@@ -777,9 +774,6 @@ function notifyAdmin() {
 
 // CHẠY KHI DOCUMENT SẴN SÀNG
 document.addEventListener('DOMContentLoaded', () => {
-	$('[data-toggle="tooltip"]').tooltip();
-	// LOADING
-	loading();
 	multipleSelect();
 	notifyAdmin();
 	// TAB

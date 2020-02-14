@@ -9,12 +9,6 @@
 		<link rel="stylesheet" href="./css/main.min.css">
 	</head>
 	<body>
-		<div id="fb-root"></div>
-		<div id="loading">
-			<div class="logo-loader"><img src="./assets/images/icons/loading.svg" alt=""></div>
-			<div class="progstat-wrapper">Loading:<span id="progstat">0</span>%</div>
-			<div id="progress"></div>
-		</div>
 		<header>
 			<div class="header-right">
 				<div class="accounts">
@@ -57,215 +51,20 @@
 				<div class="button-close"><span class="line"></span></div>
 			</div>
 			<div class="aside-list">
-				<div class="aside-item">
-					<div class="name">
-						<div class="icon"><img class="svg" src="./assets/images/icons/menu.svg" alt="" srcset=""></div>
-						<h5>Menu</h5>
-					</div>
-					<ul class="list-link">
-						<li class="link"><a href="/menu.html">Thiết lập</a></li>
-					</ul>
-				</div>
-				<div class="aside-item">
-					<div class="name">
-						<div class="icon"><img class="svg" src="./assets/images/icons/post.svg" alt="" srcset=""></div>
-						<h5>Nội dung</h5>
-					</div>
-					<ul class="list-link">
-						<li class="link"><a href="/list-post.html">Bài viết</a></li>
-						<li class="link"><a href="/list-banner.html">Banner</a></li>
-					</ul>
-				</div>
-				<div class="aside-item">
-					<div class="name">
-						<div class="icon"><img class="svg" src="./assets/images/icons/library.svg" alt="" srcset=""></div>
-						<h5>Thư Viện</h5>
-					</div>
-					<ul class="list-link">
-						<li class="link"><a href="#">Hình ảnh</a></li>
-						<li class="link"><a href="#">Video</a></li>
-					</ul>
-				</div>
-				<div class="aside-item">
-					<div class="name">
-						<div class="icon"><img class="svg" src="./assets/images/icons/ecommerce.svg" alt="" srcset=""></div>
-						<h5>Thương mại điện tử</h5>
-					</div>
-					<ul class="list-link">
-						<li class="link"><a href="/list-cart.html">Đơn đặt hàng</a></li>
-						<li class="link"><a href="/list-sale.html">Quản lí giảm giá</a></li>
-					</ul>
-				</div>
-				<div class="aside-item">
-					<div class="name">
-						<div class="icon"><img class="svg" src="./assets/images/icons/products.svg" alt="" srcset=""></div>
-						<h5>Quản lý sản phẩm</h5>
-					</div>
-					<ul class="list-link">
-						<li class="link"><a href="#">Danh sách sản phẩm</a></li>
-						<li class="link"><a href="/category-product.html">Danh mục sản phẩm</a></li>
-						<li class="link"><a href="#">Thuộc tính sản phẩm</a></li>
-						<li class="link"><a href="#">Thương hiệu</a></li>
-					</ul>
-				</div>
-				<div class="aside-item">
-					<div class="name">
-						<div class="icon"><img class="svg" src="./assets/images/icons/user.svg" alt="" srcset=""></div>
-						<h5>Thành viên</h5>
-					</div>
-					<ul class="list-link">
-						<li class="link"><a href="/user-admin.html">Tài khoản quản trị</a></li>
-						<li class="link"><a href="/role-admin.html">Quản lí quyền</a></li>
-					</ul>
-				</div>
-				<div class="aside-item">
-					<div class="name">
-						<div class="icon"><img class="svg" src="./assets/images/icons/partner.svg" alt="" srcset=""></div>
-						<h5>Đối Tác</h5>
-					</div>
-					<ul class="list-link">
-						<li class="link"><a href="/partner.html">Chỉnh sửa</a></li>
-					</ul>
-				</div>
-				<div class="aside-item">
-					<div class="name">
-						<div class="icon"><img class="svg" src="./assets/images/icons/maps.svg" alt="" srcset=""></div>
-						<h5>Chi nhánh</h5>
-					</div>
-					<ul class="list-link">
-						<li class="link"><a href="/branch-offices.html">Chỉnh sửa</a></li>
-					</ul>
-				</div>
-				<div class="aside-item">
-					<div class="name">
-						<div class="icon"><img class="svg" src="./assets/images/icons/mail.svg" alt="" srcset=""></div>
-						<h5>Phản hồi</h5>
-					</div>
-					<ul class="list-link">
-						<li class="link"><a href="#">Danh sách Subcribe</a></li>
-						<li class="link"><a href="/list-contact.html">Danh sách tham gia</a></li>
-						<li class="link"><a href="#">Yêu cầu báo giá</a></li>
-						<li class="link"><a href="#">Đăng ký booking</a></li>
-					</ul>
-				</div>
-				<div class="aside-item">
-					<div class="name">
-						<div class="icon"><img class="svg" src="./assets/images/icons/history.svg" alt="" srcset=""></div>
-						<h5>Quản lý lịch sử</h5>
-					</div>
-					<ul class="list-link">
-						<li class="link"><a href="/history.html">Kiểm tra</a></li>
-					</ul>
-				</div>
-				<div class="aside-item">
-					<div class="name">
-						<div class="icon"><img class="svg" src="./assets/images/icons/question.svg" alt="" srcset=""></div>
-						<h5>Câu hỏi thường gặp</h5>
-					</div>
-					<ul class="list-link">
-						<li class="link"><a href="#">Chỉnh sửa</a></li>
-					</ul>
-				</div>
-				<div class="aside-item">
-					<div class="name">
-						<div class="icon"><img class="svg" src="./assets/images/icons/folder.svg" alt="" srcset=""></div>
-						<h5>Quản Lý Thư Mục</h5>
-					</div>
-					<ul class="list-link">
-						<li class="link"><a href="#">Kiểm tra</a></li>
-					</ul>
-				</div>
-				<div class="aside-item">
-					<div class="name">
-						<div class="icon"><img class="svg" src="./assets/images/icons/document.svg" alt="" srcset=""></div>
-						<h5>Document</h5>
-					</div>
-					<ul class="list-link">
-						<li class="link"><a href="/document.html">Xem</a></li>
-					</ul>
-				</div>
-				<div class="aside-item">
-					<div class="name">
-						<div class="icon"><img class="svg" src="./assets/images/icons/setting.svg" alt="" srcset=""></div>
-						<h5>Cài Đặt</h5>
-					</div>
-					<ul class="list-link">
-						<li class="link"><a href="/setting.html">Thiết lập</a></li>
-						<li class="link"><a href="/resources.html">Tài nguyên</a></li>
-					</ul>
-				</div>
 				<!-- Menu đa cấp-->
 				<div class="aside-item__multi-level" data-siteid="1">
 					<div class="name">
-						<div class="icon"><img class="svg" src="./assets/images/icons/pages.svg" alt="" srcset=""></div>
-						<h5 class="lcl lcl-1">Menu Multi Level - 01</h5>
+						<div class="icon"><img class="svg" src="./assets/images/icons/document.svg" alt="" srcset=""></div>
+						<h5 class="lcl lcl-1">Document</h5>
 					</div>
 					<ul class="list-link-level--1">
 						<li class="link-level--1">
 							<div class="name-link-level--1">
 								<div class="icon"><img class="svg" src="./assets/images/icons/menu.svg" alt="" srcset=""></div>
-								<h5>Menu</h5>
+								<h5>Elements</h5>
 							</div>
 							<ul class="list-link-level--2">
-								<li class="link-level--2"><a href="/menu.html">Xem</a></li>
-							</ul>
-						</li>
-						<li class="link-level--1">
-							<div class="name-link-level--1">
-								<div class="icon"><img class="svg" src="./assets/images/icons/post.svg" alt="" srcset=""></div>
-								<h5>Nội dung</h5>
-							</div>
-							<ul class="list-link-level--2">
-								<li class="link-level--2"><a href="/list-post.html">Bài viết</a></li>
-								<li class="link-level--2"><a href="/list-banner.html">Banner</a></li>
-							</ul>
-						</li>
-						<li class="link-level--1">
-							<div class="name-link-level--1">
-								<div class="icon"><img class="svg" src="./assets/images/icons/user.svg" alt="" srcset=""></div>
-								<h5>Thành viên</h5>
-							</div>
-							<ul class="list-link-level--2">
-								<li class="link-level--2"><a href="/user-admin.html">Tài khoản quản trị</a></li>
-								<li class="link-level--2"><a href="/role-admin.html">Quản lí quyền</a></li>
-							</ul>
-						</li>
-					</ul>
-				</div>
-				<!-- Menu đa cấp-->
-				<div class="aside-item__multi-level" data-siteid="2">
-					<div class="name">
-						<div class="icon"><img class="svg" src="./assets/images/icons/pages.svg" alt="" srcset=""></div>
-						<h5 class="lcl lcl-1">Menu Multi Level - 02</h5>
-					</div>
-					<ul class="list-link-level--1">
-						<li class="link-level--1">
-							<div class="name-link-level--1">
-								<div class="icon"><img class="svg" src="./assets/images/icons/menu.svg" alt="" srcset=""></div>
-								<h5>Menu</h5>
-							</div>
-							<ul class="list-link-level--2">
-								<li class="link-level--2"><a href="/menu.html">Xem</a></li>
-							</ul>
-						</li>
-						<li class="link-level--1">
-							<div class="name-link-level--1">
-								<div class="icon"><img class="svg" src="./assets/images/icons/post.svg" alt="" srcset=""></div>
-								<h5>Nội dung</h5>
-							</div>
-							<ul class="list-link-level--2">
-								<li class="link-level--2"><a href="/list-post.html">Bài viết</a></li>
-								<li class="link-level--2"><a href="/list-banner.html">Banner</a></li>
-							</ul>
-						</li>
-						<li class="link-level--1">
-							<div class="name-link-level--1">
-								<div class="icon"><img class="svg" src="./assets/images/icons/user.svg" alt="" srcset=""></div>
-								<h5>Thành viên</h5>
-							</div>
-							<ul class="list-link-level--2">
-								<li class="link-level--2"><a href="/user-admin.html">Tài khoản quản trị</a></li>
-								<li class="link-level--2"><a href="/role-admin.html">Quản lí quyền</a></li>
+								<li class="link-level--2"><a href="/buttons.html">Buttons</a></li>
 							</ul>
 						</li>
 					</ul>
