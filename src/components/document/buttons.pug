@@ -12,9 +12,9 @@
 			.tab-container
 				ul.list-tab
 					li.item(toggle-for="item-1").acitve Standard Buttons
-					li.item(toggle-for="item-2") Size Buttons
-					li.item(toggle-for="item-3") Upload File Excel Buttons
-					li.item(toggle-for="item-4") Icons Buttons
+					li.item(toggle-for="item-2") Icons Buttons
+					li.item(toggle-for="item-3") Size Buttons
+					li.item(toggle-for="item-4") Upload File Excel Buttons
 				.tab-content
 					// Standard Buttons
 					.content(tab-id="item-1")
@@ -87,47 +87,8 @@
 											button.btn.btn-pill.btn-outline-dark Dark
 										code
 											img.m-5px(src="./assets/previewHTML/outline-pills-buttons.png", alt="")
-					// Block level button
-					.content(tab-id="item-2")
-						.row
-							.col-lg-6.mb-4
-								.card.shadow-sm
-									.card-header
-										.card-header-title
-											h3 Block level button
-									.card-body
-										.list-preview-buttons.mb-3
-											button.btn.btn-primary.btn-block Block level button
-											button.btn.btn-secondary.btn-block Block level button
-											button.btn.btn-success.btn-block Block level button
-											button.btn.btn-danger.btn-block Block level button
-											button.btn.btn-warning.btn-block Block level button
-											button.btn.btn-info.btn-block Block level button
-											button.btn.btn-light.btn-block Block level button
-											button.btn.btn-dark.btn-block Block level button
-										code
-											img.m-5px(src="./assets/previewHTML/block-buttons.png", alt="", srcset="")
-					// Buttons Upload File Excel
-					.content(tab-id="item-3")
-						.row
-							.col-lg-6.mb-4
-								.card.shadow-sm
-									.card-header
-										.card-header-title
-											h3 Upload File Excel Buttons
-									.card-body
-										.list-preview-buttons
-											.form-group
-												.input-custom
-													.file-upload
-														label.btn.btn-pill.btn-success Chọn file để upload
-															input.input-file(type="file")
-														span.file-upload-notice
-														button.btn.btn-pill.btn-primary.btn-upload(data-url="/test") Upload
-										ul.list-preview-html
-											img(src="./assets/previewHTML/upload-file-excel.png", alt="", srcset="")
 					// Icons Buttons
-					.content(tab-id="item-4")
+					.content(tab-id="item-2")
 						.row
 							// Normal Icons Buttons
 							.col-lg-6.mb-4
@@ -385,3 +346,42 @@
 												span.lnr.lnr-cross-circle
 										code
 											img.m-5px(src="./assets/previewHTML/outline-pills-icons-only.png", alt="", srcset="")
+					// Block level button
+					.content(tab-id="item-3")
+						.row
+							.col-lg-6.mb-4
+								.card.shadow-sm
+									.card-header
+										.card-header-title
+											h3 Block level button
+									.card-body
+										.list-preview-buttons.mb-3
+											button.btn.btn-primary.btn-block Block level button
+											button.btn.btn-secondary.btn-block Block level button
+											button.btn.btn-success.btn-block Block level button
+											button.btn.btn-danger.btn-block Block level button
+											button.btn.btn-warning.btn-block Block level button
+											button.btn.btn-info.btn-block Block level button
+											button.btn.btn-light.btn-block Block level button
+											button.btn.btn-dark.btn-block Block level button
+										code
+											img.m-5px(src="./assets/previewHTML/block-buttons.png", alt="", srcset="")
+					// Buttons Upload File Excel
+					.content(tab-id="item-4")
+						.row
+							.col-lg-6.mb-4
+								.card.shadow-sm
+									.card-header
+										.card-header-title
+											h3 Upload File Excel Buttons
+									.card-body
+										.list-preview-buttons
+											.form-group
+												.input-custom
+													.file-upload
+														label.btn.btn-pill.btn-success Chọn file để upload
+															input.input-file(type="file")
+														span.file-upload-notice
+														button.btn.btn-pill.btn-primary.btn-upload(data-url="/test") Upload
+										ul.list-preview-html
+											img(src="./assets/previewHTML/upload-file-excel.png", alt="", srcset="")
