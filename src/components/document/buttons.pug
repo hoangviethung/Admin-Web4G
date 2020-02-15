@@ -14,6 +14,7 @@
 					li.item(toggle-for="item-1").acitve Standard Buttons
 					li.item(toggle-for="item-2") Size Buttons
 					li.item(toggle-for="item-3") Upload File Excel Buttons
+					li.item(toggle-for="item-4") Icons Buttons
 				.tab-content
 					// Standard Buttons
 					.content(tab-id="item-1")
@@ -34,7 +35,7 @@
 											button.btn.btn-light Light
 											button.btn.btn-dark Dark
 										code
-											img(src="./assets/previewHTML/normal-buttons.png", alt="", srcset="")
+											img.m-5px(src="./assets/previewHTML/normal-buttons.png", alt="", srcset="")
 							.col-lg-6.mb-4
 								.card.shadow-sm
 									.card-header
@@ -51,7 +52,7 @@
 											button.btn.btn-outline-light Light
 											button.btn.btn-outline-dark Dark
 										code
-											img(src="./assets/previewHTML/outline-buttons.png", alt="", srcset="")
+											img.m-5px(src="./assets/previewHTML/outline-buttons.png", alt="", srcset="")
 							.col-lg-6.mb-4
 								.card.shadow-sm
 									.card-header
@@ -68,7 +69,7 @@
 											button.btn.btn-pill.btn-light Light
 											button.btn.btn-pill.btn-dark Dark
 										code
-											img(src="./assets/previewHTML/pills-buttons.png", alt="")
+											img.m-5px(src="./assets/previewHTML/pills-buttons.png", alt="")
 							.col-lg-6.mb-4
 								.card.shadow-sm
 									.card-header
@@ -85,7 +86,7 @@
 											button.btn.btn-pill.btn-outline-light Light
 											button.btn.btn-pill.btn-outline-dark Dark
 										code
-											img(src="./assets/previewHTML/pills-outline-buttons.png", alt="")
+											img.m-5px(src="./assets/previewHTML/outline-pills-buttons.png", alt="")
 					// Block level button
 					.content(tab-id="item-2")
 						.row
@@ -95,7 +96,7 @@
 										.card-header-title
 											h3 Block level button
 									.card-body
-										.list-preview-buttons
+										.list-preview-buttons.mb-3
 											button.btn.btn-primary.btn-block Block level button
 											button.btn.btn-secondary.btn-block Block level button
 											button.btn.btn-success.btn-block Block level button
@@ -104,25 +105,8 @@
 											button.btn.btn-info.btn-block Block level button
 											button.btn.btn-light.btn-block Block level button
 											button.btn.btn-dark.btn-block Block level button
-										ul.list-preview-html
-											li .btn.btn-pill.btn-outline-primary
-												span Block level button
-											li .btn.btn-primary.btn-block
-												span Block level button
-											li .btn.btn-secondary.btn-block
-												span Block level button
-											li .btn.btn-success.btn-block
-												span Block level button
-											li .btn.btn-danger.btn-block
-												span Block level button
-											li .btn.btn-warning.btn-block
-												span Block level button
-											li .btn.btn-info.btn-block
-												span Block level button
-											li .btn.btn-light.btn-block
-												span Block level button
-											li .btn.btn-dark.btn-block
-												span Block level button
+										code
+											img.m-5px(src="./assets/previewHTML/block-buttons.png", alt="", srcset="")
 					// Buttons Upload File Excel
 					.content(tab-id="item-3")
 						.row
@@ -141,4 +125,263 @@
 														span.file-upload-notice
 														button.btn.btn-pill.btn-primary.btn-upload(data-url="/test") Upload
 										ul.list-preview-html
-											img(src="./assets/previewHTML/button-upload-excel.png", alt="", srcset="")
+											img(src="./assets/previewHTML/upload-file-excel.png", alt="", srcset="")
+					// Icons Buttons
+					.content(tab-id="item-4")
+						.row
+							// Normal Icons Buttons
+							.col-lg-6.mb-4
+								.card.shadow-sm
+									.card-header
+										.card-header-title
+											h3 Normal Icons Buttons
+										.card-header-actions
+											a(href="https://linearicons.com/free") Link check code Icons
+									.card-body
+										.list-preview-buttons.mb-3
+											button.btn.btn-primary
+												span.lnr.lnr-home.mr-5px
+												| Primary
+											button.btn.btn-secondary
+												span.lnr.lnr-diamond.mr-5px
+												| Secondary
+											button.btn.btn-success
+												span.lnr.lnr-alarm.mr-5px
+												| Success
+											button.btn.btn-danger
+												spab.lnr.lnr-history.mr-5px
+												| Danger
+											button.btn.btn-warning
+												span.lnr.lnr-thumbs-up.mr-5px
+												| Warning
+											button.btn.btn-info
+												span.lnr.lnr-magnifier.mr-5px
+												| Info
+											button.btn.btn-light
+												span.lnr.lnr-star.mr-5px
+												| Light
+											button.btn.btn-dark
+												span.lnr.lnr-cross-circle.mr-5px
+												| Dark
+										code
+											img.m-5px(src="./assets/previewHTML/icons-buttons.png", alt="", srcset="")
+							// Outline Icons Buttons
+							.col-lg-6.mb-4
+								.card.shadow-sm
+									.card-header
+										.card-header-title
+											h3 Outline Icons Buttons
+										.card-header-actions
+											a(href="https://linearicons.com/free") Link check code Icons
+									.card-body
+										.list-preview-buttons.mb-3
+											button.btn.btn-outline-primary
+												span.lnr.lnr-home.mr-5px
+												| Primary
+											button.btn.btn-outline-secondary
+												span.lnr.lnr-diamond.mr-5px
+												| Secondary
+											button.btn.btn-outline-success
+												span.lnr.lnr-alarm.mr-5px
+												| Success
+											button.btn.btn-outline-danger
+												spab.lnr.lnr-history.mr-5px
+												| Danger
+											button.btn.btn-outline-warning
+												span.lnr.lnr-thumbs-up.mr-5px
+												| Warning
+											button.btn.btn-outline-info
+												span.lnr.lnr-magnifier.mr-5px
+												| Info
+											button.btn.btn-outline-light
+												span.lnr.lnr-star.mr-5px
+												| Light
+											button.btn.btn-outline-dark
+												span.lnr.lnr-cross-circle.mr-5px
+												| Dark
+										code
+											img.m-5px(src="./assets/previewHTML/outline-icons-buttons.png", alt="", srcset="")
+							// Pills Buttons
+							.col-lg-6.mb-4
+								.card.shadow-sm
+									.card-header
+										.card-header-title
+											h3 Pills Icons Buttons
+										.card-header-actions
+											a(href="https://linearicons.com/free") Link check code Icons
+									.card-body
+										.list-preview-buttons.mb-3
+											button.btn.btn-pill.btn-primary
+												span.lnr.lnr-home.mr-5px
+												| Primary
+											button.btn.btn-pill.btn-secondary
+												span.lnr.lnr-diamond.mr-5px
+												| Secondary
+											button.btn.btn-pill.btn-success
+												span.lnr.lnr-alarm.mr-5px
+												| Success
+											button.btn.btn-pill.btn-danger
+												spab.lnr.lnr-history.mr-5px
+												| Danger
+											button.btn.btn-pill.btn-warning
+												span.lnr.lnr-thumbs-up.mr-5px
+												| Warning
+											button.btn.btn-pill.btn-info
+												span.lnr.lnr-magnifier.mr-5px
+												| Info
+											button.btn.btn-pill.btn-light
+												span.lnr.lnr-star.mr-5px
+												| Light
+											button.btn.btn-pill.btn-dark
+												span.lnr.lnr-cross-circle.mr-5px
+												| Dark
+										code
+											img.m-5px(src="./assets/previewHTML/pills-icons-buttons.png", alt="", srcset="")
+							// Outline Pills Icons
+							.col-lg-6.mb-4
+								.card.shadow-sm
+									.card-header
+										.card-header-title
+											h3 Outline Pills Icons
+										.card-header-actions
+											a(href="https://linearicons.com/free") Link check code Icons
+									.card-body
+										.list-preview-buttons.mb-3
+											button.btn.btn-pill.btn-outline-primary
+												span.lnr.lnr-home.mr-5px
+												| Primary
+											button.btn.btn-pill.btn-outline-secondary
+												span.lnr.lnr-diamond.mr-5px
+												| Secondary
+											button.btn.btn-pill.btn-outline-success
+												span.lnr.lnr-alarm.mr-5px
+												| Success
+											button.btn.btn-pill.btn-outline-danger
+												spab.lnr.lnr-history.mr-5px
+												| Danger
+											button.btn.btn-pill.btn-outline-warning
+												span.lnr.lnr-thumbs-up.mr-5px
+												| Warning
+											button.btn.btn-pill.btn-outline-info
+												span.lnr.lnr-magnifier.mr-5px
+												| Info
+											button.btn.btn-pill.btn-outline-light
+												span.lnr.lnr-star.mr-5px
+												| Light
+											button.btn.btn-pill.btn-outline-dark
+												span.lnr.lnr-cross-circle.mr-5px
+												| Dark
+										code
+											img.m-5px(src="./assets/previewHTML/outline-pills-icons-buttons.png", alt="", srcset="")
+							// Icons Only
+							.col-lg-6.mb-4
+								.card.shadow-sm
+									.card-header
+										.card-header-title
+											h3 Icons Only
+										.card-header-actions
+											a(href="https://linearicons.com/free") Link check code Icons
+									.card-body
+										.list-preview-buttons.mb-3
+											button.btn.btn-primary
+												span.lnr.lnr-home
+											button.btn.btn-secondary
+												span.lnr.lnr-diamond
+											button.btn.btn-success
+												span.lnr.lnr-alarm
+											button.btn.btn-danger
+												spab.lnr.lnr-history
+											button.btn.btn-warning
+												span.lnr.lnr-thumbs-up
+											button.btn.btn-info
+												span.lnr.lnr-magnifier
+											button.btn.btn-light
+												span.lnr.lnr-star
+											button.btn.btn-dark
+												span.lnr.lnr-cross-circle
+										code
+											img.m-5px(src="./assets/previewHTML/icons-only.png", alt="", srcset="")
+							// Outline Icons Only
+							.col-lg-6.mb-4
+								.card.shadow-sm
+									.card-header
+										.card-header-title
+											h3 Outline Icons Only
+										.card-header-actions
+											a(href="https://linearicons.com/free") Link check code Icons
+									.card-body
+										.list-preview-buttons.mb-3
+											button.btn.btn-outline-primary
+												span.lnr.lnr-home
+											button.btn.btn-outline-secondary
+												span.lnr.lnr-diamond
+											button.btn.btn-outline-success
+												span.lnr.lnr-alarm
+											button.btn.btn-outline-danger
+												spab.lnr.lnr-history
+											button.btn.btn-outline-warning
+												span.lnr.lnr-thumbs-up
+											button.btn.btn-outline-info
+												span.lnr.lnr-magnifier
+											button.btn.btn-outline-light
+												span.lnr.lnr-star
+											button.btn.btn-outline-dark
+												span.lnr.lnr-cross-circle
+										code
+											img.m-5px(src="./assets/previewHTML/outline-icons-only.png", alt="", srcset="")
+							// Pills Icons Only
+							.col-lg-6.mb-4
+								.card.shadow-sm
+									.card-header
+										.card-header-title
+											h3 Pills Icons Only
+										.card-header-actions
+											a(href="https://linearicons.com/free") Link check code Icons
+									.card-body
+										.list-preview-buttons.mb-3
+											button.btn.btn-pill.btn-primary
+												span.lnr.lnr-home
+											button.btn.btn-pill.btn-secondary
+												span.lnr.lnr-diamond
+											button.btn.btn-pill.btn-success
+												span.lnr.lnr-alarm
+											button.btn.btn-pill.btn-danger
+												spab.lnr.lnr-history
+											button.btn.btn-pill.btn-warning
+												span.lnr.lnr-thumbs-up
+											button.btn.btn-pill.btn-info
+												span.lnr.lnr-magnifier
+											button.btn.btn-pill.btn-light
+												span.lnr.lnr-star
+											button.btn.btn-pill.btn-dark
+												span.lnr.lnr-cross-circle
+										code
+											img.m-5px(src="./assets/previewHTML/pills-icons-only.png", alt="", srcset="")
+							// Outline Pills Icons Only
+							.col-lg-6.mb-4
+								.card.shadow-sm
+									.card-header
+										.card-header-title
+											h3 Outline Pills Icons Only
+										.card-header-actions
+											a(href="https://linearicons.com/free") Link check code Icons
+									.card-body
+										.list-preview-buttons.mb-3
+											button.btn.btn-pill.btn-outline-primary
+												span.lnr.lnr-home
+											button.btn.btn-pill.btn-outline-secondary
+												span.lnr.lnr-diamond
+											button.btn.btn-pill.btn-outline-success
+												span.lnr.lnr-alarm
+											button.btn.btn-pill.btn-outline-danger
+												spab.lnr.lnr-history
+											button.btn.btn-pill.btn-outline-warning
+												span.lnr.lnr-thumbs-up
+											button.btn.btn-pill.btn-outline-info
+												span.lnr.lnr-magnifier
+											button.btn.btn-pill.btn-outline-light
+												span.lnr.lnr-star
+											button.btn.btn-pill.btn-outline-dark
+												span.lnr.lnr-cross-circle
+										code
+											img.m-5px(src="./assets/previewHTML/outline-pills-icons-only.png", alt="", srcset="")
