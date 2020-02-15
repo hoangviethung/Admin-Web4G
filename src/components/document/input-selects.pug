@@ -1,0 +1,134 @@
+.main__inner
+	.page-title
+		.page-title-wrapper
+			.page-title-heading
+				.page-title-icon
+					img.svg(src="./assets/images/icons/document.svg", alt="", srcset="")
+				.page-title-content
+					h3 Input & Select
+					p Tại đây các Developer Web4gsolutions có thể tham khảo các Input & Select hiện có để dễ dàng tạo trang.
+	.row
+		.block-main.shadow-sm.col-lg-12
+			.tab-container
+				ul.list-tab
+					li.item(toggle-for="item-1").acitve Input
+					li.item(toggle-for="item-2") Select
+					li.item(toggle-for="item-3") Multiple Selection
+					li.item(toggle-for="item-4") Validation
+				.tab-content
+					// Standard Buttons
+					.content(tab-id="item-1")
+						.row
+							.col-lg-6.mb-4
+								.card.shadow-sm
+									.card-header
+										.card-header-title
+											h3 Input
+									.card-body
+										.block-form
+											.form-row
+												.form-group.col-lg-12
+													label Input Type Text
+													.input-group.shadow-sm
+														input.form-control(placeholder="Input Type Text")
+												// XUỐNG DÒNG NHANH = div(class="w-100")
+												.w-100
+												.form-group.col-lg-12
+													label Input Type Number
+													.input-group.shadow-sm
+														input.form-control(type='number' min="1" value="0")
+								code
+									img(src="./assets/previewHTML/input.png", alt="", srcset="")
+							.col-lg-6.mb-4
+								.card.shadow-sm
+									.card-header
+										.card-header-title
+											h3 Datepicker
+									.card-body
+										.block-form
+											.form-row
+												.form-group.col-lg-12
+													label Input Type Date
+													.input-group.shadow-sm
+														input.form-control.date-picker
+								code
+									img(src="./assets/previewHTML/date-picker.png", alt="", srcset="")
+					.content(tab-id="item-2")
+						.row
+							.col-lg-6.mb-4
+								.card.shadow-sm
+									.card-header
+										.card-header-title
+											h3 Select
+									.card-body
+										.block-form
+											.form-row
+												.form-group.col-lg-12
+													label Select Option (Normal)
+													.input-group.shadow-sm
+														select.form-control
+															option Select 1
+															option Select 2
+															option Select 3
+								code
+									img(src="./assets/previewHTML/select.png", alt="", srcset="")
+							.col-lg-6.mb-4
+								.card.shadow-sm
+									.card-header
+										.card-header-title
+											h3 Select Url Page
+									.card-body
+										.block-form
+											.form-row
+												.form-group.col-lg-6
+													label Select Url Page
+													.input-group.shadow-sm
+														select.form-control.chooseUrlPage
+															option(data-url="/trangchu") Trang chủ
+															option(selected data-url="/gioithieu") Giới thiệu
+															option(data-url="/lienhe") Liên hệ
+												.form-group.col-lg-6
+													label Input Type Link có Select Filter
+													.input-group.shadow-sm
+														.input-group-prepend.url-default
+															span.input-group-text
+														input.form-control(type='text')
+								code
+									img(src="./assets/previewHTML/select-url-page.png", alt="", srcset="")
+					.content(tab-id="item-3")
+						.row
+							.col-lg-6.mb-4
+								.card.shadow-sm
+									.card-header
+										.card-header-title
+											h3 Multiple Selection
+									.card-body
+										.block-form
+											.form-row
+												.form-group.col-lg-12
+													label Multiple Selection
+													.input-custom
+														select._select-custom(name="" multiple)
+															option(value="1" selected) 1
+															option(value="1") 2
+															option(value="1" selected) 3
+															option(value="1") 4
+								code
+									img(src="./assets/previewHTML/multiple-select.png", alt="", srcset="")
+					.content(tab-id="item-4")
+						.row
+							.col-lg-6.mb-4
+								.card.shadow-sm
+									.card-header
+										.card-header-title
+											h3 Validation
+									.card-body
+										.block-form
+											.form-row
+												.form-group.col-lg-12
+													label Bắt lỗi
+													.input-group.shadow-sm
+														input.input-validation-error.form-control(placeholder="Hãy nhập sai")
+													span.field-validation-error Sai mật khẩu
+								code
+									img(src="./assets/previewHTML/validation.png", alt="", srcset="")
