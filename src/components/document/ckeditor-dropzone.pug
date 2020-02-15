@@ -1,0 +1,27 @@
+.main__inner
+	.page-title
+		.page-title-wrapper
+			.page-title-heading
+				.page-title-icon
+					img.svg(src="./assets/images/icons/document.svg", alt="", srcset="")
+				.page-title-content
+					h3 Ck Editor & Dropzone
+					p Tại đây các Developer Web4gsolutions có thể tham khảo Ck Editor hiện có để dễ dàng tạo trang.
+	.row
+		.block-main.shadow-sm.col-lg-12
+			.tab-container
+				ul.list-tab
+					li.item(toggle-for="item-1").acitve Template Ck Editor
+					li.item(toggle-for="item-2") Template Dropzone
+				.tab-content
+					.content(tab-id="item-1")
+						.block-form
+							.form-group
+								label Nội dung
+								textarea.ck-editor#ckeditor-1(name="ckeditor-1")
+						code
+							img(src="./assets/previewHTML/ck-editor.png", alt="", srcset="")
+					.content(tab-id="item-2")
+						iframe(src="./dropzone.html",frameborder="0", width="100%" height="750px")
+						code
+							img(src="./assets/previewHTML/dropzone.png", alt="", srcset="")

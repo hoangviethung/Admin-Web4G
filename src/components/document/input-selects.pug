@@ -13,10 +13,10 @@
 				ul.list-tab
 					li.item(toggle-for="item-1").acitve Input
 					li.item(toggle-for="item-2") Select
-					li.item(toggle-for="item-3") Multiple Selection
-					li.item(toggle-for="item-4") Validation
+					li.item(toggle-for="item-3") Textarea
+					li.item(toggle-for="item-4") Multiple Selection
+					li.item(toggle-for="item-5") Validation
 				.tab-content
-					// Standard Buttons
 					.content(tab-id="item-1")
 						.row
 							.col-lg-6.mb-4
@@ -101,6 +101,22 @@
 								.card.shadow-sm
 									.card-header
 										.card-header-title
+											h3 Textarea
+									.card-body
+										.block-form
+											.form-row
+												.form-group.col-lg-12
+													label Textarea
+													.input-group
+														textarea.form-control(rows='3' placeholder="Nhập nội dung")
+									code
+										img(src="./assets/previewHTML/textarea.png", alt="", srcset="")
+					.content(tab-id="item-4")
+						.row
+							.col-lg-6.mb-4
+								.card.shadow-sm
+									.card-header
+										.card-header-title
 											h3 Multiple Selection
 									.card-body
 										.block-form
@@ -115,7 +131,7 @@
 															option(value="1") 4
 								code
 									img(src="./assets/previewHTML/multiple-select.png", alt="", srcset="")
-					.content(tab-id="item-4")
+					.content(tab-id="item-5")
 						.row
 							.col-lg-6.mb-4
 								.card.shadow-sm

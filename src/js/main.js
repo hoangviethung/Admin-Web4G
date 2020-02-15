@@ -121,10 +121,10 @@ function ajaxFancybox() {
 				</div>
 				<div class="list-button">
 					<div class="item">
-						<button class="btn-custom cancel" data-fancybox-close>Hủy</button>
+						<button class="btn btn-pill btn-danger" data-fancybox-close>Hủy</button>
 					</div>
 					<div class="item">
-						<button class="btn-custom submit submit-delete">Chấp nhận</button>
+						<button class="btn btn-pill btn-success submit-delete">Chấp nhận</button>
 					</div>
 				</div>
 			</div>`

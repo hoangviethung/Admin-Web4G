@@ -8,7 +8,7 @@
 					h3 Bộ phân quyền nhóm quản trị
 					p Tại đây các quản trị viên có thể quản lý bộ quyền của từng nhóm quản trị viên với các chức năng cơ bản: thêm, xóa, sửa.
 			.page-title-actions
-				a(href="create-role.html").btn-custom.submit Thêm mới
+				a(href="create-role.html").btn.btn-pill.btn-success Thêm mới
 	.row
 		.block-table.userControl.col-lg-12
 			table.table.table-bordered.table-striped
@@ -19,21 +19,16 @@
 						th Mô tả chức năng bộ quyền
 						th.text-center Tác vụ
 				tbody
-					-for(i=1;i<5;i++)
-						tr
-							td #{i}
-							td
-								.list-item
-									.item.badge.badge-primary.p-2 Admin
-							td Quản lý toàn bộ tất cả các chức năng hiện có trang admin
-							td
-								.list-item.center
-									// SỬA
-									a.btn-custom-icon.item(href="create-role.html")
-										.icon(data-toggle="tooltip" data-placement="bottom" title="Sửa")
-											img.svg(src="./assets/images/icons/edit.svg", alt="", srcset="")
-									// XÓA
-									button.btn-popup.btn-custom-icon.item(fancybox="fancybox-notification" dataFieldName="roleID" dataId="item-"+i)
-										.icon(data-toggle="tooltip" data-placement="bottom" title="Xóa")
-											img.svg(src="./assets/images/icons/delete.svg", alt="", srcset="")
+					tr
+						td 1
+						td
+							.list-item
+								.item.badge.badge-primary.p-2 Admin
+						td Quản lý toàn bộ tất cả các chức năng hiện có trang admin
+						td
+							.list-item.center
+								// SỬA
+								button.btn.btn-outline-primary.mr-2 Sửa
+								// XÓA
+								button.btn.btn-outline-danger.btn-popup(fancybox="fancybox-notification" dataFieldName="testID" dataId="item-1") Xóa
 			include ../_global/_pagination.pug

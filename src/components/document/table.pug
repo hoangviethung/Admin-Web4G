@@ -1,0 +1,125 @@
+.main__inner
+	.page-title
+		.page-title-wrapper
+			.page-title-heading
+				.page-title-icon
+					img.svg(src="./assets/images/icons/document.svg", alt="", srcset="")
+				.page-title-content
+					h3 Table
+					p Tại đây các Developer Web4gsolutions có thể tham khảo Template Table hiện có để dễ dàng tạo trang.
+	.row
+		.block-main.shadow-sm.col-lg-12
+			.tab-container
+				ul.list-tab
+					li.item(toggle-for="item-1").acitve Template View Data
+					li.item(toggle-for="item-2").acitve Template Table Input
+				.tab-content
+					// Template View Data
+					.content(tab-id="item-1")
+						.block-table.col-lg-12
+							.filter
+								form(action="#" method="method")
+									.form-row
+										.col-lg-3.form-group
+											label Hiển thị
+											.input-group.shadow-sm
+												select.form-control
+													option 10
+													option 15
+													option 20
+													option 30
+													option 40
+													option Tất cả
+										.col-lg-3.form-group
+											label Danh mục
+											.input-group.shadow-sm
+												select.form-control
+													option Chính
+													option Giới thiệu
+													option Dịch vụ
+													option Tiện ích
+													option Tin tức
+										.col-lg-3.form-group
+											label Tìm kiếm
+											.input-group.shadow-sm
+												input.form-control(placeholder="Tìm kiếm")
+									button.btn.btn-primary.btn-sm.shadow Xác nhận
+							table.table.table-bordered.table-striped
+								thead
+									tr
+										th # (auto center)
+										th textalign : left
+										th.text-center textalign : center
+										th.text-center Hình ảnh
+										th.text-center Tag
+										th.text-center Ngôn ngữ
+										th.text-center Hiển thị
+										th.text-center Tác vụ
+								tbody
+									tr
+										td 1
+										td(data-fileName="false", data-value="false", data-isReadonly="false") textalign : left
+										td.text-center  textalign : center
+										td.w-150px
+											.block-images-big
+												img.ofcv(src="https://images.unsplash.com/photo-1562887085-cb16e9116582?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80", alt="", srcset="")
+										td
+											.list-item.center
+												.item.badge.badge-primary.p-2 Admin
+												.item.badge.badge-primary.p-2 Mod
+												.item.badge.badge-primary.p-2 Guest
+										td
+											.language
+												figure.shadow
+													img.ofcv(src="./assets/images/nation/1.png", alt="")
+										td.text-center
+											.input-custom
+												label._checkbox-custom
+													input.custom-control-input(type='checkbox' checked="checked" onclick="return false")
+													span.custom-control-indicator
+										td
+											.list-item.center
+												// SỬA ĐI LINK SANG TRANG SỬA
+												button.btn.btn-outline-primary.mr-2 Sửa
+												// THAY ĐỔI MẬT KHẨU (HIỆN POPUP)
+												button.btn.btn-outline-secondary.btn-popup.mr-2(fancybox="fancybox-change-pass" dataFieldName="testID" dataID="item-1") Thay đổi mật khẩu
+												// XÓA (HIỆN POPUP)
+												button.btn.btn-outline-danger.btn-popup(fancybox="fancybox-notification" dataFieldName="testID" dataId="item-1") Xóa
+					// Template Table Input
+					.content(tab-id="item-2")
+						.block-table.table-input.col-lg-12.mt-4
+							table.table.table-bordered.m-0
+								thead
+									tr
+										th #
+										th.text-center Tên
+										th.text-center Đường dẫn hình
+										th.text-center Alt
+										th.text-center Thứ tự
+										th.text-center
+											button.btn.btn-outline-success.btn-popup THÊM
+								tbody
+									tr
+										td 1
+										td
+											.form-group
+												.input-group.shadow-sm
+													input.form-control(placeholder="Input Type Text")
+										td
+											.form-group
+												.input-group.shadow-sm
+													input.form-control(placeholder="Input Type Text")
+										td
+											.form-group
+												.input-group.shadow-sm
+													input.form-control(placeholder="Input Type Text")
+										td
+											.form-group
+												.input-group.shadow-sm
+													select.form-control
+														option Select 1
+														option Select 2
+														option Select 3
+										td.text-center
+											// XÓA (HIỆN POPUP)
+											button.btn.btn-outline-danger.btn-popup(fancybox="fancybox-notification" dataFieldName="testID" dataId="item-1") xóa
