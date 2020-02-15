@@ -1,0 +1,137 @@
+.main__inner
+	.page-title
+		.page-title-wrapper
+			.page-title-heading
+				.page-title-icon
+					img.svg(src="./assets/images/icons/document.svg", alt="", srcset="")
+				.page-title-content
+					h3 Checkbox
+					p Tại đây các Developer Web4gsolutions có thể tham khảo các Checkbox hiện có để dễ dàng tạo trang.
+	.row
+		.block-main.shadow-sm.col-lg-12
+			.tab-container
+				ul.list-tab
+					li.item(toggle-for="item-1").acitve Checkbox type 1
+					li.item(toggle-for="item-2") Checkbox type 2
+				.tab-content
+					// Standard Buttons
+					.content(tab-id="item-1")
+						.row
+							.col-lg-6.mb-4
+								.card.shadow-sm
+									.card-header
+										.card-header-title
+											h3 Checkbox type 1
+									.card-body
+										.block-form
+											.form-row
+												.form-group.col-lg-12
+													.input-custom
+														h5.mb-3 Checkbox type 1 ( Ajax true & false - Onchage )
+														label._checkbox-custom.mb-0
+															input.custom-control-input(data-url="#" IsActive='false' type='checkbox' readonly)
+															span.custom-control-indicator
+								code
+									img(src="./assets/previewHTML/checkbox-type-1.png", alt="", srcset="")
+							.col-lg-6.mb-4
+								.card.shadow-sm
+									.card-header
+										.card-header-title
+											h3 Checkbox type 1 when Disabled
+									.card-body
+										.block-form
+											.form-row
+												.form-group.col-lg-12
+													.input-custom
+														h5.mb-3 Checkbox type 1 ( Ajax true & false - Onchage )
+														label._checkbox-custom.mb-0
+															input.custom-control-input(data-url="#" IsActive='false' type='checkbox' readonly disabled)
+															span.custom-control-indicator
+								code
+									img(src="./assets/previewHTML/checkbox-type-1--disabled.png", alt="", srcset="")
+							.col-lg-6.mb-4
+								.card.shadow-sm
+									.card-header
+										.card-header-title
+											h3 Checkbox type 1 when Checked
+									.card-body
+										.block-form
+											.form-row
+												.form-group.col-lg-12
+													.input-custom
+														h5.mb-3 Checkbox type 1 ( Ajax true & false - Onchage )
+														label._checkbox-custom.mb-0
+															input.custom-control-input(data-url="#" IsActive='false' type='checkbox' readonly checked)
+															span.custom-control-indicator
+								code
+									img(src="./assets/previewHTML/checkbox-type-1--checked.png", alt="", srcset="")
+							.col-lg-6.mb-4
+								.card.shadow-sm
+									.card-header
+										.card-header-title
+											h3 Checkbox type 1 when Checked and Disabled
+									.card-body
+										.block-form
+											.form-row
+												.form-group.col-lg-12
+													.input-custom
+														h5.mb-3 Checkbox type 1 ( Ajax true & false - Onchage )
+														label._checkbox-custom.mb-0
+															input.custom-control-input(data-url="#" IsActive='false' type='checkbox' readonly checked disabled)
+															span.custom-control-indicator
+								code
+									img(src="./assets/previewHTML/checkbox-type-1--disabled-checked.png", alt="", srcset="")
+					.content(tab-id="item-2")
+						.row
+							.col-lg-6.mb-4
+								.card.shadow-sm
+									.card-header
+										.card-header-title
+											h3 Checkbox type 2
+									.card-body
+										.block-form
+											.form-row
+												.form-group.col-lg-12
+													label Checkbox type 2 ( Màu mặc định )
+													.input-custom
+														._checkbox-normal
+															label
+																input(type="checkbox")
+												.form-group.col-lg-12
+													label Checkbox type 2 ( Màu thứ 2 )
+													.input-custom
+														._checkbox-normal.color-2
+															label
+																input(type="checkbox")
+								code
+									img(src="./assets/previewHTML/checkbox-type-2.png", alt="", srcset="")
+							.col-lg-6.mb-4
+								.card.shadow-sm
+									.card-header
+										.card-header-title
+											h3 Check Box Multip by Attr
+									.card-body
+										.block-form
+											.form-row
+												.form-group.mr-2
+													.input-custom
+														._checkbox-normal.color-2
+															label
+																input.check-all(type="checkbox" data-checkbox-group="1")
+												.form-group.mr-2
+													.input-custom
+														._checkbox-normal
+															label
+																input(type="checkbox" data-checkbox-group="1")
+												.form-group.mr-2
+													.input-custom
+														._checkbox-normal
+															label
+																input(type="checkbox" data-checkbox-group="1")
+												.form-group.mr-2
+													.input-custom
+														._checkbox-normal
+															label
+																input(type="checkbox" data-checkbox-group="1")
+								code
+									img(src="./assets/previewHTML/multiple-checkbox.png", alt="", srcset="")
