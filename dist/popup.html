@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Admin | Tạo tài khoản</title>
+		<title>Admin | Popup</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -135,67 +135,52 @@
 				<div class="page-title">
 					<div class="page-title-wrapper">
 						<div class="page-title-heading">
-							<div class="page-title-icon"><img class="svg" src="./assets/images/icons/user-plus.svg" alt="" srcset=""></div>
+							<div class="page-title-icon"><img class="svg" src="./assets/images/icons/document.svg" alt="" srcset=""></div>
 							<div class="page-title-content">
-								<h3>Tạo tài khoản mới</h3>
-								<p>Tại đây các quản trị viên có thể thêm tài khoản mới cho quản trị viên khác và chọn bộ quyền phù hợp với từng nhóm quản trị viên.</p>
+								<h3>Checkbox</h3>
+								<p>Tại đây các Developer Web4gsolutions có thể tham khảo các Checkbox hiện có để dễ dàng tạo trang.</p>
 							</div>
 						</div>
-						<div class="page-title-actions"></div>
 					</div>
 				</div>
 				<div class="row">
 					<div class="block-main shadow-sm col-lg-12">
-						<div class="block-form">
-							<form action="#" method="method">
-								<div class="form-row">
-									<div class="form-group col-lg-3">
-										<label>Tên tài khoản *</label>
-										<div class="input-group shadow-sm">
-											<input class="form-control" placeholder="Nhập tên tài khoản">
+						<div class="tab-container">
+							<ul class="list-tab">
+								<li class="item acitve" toggle-for="item-1">Popup Forms ( HTML BACKEND SEND API )</li>
+							</ul>
+							<div class="tab-content">
+								<div class="content" tab-id="item-1">
+									<div class="row">
+										<div class="col-lg-6 mb-4">
+											<div class="card shadow-sm">
+												<div class="card-header">
+													<div class="card-header-title">
+														<h3>Popup Form Delete</h3>
+													</div>
+												</div>
+												<div class="card-body">
+													<!-- XÓA (HIỆN POPUP)-->
+													<button class="btn btn-outline-danger btn-popup" fancybox="fancybox-notification" dataFieldName="testID" dataId="item-1" fancyboxId="#fancybox-notification" dataUrl="/testUrl">Xóa</button>
+												</div>
+											</div><code><img src="./assets/previewHTML/checkbox-type-1.png" alt="" srcset=""></code>
+										</div>
+										<div class="col-lg-6 mb-4">
+											<div class="card shadow-sm">
+												<div class="card-header">
+													<div class="card-header-title">
+														<h3>Popup Form Change Pass User</h3>
+													</div>
+												</div>
+												<div class="card-body">
+													<!-- THAY ĐỔI MẬT KHẨU (HIỆN POPUP)-->
+													<button class="btn btn-outline-secondary btn-popup" fancybox="fancybox-change-pass" dataFieldName="testID" dataId="item-1" fancyboxId="#fancybox-change-pass" dataUrl="/testUrl">Đổi mật khẩu</button>
+												</div>
+											</div><code><img src="./assets/previewHTML/checkbox-type-1.png" alt="" srcset=""></code>
 										</div>
 									</div>
 								</div>
-								<div class="form-row">
-									<div class="form-group col-lg-3">
-										<label>Email *</label>
-										<div class="input-group shadow-sm">
-											<input class="form-control" placeholder="Nhập địa chỉ email">
-										</div>
-									</div>
-								</div>
-								<div class="form-row">
-									<div class="form-group col-lg-3">
-										<label>Mật khẩu *</label>
-										<div class="input-group shadow-sm">
-											<input class="form-control" type="text" placeholder="Nhập mật khẩu">
-										</div>
-									</div>
-								</div>
-								<div class="form-row">
-									<div class="form-group col-lg-3">
-										<label>Nhập lại mật khẩu</label>
-										<div class="input-group shadow-sm">
-											<input class="form-control" type="text" placeholder="Nhập lập mật khẩu">
-										</div>
-									</div>
-								</div>
-								<div class="form-row">
-									<div class="form-group col-lg-3">
-										<div class="input-custom d-flex align-items-center">
-											<h5>Kích hoạt *</h5>
-											<label class="_checkbox-custom mb-0">
-												<input class="custom-control-input" type="checkbox"><span class="custom-control-indicator"></span>
-											</label>
-										</div>
-									</div>
-								</div>
-								<div class="form-row">
-									<div class="form-group col-lg-12"><a class="btn btn-pill btn-danger" href="/">Hủy</a>
-										<button class="btn btn-pill btn-success">Thêm</button>
-									</div>
-								</div>
-							</form>
+							</div>
 						</div>
 					</div>
 				</div>

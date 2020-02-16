@@ -100,62 +100,99 @@ class SubTAB {
 	}
 }
 
-// AJAX BUTTON DELETE
+// AJAX FORMS FANCYBOX
 function ajaxFancybox() {
+	// TẤT CẢ DATA CẦN CÓ TRONG 1 BUTTONS KHI MUỐN HIỆN POPUP
 	var itemId;
+	var fancyboxId;
 	var dataFieldName;
 	var dataURL;
 	// POPUP THÔNG BÁO
 	$('.btn-popup[fancybox=fancybox-notification]').on('click', function() {
-		itemId = $(this).attr('dataiD');
+		// GET DATA
+		itemId = $(this).attr('dataId');
 		dataFieldName = $(this).attr('dataFieldName');
 		dataURL = $(this).attr('dataUrl');
-		const html =
-			`<div class="modal-POPUP fancybox-content" id="fancybox-notification">
-				<div class="title-modal">
-					<h5>Thông báo</h5>
-					<p>Web4gsolutions xin thông báo</p>
-				</div>
-				<div class="content-modal">
-					<p>Bạn có chắc chắn xóa ?</p>
-				</div>
-				<div class="list-button">
-					<div class="item">
-						<button class="btn btn-pill btn-danger" data-fancybox-close>Hủy</button>
-					</div>
-					<div class="item">
-						<button class="btn btn-pill btn-success submit-delete">Chấp nhận</button>
-					</div>
-				</div>
-			</div>`
-		$("body").append(html);
-		$.fancybox.open({
-			src: '#fancybox-notification',
-			type: 'inline',
-			opts: {
-				hash: false,
-				closeExisting: true,
-				beforeShow: function() {
-					// SUBMIT DELETE
-					$('.submit-delete').on('click', function() {
-						const data = {};
-						data[dataFieldName] = itemId;
-						$.ajax({
-							type: "POST",
-							url: dataURL,
-							data: data,
-							success: function(res) {
-								if (res.Code === 200) {
-									location.reload();
-								} else {
-									console.log('Xóa thất bại');
-								}
+		fancyboxId = $(this).attr('fancyboxId');
+		// HÀM THỰC HIỆN POPUP XÓA
+		$.ajax({
+			type: "GET",
+			url: dataURL,
+			// TEST IN FRONT END
+			// error: function() {
+			// 	const resCode = 200;
+			// 	const resResult = `<div class="modal-POPUP fancybox-content" id="fancybox-notification"><div class="title-modal"><h5>Thông báo</h5><p>Web4gsolutions xin thông báo</p></div><div class="content-modal"><p>Bạn có chắc chắn xóa ?</p></div><div class="list-button"><div class="item"><button class="btn btn-pill btn-danger" data-fancybox-close>Hủy</button></div><div class="item"><button class="btn btn-pill btn-success submit-delete">Chấp nhận</button></div></div></div>`
+			// 	if (resCode === 200) {
+			// 		$("body").append(resResult);
+			// 		$.fancybox.open({
+			// 			src: fancyboxId,
+			// 			type: 'inline',
+			// 			opts: {
+			// 				hash: false,
+			// 				closeExisting: true,
+			// 				beforeShow: function() {
+			// 					// SUBMIT DELETE
+			// 					$('.submit-delete').on('click', function() {
+			// 						const data = {};
+			// 						data[dataFieldName] = itemId;
+			// 						$.ajax({
+			// 							type: "POST",
+			// 							url: dataURL,
+			// 							data: data,
+			// 							error: function() {
+			// 								if (resCode === 200) {
+			// 									location.reload();
+			// 								} else {
+			// 									alert('Xóa thất bại');
+			// 								}
+			// 							}
+			// 						});
+			// 					});
+			// 				},
+			// 				afterClose: function() {
+			// 					$(fancyboxId).remove();
+			// 				}
+			// 			}
+			// 		});
+			// 	} else {
+			// 		alert('Hiện popup thất bại')
+			// 	}
+			// },
+			success: function(res) {
+				if (res.Code === 200) {
+					$("body").append(res.Result);
+					$.fancybox.open({
+						src: fancyboxId,
+						type: 'inline',
+						opts: {
+							hash: false,
+							closeExisting: true,
+							beforeShow: function() {
+								// SUBMIT DELETE
+								$('.submit-delete').on('click', function() {
+									const data = {};
+									data[dataFieldName] = itemId;
+									$.ajax({
+										type: "POST",
+										url: dataURL,
+										data: data,
+										success: function(res) {
+											if (res.Code === 200) {
+												location.reload();
+											} else {
+												alert('Xóa thất bại');
+											}
+										}
+									});
+								});
+							},
+							afterClose: function() {
+								$(fancyboxId).remove();
 							}
-						});
+						}
 					});
-				},
-				afterClose: function() {
-					$("#fancybox-notification").remove();
+				} else {
+					alert('Hiện popup thất bại');
 				}
 			}
 		});
@@ -166,94 +203,107 @@ function ajaxFancybox() {
 		itemId = $(this).attr('dataiD');
 		dataFieldName = $(this).attr('dataFieldName');
 		dataURL = $(this).attr('dataUrl');
-
+		fancyboxId = $(this).attr('fancyboxId');
 		const dataValue = $(this).parents('td').siblings('td[data-value]').attr('data-value');
-		const html =
-			`<div class="modal-POPUP fancybox-content" id="fancybox-change-pass">
-				<div class="title-modal">
-					<h5>Thay đổi mật khẩu</h5>
-					<p>Web4gsolutions xin thông báo</p>
-				</div>
-				<div class="content-modal">
-					<form action="#" method="method">
-						<div class="form-group row">
-							<label class="col-sm-5 col-form-label" for="staticEmail">Tài khoản</label>
-							<div class="col-sm-7">
-								<div class="input-group input-group-sm old-value">
-									<input class="form-control-plaintext" type="text" readonly="" value="">
-								</div>
-							</div>
-						</div>
-						<div class="form-group row">
-							<label class="col-sm-5 col-form-label">Mật khẩu cũ</label>
-							<div class="col-sm-7">
-								<div class="input-group input-group-sm">
-									<input class="form-control" id="oldpass" type="Password">
-								</div>
-							</div>
-						</div>
-						<div class="form-group row">
-							<label class="col-sm-5 col-form-label">Mật khẩu mới</label>
-							<div class="col-sm-7">
-								<div class="input-group input-group-sm">
-									<input class="form-control" id="newpass" type="Password">
-								</div>
-							</div>
-						</div>
-						<div class="form-group row">
-							<label class="col-sm-5 col-form-label">Nhập lại mật khẩu mới</label>
-							<div class="col-sm-7">
-								<div class="input-group input-group-sm">
-									<input class="form-control" id="re_newpass" type="Password">
-								</div>
-							</div>
-						</div>
-					</form>
-				</div>
-				<div class="list-button">
-					<div class="item">
-						<button class="btn-custom cancel" data-fancybox-close>Hủy</button>
-					</div>
-					<div class="item">
-						<button class="btn-custom submit submit-change-pass">Cập nhật</button>
-					</div>
-				</div>
-			</div>`
-		$("body").append(html);
-		$('#fancybox-change-pass .old-value input').val(dataValue)
-		$.fancybox.open({
-			src: '#fancybox-change-pass',
-			type: 'inline',
-			opts: {
-				hash: false,
-				closeExisting: true,
-				beforeShow: function() {
-					// SUBMIT CHANGE PASSWORD
-					$('.submit-change-pass').on('click', function() {
-						const oldpass = $('#oldpass').val();
-						const newpass = $('#newpass').val();
-						const re_newpass = $('#re_newpass').val();
-						const data = {};
-						data[dataFieldName] = itemId;
-						data['oldpass'] = oldpass;
-						data['newpass'] = newpass;
-						data['re_newpass'] = re_newpass;
-						$.ajax({
-							type: "POST",
-							url: dataURL,
-							data: data,
-							success: function(res) {
-								if (res.Code === 200) {
-									location.reload();
-								} else {
-									alert('Thay đổi mật khẩu thất bại');
-								}
+		$.ajax({
+			type: "GET",
+			url: dataURL,
+			// TEST IN FRONR END
+			// error: function() {
+			// 	const resCode = 200;
+			// 	const resResult = `<div class="modal-POPUP fancybox-content" id="fancybox-change-pass"><div class="title-modal"><h5>Thay đổi mật khẩu</h5><p>Web4gsolutions xin thông báo</p></div><div class="content-modal"><form action="#" method="method"><div class="form-group row"><label class="col-sm-5 col-form-label" for="staticEmail">Tài khoản</label><div class="col-sm-7"><div class="input-group input-group-sm old-value"><input class="form-control-plaintext" type="text" readonly="" value=""></div></div></div><div class="form-group row"><label class="col-sm-5 col-form-label">Mật khẩu cũ</label><div class="col-sm-7"><div class="input-group input-group-sm"><input class="form-control" id="oldpass" type="Password"></div></div></div><div class="form-group row"><label class="col-sm-5 col-form-label">Mật khẩu mới</label><div class="col-sm-7"><div class="input-group input-group-sm"><input class="form-control" id="newpass" type="Password"></div></div></div><div class="form-group row"><label class="col-sm-5 col-form-label">Nhập lại mật khẩu mới</label><div class="col-sm-7"><div class="input-group input-group-sm"><input class="form-control" id="re_newpass" type="Password"></div></div></div></form></div><div class="list-button"><div class="item"><button class="btn btn-pill btn-danger" data-fancybox-close>Hủy</button></div><div class="item"><button class="btn btn-pill btn-success submit-change-pass">Cập nhật</button></div></div></div>`;
+			// 	if (resCode === 200) {
+			// 		// XUẤT HTML VÙA GET ĐƯỢC RA NGOÀI
+			// 		$("body").append(resResult);
+			// 		// HIỆN CÁI TÊN NGƯỜI BỊ ĐỔI RA
+			// 		$('#fancybox-change-pass .old-value input').val(dataValue);
+			// 		// HÀM THAY ĐỔI MẬT KHẨU
+			// 		$.fancybox.open({
+			// 			src: fancyboxId,
+			// 			type: 'inline',
+			// 			opts: {
+			// 				hash: false,
+			// 				closeExisting: true,
+			// 				beforeShow: function() {
+			// 					// SUBMIT CHANGE PASSWORD
+			// 					$('.submit-change-pass').on('click', function() {
+			// 						const oldpass = $('#oldpass').val();
+			// 						const newpass = $('#newpass').val();
+			// 						const re_newpass = $('#re_newpass').val();
+			// 						const data = {};
+			// 						data[dataFieldName] = itemId;
+			// 						data['oldpass'] = oldpass;
+			// 						data['newpass'] = newpass;
+			// 						data['re_newpass'] = re_newpass;
+			// 						$.ajax({
+			// 							type: "POST",
+			// 							url: dataURL,
+			// 							data: data,
+			// 							// TEST IN FRONT END
+			// 							error: function() {
+			// 								if (resCode === 400) {
+			// 									location.reload();
+			// 								} else {
+			// 									alert('Thay đổi mật khẩu thất bại');
+			// 								}
+			// 							}
+			// 						});
+			// 					});
+			// 				},
+			// 				afterClose: function() {
+			// 					$("#fancybox-change-pass").remove();
+			// 				}
+			// 			}
+			// 		});
+			// 	}else{
+			// 		alert('Hiện popup thất bại');
+			// 	}
+			// },
+			success: function(res) {
+				if (res.Code === 200) {
+					// XUẤT HTML VÙA GET ĐƯỢC RA NGOÀI
+					$("body").append(res.Result);
+					// HIỆN CÁI TÊN NGƯỜI BỊ ĐỔI RA
+					$('#fancybox-change-pass .old-value input').val(dataValue);
+					// HÀM THAY ĐỔI MẬT KHẨU
+					$.fancybox.open({
+						src: fancyboxId,
+						type: 'inline',
+						opts: {
+							hash: false,
+							closeExisting: true,
+							beforeShow: function() {
+								// SUBMIT CHANGE PASSWORD
+								$('.submit-change-pass').on('click', function() {
+									const oldpass = $('#oldpass').val();
+									const newpass = $('#newpass').val();
+									const re_newpass = $('#re_newpass').val();
+									const data = {};
+									data[dataFieldName] = itemId;
+									data['oldpass'] = oldpass;
+									data['newpass'] = newpass;
+									data['re_newpass'] = re_newpass;
+									$.ajax({
+										type: "POST",
+										url: dataURL,
+										data: data,
+										success: function(res) {
+											if (res.Code === 200) {
+												location.reload();
+											} else {
+												alert('Thay đổi mật khẩu thất bại');
+											}
+										}
+									});
+								});
+							},
+							afterClose: function() {
+								$("#fancybox-change-pass").remove();
 							}
-						});
+						}
 					});
-				},
-				afterClose: function() {
-					$("#fancybox-change-pass").remove();
+				} else {
+					alert('Hiện popup thất bại')
 				}
 			}
 		});

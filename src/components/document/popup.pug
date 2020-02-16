@@ -1,0 +1,37 @@
+.main__inner
+	.page-title
+		.page-title-wrapper
+			.page-title-heading
+				.page-title-icon
+					img.svg(src="./assets/images/icons/document.svg", alt="", srcset="")
+				.page-title-content
+					h3 Checkbox
+					p Tại đây các Developer Web4gsolutions có thể tham khảo các Checkbox hiện có để dễ dàng tạo trang.
+	.row
+		.block-main.shadow-sm.col-lg-12
+			.tab-container
+				ul.list-tab
+					li.item(toggle-for="item-1").acitve Popup Forms ( HTML BACKEND SEND API )
+				.tab-content
+					.content(tab-id="item-1")
+						.row
+							.col-lg-6.mb-4
+								.card.shadow-sm
+									.card-header
+										.card-header-title
+											h3 Popup Form Delete
+									.card-body
+										// XÓA (HIỆN POPUP)
+										button.btn.btn-outline-danger.btn-popup(fancybox="fancybox-notification" dataFieldName="testID" dataId="item-1" fancyboxId="#fancybox-notification" dataUrl="/testUrl") Xóa
+								code
+									img(src="./assets/previewHTML/checkbox-type-1.png", alt="", srcset="")
+							.col-lg-6.mb-4
+								.card.shadow-sm
+									.card-header
+										.card-header-title
+											h3 Popup Form Change Pass User
+									.card-body
+										// THAY ĐỔI MẬT KHẨU (HIỆN POPUP)
+										button.btn.btn-outline-secondary.btn-popup(fancybox="fancybox-change-pass" dataFieldName="testID" dataId="item-1" fancyboxId="#fancybox-change-pass" dataUrl="/testUrl") Đổi mật khẩu
+								code
+									img(src="./assets/previewHTML/checkbox-type-1.png", alt="", srcset="")

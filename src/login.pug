@@ -9,32 +9,31 @@ html(lang="en")
 		link(rel="stylesheet", href="./css/core.min.css")
 		link(rel="stylesheet", href="./css/main.min.css")
 	body
-		main
-			section.login
-				.box-form-login
-					.title
-						.logo
-							a(href="http://web4gsolutions.com/")
-								img(src="./assets/images/logo.png", alt="")
-						.content Xin chào quản trị viên !
-					form(action="index.html" method="method")
-						.form-row
-							.form-group.col-lg-12
-								label Tài khoản
-								input(type="text")
-							.form-group.col-lg-12
-								label Mật khẩu
-								input(type="password")
-							.form-group.col-lg-6.d-flex.justify-content-between
-								label Duy trì đăng nhập
-								.input-custom
-									._checkbox-normal
-										label
-											input(type="checkbox")
-							.form-group.col-lg-6
-								.forgot-pass
-									a(href="quen-mat-khau.html") Quên mật khẩu ?
-						button Đăng nhập
+		section.login
+			.box-form-login
+				.title
+					.logo
+						a(href="http://web4gsolutions.com/")
+							img(src="./assets/images/logo.png", alt="")
+					.content Xin chào quản trị viên !
+				form(action="index.html" method="method")
+					.form-row
+						.form-group.col-lg-12
+							label Tài khoản
+							input(type="text")
+						.form-group.col-lg-12
+							label Mật khẩu
+							input(type="password")
+						.form-group.col-lg-6.d-flex.justify-content-between
+							label Duy trì đăng nhập
+							.input-custom
+								._checkbox-normal
+									label
+										input(type="checkbox")
+						.form-group.col-lg-6
+							.forgot-pass
+								a(href="quen-mat-khau.html") Quên mật khẩu ?
+					button Đăng nhập
 			#js-page-verify(class=bodyClass hidden)
 		block scripts
 		script(type="text/javascript", src="./js/core.min.js")
