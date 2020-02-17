@@ -155,7 +155,7 @@ function ajaxFancybox() {
 				// });
 			},
 			success: function(res) {
-				$("body").append(res.Result);
+				$("body").append(res);
 				$.fancybox.open({
 					src: fancyboxId,
 					type: 'inline',
@@ -249,7 +249,7 @@ function ajaxFancybox() {
 			},
 			success: function(res) {
 				// XUẤT HTML VÙA GET ĐƯỢC RA NGOÀI
-				$("body").append(res.Result);
+				$("body").append(res);
 				// HIỆN CÁI TÊN NGƯỜI BỊ ĐỔI RA
 				$('#fancybox-change-pass .old-value input').val(dataValue);
 				// HÀM THAY ĐỔI MẬT KHẨU
