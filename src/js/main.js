@@ -166,7 +166,7 @@ function ajaxFancybox() {
 		}
 		dataURL = $(this).attr('dataUrl');
 		fancyboxId = $(this).attr('fancyboxId');
-		const dataValue = $(this).parents('td').siblings('td[data-value]').attr('data-value');
+		const dataOldUserName = $(this).parents('td').siblings('td[data-value]').attr('data-value');
 		$.ajax({
 			type: "GET",
 			url: dataURL,
@@ -174,7 +174,7 @@ function ajaxFancybox() {
 			error: function() {
 				// const resCode = 200;
 				// const resResult = `
-				// 	<div class="modal-POPUP fancybox-content" id="fancybox-change-pass">
+				// 	<div class="modal-POPUP fancybox-content" id="fancybox-forms">
 				// 		<div class="title-modal">
 				// 			<h5>Thay đổi mật khẩu</h5>
 				// 			<p>Web4gsolutions xin thông báo</p>
@@ -213,14 +213,14 @@ function ajaxFancybox() {
 				// 		</div>
 				// 		<div class="list-button">
 				// 			<div class="item"><button class="btn btn-pill btn-danger" data-fancybox-close>Hủy</button></div>
-				// 			<div class="item"><button class="btn btn-pill btn-success submit-change-pass">Cập nhật</button></div>
+				// 			<div class="item"><button class="btn btn-pill btn-success submit-form">Cập nhật</button></div>
 				// 		</div>
 				// 	</div>
 				// `;
 				// // // XUẤT HTML VÙA GET ĐƯỢC RA NGOÀI
 				// $("body").append(resResult);
 				// // // HIỆN CÁI TÊN NGƯỜI BỊ ĐỔI RA
-				// $('#fancybox-change-pass .old-value input').val(dataValue);
+				// $('#fancybox-change-pass .old-value input').val(dataOldUserName);
 				// // // HÀM THAY ĐỔI MẬT KHẨU
 				// $.fancybox.open({
 				// 	src: fancyboxId,
@@ -230,7 +230,7 @@ function ajaxFancybox() {
 				// 		closeExisting: true,
 				// 		beforeShow: function() {
 				// 			// SUBMIT CHANGE PASSWORD
-				// 			$('.submit-change-pass').on('click', function(e) {
+				// 			$('.submit-form').on('click', function(e) {
 				// 				e.preventDefault();
 				// 				// $(".modal-POPUP form").valid();
 				// 				const FormElement = document.querySelector('.modal-POPUP form')
@@ -253,19 +253,18 @@ function ajaxFancybox() {
 				// 			});
 				// 		},
 				// 		afterClose: function() {
-				// 			$("#fancybox-change-pass").remove();
+				// 			$("#fancybox-form").remove();
 				// 		}
 				// 	}
 				// });
 			},
+
 			success: function(res) {
-				// XUẤT HTML VÙA GET ĐƯỢC RA NGOÀI
+				// // XUẤT HTML VÙA GET ĐƯỢC RA NGOÀI
 				$("body").append(res);
-				var form = $(".modal-POPUP form").removeData("validator").removeData("unobtrusiveValidation");
-				$.validator.unobtrusive.parse(form);
-				// HIỆN CÁI TÊN NGƯỜI BỊ ĐỔI RA
-				$('#fancybox-change-pass .old-value input').val(dataValue);
-				// HÀM THAY ĐỔI MẬT KHẨU
+				// // HIỆN CÁI TÊN NGƯỜI BỊ ĐỔI RA
+				$('#fancybox-change-pass .old-value input').val(dataOldUserName);
+				// // HÀM THAY ĐỔI MẬT KHẨU
 				$.fancybox.open({
 					src: fancyboxId,
 					type: 'inline',
@@ -274,15 +273,17 @@ function ajaxFancybox() {
 						closeExisting: true,
 						beforeShow: function() {
 							// SUBMIT CHANGE PASSWORD
-							$('.submit-change-pass').on('click', function(e) {
+							$('.submit-form').on('click', function(e) {
 								e.preventDefault();
 								$(".modal-POPUP form").valid();
-								const selector = $('.modal-POPUP form');
-								const data = createFormData(selector, fieldName);
+								const FormElement = document.querySelector('.modal-POPUP form')
+								const data = createFormData(FormElement, fieldName);
 								$.ajax({
 									type: "POST",
 									url: dataURL,
 									data: data,
+									processData: false,
+									contentType: false,
 									success: function(res) {
 										if (res.Code === 200) {
 											location.reload();
@@ -294,7 +295,7 @@ function ajaxFancybox() {
 							});
 						},
 						afterClose: function() {
-							$("#fancybox-change-pass").remove();
+							$("#fancybox-forms").remove();
 						}
 					}
 				});
