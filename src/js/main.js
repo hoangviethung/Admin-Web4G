@@ -211,7 +211,7 @@ function ajaxFancybox() {
 			success: function(res) {
 				// XUẤT HTML VÙA GET ĐƯỢC RA NGOÀI
 				$("body").append(res);
-				var form = $("modal-POPUP form").removeData("validator").removeData("unobtrusiveValidation");
+				var form = $(".modal-POPUP form").removeData("validator").removeData("unobtrusiveValidation");
 				$.validator.unobtrusive.parse(form);
 				// HIỆN CÁI TÊN NGƯỜI BỊ ĐỔI RA
 				$('#fancybox-change-pass .old-value input').val(dataValue);
