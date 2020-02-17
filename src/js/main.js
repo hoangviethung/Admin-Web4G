@@ -211,6 +211,8 @@ function ajaxFancybox() {
 			success: function(res) {
 				// XUẤT HTML VÙA GET ĐƯỢC RA NGOÀI
 				$("body").append(res);
+				var form = $("modal-POPUP form").removeData("validator").removeData("unobtrusiveValidation");
+				$.validator.unobtrusive.parse(form);
 				// HIỆN CÁI TÊN NGƯỜI BỊ ĐỔI RA
 				$('#fancybox-change-pass .old-value input').val(dataValue);
 				// HÀM THAY ĐỔI MẬT KHẨU
@@ -222,7 +224,8 @@ function ajaxFancybox() {
 						closeExisting: true,
 						beforeShow: function() {
 							// SUBMIT CHANGE PASSWORD
-							$('.submit-change-pass').on('click', function() {
+							$('.submit-change-pass').on('click', function(e) {
+								e.preventDefault();
 								const oldpass = $('#oldpass').val();
 								const newpass = $('#newpass').val();
 								const re_newpass = $('#re_newpass').val();
