@@ -100,6 +100,13 @@ class SubTAB {
 	}
 }
 
+function createFormData(selector, fieldName) {
+	console.log(selector);
+	const formData = new FormData(selector);
+	formData.append(fieldName.name, fieldName.id);
+	return formData;
+}
+
 // AJAX FORMS FANCYBOX
 function ajaxFancybox() {
 	// TẤT CẢ DATA CẦN CÓ TRONG 1 BUTTONS KHI MUỐN HIỆN POPUP
@@ -152,9 +159,11 @@ function ajaxFancybox() {
 	});
 
 	// PUP FORM THAY ĐỔI MẬT KHẨU USER
-	$('.btn-popup[fancybox="fancybox-change-pass"]').on('click', function() {
-		itemId = $(this).attr('dataiD');
-		dataFieldName = $(this).attr('dataFieldName');
+	$('.btn-popup[fancybox="fancybox-forms"]').on('click', function() {
+		const fieldName = {
+			id: $(this).attr('dataiD'),
+			name: $(this).attr('dataFieldName')
+		}
 		dataURL = $(this).attr('dataUrl');
 		fancyboxId = $(this).attr('fancyboxId');
 		const dataValue = $(this).parents('td').siblings('td[data-value]').attr('data-value');
@@ -164,12 +173,55 @@ function ajaxFancybox() {
 			// TEST IN FRONR END
 			error: function() {
 				// const resCode = 200;
-				// const resResult = `<div class="modal-POPUP fancybox-content" id="fancybox-change-pass"><div class="title-modal"><h5>Thay đổi mật khẩu</h5><p>Web4gsolutions xin thông báo</p></div><div class="content-modal"><form action="#" method="method"><div class="form-group row"><label class="col-sm-5 col-form-label" for="staticEmail">Tài khoản</label><div class="col-sm-7"><div class="input-group input-group-sm old-value"><input class="form-control-plaintext" type="text" readonly="" value=""></div></div></div><div class="form-group row"><label class="col-sm-5 col-form-label">Mật khẩu cũ</label><div class="col-sm-7"><div class="input-group input-group-sm"><input class="form-control" id="oldpass" type="Password"></div></div></div><div class="form-group row"><label class="col-sm-5 col-form-label">Mật khẩu mới</label><div class="col-sm-7"><div class="input-group input-group-sm"><input class="form-control" id="newpass" type="Password"></div></div></div><div class="form-group row"><label class="col-sm-5 col-form-label">Nhập lại mật khẩu mới</label><div class="col-sm-7"><div class="input-group input-group-sm"><input class="form-control" id="re_newpass" type="Password"></div></div></div></form></div><div class="list-button"><div class="item"><button class="btn btn-pill btn-danger" data-fancybox-close>Hủy</button></div><div class="item"><button class="btn btn-pill btn-success submit-change-pass">Cập nhật</button></div></div></div>`;
-				// // XUẤT HTML VÙA GET ĐƯỢC RA NGOÀI
+				// const resResult = `
+				// 	<div class="modal-POPUP fancybox-content" id="fancybox-change-pass">
+				// 		<div class="title-modal">
+				// 			<h5>Thay đổi mật khẩu</h5>
+				// 			<p>Web4gsolutions xin thông báo</p>
+				// 		</div>
+				// 		<div class="content-modal">
+				// 			<form action="#" method="method">
+				// 				<div class="form-group row"><label class="col-sm-5 col-form-label" for="staticEmail">Tài khoản</label>
+				// 					<div class="col-sm-7">
+				// 						<div class="input-group input-group-sm old-value">
+				// 						<input class="form-control-plaintext" type="text"
+				// 								readonly="" value=""></div>
+				// 					</div>
+				// 				</div>
+				// 				<div class="form-group row"><label class="col-sm-5 col-form-label">Mật khẩu cũ</label>
+				// 					<div class="col-sm-7">
+				// 						<div class="input-group input-group-sm">
+				// 						<input name="old-pass" class="form-control" id="oldpass" type="Password">
+				// 						</div>
+				// 					</div>
+				// 				</div>
+				// 				<div class="form-group row"><label class="col-sm-5 col-form-label">Mật khẩu mới</label>
+				// 					<div class="col-sm-7">
+				// 						<div class="input-group input-group-sm">
+				// 						<input name="new-pass" class="form-control" id="newpass" type="Password">
+				// 						</div>
+				// 					</div>
+				// 				</div>
+				// 				<div class="form-group row"><label class="col-sm-5 col-form-label">Nhập lại mật khẩu mới</label>
+				// 					<div class="col-sm-7">
+				// 						<div class="input-group input-group-sm">
+				// 						<input name="confirm-pass" class="form-control" id="re_newpass" type="Password">
+				// 						</div>
+				// 					</div>
+				// 				</div>
+				// 			</form>
+				// 		</div>
+				// 		<div class="list-button">
+				// 			<div class="item"><button class="btn btn-pill btn-danger" data-fancybox-close>Hủy</button></div>
+				// 			<div class="item"><button class="btn btn-pill btn-success submit-change-pass">Cập nhật</button></div>
+				// 		</div>
+				// 	</div>
+				// `;
+				// // // XUẤT HTML VÙA GET ĐƯỢC RA NGOÀI
 				// $("body").append(resResult);
-				// // HIỆN CÁI TÊN NGƯỜI BỊ ĐỔI RA
+				// // // HIỆN CÁI TÊN NGƯỜI BỊ ĐỔI RA
 				// $('#fancybox-change-pass .old-value input').val(dataValue);
-				// // HÀM THAY ĐỔI MẬT KHẨU
+				// // // HÀM THAY ĐỔI MẬT KHẨU
 				// $.fancybox.open({
 				// 	src: fancyboxId,
 				// 	type: 'inline',
@@ -178,25 +230,23 @@ function ajaxFancybox() {
 				// 		closeExisting: true,
 				// 		beforeShow: function() {
 				// 			// SUBMIT CHANGE PASSWORD
-				// 			$('.submit-change-pass').on('click', function() {
-				// 				const oldpass = $('#oldpass').val();
-				// 				const newpass = $('#newpass').val();
-				// 				const re_newpass = $('#re_newpass').val();
-				// 				const data = {};
-				// 				data[dataFieldName] = itemId;
-				// 				data['oldpass'] = oldpass;
-				// 				data['newpass'] = newpass;
-				// 				data['re_newpass'] = re_newpass;
+				// 			$('.submit-change-pass').on('click', function(e) {
+				// 				e.preventDefault();
+				// 				// $(".modal-POPUP form").valid();
+				// 				const FormElement = document.querySelector('.modal-POPUP form')
+				// 				const data = createFormData(FormElement, fieldName);
 				// 				$.ajax({
 				// 					type: "POST",
 				// 					url: dataURL,
 				// 					data: data,
-				// 					// TEST IN FRONT END
+				// 					processData: false,
+				// 					contentType: false,
 				// 					error: function() {
 				// 						if (resCode === 200) {
-				// 							location.reload();
+				// 							// location.reload();
+				// 							console.log(1)
 				// 						} else {
-				// 							alert('Thay đổi mật khẩu thất bại');
+				// 							alert('sai');
 				// 						}
 				// 					}
 				// 				});
@@ -226,14 +276,9 @@ function ajaxFancybox() {
 							// SUBMIT CHANGE PASSWORD
 							$('.submit-change-pass').on('click', function(e) {
 								e.preventDefault();
-								const oldpass = $('#oldpass').val();
-								const newpass = $('#newpass').val();
-								const re_newpass = $('#re_newpass').val();
-								const data = {};
-								data[dataFieldName] = itemId;
-								data['oldpass'] = oldpass;
-								data['newpass'] = newpass;
-								data['re_newpass'] = re_newpass;
+								$(".modal-POPUP form").valid();
+								const selector = $('.modal-POPUP form');
+								const data = createFormData(selector, fieldName);
 								$.ajax({
 									type: "POST",
 									url: dataURL,
