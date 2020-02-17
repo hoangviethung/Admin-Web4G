@@ -114,78 +114,39 @@ function ajaxFancybox() {
 		dataFieldName = $(this).attr('dataFieldName');
 		dataURL = $(this).attr('dataUrl');
 		fancyboxId = $(this).attr('fancyboxId');
-		// HÀM THỰC HIỆN POPUP XÓA
-		$.ajax({
-			type: "GET",
-			url: dataURL,
-			// TEST IN FRONT END
-			error: function() {
-				// const resCode = 200;
-				// const resResult = `<div class="modal-POPUP fancybox-content" id="fancybox-notification"><div class="title-modal"><h5>Thông báo</h5><p>Web4gsolutions xin thông báo</p></div><div class="content-modal"><p>Bạn có chắc chắn xóa ?</p></div><div class="list-button"><div class="item"><button class="btn btn-pill btn-danger" data-fancybox-close>Hủy</button></div><div class="item"><button class="btn btn-pill btn-success submit-delete">Chấp nhận</button></div></div></div>`
-				// $("body").append(resResult);
-				// $.fancybox.open({
-				// 	src: fancyboxId,
-				// 	type: 'inline',
-				// 	opts: {
-				// 		hash: false,
-				// 		closeExisting: true,
-				// 		beforeShow: function() {
-				// 			// SUBMIT DELETE
-				// 			$('.submit-delete').on('click', function() {
-				// 				const data = {};
-				// 				data[dataFieldName] = itemId;
-				// 				$.ajax({
-				// 					type: "POST",
-				// 					url: dataURL,
-				// 					data: data,
-				// 					error: function() {
-				// 						if (resCode === 200) {
-				// 							location.reload();
-				// 						} else {
-				// 							alert('Xóa thất bại');
-				// 						}
-				// 					}
-				// 				});
-				// 			});
-				// 		},
-				// 		afterClose: function() {
-				// 			$(fancyboxId).remove();
-				// 		}
-				// 	}
-				// });
-			},
-			success: function(res) {
-				$("body").append(res);
-				$.fancybox.open({
-					src: fancyboxId,
-					type: 'inline',
-					opts: {
-						hash: false,
-						closeExisting: true,
-						beforeShow: function() {
-							// SUBMIT DELETE
-							$('.submit-delete').on('click', function() {
-								const data = {};
-								data[dataFieldName] = itemId;
-								$.ajax({
-									type: "POST",
-									url: dataURL,
-									data: data,
-									success: function(res) {
-										if (res.Code === 200) {
-											location.reload();
-										} else {
-											alert('Xóa thất bại');
-										}
-									}
-								});
-							});
-						},
-						afterClose: function() {
-							$(fancyboxId).remove();
-						}
-					}
-				});
+		// HTML POPUP XÓA
+		const html = `<div class="modal-POPUP fancybox-content" id="fancybox-notification"><div class="title-modal"><h5>Thông báo</h5><p>Web4gsolutions xin thông báo</p></div><div class="content-modal"><p>Bạn có chắc chắn xóa ?</p></div><div class="list-button"><div class="item"><button class="btn btn-pill btn-danger" data-fancybox-close>Hủy</button></div><div class="item"><button class="btn btn-pill btn-success submit-delete">Chấp nhận</button></div></div></div>`;
+		// ĐẨY HTML VÀO BODY
+		$("body").append(html);
+		// HÀM XÓA
+		$.fancybox.open({
+			src: fancyboxId,
+			type: 'inline',
+			opts: {
+				hash: false,
+				closeExisting: true,
+				beforeShow: function() {
+					// SUBMIT DELETE
+					$('.submit-delete').on('click', function() {
+						const data = {};
+						data[dataFieldName] = itemId;
+						$.ajax({
+							type: "POST",
+							url: dataURL,
+							data: data,
+							success: function(res) {
+								if (res.Code === 200) {
+									location.reload();
+								} else {
+									alert('Xóa thất bại');
+								}
+							}
+						});
+					});
+				},
+				afterClose: function() {
+					$(fancyboxId).remove();
+				}
 			}
 		});
 	});
