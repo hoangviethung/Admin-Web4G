@@ -193,7 +193,7 @@ function ajaxFancybox() {
 				// 					data: data,
 				// 					// TEST IN FRONT END
 				// 					error: function() {
-				// 						if (resCode === 400) {
+				// 						if (resCode === 200) {
 				// 							location.reload();
 				// 						} else {
 				// 							alert('Thay đổi mật khẩu thất bại');
