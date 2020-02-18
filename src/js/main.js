@@ -299,10 +299,10 @@ function ajaxFancybox() {
 										processData: false,
 										contentType: false,
 										success: function(res) {
-											if (resCode === 200) {
+											if (res.Code === 200) {
 												location.reload();
 											} else {
-												alert('báo lỗi');
+												alert(res.Message);
 											}
 										}
 									});
