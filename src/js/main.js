@@ -176,8 +176,6 @@ function ajaxFancybox() {
 			},
 			// TEST IN FRONR END
 			error: function() {
-				// $('.block-loading').removeClass('active');
-				// $('body').removeClass('no-scroll');
 				// const resCode = 200;
 				// const res = `
 				// 	<div class="modal-POPUP fancybox-content" id="fancybox-forms">
@@ -272,9 +270,6 @@ function ajaxFancybox() {
 			},
 
 			success: function(res) {
-				// XÓA MÀN HÌNH LOADING
-				$('.block-loading').removeClass('active');
-				$('body').removeClass('no-scroll');
 				// XUẤT HTML VÙA GET ĐƯỢC RA NGOÀI
 				$("body").append(res);
 				var form = $(".modal-POPUP form").removeData("validator").removeData("unobtrusiveValidation");
@@ -321,6 +316,11 @@ function ajaxFancybox() {
 						}
 					}
 				});
+			},
+
+			complete: function() {
+				$('.block-loading').removeClass('active');
+				$('body').removeClass('no-scroll');
 			}
 		});
 	});
