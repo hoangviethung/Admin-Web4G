@@ -101,7 +101,6 @@ class SubTAB {
 }
 
 function createFormData(selector, fieldName) {
-	console.log(selector);
 	const formData = new FormData(selector);
 	formData.append(fieldName.name, fieldName.id);
 	return formData;
@@ -170,10 +169,17 @@ function ajaxFancybox() {
 		$.ajax({
 			type: "GET",
 			url: dataURL,
+			// HIỆN MÀN HÌNH LOADING 
+			beforeSend: function() {
+				$('.block-loading').addClass('active');
+				$('body').addClass('no-scroll');
+			},
 			// TEST IN FRONR END
 			error: function() {
+				// $('.block-loading').removeClass('active');
+				// $('body').removeClass('no-scroll');
 				// const resCode = 200;
-				// const resResult = `
+				// const res = `
 				// 	<div class="modal-POPUP fancybox-content" id="fancybox-forms">
 				// 		<div class="title-modal">
 				// 			<h5>Thay đổi mật khẩu</h5>
@@ -217,11 +223,13 @@ function ajaxFancybox() {
 				// 		</div>
 				// 	</div>
 				// `;
-				// // // XUẤT HTML VÙA GET ĐƯỢC RA NGOÀI
-				// $("body").append(resResult);
-				// // // HIỆN CÁI TÊN NGƯỜI BỊ ĐỔI RA
-				// $('#fancybox-change-pass .old-value input').val(dataOldUserName);
-				// // // HÀM THAY ĐỔI MẬT KHẨU
+				// // XUẤT HTML VÙA GET ĐƯỢC RA NGOÀI
+				// $("body").append(res);
+				// var form = $(".modal-POPUP form").removeData("validator").removeData("unobtrusiveValidation");
+				// $.validator.unobtrusive.parse(form);
+				// // HIỆN CÁI TÊN NGƯỜI BỊ ĐỔI RA
+				// $('#fancybox-forms .old-value input').val(dataOldUserName);
+				// // HÀM THAY ĐỔI MẬT KHẨU
 				// $.fancybox.open({
 				// 	src: fancyboxId,
 				// 	type: 'inline',
@@ -232,41 +240,48 @@ function ajaxFancybox() {
 				// 			// SUBMIT CHANGE PASSWORD
 				// 			$('.submit-form').on('click', function(e) {
 				// 				e.preventDefault();
-				// 				// $(".modal-POPUP form").valid();
+				// 				$(".modal-POPUP form").valid();
 				// 				const FormElement = document.querySelector('.modal-POPUP form')
 				// 				const data = createFormData(FormElement, fieldName);
-				// 				$.ajax({
-				// 					type: "POST",
-				// 					url: dataURL,
-				// 					data: data,
-				// 					processData: false,
-				// 					contentType: false,
-				// 					error: function() {
-				// 						if (resCode === 200) {
-				// 							// location.reload();
-				// 							console.log(1)
-				// 						} else {
-				// 							alert('sai');
+				// 				// KIỂM TRA XEM VALID CÓ ĐÚNG KHÔNG MỚI CHO Request lên URL
+				// 				if ($(".modal-POPUP form").valid() === true) {
+				// 					$.ajax({
+				// 						type: "POST",
+				// 						url: dataURL,
+				// 						data: data,
+				// 						processData: false,
+				// 						contentType: false,
+				// 						success: function(res) {
+				// 							if (resCode === 200) {
+				// 								location.reload();
+				// 							} else {
+				// 								alert('báo lỗi');
+				// 							}
 				// 						}
-				// 					}
-				// 				});
+				// 					});
+				// 				} else {
+				// 					console.log('Không được request lên url vì valid');
+				// 				}
 				// 			});
 				// 		},
 				// 		afterClose: function() {
-				// 			$("#fancybox-form").remove();
+				// 			$("#fancybox-forms").remove();
 				// 		}
 				// 	}
 				// });
 			},
 
 			success: function(res) {
-				// // XUẤT HTML VÙA GET ĐƯỢC RA NGOÀI
+				// XÓA MÀN HÌNH LOADING
+				$('.block-loading').removeClass('active');
+				$('body').removeClass('no-scroll');
+				// XUẤT HTML VÙA GET ĐƯỢC RA NGOÀI
 				$("body").append(res);
 				var form = $(".modal-POPUP form").removeData("validator").removeData("unobtrusiveValidation");
 				$.validator.unobtrusive.parse(form);
-				// // HIỆN CÁI TÊN NGƯỜI BỊ ĐỔI RA
-				$('#fancybox-change-pass .old-value input').val(dataOldUserName);
-				// // HÀM THAY ĐỔI MẬT KHẨU
+				// HIỆN CÁI TÊN NGƯỜI BỊ ĐỔI RA
+				$('#fancybox-forms .old-value input').val(dataOldUserName);
+				// HÀM THAY ĐỔI MẬT KHẨU
 				$.fancybox.open({
 					src: fancyboxId,
 					type: 'inline',
@@ -280,20 +295,25 @@ function ajaxFancybox() {
 								$(".modal-POPUP form").valid();
 								const FormElement = document.querySelector('.modal-POPUP form')
 								const data = createFormData(FormElement, fieldName);
-								$.ajax({
-									type: "POST",
-									url: dataURL,
-									data: data,
-									processData: false,
-									contentType: false,
-									success: function(res) {
-										if (res.Code === 200) {
-											location.reload();
-										} else {
-											alert(res.Message);
+								// KIỂM TRA XEM VALID CÓ ĐÚNG KHÔNG MỚI CHO Request lên URL
+								if ($(".modal-POPUP form").valid() === true) {
+									$.ajax({
+										type: "POST",
+										url: dataURL,
+										data: data,
+										processData: false,
+										contentType: false,
+										success: function(res) {
+											if (resCode === 200) {
+												location.reload();
+											} else {
+												alert('báo lỗi');
+											}
 										}
-									}
-								});
+									});
+								} else {
+									console.log('Không được request lên url vì valid');
+								}
 							});
 						},
 						afterClose: function() {

@@ -20,6 +20,8 @@ html(lang="en")
 			#js-page-verify(class=bodyClass hidden)
 		block footer
 			include _footer.pug
+		.block-loading
+			img(src="./assets/images/loading.gif", alt="", srcset="")
 		input#notify-json(type="text" hidden value='{"Code":"200","Message":"lorem ipsum"}')
 		script(type="text/javascript", src="./js/core.min.js")
 		script(type="text/javascript", src="./js/main.min.js")
