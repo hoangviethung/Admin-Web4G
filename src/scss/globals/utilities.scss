@@ -955,6 +955,7 @@ span.flatpickr-weekday {
 		.item {
 			cursor     : pointer;
 			display    : flex;
+			flex-wrap  : wrap;
 			align-items: center;
 
 			background-color: #ffffff;
@@ -998,7 +999,6 @@ span.flatpickr-weekday {
 
 					h5 {
 						display       : inline-block;
-						min-width     : 200px;
 						font-size     : 14px;
 						color         : rgba($color: #000000, $alpha: .6);
 						text-transform: uppercase;
