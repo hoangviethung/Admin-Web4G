@@ -790,7 +790,7 @@ function notifyAdmin() {
 				// options
 				icon: 'glyphicon glyphicon-warning-sign',
 				title: 'Web4gsolutions xin thông báo: ',
-				message: notifyValue[0].Message,
+				message: notifyValue.Message,
 				url: '/',
 				target: '_blank'
 			}, {
