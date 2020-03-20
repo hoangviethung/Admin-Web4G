@@ -162,6 +162,12 @@ aside {
 					background-size  : cover;
 				}
 
+				&.active {
+					&:after {
+						transform: translateY(-50%) rotate(180deg);
+					}
+				}
+
 				&.name-link-level--1 {
 					padding: 0 30px 0 45px;
 
@@ -235,13 +241,7 @@ aside {
 				}
 			}
 
-			&.active {
-				.name {
-					&:after {
-						transform: translateY(-50%) rotate(180deg);
-					}
-				}
-			}
+
 		}
 	}
 
@@ -282,56 +282,6 @@ aside {
 					opacity: 0;
 					height : 0;
 					padding: 0;
-				}
-			}
-		}
-
-		@media (min-width: 1440px) {
-			&:hover {
-				width     : 280px;
-				box-shadow: 0 3px 6px rgba($color: #000000, $alpha: .6);
-
-				.block-logo {
-					justify-content: space-between;
-
-					img {
-						display: block;
-					}
-				}
-
-				.aside-list {
-					padding: 0 25px;
-
-					.title-aside {
-						opacity: 1;
-						height : auto;
-					}
-
-					.aside-item {
-						.name {
-							padding: 0 30px 0 45px;
-
-							.icon {
-								left     : 5px;
-								transform: translateY(-50%);
-							}
-
-							h5 {
-								opacity: 1;
-								width  : auto;
-							}
-
-							&:after {
-								content: '';
-							}
-						}
-
-						.list-link {
-							opacity: 1;
-							height : auto;
-							padding: 5px 0 5px 45px;
-						}
-					}
 				}
 			}
 		}

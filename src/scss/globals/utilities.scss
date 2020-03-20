@@ -362,11 +362,16 @@ span.flatpickr-weekday {
 }
 
 .tab-container {
+	.block-list-tab {
+		position: relative;
+	}
+
 	.list-tab {
-		display       : flex;
-		padding-bottom: 30px;
-		margin-bottom : 30px;
-		border-bottom : 1px solid rgba($color: #000000, $alpha: .1);
+		width           : 100%;
+		display         : flex;
+		padding-bottom  : 30px;
+		border-bottom   : 1px solid rgba($color: #000000, $alpha: .1);
+		background-color: white;
 
 		.item {
 			user-select  : none;

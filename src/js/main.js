@@ -389,11 +389,12 @@ function toggleAsideMenu() {
 		const _notthis = $('.aside-list .aside-item .name-link-level--1').not(this);
 		// SHOW SUB MENU ==> ADD CLASS ACTIVE
 		$(this).siblings('.list-link').slideToggle();
-		$(this).parent('.aside-item').toggleClass('active');
+		$(this).toggleClass('active');
 		_notthis.siblings('.list-link').slideUp();
-
+		_notthis.removeClass('active');
 		// CLOSE LELVEL 2
 		$('.aside-list .aside-item .list-link-level--2').slideUp();
+		$('.aside-list .aside-item .name-link-level--2').removeClass('active');
 	});
 
 	$('.aside-list .aside-item .name-link-level--2').on('click', function() {
@@ -401,8 +402,9 @@ function toggleAsideMenu() {
 		const _notthis = $('.aside-list .aside-item .name-link-level--2').not(this);
 		// SHOW SUB MENU AND ADD CLASS ACTIVE
 		$(this).siblings('.list-link').slideToggle();
-		$(this).parent('.aside-item').toggleClass('active');
+		$(this).toggleClass('active');
 		_notthis.siblings('.list-link').slideUp();
+		_notthis.removeClass('active');
 	});
 }
 
@@ -441,8 +443,7 @@ function activeMenuByUrl() {
 }
 
 // TOGGLE ASIDE GỌN PHÓNG TÓ
-function toogleAsideMenu() {
-
+function closeAsideMenu() {
 	if ($(window).width() < 1024) {
 		$('body, aside').addClass('active');
 	}
@@ -836,6 +837,43 @@ function notifyAdmin() {
 
 }
 
+function fixedLisTab() {
+
+	const heightHeader = $('header').height();
+	const widthAside = $('aside').width();
+	const heightListTab = $('.block-list-tab .list-tab').outerHeight();
+	console.log(heightListTab);
+
+	$('.block-list-tab').css({
+		'padding-top': heightListTab + "px"
+	})
+
+	$('.list-tab').css({
+		'position': 'absolute',
+		'top': "0px",
+		'left': "0px",
+	})
+
+	window.addEventListener('scroll', () => {
+		const locationLisTab = $('.block-list-tab').offset();
+		const locationWindow = window.scrollY;
+
+		if ($('.list-tab').hasClass('fixed')) {
+			$('.list-tab').css({
+				'top': heightHeader + "px",
+				'left': widthAside + "px",
+			})
+		} else {
+			$('.list-tab').css({
+				'position': 'absolute',
+				'top': "0px",
+				'left': "0px",
+			})
+		}
+	})
+}
+
+
 // CHẠY KHI DOCUMENT SẴN SÀNG
 document.addEventListener('DOMContentLoaded', () => {
 	multipleSelect();
@@ -851,7 +889,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	// ASIDE
 	initializationClassAsideMenu();
 	toggleAsideMenu();
-	toogleAsideMenu();
+	closeAsideMenu();
 	// AJAX
 	ajaxFancybox();
 	ajaxCheckBox();
@@ -869,6 +907,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	DatePickerInit();
 	// lấy file name khi chọn file upload
 	getFileNameWhenChooseFileUpload();
+	fixedLisTab();
 });
 
 // CHẠY KHI WINDOWN SCROLL
