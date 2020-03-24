@@ -873,6 +873,39 @@ function fixedLisTab() {
 	})
 }
 
+const editHTMLWithGrapesJS = () => {
+	const coreCSS = window.location.origin + "/css/core.min.css";
+	const mainCSS = window.location.origin + "/css/main.min.css";
+	const coreJS = window.location.origin + "/js/core.min.js";
+	const mainJS = window.location.origin + "/js/main.min.js";
+	const editor = grapesjs.init({
+		// Indicate where to init the editor. You can also pass an HTMLElement
+		container: "#grapesjs",
+		// Get the content for the canvas directly from the element
+		// As an alternative we could use: `components: "<h1>Hello World Component!</h1>"`,
+		fromElement: true,
+		// Size of the editor
+		height: "700px",
+		width: "100%",
+		// Disable the storage manager for the moment
+		storageManager: false,
+		// Avoid any default panel
+		panels: {
+			defaults: []
+		},
+		draggable: false,
+		canvas: {
+			styles: [coreCSS, mainCSS],
+			scripts: [coreJS, mainJS]
+		}
+	});
+	$("#grapesjs-btn-save").on("click", function(e) {
+		e.preventDefault();
+		const htmlEdited = editor.getHtml();
+		$("#grapesjs-html").val(htmlEdited);
+		$("#grapesjs-form").submit();
+	})
+}
 
 // CHẠY KHI DOCUMENT SẴN SÀNG
 document.addEventListener('DOMContentLoaded', () => {
@@ -908,6 +941,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	// lấy file name khi chọn file upload
 	getFileNameWhenChooseFileUpload();
 	fixedLisTab();
+	editHTMLWithGrapesJS();
 });
 
 // CHẠY KHI WINDOWN SCROLL

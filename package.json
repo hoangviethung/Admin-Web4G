@@ -45,6 +45,7 @@
 		"vinyl-source-stream": "^2.0.0"
 	},
 	"dependencies": {
-		"ckeditor4": "^4.13.1"
+		"ckeditor4": "^4.13.1",
+		"grapesjs": "^0.16.3"
 	}
 }

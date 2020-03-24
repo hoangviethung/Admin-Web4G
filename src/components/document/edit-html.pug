@@ -1,0 +1,26 @@
+.main__inner
+	.page-title
+		.page-title-wrapper
+			.page-title-heading
+				.page-title-icon
+					img.svg(src="./assets/images/icons/document.svg", alt="", srcset="")
+				.page-title-content
+					h3 Chỉnh sửa HTML
+					p Tại đây các Developer Web4gsolutions có thể chỉnh sửa HTML trực tiếp trên template
+	.row
+		.block-main.shadow-sm.col-lg-12
+			.tab-container
+				.block-list-tab
+					ul.list-tab
+						li.item(toggle-for="item-1").acitve Sửa HTML
+				.tab-content
+					.content(tab-id="item-1")
+						form#grapesjs-form
+						.row
+							.col-lg
+								#grapesjs
+									h1 INPUT HTML đây nè KHoa :v
+								
+									input#grapesjs-html(hidden type="text" name="html")
+							.col-lg-auto
+								button.btn.btn-success#grapesjs-btn-save Lưu trang

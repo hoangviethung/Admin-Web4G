@@ -9,17 +9,17 @@
 }
 
 ::-webkit-scrollbar {
-	width           : 5px;
+	width: 5px;
 	background-color: rgba($color: #000000, $alpha: .1)
 }
 
 ::-webkit-scrollbar-thumb {
-	border-radius   : 5px;
+	border-radius: 5px;
 	background-color: rgba($color: #000000, $alpha: .5)
 }
 
 html {
-	-webkit-text-size-adjust   : 100%;
+	-webkit-text-size-adjust: 100%;
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
@@ -42,8 +42,8 @@ section {
 
 hr {
 	box-sizing: content-box;
-	height    : 0;
-	overflow  : visible;
+	height: 0;
+	overflow: visible;
 }
 
 h1,
@@ -52,41 +52,41 @@ h3,
 h4,
 h5,
 h6 {
-	margin-top   : 0;
+	margin-top: 0;
 	margin-bottom: 0;
 }
 
 p {
-	margin-top   : 0;
+	margin-top: 0;
 	margin-bottom: 0;
 }
 
 abbr[title],
 abbr[data-original-title] {
-	text-decoration                 : underline;
-	-webkit-text-decoration         : underline dotted;
-	text-decoration                 : underline dotted;
-	cursor                          : help;
-	border-bottom                   : 0;
+	text-decoration: underline;
+	-webkit-text-decoration: underline dotted;
+	text-decoration: underline dotted;
+	cursor: help;
+	border-bottom: 0;
 	-webkit-text-decoration-skip-ink: none;
-	text-decoration-skip-ink        : none;
+	text-decoration-skip-ink: none;
 }
 
 address {
 	margin-bottom: 0;
-	font-style   : normal;
-	line-height  : inherit;
+	font-style: normal;
+	line-height: inherit;
 }
 
 ul {
 	list-style: none;
-	padding   : 0;
+	padding: 0;
 }
 
 ol,
 ul,
 dl {
-	margin-top   : 0;
+	margin-top: 0;
 	margin-bottom: 0;
 }
 
@@ -103,7 +103,7 @@ dt {
 
 dd {
 	margin-bottom: 0;
-	margin-left  : 0;
+	margin-left: 0;
 }
 
 blockquote {
@@ -122,9 +122,9 @@ small {
 
 sub,
 sup {
-	position      : relative;
-	font-size     : 75%;
-	line-height   : 0;
+	position: relative;
+	font-size: 75%;
+	line-height: 0;
 	vertical-align: baseline;
 }
 
@@ -137,19 +137,19 @@ sup {
 }
 
 a {
-	color           : unset;
-	text-decoration : none;
+	color: unset;
+	text-decoration: none;
 	background-color: transparent;
 }
 
 a:not([href]):not([tabindex]) {
-	color          : inherit;
+	color: inherit;
 	text-decoration: none;
 }
 
 a:not([href]):not([tabindex]):hover,
 a:not([href]):not([tabindex]):focus {
-	color          : inherit;
+	color: inherit;
 	text-decoration: none;
 }
 
@@ -162,13 +162,13 @@ code,
 kbd,
 samp {
 	font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-	font-size  : 1em;
+	font-size: 1em;
 }
 
 pre {
-	margin-top   : 0;
+	margin-top: 0;
 	margin-bottom: 0;
-	overflow     : auto;
+	overflow: auto;
 }
 
 figure {
@@ -177,12 +177,12 @@ figure {
 
 img {
 	vertical-align: middle;
-	border-style  : none;
-	max-width     : 100%;
+	border-style: none;
+	max-width: 100%;
 }
 
 svg {
-	overflow      : hidden;
+	overflow: hidden;
 	vertical-align: middle;
 }
 
@@ -191,11 +191,11 @@ table {
 }
 
 caption {
-	padding-top   : 0;
+	padding-top: 0;
 	padding-bottom: 0;
-	color         : #6c757d;
-	text-align    : left;
-	caption-side  : bottom;
+	color: #6c757d;
+	text-align: left;
+	caption-side: bottom;
 }
 
 th {
@@ -203,7 +203,7 @@ th {
 }
 
 label {
-	display      : inline-block;
+	display: inline-block;
 	margin-bottom: 0;
 }
 
@@ -216,9 +216,9 @@ button,
 select,
 optgroup,
 textarea {
-	margin     : 0;
+	margin: 0;
 	font-family: inherit;
-	font-size  : inherit;
+	font-size: inherit;
 	line-height: inherit;
 }
 
@@ -254,14 +254,14 @@ button::-moz-focus-inner,
 [type="button"]::-moz-focus-inner,
 [type="reset"]::-moz-focus-inner,
 [type="submit"]::-moz-focus-inner {
-	padding     : 0;
+	padding: 0;
 	border-style: none;
 }
 
 input[type="radio"],
 input[type="checkbox"] {
 	box-sizing: border-box;
-	padding   : 0;
+	padding: 0;
 }
 
 input[type="date"],
@@ -273,26 +273,26 @@ input[type="month"] {
 
 textarea {
 	overflow: auto;
-	resize  : vertical;
+	resize: vertical;
 }
 
 fieldset {
 	min-width: 0;
-	padding  : 0;
-	margin   : 0;
-	border   : 0;
+	padding: 0;
+	margin: 0;
+	border: 0;
 }
 
 legend {
-	display      : block;
-	width        : 100%;
-	max-width    : 100%;
-	padding      : 0;
+	display: block;
+	width: 100%;
+	max-width: 100%;
+	padding: 0;
 	margin-bottom: 0;
-	font-size    : 1.5rem;
-	line-height  : inherit;
-	color        : inherit;
-	white-space  : normal;
+	font-size: 1.5rem;
+	line-height: inherit;
+	color: inherit;
+	white-space: normal;
 }
 
 progress {
@@ -305,7 +305,7 @@ progress {
 }
 
 [type="search"] {
-	outline-offset    : -2px;
+	outline-offset: -2px;
 	-webkit-appearance: none;
 }
 
@@ -314,7 +314,7 @@ progress {
 }
 
 ::-webkit-file-upload-button {
-	font              : inherit;
+	font: inherit;
 	-webkit-appearance: button;
 }
 
@@ -324,7 +324,7 @@ output {
 
 summary {
 	display: list-item;
-	cursor : pointer;
+	cursor: pointer;
 }
 
 template {
