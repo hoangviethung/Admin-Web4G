@@ -874,10 +874,10 @@ function fixedLisTab() {
 }
 
 const editHTMLWithGrapesJS = () => {
-	const coreCSS = window.location.origin + "/css/core.min.css";
-	const mainCSS = window.location.origin + "/css/main.min.css";
-	const coreJS = window.location.origin + "/js/core.min.js";
-	const mainJS = window.location.origin + "/js/main.min.js";
+	const coreCSS = window.location.origin + "/Content/resources/css/core.min.css";
+	const mainCSS = window.location.origin + "/Content/resources/css/main.min.css";
+	const coreJS = window.location.origin + "/Content/resources/js/core.min.js";
+	const mainJS = window.location.origin + "/Content/resources/js/main.min.js";
 	const editor = grapesjs.init({
 		// Indicate where to init the editor. You can also pass an HTMLElement
 		container: "#grapesjs",
