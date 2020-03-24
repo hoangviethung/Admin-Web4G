@@ -10,10 +10,12 @@
 	.row
 		.block-main.shadow-sm.col-lg-12
 			.tab-container
-				ul.list-tab
-					li.item(toggle-for="item-1").acitve Checkbox type 1
-					li.item(toggle-for="item-2") Checkbox type 2
-					li.item(toggle-for="item-3") Check Box Multip by Attr
+				.block-list-tab
+					ul.list-tab
+						li.item(toggle-for="item-1").acitve Checkbox type 1
+						li.item(toggle-for="item-2") Checkbox type 2
+						li.item(toggle-for="item-3") Check Box Multip by Attr
+						li.item(toggle-for="item-4") Radio
 				.tab-content
 					.content(tab-id="item-1")
 						.row
@@ -137,3 +139,25 @@
 																input(type="checkbox" data-checkbox-group="1")
 								code
 									img(src="./assets/previewHTML/multiple-checkbox.png", alt="", srcset="")
+					.content(tab-id="item-4")
+						.row
+							.col-lg-6.mb-4
+								.card.shadow-sm
+									.card-header
+										.card-header-title
+											h3 Radio
+									.card-body
+										.block-form
+											.form-row
+												.form-group.mr-2
+													.input-custom
+														._checkbox-normal
+															label
+																input(name="radio" type="radio")
+												.form-group.mr-2
+													.input-custom
+														._checkbox-normal.color-2
+															label
+																input(name="radio" type="radio")
+								code
+									img(src="./assets/previewHTML/radio.png", alt="", srcset="")

@@ -13,20 +13,22 @@
 		.block-main.shadow-sm.col-lg-12.mt-5
 			p.mb-5 Layout trang chi tiết có TAB
 			.tab-container
-				ul.list-tab
-					li.item(toggle-for="item-1").acitve Tab-1
-					li.item(toggle-for="item-2") Tab-2
-					li.item(toggle-for="item-3") Tab-3
+				.block-list-tab
+					ul.list-tab
+						li.item(toggle-for="item-1").acitve Tab-1
+						li.item(toggle-for="item-2") Tab-2
+						li.item(toggle-for="item-3") Tab-3
 				.tab-content
 					.content(tab-id="item-1")
 						p.mb-5 Content Tab 1
 						p Nếu có Subtab (Tab Con)
 						.block-subTab.mt-5
 							.tab-container
-								ul.list-tab
-									li.item(subtab-toggle-for="item-1").acitve Sub-Tab-1
-									li.item(subtab-toggle-for="item-2") Sub-Tab-2
-									li.item(subtab-toggle-for="item-3") Sub-Tab-3
+								.block-list-tab
+									ul.list-tab
+										li.item(subtab-toggle-for="item-1").acitve Sub-Tab-1
+										li.item(subtab-toggle-for="item-2") Sub-Tab-2
+										li.item(subtab-toggle-for="item-3") Sub-Tab-3
 								.tab-content
 									.content(sub-tab-id="item-1")
 										p Content Subtab 1

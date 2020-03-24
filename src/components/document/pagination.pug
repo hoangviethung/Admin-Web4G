@@ -10,10 +10,11 @@
 	.row
 		.block-main.shadow-sm.col-lg-12
 			.tab-container
-				ul.list-tab
-					li.item(toggle-for="item-1").acitve Template
+				.block-list-tab
+					ul.list-tab
+						li.item(toggle-for="item-1").acitve Template
 				.tab-content
 					.content(tab-id="item-1")
 						include ../_global/_pagination.pug
 						code
-							img(src="./assets/previewHTML/pagination.png", alt="", srcset="")
+							img.mt-25px(src="./assets/previewHTML/pagination.png", alt="", srcset="")

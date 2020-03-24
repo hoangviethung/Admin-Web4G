@@ -372,39 +372,39 @@ function setUrlTypeLink() {
 	});
 }
 
-// SUBMENU ASIDE
-function showSubAsideMenu() {
-	// MENU 1 CẤP
-	$('.aside-list .aside-item').on('click', function() {
+function initializationClassAsideMenu() {
+	// LEVEL 1
+	$('.aside-list .aside-item').children('.list-link').addClass('list-link-level--1');
+	$('.aside-list .aside-item').children('.name').addClass('name-link-level--1');
+	$('.aside-list .aside-item .list-link-level--1').children('.link').addClass('link-level--1');
+	// LEVEL 2
+	$('.aside-list .aside-item .list-link-level--1').find('.list-link').addClass('list-link-level--2');
+	$('.aside-list .aside-item .link-level--1').children('.name').addClass('name-link-level--2');
+	$('.aside-list .aside-item .list-link-level--2').children('.link').addClass('link-level--2');
+}
+
+function toggleAsideMenu() {
+	$('.aside-list .aside-item .name-link-level--1').on('click', function() {
 		// THIS IS 'NOT THIS'
-		const _notthis = $('.aside-list .aside-item').not(this);
-		// SHOW SUB MENU AND ADD CLASS ACTIVE
-		$(this).find('.list-link').slideToggle();
+		const _notthis = $('.aside-list .aside-item .name-link-level--1').not(this);
+		// SHOW SUB MENU ==> ADD CLASS ACTIVE
+		$(this).siblings('.list-link').slideToggle();
 		$(this).toggleClass('active');
-		// RESET ALL NOT THIS
-		$('.aside-list .aside-item__multi-level .list-link-level--1').slideUp();
-		_notthis.find('.list-link').slideUp();
+		_notthis.siblings('.list-link').slideUp();
 		_notthis.removeClass('active');
+		// CLOSE LELVEL 2
+		$('.aside-list .aside-item .list-link-level--2').slideUp();
+		$('.aside-list .aside-item .name-link-level--2').removeClass('active');
 	});
-	// MENU ĐA CẤP
-	$('.aside-list .aside-item__multi-level .name').on('click', function() {
+
+	$('.aside-list .aside-item .name-link-level--2').on('click', function() {
+		// THIS IS 'NOT THIS'
+		const _notthis = $('.aside-list .aside-item .name-link-level--2').not(this);
 		// SHOW SUB MENU AND ADD CLASS ACTIVE
-		$(this).siblings('.list-link-level--1').slideToggle();
-		$(this).parents('.aside-item__multi-level').toggleClass('active');
-		// RESET ALL NOT THIS
-		$('.aside-list .aside-item .list-link').slideUp();
-		$(this).parent().siblings('.aside-item__multi-level').find('.list-link-level--1').slideUp();
-		$(this).parent().siblings('.aside-item__multi-level').find('.list-link-level--2').slideUp();
-		$('.aside-item__multi-level .list-link-level--1 .name-link-level--1').not(this).removeClass('active');
-	});
-	// MỞ MENU CẤP 2
-	$('.aside-item__multi-level .list-link-level--1 .name-link-level--1').on('click', function() {
-		// SHOW SUB MENU AND ADD CLASS ACTIVE
-		$(this).siblings('.list-link-level--2').slideToggle();
+		$(this).siblings('.list-link').slideToggle();
 		$(this).toggleClass('active');
-		// RESET ALL NOT THIS
-		$('.aside-item__multi-level .list-link-level--1 .name-link-level--1').not(this).removeClass('active');
-		$(this).parent().siblings('.link-level--1').find('.list-link-level--2').slideUp();
+		_notthis.siblings('.list-link').slideUp();
+		_notthis.removeClass('active');
 	});
 }
 
@@ -443,8 +443,7 @@ function activeMenuByUrl() {
 }
 
 // TOGGLE ASIDE GỌN PHÓNG TÓ
-function toogleAsideMenu() {
-
+function closeAsideMenu() {
 	if ($(window).width() < 1024) {
 		$('body, aside').addClass('active');
 	}
@@ -791,7 +790,7 @@ function notifyAdmin() {
 				// options
 				icon: 'glyphicon glyphicon-warning-sign',
 				title: 'Web4gsolutions xin thông báo: ',
-				message: notifyValue[0].Message,
+				message: notifyValue.Message,
 				url: '/',
 				target: '_blank'
 			}, {
@@ -838,6 +837,43 @@ function notifyAdmin() {
 
 }
 
+function fixedLisTab() {
+
+	const heightHeader = $('header').height();
+	const widthAside = $('aside').width();
+	const heightListTab = $('.block-list-tab .list-tab').outerHeight();
+	console.log(heightListTab);
+
+	$('.block-list-tab').css({
+		'padding-top': heightListTab + "px"
+	})
+
+	$('.list-tab').css({
+		'position': 'absolute',
+		'top': "0px",
+		'left': "0px",
+	})
+
+	window.addEventListener('scroll', () => {
+		const locationLisTab = $('.block-list-tab').offset();
+		const locationWindow = window.scrollY;
+
+		if ($('.list-tab').hasClass('fixed')) {
+			$('.list-tab').css({
+				'top': heightHeader + "px",
+				'left': widthAside + "px",
+			})
+		} else {
+			$('.list-tab').css({
+				'position': 'absolute',
+				'top': "0px",
+				'left': "0px",
+			})
+		}
+	})
+}
+
+
 // CHẠY KHI DOCUMENT SẴN SÀNG
 document.addEventListener('DOMContentLoaded', () => {
 	multipleSelect();
@@ -851,8 +887,9 @@ document.addEventListener('DOMContentLoaded', () => {
 	activeMenuByUrl();
 	dropdownHeader();
 	// ASIDE
-	showSubAsideMenu();
-	toogleAsideMenu();
+	initializationClassAsideMenu();
+	toggleAsideMenu();
+	closeAsideMenu();
 	// AJAX
 	ajaxFancybox();
 	ajaxCheckBox();
@@ -870,6 +907,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	DatePickerInit();
 	// lấy file name khi chọn file upload
 	getFileNameWhenChooseFileUpload();
+	fixedLisTab();
 });
 
 // CHẠY KHI WINDOWN SCROLL
