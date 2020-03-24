@@ -19,6 +19,9 @@ import {
 import {
 	cleanAssets
 } from "./clean";
+import {
+	copyAPIs
+} from "./api";
 
 export const server = () => {
 	bSync.init({
@@ -37,6 +40,10 @@ export const server = () => {
 	}, series(jsTask));
 
 	watch([
+		"src/api/**.json"
+	], series(copyAPIs))
+
+	watch([
 		'src/js/**.js',
 		'!src/js/main.js'
 	], {
@@ -45,6 +52,7 @@ export const server = () => {
 
 	watch([
 		'src/js/ckeditor.js',
+		'src/js/plugins/**/**'
 	], {
 		delay: 750
 	}, series(jsTask3));

@@ -22,6 +22,9 @@ import {
 	copyFavicon,
 	copyAssets
 } from "./.tasks/copy";
+import {
+	copyAPIs
+} from "./.tasks/api";
 
 
 exports.default = series(
@@ -29,7 +32,8 @@ exports.default = series(
 	parallel(
 		copyFavicon,
 		copyFonts,
-		copyAssets
+		copyAssets,
+		copyAPIs
 	),
 	parallel(
 		jsCore,
