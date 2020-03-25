@@ -352,7 +352,6 @@ function ajaxCheckBox() {
 function createRowTableInput() {
 	$('.table-input table thead tr th .submit').on('click', function() {
 		const newRow = $(this).parents('thead').siblings('tbody').find('tr').last();
-		console.log(newRow);
 	})
 }
 
@@ -842,7 +841,6 @@ function fixedLisTab() {
 	const heightHeader = $('header').height();
 	const widthAside = $('aside').width();
 	const heightListTab = $('.block-list-tab .list-tab').outerHeight();
-	console.log(heightListTab);
 
 	$('.block-list-tab').css({
 		'padding-top': heightListTab + "px"
@@ -874,37 +872,62 @@ function fixedLisTab() {
 }
 
 const editHTMLWithGrapesJS = () => {
-	const coreCSS = window.location.origin + "/Content/resources/css/core.min.css";
-	const mainCSS = window.location.origin + "/Content/resources/css/main.min.css";
-	const coreJS = window.location.origin + "/Content/resources/js/core.min.js";
-	const mainJS = window.location.origin + "/Content/resources/js/main.min.js";
-	const editor = grapesjs.init({
-		// Indicate where to init the editor. You can also pass an HTMLElement
-		container: "#grapesjs",
-		// Get the content for the canvas directly from the element
-		// As an alternative we could use: `components: "<h1>Hello World Component!</h1>"`,
-		fromElement: true,
-		// Size of the editor
-		height: "700px",
-		width: "100%",
-		// Disable the storage manager for the moment
-		storageManager: false,
-		// Avoid any default panel
-		panels: {
-			defaults: []
-		},
-		draggable: false,
-		canvas: {
-			styles: [coreCSS, mainCSS],
-			scripts: [coreJS, mainJS]
-		}
-	});
-	$("#grapesjs-btn-save").on("click", function(e) {
-		e.preventDefault();
-		const htmlEdited = editor.getHtml();
-		$("#grapesjs-html").val(htmlEdited);
-		$("#grapesjs-form").submit();
-	})
+	const GrapesJS = $("#grapesjs");
+
+	const coreCSS = "http://192.168.1.105/Content/resources/css/core.min.css";
+	const mainCSS = "http://192.168.1.105/Content/resources/css/main.min.css";
+	const coreJS = "http://192.168.1.105/Content/resources/js/core.min.js";
+	const mainJS = "http://192.168.1.105/Content/resources/js/main.min.js";
+
+	if (GrapesJS.length > 0) {
+		$("#grapesjs").find("[data-src]").each(function() {
+			const src = $(this).attr("data-src");
+			$(this).addClass('lazyload-custom');
+			$(this).attr("src", src);
+			$(this).removeAttr("data-src");
+		});
+
+		const editor = grapesjs.init({
+			// Indicate where to init the editor. You can also pass an HTMLElement
+			container: "#grapesjs",
+			// Get the content for the canvas directly from the element
+			// As an alternative we could use: `components: "<h1>Hello World Component!</h1>"`,
+			fromElement: true,
+			// Size of the editor
+			height: "700px",
+			width: "100%",
+			// Disable the storage manager for the moment
+			storageManager: false,
+			// Avoid any default panel
+			panels: {
+				defaults: []
+			},
+			forceClass: false,
+			draggable: false,
+			canvas: {
+				styles: [coreCSS, mainCSS],
+				scripts: [coreJS, mainJS]
+			}
+		});
+
+		$("#grapesjs-btn-save").on("click", function(e) {
+			e.preventDefault();
+			const htmlEdited = editor.getHtml();
+			const storeHTML = document.createElement("div");
+			$(storeHTML).html(htmlEdited);
+			$(storeHTML).find(".lazyload-custom").each(function() {
+				const src = $(this).attr("src");
+				$(this).attr("data-src", src);
+				$(this).removeAttr("src");
+				$(this).removeClass('lazyload-custom');
+			});
+			const newHTML = $(storeHTML).html();
+			console.log(newHTML);
+			$("#grapesjs-html").val(htmlEdited);
+			$("#grapesjs-form").submit();
+		})
+	}
+
 }
 
 // CHẠY KHI DOCUMENT SẴN SÀNG
