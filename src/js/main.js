@@ -922,8 +922,7 @@ const editHTMLWithGrapesJS = () => {
 				$(this).removeClass('lazyload-custom');
 			});
 			const newHTML = $(storeHTML).html();
-			console.log(newHTML);
-			$("#grapesjs-html").val(htmlEdited);
+			$("#grapesjs-html").val(newHTML);
 			$("#grapesjs-form").submit();
 		})
 	}
