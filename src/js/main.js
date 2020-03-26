@@ -879,7 +879,10 @@ const editHTMLWithGrapesJS = () => {
 	const coreJS = "http://192.168.1.105/Content/resources/js/core.min.js";
 	const mainJS = "http://192.168.1.105/Content/resources/js/main.min.js";
 
+
 	if (GrapesJS.length > 0) {
+		const dataFolder = $("#ImageFolder").val();
+		const storeUrl = window.location.origin + dataFolder;
 		$("#grapesjs").find("[data-src]").each(function() {
 			const src = $(this).attr("data-src");
 			$(this).addClass('lazyload-custom');
@@ -888,17 +891,19 @@ const editHTMLWithGrapesJS = () => {
 		});
 
 		const editor = grapesjs.init({
-			// Indicate where to init the editor. You can also pass an HTMLElement
 			container: "#grapesjs",
-			// Get the content for the canvas directly from the element
-			// As an alternative we could use: `components: "<h1>Hello World Component!</h1>"`,
 			fromElement: true,
-			// Size of the editor
 			height: "700px",
 			width: "100%",
-			// Disable the storage manager for the moment
+			noticeOnUnload: false,
+			assetManager: false,
+			// storageManager: {
+			// 	type: 'remote',
+			// 	urlStore: storeUrl,
+			// 	urlLoad: storeUrl,
+			// 	stepsBeforeSave: 3,
+			// },
 			storageManager: false,
-			// Avoid any default panel
 			panels: {
 				defaults: []
 			},
@@ -908,9 +913,71 @@ const editHTMLWithGrapesJS = () => {
 				styles: [coreCSS, mainCSS],
 				scripts: [coreJS, mainJS]
 			}
-		});
+		})
+
+		const uploadFile = e => {
+			const files = e.dataTransfer ? e.dataTransfer.files : e.target.files;
+			let formData = new FormData();
+			Array.from(files).forEach((file, index) => {
+				formData.append(`file[${index}]`, file);
+			});
+			formData.append("folder", dataFolder);
+			// formData.append("file[0]", files);
+			$.ajax({
+				url: '/file-upload', // Set the url
+				data: formData,
+				type: "POST",
+				processData: false,
+				contentType: false,
+				success: function(response) {
+					const images = response; // <- should be an array of uploaded images
+					const newImages = images.map(image => {
+						const item = {
+							src: image.Link
+						};
+						return item;
+					})
+					editor.AssetManager.add(newImages);
+				},
+				error: function(err) {
+					console.log(err);
+				}
+			})
+		}
+
+		editor.on('run:open-assets', () => {
+			if (editor.uploaderModified) {
+				return;
+			} else {
+				const modal = editor.Modal;
+				const modalBody = modal.getContentEl();
+				const uploader = modalBody.querySelector('.gjs-am-file-uploader');
+				const uploadInput = modalBody.querySelector("#gjs-am-uploadFile");
+				var uploadForm = $(uploader).find("form").get(0);
+				uploadForm.ondrop = function(e) {
+					this.className = '';
+					e.preventDefault();
+					uploadFile(e);
+					return;
+				}
+				// change the id of the upload input
+				// this turns off the old change handler bound to that id
+				// (so that it no longer sends needless requests to /assets/upload)
+				// but also turns off the stylesheet so we have to replace the css
+				$(uploadInput).attr("id", "dummy");
+				$(uploadInput).css("opacity", "0")
+					.css("filter", "alpha(opacity=0)")
+					.css("padding", "150px 10px")
+					.css("width", "100%")
+					.css("box-sizing", "border-box");
+
+				$(uploadInput).change(uploadFile);
+				editor.uploaderModified = true
+			}
+		})
 
 		$("#grapesjs-btn-save").on("click", function(e) {
+			const hiddenInput = $(this).attr("data-input-id");
 			e.preventDefault();
 			const htmlEdited = editor.getHtml();
 			const storeHTML = document.createElement("div");
@@ -922,8 +989,7 @@ const editHTMLWithGrapesJS = () => {
 				$(this).removeClass('lazyload-custom');
 			});
 			const newHTML = $(storeHTML).html();
-			$("#grapesjs-html").val(newHTML);
-			$("#grapesjs-form").submit();
+			$(hiddenInput).val(newHTML);
 		})
 	}
 

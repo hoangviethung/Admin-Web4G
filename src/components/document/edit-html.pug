@@ -15,7 +15,7 @@
 						li.item(toggle-for="item-1").acitve Sửa HTML
 				.tab-content
 					.content(tab-id="item-1")
-						form#grapesjs-form
+						#grapesjs-form
 							.row
 								.col-lg
 									#grapesjs
@@ -116,6 +116,6 @@
 														h4 Lorem Ipsum is simply dummy text
 														p
 															| Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.The standard chunk of Lorem Ipsum.
-									input#grapesjs-html(hidden type="text" name="html")
 								.col-lg-auto
-									button.btn.btn-success#grapesjs-btn-save Lưu trang
+									input#grapesjs-html(hidden type="text" name="html")
+									button.btn.btn-success#grapesjs-btn-save(data-input-id="#grapesjs-html") Lưu trang
