@@ -872,126 +872,120 @@ function fixedLisTab() {
 }
 
 const editHTMLWithGrapesJS = () => {
-	const GrapesJS = $("#grapesjs");
-
+	// const GrapesJS = $("#grapes-html");
 	const coreCSS = "http://192.168.1.105/Content/resources/css/core.min.css";
 	const mainCSS = "http://192.168.1.105/Content/resources/css/main.min.css";
 	const coreJS = "http://192.168.1.105/Content/resources/js/core.min.js";
 	const mainJS = "http://192.168.1.105/Content/resources/js/main.min.js";
 
+	const ckeditor = CKEDITOR.replace('grapesjs-ckeditor', {
+		allowedContent: true,
+		filebrowserBrowseUrl: '/Admin/HomeAdmin/CkfinderPopup',
+	})
 
-	if (GrapesJS.length > 0) {
-		const dataFolder = $("#ImageFolder").val();
-		const storeUrl = window.location.origin + dataFolder;
-		$("#grapesjs").find("[data-src]").each(function() {
-			const src = $(this).attr("data-src");
-			$(this).addClass('lazyload-custom');
-			$(this).attr("src", src);
-			$(this).removeAttr("data-src");
-		});
-
-		const editor = grapesjs.init({
-			container: "#grapesjs",
-			fromElement: true,
-			height: "700px",
-			width: "100%",
-			noticeOnUnload: false,
-			assetManager: false,
-			// storageManager: {
-			// 	type: 'remote',
-			// 	urlStore: storeUrl,
-			// 	urlLoad: storeUrl,
-			// 	stepsBeforeSave: 3,
-			// },
-			storageManager: false,
-			panels: {
-				defaults: []
-			},
-			forceClass: false,
-			draggable: false,
-			canvas: {
-				styles: [coreCSS, mainCSS],
-				scripts: [coreJS, mainJS]
+	const openPopupTemplate = () => {
+		$.fancybox.open({
+			type: 'inline',
+			src: '#template-select-popup',
+			opts: {
+				hash: false,
+				touch: false,
 			}
-		})
-
-		const uploadFile = e => {
-			const files = e.dataTransfer ? e.dataTransfer.files : e.target.files;
-			let formData = new FormData();
-			Array.from(files).forEach((file, index) => {
-				formData.append(`file[${index}]`, file);
-			});
-			formData.append("folder", dataFolder);
-			// formData.append("file[0]", files);
-			$.ajax({
-				url: '/file-upload', // Set the url
-				data: formData,
-				type: "POST",
-				processData: false,
-				contentType: false,
-				success: function(response) {
-					const images = response; // <- should be an array of uploaded images
-					const newImages = images.map(image => {
-						const item = {
-							src: image.Link
-						};
-						return item;
-					})
-					editor.AssetManager.add(newImages);
-				},
-				error: function(err) {
-					console.log(err);
-				}
-			})
-		}
-
-		editor.on('run:open-assets', () => {
-			if (editor.uploaderModified) {
-				return;
-			} else {
-				const modal = editor.Modal;
-				const modalBody = modal.getContentEl();
-				const uploader = modalBody.querySelector('.gjs-am-file-uploader');
-				const uploadInput = modalBody.querySelector("#gjs-am-uploadFile");
-				var uploadForm = $(uploader).find("form").get(0);
-				uploadForm.ondrop = function(e) {
-					this.className = '';
-					e.preventDefault();
-					uploadFile(e);
-					return;
-				}
-				// change the id of the upload input
-				// this turns off the old change handler bound to that id
-				// (so that it no longer sends needless requests to /assets/upload)
-				// but also turns off the stylesheet so we have to replace the css
-				$(uploadInput).attr("id", "dummy");
-				$(uploadInput).css("opacity", "0")
-					.css("filter", "alpha(opacity=0)")
-					.css("padding", "150px 10px")
-					.css("width", "100%")
-					.css("box-sizing", "border-box");
-
-				$(uploadInput).change(uploadFile);
-				editor.uploaderModified = true
-			}
-		})
-
-		$("#grapesjs-btn-save").on("click", function(e) {
-			const hiddenInput = $(this).attr("data-input-id");
-			e.preventDefault();
-			const htmlEdited = editor.getHtml();
-			const storeHTML = document.createElement("div");
-			$(storeHTML).html(htmlEdited);
-			$(storeHTML).find(".lazyload-custom").each(function() {
-				const src = $(this).attr("src");
-				$(this).attr("data-src", src);
-				$(this).removeAttr("src");
-				$(this).removeClass('lazyload-custom');
-			});
-			const newHTML = $(storeHTML).html();
-			$(hiddenInput).val(newHTML);
 		})
 	}
+
+	const defaultOpts = {
+		container: "#grapes-html",
+		fromElement: true,
+		height: "700px",
+		width: "100%",
+		noticeOnUnload: false,
+		assetManager: false,
+		storageManager: false,
+		panels: {
+			defaults: []
+		},
+		forceClass: false,
+		draggable: false,
+		canvas: {
+			styles: [coreCSS, mainCSS],
+			scripts: [coreJS, mainJS]
+		}
+	};
+
+	let editor = grapesjs.init(defaultOpts);
+
+	$("#btn-grapesjs-import-html").on("click", function(e) {
+		e.preventDefault();
+		ckeditor.insertHtml(editor.getHtml());
+		$("#grapesjs-popup").addClass("active");
+	})
+	$("#btn-grapesjs-popup-discard").on("click", function(e) {
+		e.preventDefault();
+		ckeditor.setData("");
+		$("#grapesjs-popup").removeClass("active");
+	})
+	$("#btn-grapesjs-popup-save").on("click", function(e) {
+		const data = ckeditor.getData();
+		editor.destroy();
+		ckeditor.setData("");
+		$("#grapesjs-popup").removeClass("active");
+		$("#grapes-html").html(data);
+		editor = grapesjs.init(defaultOpts);
+	})
+	$("#btn-grapesjs-popup-select").on("click", function(e) {
+		const url = $(this).attr("data-url")
+		$.ajax({
+			url: url,
+			type: 'get',
+			success: function(res) {
+				if (res.Code === 200) {
+					let optionsHTML = '';
+					const templateList = res.Templates;
+					templateList.forEach(template => {
+						optionsHTML += `<option value="${template.id}">${template.text}</option>`;
+					});
+					const popupHTMLDom = document.createElement('div');
+					popupHTMLDom.classList.add('d-none')
+					popupHTMLDom.innerHTML = `
+						<div class="template-select-popup" id="template-select-popup">
+							<div class="block-title">
+								<h3>Chọn template</h3>
+							</div>
+							<div class="form-group form-select">
+								<select id="select-template">${optionsHTML}</select>
+							</div>
+							<div class="form-group form-button">
+								<a class="btn btn-success" id="btn-get-template">Chọn</a>
+							</div>
+						</div>`;
+					document.body.append(popupHTMLDom)
+					openPopupTemplate();
+				}
+			}
+		});
+	})
+
+	$("body").on("click", "#btn-get-template", function(e) {
+		const id = document.querySelector('#template-select-popup select').value;
+		$.ajax({
+			url: 'api/template-1.html',
+			// data: {
+			// 	templateId: id
+			// },
+			type: 'get',
+			// type: 'post',
+			success: function(result) {
+				ckeditor.setData("");
+				setTimeout(() => {
+					ckeditor.insertHtml(result);
+				}, 500);
+			},
+			complete: function() {
+				$.fancybox.close(true);
+			}
+		})
+	})
 
 }
 

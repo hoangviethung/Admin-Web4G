@@ -1197,6 +1197,9 @@ span.flatpickr-weekday {
 	}
 }
 
+// Css cho GrapesJS
+
+
 #grapesjs {
 	box-shadow: 0 0 8px rgba(black, .15);
 }
@@ -1242,3 +1245,81 @@ span.flatpickr-weekday {
 		height: 100%;
 	}
 }
+
+.grapesjs-popup-wrapper {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.grapesjs-import-panels {
+	background-color: white;
+	padding: 15px;
+	display: flex;
+
+	#btn-grapesjs-popup-discard {
+		margin-left: 15px;
+	}
+
+	#btn-grapesjs-popup-save {
+		margin-left: auto;
+	}
+}
+
+.grapesjs-import-content {
+	-ms-flex-preferred-size: 0;
+	-ms-flex-positive: 1;
+	-webkit-box-flex: 1;
+	flex-basis: 0;
+	flex-grow: 1;
+	max-width: 100%;
+}
+
+#grapesjs-popup {
+	opacity: 0 !important;
+	visibility: hidden;
+	position: fixed;
+	top: 60px;
+	right: 0;
+	bottom: 0;
+	transform: scale(.5);
+	background-color: rgba(black, .9);
+	transition: all .3s ease-in-out;
+	transform-origin: 50% 50%;
+	z-index: 10;
+	padding: 20px;
+
+	&.active {
+		opacity: 1 !important;
+		visibility: visible;
+		transform: scale(1);
+	}
+}
+
+body {
+	#grapesjs-popup {
+		left: 280px;
+	}
+
+	&.active {
+		#grapesjs-popup {
+			left: 80px;
+		}
+	}
+}
+
+.cke_editor_grapesjs-ckeditor.cke_reset {
+	height: 100%;
+
+	.cke_inner {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+	}
+
+	.cke_contents {
+		height: 100% !important;
+	}
+}
+
+// End Css cho GrapesJS
