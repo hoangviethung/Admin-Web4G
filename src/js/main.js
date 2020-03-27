@@ -903,15 +903,13 @@ const editHTMLWithGrapesJS = () => {
 			url: url,
 			type: 'get',
 			success: function(res) {
-				if (res.Code === 200) {
-					templates = res.Templates;
-					LocalStorage.setItem("templates", JSON.stringify(templates))
-					let optionsHTML = '';
-					templates.forEach(template => {
-						optionsHTML += `<option value="${template.id}">${template.name}</option>`;
-					});
-					$("#template-select-popup").find(".form-select select").append(optionsHTML);
-				}
+				templates = res;
+				LocalStorage.setItem("templates", JSON.stringify(templates))
+				let optionsHTML = '';
+				templates.forEach(template => {
+					optionsHTML += `<option value="${template.Id}">${template.Name}</option>`;
+				});
+				$("#template-select-popup").find(".form-select select").append(optionsHTML);
 			}
 		});
 	}
@@ -977,10 +975,14 @@ const editHTMLWithGrapesJS = () => {
 			success: function(res) {
 				const imagesList = res.map(item => {
 					return item = {
-						src: item.Link
+						src: item.Link,
+						name: item.Name,
 					}
 				})
-				editor.AssetManager.add(imagesList)
+				editor.AssetManager.add(imagesList);
+
+				var iframe = document.getElementById('upload');
+				iframe.src = iframe.src;
 			}
 		})
 	}
@@ -1038,9 +1040,21 @@ const editHTMLWithGrapesJS = () => {
 	$("body").on("click", "#btn-get-template", function(e) {
 		ckeditor.setData("");
 		const id = Number($("#template-select-popup select").val());
-		const item = templates.filter(template => template.id === id);
+		const item = templates.filter(template => template.Id === id);
 		setTimeout(() => {
-			ckeditor.insertHtml(item[0].text);
+			const storeHTML = document.createElement("div");
+			$(storeHTML).html(item[0].Text);
+
+
+			$(storeHTML).find("[data-src]").each(function() {
+				const src = $(this).attr("data-src");
+				$(this).addClass("temporary-data-src");
+				$(this).attr("src", src);
+				$(this).attr("data-src", "");
+			})
+			const htmlIsInserted = $(storeHTML).html();
+			ckeditor.insertHtml(htmlIsInserted);
+
 			$.fancybox.close(true);
 		}, 150);
 	})
