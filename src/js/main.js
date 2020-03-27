@@ -962,18 +962,25 @@ const editHTMLWithGrapesJS = () => {
 
 	function uploadFile(e) {
 		var files = e.dataTransfer ? e.dataTransfer.files : e.target.files;
-		const formData = new FormData();
-		files.forEach((file, index) => {
-			formData.append(`files[${index}]`, file);
+		let formData = new FormData();
+		Array.from(files).forEach((file, index) => {
+			formData.append(`file[${index}]`, file);
 		})
-		formData.append("folder", dataFolder)
+		formData.append("folder", dataFolder);
+
 		$.ajax({
 			url: "/file-upload",
 			data: formData,
+			type: "POST",
 			processData: false,
 			contentType: false,
-			success: function (res) {
-				console.log(res);
+			success: function(res) {
+				const imagesList = res.map(item => {
+					return item = {
+						src: item.Link
+					}
+				})
+				editor.AssetManager.add(imagesList)
 			}
 		})
 	}
