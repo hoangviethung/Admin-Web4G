@@ -1313,6 +1313,12 @@ body {
 
 	.cke_top {
 		min-height: 100px;
+		-ms-flex-preferred-size: 0;
+		-ms-flex-positive: 1;
+		-webkit-box-flex: 1;
+		flex-basis: 0;
+		flex-grow: 1;
+		max-width: 100%;
 	}
 
 	.cke_inner {

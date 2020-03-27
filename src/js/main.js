@@ -990,6 +990,26 @@ const editHTMLWithGrapesJS = () => {
 		if (editor.uploaderModified) {
 			return;
 		} else {
+
+			$.ajax({
+				url: "/get-files",
+				data: {
+					folder: dataFolder
+				},
+				processData: false,
+				contentType: false,
+				success: function(res) {
+					if (typeof(res) == "object") {
+						const imagesList = res.map(item => {
+							return item = {
+								src: item.Link,
+								name: item.Name,
+							}
+						})
+						editor.AssetManager.add(imagesList);
+					}
+				}
+			})
 			const modal = editor.Modal;
 			const modalBody = modal.getContentEl();
 			const uploader = modalBody.querySelector('.gjs-am-file-uploader');
