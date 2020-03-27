@@ -155,7 +155,10 @@
 								<div class="content" tab-id="item-1">
 									<div class="row">
 										<div class="col-lg-12">
-											<div class="btn btn-info" id="btn-grapesjs-import-html">Trình soạn thảo</div>
+											<div class="row no-gutters grapes-buttons mb-3">
+												<div class="btn btn-info" id="btn-grapesjs-import-html">Trình soạn thảo</div>
+												<div class="btn btn-success" id="btn-grapesjs-save-html">Lưu trang</div>
+											</div>
 										</div>
 										<div class="col-lg-12">
 											<div id="grapes-html">
@@ -279,6 +282,7 @@
 													</div>
 												</div>
 											</div>
+											<input class="d-none" id="grapesjs-input-hidden">
 										</div>
 									</div>
 								</div>
@@ -289,8 +293,8 @@
 				<div id="grapesjs-popup">
 					<div class="grapesjs-popup-wrapper">
 						<div class="grapesjs-import-panels">
-							<div class="btn btn-info" id="btn-grapesjs-popup-select" data-url="/api/get-templates.json">Chọn template</div>
-							<div class="btn btn-success" id="btn-grapesjs-popup-save">Lưu trang</div>
+							<div class="btn btn-info" id="btn-grapesjs-popup-select" data-url="/api/get-templates.json">Chọn giao diện</div>
+							<div class="btn btn-success" id="btn-grapesjs-popup-save">Cập nhật giao diện</div>
 							<div class="btn btn-danger" id="btn-grapesjs-popup-discard">Hủy bỏ</div>
 						</div>
 						<div class="grapesjs-import-content">

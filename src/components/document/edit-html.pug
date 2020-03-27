@@ -17,7 +17,9 @@
 					.content(tab-id="item-1")
 						.row
 							.col-lg-12
-								.btn.btn-info#btn-grapesjs-import-html Trình soạn thảo
+								.row.no-gutters.grapes-buttons.mb-3
+									.btn.btn-info#btn-grapesjs-import-html Trình soạn thảo
+									.btn.btn-success#btn-grapesjs-save-html Lưu trang
 							.col-lg-12
 								#grapes-html
 									.block-1
@@ -117,11 +119,12 @@
 													h4 Lorem Ipsum is simply dummy text
 													p
 														| Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.The standard chunk of Lorem Ipsum.
+								input#grapesjs-input-hidden.d-none
 	#grapesjs-popup
 		.grapesjs-popup-wrapper
 			.grapesjs-import-panels
-				.btn.btn-info#btn-grapesjs-popup-select(data-url="/api/get-templates.json") Chọn template
-				.btn.btn-success#btn-grapesjs-popup-save Lưu trang
+				.btn.btn-info#btn-grapesjs-popup-select(data-url="/api/get-templates.json") Chọn giao diện
+				.btn.btn-success#btn-grapesjs-popup-save Cập nhật giao diện
 				.btn.btn-danger#btn-grapesjs-popup-discard Hủy bỏ
 			.grapesjs-import-content
 				textarea#grapesjs-ckeditor

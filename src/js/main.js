@@ -872,11 +872,49 @@ function fixedLisTab() {
 }
 
 const editHTMLWithGrapesJS = () => {
-	// const GrapesJS = $("#grapes-html");
-	const coreCSS = "http://192.168.1.105/Content/resources/css/core.min.css";
-	const mainCSS = "http://192.168.1.105/Content/resources/css/main.min.css";
-	const coreJS = "http://192.168.1.105/Content/resources/js/core.min.js";
-	const mainJS = "http://192.168.1.105/Content/resources/js/main.min.js";
+	const GrapesJS = $("#grapes-html");
+	const dataFolder = $("#ImageFolder").val();
+	const hiddenInput = $("#grapesjs-input-hidden");
+	const coreCSS = window.location.origin + "/Content/resources/css/core.min.css";
+	const mainCSS = window.location.origin + "/Content/resources/css/main.min.css";
+	const coreJS = window.location.origin + "/Content/resources/js/core.min.js";
+	const mainJS = window.location.origin + "/Content/resources/js/main.min.js";
+	const LocalStorage = window.localStorage;
+	LocalStorage.removeItem("templates")
+	let templates;
+	$("body").append(`
+		<div class="d-none">
+			<div class="template-select-popup" id="template-select-popup">
+				<div class="block-title">
+					<h3>Chọn template</h3>
+				</div>
+				<div class="form-group form-select">
+					<select id="select-template"></select>
+				</div>
+				<div class="form-group form-button">
+					<span class="btn btn-success" id="btn-get-template">Chọn</span>
+				</div>
+			</div>
+		</div>
+	`);
+	if (!templates) {
+		const url = $("#btn-grapesjs-popup-select").attr("data-url")
+		$.ajax({
+			url: url,
+			type: 'get',
+			success: function(res) {
+				if (res.Code === 200) {
+					templates = res.Templates;
+					LocalStorage.setItem("templates", JSON.stringify(templates))
+					let optionsHTML = '';
+					templates.forEach(template => {
+						optionsHTML += `<option value="${template.id}">${template.name}</option>`;
+					});
+					$("#template-select-popup").find(".form-select select").append(optionsHTML);
+				}
+			}
+		});
+	}
 
 	const ckeditor = CKEDITOR.replace('grapesjs-ckeditor', {
 		allowedContent: true,
@@ -913,7 +951,62 @@ const editHTMLWithGrapesJS = () => {
 		}
 	};
 
+	GrapesJS.find("[data-src]").each(function() {
+		const src = $(this).attr("data-src");
+		$(this).addClass("temporary-data-src");
+		$(this).attr("src", src);
+		$(this).attr("data-src", "");
+	})
+
 	let editor = grapesjs.init(defaultOpts);
+
+	function uploadFile(e) {
+		var files = e.dataTransfer ? e.dataTransfer.files : e.target.files;
+		const formData = new FormData();
+		files.forEach((file, index) => {
+			formData.append(`files[${index}]`, file);
+		})
+		formData.append("folder", dataFolder)
+		$.ajax({
+			url: "/file-upload",
+			data: formData,
+			processData: false,
+			contentType: false,
+			success: function (res) {
+				console.log(res);
+			}
+		})
+	}
+	editor.on('run:open-assets', () => {
+		if (editor.uploaderModified) {
+			return;
+		} else {
+			const modal = editor.Modal;
+			const modalBody = modal.getContentEl();
+			const uploader = modalBody.querySelector('.gjs-am-file-uploader');
+			const uploadInput = modalBody.querySelector("#gjs-am-uploadFile");
+			var uploadForm = $(uploader).find("form").get(0);
+			uploadForm.ondrop = function(e) {
+				this.className = '';
+				e.preventDefault();
+				uploadFile(e);
+				return;
+			}
+			// change the id of the upload input
+			// this turns off the old change handler bound to that id
+			// (so that it no longer sends needless requests to /assets/upload)
+			// but also turns off the stylesheet so we have to replace the css
+			$(uploadInput).attr("id", "dummy");
+			$(uploadInput).css("opacity", "0")
+				.css("filter", "alpha(opacity=0)")
+				.css("padding", "150px 10px")
+				.css("width", "100%")
+				.css("box-sizing", "border-box");
+
+			$(uploadInput).change(uploadFile);
+			editor.uploaderModified = true;
+		}
+	})
 
 	$("#btn-grapesjs-import-html").on("click", function(e) {
 		e.preventDefault();
@@ -933,59 +1026,34 @@ const editHTMLWithGrapesJS = () => {
 		$("#grapes-html").html(data);
 		editor = grapesjs.init(defaultOpts);
 	})
-	$("#btn-grapesjs-popup-select").on("click", function(e) {
-		const url = $(this).attr("data-url")
-		$.ajax({
-			url: url,
-			type: 'get',
-			success: function(res) {
-				if (res.Code === 200) {
-					let optionsHTML = '';
-					const templateList = res.Templates;
-					templateList.forEach(template => {
-						optionsHTML += `<option value="${template.id}">${template.text}</option>`;
-					});
-					const popupHTMLDom = document.createElement('div');
-					popupHTMLDom.classList.add('d-none')
-					popupHTMLDom.innerHTML = `
-						<div class="template-select-popup" id="template-select-popup">
-							<div class="block-title">
-								<h3>Chọn template</h3>
-							</div>
-							<div class="form-group form-select">
-								<select id="select-template">${optionsHTML}</select>
-							</div>
-							<div class="form-group form-button">
-								<a class="btn btn-success" id="btn-get-template">Chọn</a>
-							</div>
-						</div>`;
-					document.body.append(popupHTMLDom)
-					openPopupTemplate();
-				}
-			}
-		});
-	})
+	$("#btn-grapesjs-popup-select").on("click", openPopupTemplate)
 
 	$("body").on("click", "#btn-get-template", function(e) {
-		const id = document.querySelector('#template-select-popup select').value;
-		$.ajax({
-			url: 'api/template-1.html',
-			// data: {
-			// 	templateId: id
-			// },
-			type: 'get',
-			// type: 'post',
-			success: function(result) {
-				ckeditor.setData("");
-				setTimeout(() => {
-					ckeditor.insertHtml(result);
-				}, 500);
-			},
-			complete: function() {
-				$.fancybox.close(true);
-			}
-		})
+		ckeditor.setData("");
+		const id = Number($("#template-select-popup select").val());
+		const item = templates.filter(template => template.id === id);
+		setTimeout(() => {
+			ckeditor.insertHtml(item[0].text);
+			$.fancybox.close(true);
+		}, 150);
 	})
+
+	$("#btn-grapesjs-save-html").on("click", function(e) {
+		e.preventDefault();
+		const storeHTML = document.createElement("div");
+		const htmlEdited = editor.getHtml();
+		$(storeHTML).html(htmlEdited);
+		$(storeHTML).find(".temporary-data-src").each(function() {
+			const src = $(this).attr("src");
+			$(this).attr("data-src", src);
+			$(this).attr("src", "");
+			$(this).removeClass('temporary-data-src');
+		})
+		const newHTML = $(storeHTML).html();
+		$("#grapesjs-html").val(newHTML);
+		$(hiddenInput).val(newHTML);
+		$("#grapesjs-form").submit();
+	});
 
 }
 
