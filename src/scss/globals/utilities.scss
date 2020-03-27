@@ -1332,4 +1332,37 @@ body {
 	}
 }
 
+.gjs-mdl-container {
+	position: absolute;
+}
+
+#gjs-am-uploadFile {
+	opacity: 0;
+	padding: 150px 10px;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+#gjs-form-upload {
+	height: 325px;
+	position: relative;
+	margin-bottom: 15px;
+	border: 2px dashed;
+	border-radius: 3px;
+	background-color: rgba(0, 0, 0, .1);
+	text-align: center;
+}
+
+.gjs-am-assets {
+	height: 240px;
+}
+
+.gjs-am-close {
+	display: none !important;
+	visibility: hidden !important;
+	opacity: 0 !important;
+	pointer-events: none !important;
+	user-select: none!important;
+}
+
 // End Css cho GrapesJS

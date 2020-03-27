@@ -880,7 +880,7 @@ const editHTMLWithGrapesJS = () => {
 	const coreJS = window.location.origin + "/Content/resources/js/core.min.js";
 	const mainJS = window.location.origin + "/Content/resources/js/main.min.js";
 	const LocalStorage = window.localStorage;
-	LocalStorage.removeItem("templates")
+	LocalStorage.removeItem("templates");
 	let templates;
 	$("body").append(`
 		<div class="d-none">
@@ -897,22 +897,6 @@ const editHTMLWithGrapesJS = () => {
 			</div>
 		</div>
 	`);
-	if (!templates) {
-		const url = $("#btn-grapesjs-popup-select").attr("data-url")
-		$.ajax({
-			url: url,
-			type: 'get',
-			success: function(res) {
-				templates = res;
-				LocalStorage.setItem("templates", JSON.stringify(templates))
-				let optionsHTML = '';
-				templates.forEach(template => {
-					optionsHTML += `<option value="${template.Id}">${template.Name}</option>`;
-				});
-				$("#template-select-popup").find(".form-select select").append(optionsHTML);
-			}
-		});
-	}
 
 	const ckeditor = CKEDITOR.replace('grapesjs-ckeditor', {
 		allowedContent: true,
@@ -920,6 +904,30 @@ const editHTMLWithGrapesJS = () => {
 	})
 
 	const openPopupTemplate = () => {
+		templates = JSON.parse(LocalStorage.getItem("templates"));
+		console.log(templates);
+		if (!templates) {
+			const url = $("#btn-grapesjs-popup-select").attr("data-url")
+			$.ajax({
+				url: url,
+				type: 'get',
+				success: function(res) {
+					templates = res;
+					LocalStorage.setItem("templates", JSON.stringify(templates))
+					let optionsHTML = '';
+					templates.forEach(template => {
+						optionsHTML += `<option value="${template.Id}">${template.Name}</option>`;
+					});
+					$("#template-select-popup").find(".form-select select").html(optionsHTML);
+				}
+			});
+		} else {
+			let optionsHTML = '';
+			templates.forEach(template => {
+				optionsHTML += `<option value="${template.Id}">${template.Name}</option>`;
+			});
+			$("#template-select-popup").find(".form-select select").html(optionsHTML);
+		}
 		$.fancybox.open({
 			type: 'inline',
 			src: '#template-select-popup',
@@ -973,13 +981,13 @@ const editHTMLWithGrapesJS = () => {
 			processData: false,
 			contentType: false,
 			success: function(res) {
-				const imagesList = res.map(item => {
-					return item = {
-						src: item.Link,
-						name: item.Name,
-					}
-				})
-				editor.AssetManager.add(imagesList);
+				// const imagesList = res.map(item => {
+				// 	return item = {
+				// 		src: item.Link,
+				// 		name: item.Name,
+				// 	}
+				// })
+				// editor.AssetManager.add(imagesList);
 
 				var iframe = document.getElementById('upload');
 				iframe.src = iframe.src;
@@ -990,14 +998,18 @@ const editHTMLWithGrapesJS = () => {
 		if (editor.uploaderModified) {
 			return;
 		} else {
-
+			const modal = editor.Modal;
+			const modalBody = modal.getContentEl();
+			const uploader = $(modalBody).find('.gjs-am-file-uploader');
+			const insideFormHtml = $(uploader).find("form").html();
+			$(uploader).html(`<div id="gjs-form-upload">${insideFormHtml}</div>`);
+			const uploadForm = $(uploader).find("#gjs-form-upload");
+			const uploadInput = $(uploader).find("#gjs-am-uploadFile");
 			$.ajax({
 				url: "/get-files",
 				data: {
 					folder: dataFolder
 				},
-				processData: false,
-				contentType: false,
 				success: function(res) {
 					if (typeof(res) == "object") {
 						const imagesList = res.map(item => {
@@ -1010,28 +1022,12 @@ const editHTMLWithGrapesJS = () => {
 					}
 				}
 			})
-			const modal = editor.Modal;
-			const modalBody = modal.getContentEl();
-			const uploader = modalBody.querySelector('.gjs-am-file-uploader');
-			const uploadInput = modalBody.querySelector("#gjs-am-uploadFile");
-			var uploadForm = $(uploader).find("form").get(0);
 			uploadForm.ondrop = function(e) {
 				this.className = '';
 				e.preventDefault();
 				uploadFile(e);
 				return;
 			}
-			// change the id of the upload input
-			// this turns off the old change handler bound to that id
-			// (so that it no longer sends needless requests to /assets/upload)
-			// but also turns off the stylesheet so we have to replace the css
-			$(uploadInput).attr("id", "dummy");
-			$(uploadInput).css("opacity", "0")
-				.css("filter", "alpha(opacity=0)")
-				.css("padding", "150px 10px")
-				.css("width", "100%")
-				.css("box-sizing", "border-box");
-
 			$(uploadInput).change(uploadFile);
 			editor.uploaderModified = true;
 		}
