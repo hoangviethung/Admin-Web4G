@@ -1199,25 +1199,9 @@ span.flatpickr-weekday {
 
 // Css cho GrapesJS
 
-
 #grapes-html {
 	box-shadow: 0 0 8px rgba(black, .15);
 	border: 1px solid #c0c0c0;
-
-	[data-gjs-type="wrapper"] {
-		.list-item {
-			outline: 3px solid #3b97e3 !important;
-			background-color: rgba(#3b97e3, .3);
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			height: 100px;
-
-			&:before {
-				content: "Danh sách sản phẩm"
-			}
-		}
-	}
 }
 
 /* Theming */
