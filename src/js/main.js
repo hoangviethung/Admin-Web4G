@@ -879,8 +879,6 @@ const editHTMLWithGrapesJS = () => {
 	const mainCSS = window.location.origin + "/Content/resources/css/main.min.css";
 	const coreJS = window.location.origin + "/Content/resources/js/core.min.js";
 	const mainJS = window.location.origin + "/Content/resources/js/main.min.js";
-	const LocalStorage = window.localStorage;
-	LocalStorage.removeItem("templates");
 	let templates;
 	$("body").append(`
 		<div class="d-none">
@@ -904,30 +902,19 @@ const editHTMLWithGrapesJS = () => {
 	})
 
 	const openPopupTemplate = () => {
-		templates = JSON.parse(LocalStorage.getItem("templates"));
-		console.log(templates);
-		if (!templates) {
-			const url = $("#btn-grapesjs-popup-select").attr("data-url")
-			$.ajax({
-				url: url,
-				type: 'get',
-				success: function(res) {
-					templates = res;
-					LocalStorage.setItem("templates", JSON.stringify(templates))
-					let optionsHTML = '';
-					templates.forEach(template => {
-						optionsHTML += `<option value="${template.Id}">${template.Name}</option>`;
-					});
-					$("#template-select-popup").find(".form-select select").html(optionsHTML);
-				}
-			});
-		} else {
-			let optionsHTML = '';
-			templates.forEach(template => {
-				optionsHTML += `<option value="${template.Id}">${template.Name}</option>`;
-			});
-			$("#template-select-popup").find(".form-select select").html(optionsHTML);
-		}
+		const url = $("#btn-grapesjs-popup-select").attr("data-url")
+		$.ajax({
+			url: url,
+			type: 'get',
+			success: function(res) {
+				templates = res;
+				let optionsHTML = '<option disabled>-- Chọn giao diện --</option>';
+				templates.forEach(template => {
+					optionsHTML += `<option value="${template.Id}">${template.Name}</option>`;
+				});
+				$("#template-select-popup").find(".form-select select").html(optionsHTML);
+			}
+		});
 		$.fancybox.open({
 			type: 'inline',
 			src: '#template-select-popup',
