@@ -842,7 +842,6 @@ function fixedLisTab() {
 	const heightHeader = $('header').height();
 	const widthAside = $('aside').width();
 	const heightListTab = $('.block-list-tab .list-tab').outerHeight();
-	console.log(heightListTab);
 
 	$('.block-list-tab').css({
 		'padding-top': heightListTab + "px"

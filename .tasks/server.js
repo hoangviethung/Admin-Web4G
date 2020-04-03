@@ -10,7 +10,10 @@ import {
 	jsTask2,
 	jsTask3
 } from "./script"
-import pugTask from "./html"
+import {
+	pugTask,
+	pugTask2
+} from "./html"
 import cssCore from "./core-css"
 import cssTask from "./css"
 import {
@@ -59,10 +62,16 @@ export const server = () => {
 
 	watch([
 		"src/**.pug",
-		"src/components/**/**.pug"
+		"src/components/**/**.pug",
 	], {
 		delay: 750
 	}, series(pugTask));
+
+	watch([
+		"src/template-paper/**.pug",
+	], {
+		delay: 750
+	}, series(pugTask2));
 
 	watch([
 		"src/scss/**/**.scss"

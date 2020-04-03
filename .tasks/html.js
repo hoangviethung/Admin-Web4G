@@ -17,7 +17,7 @@ export const pugTask = () => {
 		glob = gulpConfig.filePath;
 	}
 	return src(glob)
-		.pipe(plumber(function (err) {
+		.pipe(plumber(function(err) {
 			console.log(err);
 			this.emit('end');
 		}))
@@ -27,4 +27,26 @@ export const pugTask = () => {
 		.pipe(dest('dist'));
 };
 
-module.exports = pugTask;
+export const pugTask2 = () => {
+	const gulpConfig = JSON.parse(readFileSync('config.json'));
+	let glob;
+	if (gulpConfig.build) {
+		glob = './src/template-paper/**.pug';
+	} else {
+		glob = gulpConfig.filePath;
+	}
+	return src(glob)
+		.pipe(plumber(function(err) {
+			console.log(err);
+			this.emit('end');
+		}))
+		.pipe(pug({
+			pretty: '\t',
+		}))
+		.pipe(dest('dist/template-paper'));
+};
+
+module.exports = {
+	pugTask,
+	pugTask2
+};
