@@ -1,77 +1,76 @@
 aside {
-	position           : fixed;
-	top                : 0;
-	left               : 0;
-	bottom             : 0;
-	width              : 280px;
-	height             : 100%;
-	max-height         : 100%;
-	color              : #ffffff;
-	transition         : .3s all ease-in-out;
-	transition-duration: .2s;
-	z-index            : 500;
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	width: 280px;
+	height: 100%;
+	max-height: 100%;
+	color: #ffffff;
+	transition: .3s all ease-in-out;
+	z-index: 500;
 
 	.sidebar-background {
-		position           : absolute;
-		z-index            : 1;
-		height             : 100%;
-		width              : 100%;
-		display            : block;
-		top                : 0;
-		left               : 0;
-		background-size    : cover;
+		position: absolute;
+		z-index: 1;
+		height: 100%;
+		width: 100%;
+		display: block;
+		top: 0;
+		left: 0;
+		background-size: cover;
 		background-position: center center;
-		background-image   : url(../assets/images/background/aside.png);
-		z-index            : -1;
+		background-image: url(../assets/images/background/aside.png);
+		z-index: -1;
 
 		&:after {
-			content   : '';
-			position  : absolute;
-			top       : 0;
-			left      : 0;
-			width     : 100%;
-			height    : 100%;
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
 			background: rgba($color: #000000, $alpha: .8);
 		}
 	}
 
 	.block-logo {
-		display        : flex;
+		display: flex;
 		justify-content: space-between;
-		padding        : 0 25px;
-		align-items    : center;
-		height         : 60px;
-		width          : 100%;
+		padding: 0 25px;
+		align-items: center;
+		height: 60px;
+		width: 100%;
 
 		img {
-			width  : 50%;
+			width: 50%;
 			opacity: .8;
 		}
 
 		.button-close {
-			cursor   : pointer;
-			position : relative;
-			display  : inline-block;
-			flex     : 0 0 24px;
+			cursor: pointer;
+			position: relative;
+			display: inline-block;
+			flex: 0 0 24px;
 			max-width: 24px;
-			height   : 15px;
+			height: 15px;
 
 			.line {
-				position     : absolute;
-				content      : '';
-				width        : 100%;
-				height       : 2px;
-				background   : #ffffff;
-				top          : 1px;
+				position: absolute;
+				content: '';
+				width: 100%;
+				height: 2px;
+				background: #ffffff;
+				top: 1px;
 				border-radius: 10px;
 
 				&:after,
 				&:before {
-					position     : absolute;
-					content      : '';
-					width        : 100%;
-					height       : 2px;
-					background   : #ffffff;
+					position: absolute;
+					content: '';
+					width: 100%;
+					height: 2px;
+					background: #ffffff;
 					border-radius: 10px;
 				}
 
@@ -80,15 +79,15 @@ aside {
 				}
 
 				&:before {
-					top       : 12px;
+					top: 12px;
 					transition: transform 0.275s cubic-bezier(0.68, -0.55, 0.265, 1.55), -webkit-transform 0.275s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 				}
 			}
 
 			&.active {
 				.line {
-					transform       : translate3d(0, 6px, 0) rotate(135deg);
-					transition      : transform 0.275s cubic-bezier(0.68, -0.55, 0.265, 1.55), -webkit-transform 0.275s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+					transform: translate3d(0, 6px, 0) rotate(135deg);
+					transition: transform 0.275s cubic-bezier(0.68, -0.55, 0.265, 1.55), -webkit-transform 0.275s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 					transition-delay: 0.075s;
 
 					&:after {
@@ -96,7 +95,7 @@ aside {
 					}
 
 					&:before {
-						top      : -6px;
+						top: -6px;
 						transform: translate3d(0, 6px, 0) rotate(90deg);
 					}
 				}
@@ -105,34 +104,34 @@ aside {
 	}
 
 	.aside-list {
-		padding    : 25px;
+		padding: 25px;
 		user-select: none;
-		height     : calc(100vh - 60px);
-		overflow-y : scroll;
+		height: calc(100vh - 60px);
+		overflow-y: scroll;
 
 		// MENU 2 CẤP
 		.aside-item {
 			margin: 15px 0;
 
 			.name {
-				position     : relative;
-				cursor       : pointer;
+				position: relative;
+				cursor: pointer;
 				border-radius: 3px;
-				padding      : 0 30px 0 35px;
-				transition   : .2s all ease-in-out;
+				padding: 0 30px 0 35px;
+				transition: .2s all ease-in-out;
 
 				.icon {
-					position : absolute;
-					top      : 50%;
-					left     : 5px;
+					position: absolute;
+					top: 50%;
+					left: 5px;
 					transform: translateY(-50%);
-					width    : 25px;
-					height   : 25px;
+					width: 25px;
+					height: 25px;
 
 					svg {
 						position: absolute;
-						width   : 100%;
-						height  : 100%;
+						width: 100%;
+						height: 100%;
 
 						path {
 							fill: #ffffff;
@@ -141,25 +140,25 @@ aside {
 				}
 
 				h5 {
-					font-size     : 13px;
-					font-weight   : 400;
-					line-height   : 35px;
+					font-size: 13px;
+					font-weight: 400;
+					line-height: 35px;
 					text-transform: capitalize;
 				}
 
 				&:after {
-					content   : '';
-					position  : absolute;
-					top       : 50%;
-					right     : 10px;
-					width     : 10px;
-					height    : 10px;
-					transform : translateY(-50%);
+					content: '';
+					position: absolute;
+					top: 50%;
+					right: 10px;
+					width: 10px;
+					height: 10px;
+					transform: translateY(-50%);
 					transition: .2s all ease-in-out;
 
-					background-image : url(../assets/images/icons/arrow-sub-menu.svg);
+					background-image: url(../assets/images/icons/arrow-sub-menu.svg);
 					background-repeat: no-repeat;
-					background-size  : cover;
+					background-size: cover;
 				}
 
 				&.active {
@@ -172,12 +171,12 @@ aside {
 					padding: 0 30px 0 45px;
 
 					h5 {
-						font-size  : 14px;
+						font-size: 14px;
 						line-height: 40px;
 					}
 
 					.icon {
-						width : 30px;
+						width: 30px;
 						height: 30px;
 					}
 				}
@@ -191,37 +190,37 @@ aside {
 
 			.list-link {
 				position: relative;
-				display : none;
+				display: none;
 
 				.link {
-					cursor     : pointer;
-					color      : #ffffff;
+					cursor: pointer;
+					color: #ffffff;
 					line-height: 30px;
 
 					>a {
-						font-size    : 13px;
-						display      : block;
-						padding      : 0 10px;
-						transition   : .2s all ease-in-out;
+						font-size: 13px;
+						display: block;
+						padding: 0 10px;
+						transition: .2s all ease-in-out;
 						border-radius: 3px;
 					}
 
 					&:after {
-						content         : '';
-						width           : 2px;
-						height          : 100%;
+						content: '';
+						width: 2px;
+						height: 100%;
 						background-color: rgba(200, 200, 200, .2);
-						position        : absolute;
-						left            : 20px;
-						top             : 0;
-						border-radius   : 15px;
+						position: absolute;
+						left: 20px;
+						top: 0;
+						border-radius: 15px;
 					}
 
 					@media (min-width: 1025px) {
 						&:hover {
 							>a {
-								color           : #ffffffff;
-								text-decoration : none;
+								color: #ffffffff;
+								text-decoration: none;
 								background-color: rgba(200, 200, 200, .2);
 							}
 						}
@@ -264,13 +263,13 @@ aside {
 					padding: 0;
 
 					.icon {
-						left     : 50%;
+						left: 50%;
 						transform: translate(-50%, -50%);
 					}
 
 					h5 {
 						opacity: 0;
-						width  : 0;
+						width: 0;
 					}
 
 					&:after {
@@ -280,7 +279,7 @@ aside {
 
 				.list-link {
 					opacity: 0;
-					height : 0;
+					height: 0;
 					padding: 0;
 				}
 			}

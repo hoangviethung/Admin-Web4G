@@ -1,0 +1,20 @@
+﻿@model MainProject.SBussiness.Admin.Models.FilterViewModel
+
+<div class="filter">
+    <form action="/Admin/CategoryAdmin">
+        <div class="form-row">
+            <div class="col-lg-3 form-group">
+                <label>Ngôn ngữ</label>
+                <div class="input-group shadow-sm">
+                    @Html.DropDownList("languageId", Model.LanguageViewModel.Languages, new { @class = "form-control", @onchange = "changeLanguage(this.value)" })
+                </div>
+            </div>
+            <div class="col-lg-3 form-group">
+                <label class="text-center">Danh mục</label>
+                <div class="input-group shadow-sm">
+                    @Html.DropDownList("fa", Model.FatherSelectModel.Fathers, new { @class = "form-control", @onchange = "form.submit()" })
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

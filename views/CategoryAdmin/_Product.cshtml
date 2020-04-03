@@ -1,0 +1,37 @@
+﻿@{
+    Layout = null;
+}
+@model MainProject.SBussiness.Admin.Models.Category.ProductManageViewModel
+
+<tr>
+    <td>
+        @Html.Hidden(Model.PropertyName + "[" + Model.Position + "].Id", Model.Id, new { @class = "form-control" })
+        @Html.Hidden(Model.PropertyName + "[" + Model.Position + "].IsDeleted", Model.IsDeleted)
+        @Model.Position
+    </td>
+    <td>
+        <div class="form-group mb-0">
+            <div class="input-group shadow-sm">
+                @Html.DropDownListFor(d => d.ProductSelectedId, Model.Products, new { @class = "form-control", @Name = Model.PropertyName + "[" + Model.Position + "].ProductSelectedId" })
+                
+            </div>
+            @Html.ValidationMessage(Model.PropertyName + "[" + Model.Position + "].ProductSelectedId")
+        </div>
+    </td>
+    <td>
+        <div class="form-group mb-0">
+            <div class="input-group shadow-sm">
+                @Html.TextBoxFor(d => d.Order, new { @class = "form-control", @Name = Model.PropertyName + "[" + Model.Position + "].Order", @type = "number" })
+            </div>
+            @Html.ValidationMessage(Model.PropertyName + "[" + Model.Position + "].Order")
+        </div>
+    </td>
+    <td class="text-center">
+        <button class="btn btn-outline-danger" type="button"
+                onclick="$(this).parents('tr:first').find('input[name=\'@(Model.PropertyName + "[" + Model.Position)].IsDeleted\']').val(true);
+                        $(this).parents('tr:first').hide();
+                        $(this).parents('tr:first').find('input[type=\'text\']').each(function (i) { $(this).val('Deleted'); })">
+            Xóa
+        </button>
+    </td>
+</tr>

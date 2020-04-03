@@ -1,29 +1,33 @@
 {
 	"Code": 200,
-	"Templates": [
-		{
+	"Templates": [{
 			"id": 1,
+			"name": "Template 1",
 			"text": "test 1",
 			"image": "./assets/images/block-buttons.png"
 		},
 		{
 			"id": 2,
+			"name": "Template 2",
 			"text": "test 2",
 			"image": "./assets/images/ck-editor.png"
 		},
 		{
 			"id": 3,
+			"name": "Template 3",
 			"text": "test 3",
 			"image": "./assets/images/input.png"
 		},
 		{
 			"id": 4,
+			"name": "Template 4",
 			"text": "test 4",
 			"image": "./assets/images/multi-select.png"
 		},
 		{
 			"id": 5,
-			"text": "test 5",
+			"name": "Template 5",
+			"text": "<p>as dasd asd asd asd</p><h5>test<b>QUan</b></h5>",
 			"image": "./assets/images/normal-buttons.png"
 		}
 	]

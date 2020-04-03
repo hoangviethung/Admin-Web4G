@@ -1199,9 +1199,35 @@ span.flatpickr-weekday {
 	}
 }
 
-#grapesjs {
-	border    : 1px solid #444;
+// Css cho GrapesJS
+
+#grapes-html {
 	box-shadow: 0 0 8px rgba(black, .15);
+	border: 1px solid #c0c0c0;
+}
+
+/* Theming */
+
+/* Primary color for the background */
+.gjs-one-bg {
+	background-color: #78366a;
+}
+
+/* Secondary color for the text color */
+.gjs-two-color {
+	color: rgba(255, 255, 255, 0.7);
+}
+
+/* Tertiary color for the background */
+.gjs-three-bg {
+	background-color: #ec5896;
+	color: white;
+}
+
+/* Quaternary color for the text color */
+.gjs-four-color,
+.gjs-four-color-h:hover {
+	color: #ec5896;
 }
 
 /* Reset some default styling */
@@ -1210,3 +1236,135 @@ span.flatpickr-weekday {
 	width : 100%;
 	height: 100%;
 }
+
+.gjs-plh-image {
+	&.ofcv {
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.grapesjs-popup-wrapper {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.grapesjs-import-panels {
+	background-color: white;
+	padding: 15px;
+	display: flex;
+}
+
+#btn-grapesjs-popup-discard {
+	margin-left: 15px;
+}
+
+#btn-grapesjs-popup-save {
+	margin-left: auto;
+}
+
+#btn-grapesjs-save-html {
+	margin-left: auto;
+}
+
+.grapesjs-import-content {
+	-ms-flex-preferred-size: 0;
+	-ms-flex-positive: 1;
+	-webkit-box-flex: 1;
+	flex-basis: 0;
+	flex-grow: 1;
+	max-width: 100%;
+}
+
+#grapesjs-popup {
+	opacity: 0 !important;
+	visibility: hidden;
+	position: fixed;
+	top: 60px;
+	right: 0;
+	bottom: 0;
+	transform: scale(.5);
+	background-color: rgba(black, .9);
+	transition: all .3s ease-in-out;
+	transform-origin: 50% 50%;
+	z-index: 10;
+	padding: 20px;
+
+	&.active {
+		opacity: 1 !important;
+		visibility: visible;
+		transform: scale(1);
+	}
+}
+
+body {
+	#grapesjs-popup {
+		left: 280px;
+	}
+
+	&.active {
+		#grapesjs-popup {
+			left: 80px;
+		}
+	}
+}
+
+.cke_editor_grapesjs-ckeditor.cke_reset {
+	height: 100%;
+
+	.cke_top {
+		min-height: 100px;
+		-ms-flex-preferred-size: 0;
+		-ms-flex-positive: 1;
+		-webkit-box-flex: 1;
+		flex-basis: 0;
+		flex-grow: 1;
+		max-width: 100%;
+	}
+
+	.cke_inner {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+	}
+
+	.cke_contents {
+		height: 100% !important;
+	}
+}
+
+.gjs-mdl-container {
+	position: absolute;
+}
+
+#gjs-am-uploadFile {
+	opacity: 0;
+	padding: 150px 10px;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+#gjs-form-upload {
+	height: 325px;
+	position: relative;
+	margin-bottom: 15px;
+	border: 2px dashed;
+	border-radius: 3px;
+	background-color: rgba(0, 0, 0, .1);
+	text-align: center;
+}
+
+.gjs-am-assets {
+	height: 240px;
+}
+
+.gjs-am-close {
+	display: none !important;
+	visibility: hidden !important;
+	opacity: 0 !important;
+	pointer-events: none !important;
+	user-select: none!important;
+}
+
+// End Css cho GrapesJS
