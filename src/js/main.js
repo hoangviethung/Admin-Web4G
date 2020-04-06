@@ -871,6 +871,51 @@ function fixedLisTab() {
 	})
 }
 
+// KHÓA 1 NGÔN NGỮ KHI SẢN PHẨM CHƯA CÓ TIẾNG ANH (HOẶC TIẾNG VIỆT)
+function lockOneLanguageWhenCheckBox() {
+	function CopyValue() {
+		$('[data-copy]').each(function() {
+			let name = $(this).attr('data-copy')
+			let value = $(this).val();
+			$(`[data-past=${name}]`).val(value)
+		})
+	}
+
+	$('input[name="lock-language"]').on('change', function() {
+		const dataLock = $(this).attr('data-lock');
+		if ($(this)[0].checked === true) {
+			$('[data-lock-language]').each(function() {
+				if (dataLock === $(this).attr('data-lock-language')) {
+					$(this).css({
+						'pointer-events': 'none',
+						'opacity': '0.5'
+					})
+					$(this).find('input, textarea , select , checkbox').not('.copyValue').val('');
+					$(this).find('input, textarea , select , checkbox').attr('readonly', true);
+				} else {
+					$(this).find('input, textarea , select , checkbox').attr('readonly', true);
+				}
+			});
+			// call here
+			CopyValue()
+
+		} else {
+			$('[data-lock-language]').each(function() {
+				if (dataLock === $(this).attr('data-lock-language')) {
+					$(this).css({
+						'pointer-events': 'visible',
+						'opacity': '1'
+					})
+					$(this).find('input, textarea , select , checkbox').val('');
+					$(this).find('input, textarea , select , checkbox').attr('readonly', false);
+				} else {
+					$(this).find('input, textarea , select , checkbox').attr('readonly', false);
+				}
+			})
+		}
+	});
+}
+
 const editHTMLWithGrapesJS = () => {
 	const GrapesJS = $("#grapes-html");
 	const dataFolder = $("#ImageFolder").val();
@@ -1115,6 +1160,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	// lấy file name khi chọn file upload
 	getFileNameWhenChooseFileUpload();
 	fixedLisTab();
+	lockOneLanguageWhenCheckBox();
 	editHTMLWithGrapesJS();
 });
 

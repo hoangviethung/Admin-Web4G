@@ -1,0 +1,147 @@
+.main__inner
+	.page-title
+		.page-title-wrapper
+			.page-title-heading
+				.page-title-icon
+					img.svg(src="./assets/images/icons/document.svg", alt="")
+				.page-title-content
+					h3 Thêm sản phẩm
+					p Tại đây các Developer Web4gsolutions có thể thêm sản phẩm với chức năng chọn 1 trong 2 hoặc cả 2 ngông ngữ
+	.row
+		.block-main.shadow-sm.col-lg-12
+			.tab-container
+				.block-list-tab
+					ul.list-tab
+						li.item(toggle-for="item-1") Nội dung bài viết
+						li.item(toggle-for="item-2") Hình ảnh
+				.tab-content
+					// THÔNG TIN SẢN PHẨM
+					.content(tab-id="item-1")
+						.block-form
+							.form-row
+								.form-group.col-lg-4
+									label Danh mục sản phẩm
+									.input-group.shadow-sm
+										select.form-control
+											option Select 1
+											option Select 2
+											option Select 3
+								.form-group.col-lg-4
+									label Thương hiệu
+									.input-group.shadow-sm
+										select.form-control
+											option Select 1
+											option Select 2
+											option Select 3
+								.w-100
+								.form-group.col-lg-4
+									label Mã sản phẩm
+									.input-group.shadow-sm
+										input.form-control(placeholder="Nhập mã sản phẩm")
+								.w-100
+								.form-group.col-lg-4
+									label Ảnh đại diện
+									.input-group.shadow-sm
+										input.form-control(placeholder="Chọn ảnh đại diện")
+								.w-100
+								.form-group.col-lg-4
+									label Giá
+									.input-group.shadow-sm
+										input.form-control(type="number" placeholder="Nhập giá sản phẩm")
+								.w-100
+								.form-group.col-lg-4
+									label Ngày đăng
+									.input-group.shadow-sm
+										input.form-control.date-picker
+						.block-subTab.mt-5
+							.tab-container
+								.block-list-tab
+									ul.list-tab
+										li.item(data-lock-language="vi" subtab-toggle-for="sub-item-1") Vietnamese
+										li.item(data-lock-language="en" subtab-toggle-for="sub-item-2") English
+								.tab-content
+									.content(data-lock-language="vi" sub-tab-id="sub-item-1")
+										.block-form
+											.form-row
+												.form-group.col-lg-4
+													.input-custom
+														label Sản phẩm chưa có Tiếng Anh
+														._checkbox-normal.color-2
+															label
+																input(name="lock-language" data-lock="en" type="checkbox")
+													label.mt-2.text-danger Lưu ý*: Chỉ chọn sau khi hoàn tất nhập liệu xong Tiếng Việt
+												.w-100
+												.form-group.col-lg-4
+													label Đường dẫn sản phẩm
+													.input-group.shadow-sm
+														.input-group-prepend.url-default
+															span.input-group-text
+														input.form-control.copyValue(data-copy="url-product" type='text')
+												.form-group.col-lg-4
+													label Đường dẫn mới
+													.input-group.shadow-sm
+														input.form-control(type='text')
+												.w-100
+												.form-group.col-lg-4
+													label Tên sản phẩm
+													.input-group.shadow-sm
+														input.form-control.copyValue(data-copy="name-product" type='text')
+												.w-100
+												.form-group.col-lg-8
+													label Mô tả
+													.input-group
+														textarea.form-control(rows='3' placeholder="Nhập nội dung")
+												.w-100
+												.form-group
+													label Nội dung
+													textarea.ck-editor#ckeditor-1(name="ckeditor-1")
+												.w-100
+												.form-group
+													label Chi tiết kĩ thuật
+													textarea.ck-editor#ckeditor-2(name="ckeditor-2")
+									.content(data-lock-language="en" sub-tab-id="sub-item-2")
+										.block-form
+											.form-row
+												.form-group.col-lg-4
+													label Đường dẫn sản phẩm 
+														|
+														span.text-success.fw-700 (English)
+													.input-group.shadow-sm
+														.input-group-prepend.url-default
+															span.input-group-text
+														input.form-control.copyValue(data-past="url-product" type='text')
+												.form-group.col-lg-4
+													label Đường dẫn mới 
+														|
+														span.text-success.fw-700 (English)
+													.input-group.shadow-sm
+														input.form-control(type='text')
+												.w-100
+												.form-group.col-lg-4
+													label Tên sản phẩm 
+														|
+														span.text-success.fw-700 (English)
+													.input-group.shadow-sm
+														input.form-control.copyValue(data-past="name-product" type='text')
+												.w-100
+												.form-group.col-lg-8
+													label Mô tả 
+														|
+														span.text-success.fw-700 (English)
+													.input-group
+														textarea.form-control(rows='3' placeholder="Nhập nội dung")
+												.w-100
+												.form-group
+													label Nội dung 
+														|
+														span.text-success.fw-700 (English)
+													textarea.ck-editor#ckeditor-3(name="ckeditor-3")
+												.w-100
+												.form-group
+													label Chi tiết kĩ thuật 
+														|
+														span.text-success.fw-700 (English)
+													textarea.ck-editor#ckeditor-4(name="ckeditor-4")
+					// THÊM HÌNH ẢNH CỦA SẢN PHẨM
+					.content(tab-id="item-2")
+						iframe(src="./dropzone.html",frameborder="0", width="100%" height="750px")

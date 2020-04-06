@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Admin | Input &amp; Selects</title>
+		<title>Trang mẫu thêm sản phẩm</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -145,10 +145,10 @@
 				<div class="page-title">
 					<div class="page-title-wrapper">
 						<div class="page-title-heading">
-							<div class="page-title-icon"><img class="svg" src="./assets/images/icons/document.svg" alt="" srcset=""></div>
+							<div class="page-title-icon"><img class="svg" src="./assets/images/icons/document.svg" alt=""></div>
 							<div class="page-title-content">
-								<h3>Input & Select</h3>
-								<p>Tại đây các Developer Web4gsolutions có thể tham khảo các Input & Select hiện có để dễ dàng tạo trang.</p>
+								<h3>Thêm sản phẩm</h3>
+								<p>Tại đây các Developer Web4gsolutions có thể thêm sản phẩm với chức năng chọn 1 trong 2 hoặc cả 2 ngông ngữ</p>
 							</div>
 						</div>
 					</div>
@@ -158,208 +158,185 @@
 						<div class="tab-container">
 							<div class="block-list-tab">
 								<ul class="list-tab">
-									<li class="item acitve" toggle-for="item-1">Input</li>
-									<li class="item" toggle-for="item-2">Select</li>
-									<li class="item" toggle-for="item-3">Textarea</li>
-									<li class="item" toggle-for="item-4">Multiple Selection</li>
-									<li class="item" toggle-for="item-5">Validation</li>
+									<li class="item" toggle-for="item-1">Nội dung bài viết</li>
+									<li class="item" toggle-for="item-2">Hình ảnh</li>
 								</ul>
 							</div>
 							<div class="tab-content">
+								<!-- THÔNG TIN SẢN PHẨM-->
 								<div class="content" tab-id="item-1">
-									<div class="row">
-										<div class="col-lg-6 mb-4">
-											<div class="card shadow-sm">
-												<div class="card-header">
-													<div class="card-header-title">
-														<h3>Input</h3>
-													</div>
+									<div class="block-form">
+										<div class="form-row">
+											<div class="form-group col-lg-4">
+												<label>Danh mục sản phẩm</label>
+												<div class="input-group shadow-sm">
+													<select class="form-control">
+														<option>Select 1</option>
+														<option>Select 2</option>
+														<option>Select 3</option>
+													</select>
 												</div>
-												<div class="card-body">
-													<div class="block-form">
-														<div class="form-row">
-															<div class="form-group col-lg-12">
-																<label>Input Type Text</label>
-																<div class="input-group shadow-sm">
-																	<input class="form-control" placeholder="Input Type Text">
-																</div>
-															</div>
-															<!-- XUỐNG DÒNG NHANH = div(class="w-100")-->
-															<div class="w-100"></div>
-															<div class="form-group col-lg-12">
-																<label>Input Type Number</label>
-																<div class="input-group shadow-sm">
-																	<input class="form-control" type="number" min="1" value="0">
-																</div>
-															</div>
-														</div>
-													</div>
+											</div>
+											<div class="form-group col-lg-4">
+												<label>Thương hiệu</label>
+												<div class="input-group shadow-sm">
+													<select class="form-control">
+														<option>Select 1</option>
+														<option>Select 2</option>
+														<option>Select 3</option>
+													</select>
 												</div>
-											</div><code><img src="./assets/previewHTML/input.png" alt="" srcset=""></code>
-										</div>
-										<div class="col-lg-6 mb-4">
-											<div class="card shadow-sm">
-												<div class="card-header">
-													<div class="card-header-title">
-														<h3>Datepicker</h3>
-													</div>
+											</div>
+											<div class="w-100"></div>
+											<div class="form-group col-lg-4">
+												<label>Mã sản phẩm</label>
+												<div class="input-group shadow-sm">
+													<input class="form-control" placeholder="Nhập mã sản phẩm">
 												</div>
-												<div class="card-body">
-													<div class="block-form">
-														<div class="form-row">
-															<div class="form-group col-lg-12">
-																<label>Input Type Date</label>
-																<div class="input-group shadow-sm">
-																	<input class="form-control date-picker">
-																</div>
-															</div>
-														</div>
-													</div>
+											</div>
+											<div class="w-100"></div>
+											<div class="form-group col-lg-4">
+												<label>Ảnh đại diện</label>
+												<div class="input-group shadow-sm">
+													<input class="form-control" placeholder="Chọn ảnh đại diện">
 												</div>
-											</div><code><img src="./assets/previewHTML/date-picker.png" alt="" srcset=""></code>
+											</div>
+											<div class="w-100"></div>
+											<div class="form-group col-lg-4">
+												<label>Giá</label>
+												<div class="input-group shadow-sm">
+													<input class="form-control" type="number" placeholder="Nhập giá sản phẩm">
+												</div>
+											</div>
+											<div class="w-100"></div>
+											<div class="form-group col-lg-4">
+												<label>Ngày đăng</label>
+												<div class="input-group shadow-sm">
+													<input class="form-control date-picker">
+												</div>
+											</div>
 										</div>
 									</div>
-								</div>
-								<div class="content" tab-id="item-2">
-									<div class="row">
-										<div class="col-lg-6 mb-4">
-											<div class="card shadow-sm">
-												<div class="card-header">
-													<div class="card-header-title">
-														<h3>Select</h3>
-													</div>
-												</div>
-												<div class="card-body">
+									<div class="block-subTab mt-5">
+										<div class="tab-container">
+											<div class="block-list-tab">
+												<ul class="list-tab">
+													<li class="item" data-lock-language="vi" subtab-toggle-for="sub-item-1">Vietnamese</li>
+													<li class="item" data-lock-language="en" subtab-toggle-for="sub-item-2">English</li>
+												</ul>
+											</div>
+											<div class="tab-content">
+												<div class="content" data-lock-language="vi" sub-tab-id="sub-item-1">
 													<div class="block-form">
 														<div class="form-row">
-															<div class="form-group col-lg-12">
-																<label>Select Option (Normal)</label>
-																<div class="input-group shadow-sm">
-																	<select class="form-control">
-																		<option>Select 1</option>
-																		<option>Select 2</option>
-																		<option>Select 3</option>
-																	</select>
+															<div class="form-group col-lg-4">
+																<div class="input-custom">
+																	<label>Sản phẩm chưa có Tiếng Anh</label>
+																	<div class="_checkbox-normal color-2">
+																		<label>
+																			<input name="lock-language" data-lock="en" type="checkbox">
+																		</label>
+																	</div>
 																</div>
+																<label class="mt-2 text-danger">Lưu ý*: Chỉ chọn sau khi hoàn tất nhập liệu xong Tiếng Việt</label>
 															</div>
-														</div>
-													</div>
-												</div>
-											</div><code><img src="./assets/previewHTML/select.png" alt="" srcset=""></code>
-										</div>
-										<div class="col-lg-6 mb-4">
-											<div class="card shadow-sm">
-												<div class="card-header">
-													<div class="card-header-title">
-														<h3>Select Url Page</h3>
-													</div>
-												</div>
-												<div class="card-body">
-													<div class="block-form">
-														<div class="form-row">
-															<div class="form-group col-lg-6">
-																<label>Select Url Page</label>
-																<div class="input-group shadow-sm">
-																	<select class="form-control chooseUrlPage">
-																		<option data-url="/trangchu">Trang chủ</option>
-																		<option selected data-url="/gioithieu">Giới thiệu</option>
-																		<option data-url="/lienhe">Liên hệ</option>
-																	</select>
-																</div>
-															</div>
-															<div class="form-group col-lg-6">
-																<label>Input Type Link có Select Filter</label>
+															<div class="w-100"></div>
+															<div class="form-group col-lg-4">
+																<label>Đường dẫn sản phẩm</label>
 																<div class="input-group shadow-sm">
 																	<div class="input-group-prepend url-default"><span class="input-group-text"></span></div>
+																	<input class="form-control copyValue" data-copy="url-product" type="text">
+																</div>
+															</div>
+															<div class="form-group col-lg-4">
+																<label>Đường dẫn mới</label>
+																<div class="input-group shadow-sm">
 																	<input class="form-control" type="text">
 																</div>
 															</div>
-														</div>
-													</div>
-												</div>
-											</div><code><img src="./assets/previewHTML/select-url-page.png" alt="" srcset=""></code>
-										</div>
-									</div>
-								</div>
-								<div class="content" tab-id="item-3">
-									<div class="row">
-										<div class="col-lg-6 mb-4">
-											<div class="card shadow-sm">
-												<div class="card-header">
-													<div class="card-header-title">
-														<h3>Textarea</h3>
-													</div>
-												</div>
-												<div class="card-body">
-													<div class="block-form">
-														<div class="form-row">
-															<div class="form-group col-lg-12">
-																<label>Textarea</label>
+															<div class="w-100"></div>
+															<div class="form-group col-lg-4">
+																<label>Tên sản phẩm</label>
+																<div class="input-group shadow-sm">
+																	<input class="form-control copyValue" data-copy="name-product" type="text">
+																</div>
+															</div>
+															<div class="w-100"></div>
+															<div class="form-group col-lg-8">
+																<label>Mô tả</label>
 																<div class="input-group">
 																	<textarea class="form-control" rows="3" placeholder="Nhập nội dung"></textarea>
 																</div>
 															</div>
+															<div class="w-100"></div>
+															<div class="form-group">
+																<label>Nội dung</label>
+																<textarea class="ck-editor" id="ckeditor-1" name="ckeditor-1"></textarea>
+															</div>
+															<div class="w-100"></div>
+															<div class="form-group">
+																<label>Chi tiết kĩ thuật</label>
+																<textarea class="ck-editor" id="ckeditor-2" name="ckeditor-2"></textarea>
+															</div>
 														</div>
 													</div>
-												</div><code><img src="./assets/previewHTML/textarea.png" alt="" srcset=""></code>
+												</div>
+												<div class="content" data-lock-language="en" sub-tab-id="sub-item-2">
+													<div class="block-form">
+														<div class="form-row">
+															<div class="form-group col-lg-4">
+																<label>
+																	Đường dẫn sản phẩm <span class="text-success fw-700">(English)</span></label>
+																<div class="input-group shadow-sm">
+																	<div class="input-group-prepend url-default"><span class="input-group-text"></span></div>
+																	<input class="form-control copyValue" data-past="url-product" type="text">
+																</div>
+															</div>
+															<div class="form-group col-lg-4">
+																<label>
+																	Đường dẫn mới <span class="text-success fw-700">(English)</span></label>
+																<div class="input-group shadow-sm">
+																	<input class="form-control" type="text">
+																</div>
+															</div>
+															<div class="w-100"></div>
+															<div class="form-group col-lg-4">
+																<label>
+																	Tên sản phẩm <span class="text-success fw-700">(English)</span></label>
+																<div class="input-group shadow-sm">
+																	<input class="form-control copyValue" data-past="name-product" type="text">
+																</div>
+															</div>
+															<div class="w-100"></div>
+															<div class="form-group col-lg-8">
+																<label>
+																	Mô tả <span class="text-success fw-700">(English)</span></label>
+																<div class="input-group">
+																	<textarea class="form-control" rows="3" placeholder="Nhập nội dung"></textarea>
+																</div>
+															</div>
+															<div class="w-100"></div>
+															<div class="form-group">
+																<label>
+																	Nội dung <span class="text-success fw-700">(English)</span></label>
+																<textarea class="ck-editor" id="ckeditor-3" name="ckeditor-3"></textarea>
+															</div>
+															<div class="w-100"></div>
+															<div class="form-group">
+																<label>
+																	Chi tiết kĩ thuật <span class="text-success fw-700">(English)</span></label>
+																<textarea class="ck-editor" id="ckeditor-4" name="ckeditor-4"></textarea>
+															</div>
+														</div>
+													</div>
+												</div>
 											</div>
 										</div>
 									</div>
 								</div>
-								<div class="content" tab-id="item-4">
-									<div class="row">
-										<div class="col-lg-6 mb-4">
-											<div class="card shadow-sm">
-												<div class="card-header">
-													<div class="card-header-title">
-														<h3>Multiple Selection</h3>
-													</div>
-												</div>
-												<div class="card-body">
-													<div class="block-form">
-														<div class="form-row">
-															<div class="form-group col-lg-12">
-																<label>Multiple Selection</label>
-																<div class="input-custom">
-																	<select class="_select-custom" name="" multiple>
-																		<option value="1" selected>1</option>
-																		<option value="1">2</option>
-																		<option value="1" selected>3</option>
-																		<option value="1">4</option>
-																	</select>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div><code><img src="./assets/previewHTML/multiple-select.png" alt="" srcset=""></code>
-										</div>
-									</div>
-								</div>
-								<div class="content" tab-id="item-5">
-									<div class="row">
-										<div class="col-lg-6 mb-4">
-											<div class="card shadow-sm">
-												<div class="card-header">
-													<div class="card-header-title">
-														<h3>Validation</h3>
-													</div>
-												</div>
-												<div class="card-body">
-													<div class="block-form">
-														<div class="form-row">
-															<div class="form-group col-lg-12">
-																<label>Bắt lỗi</label>
-																<div class="input-group shadow-sm">
-																	<input class="input-validation-error form-control" placeholder="Hãy nhập sai">
-																</div><span class="field-validation-error">Sai mật khẩu</span>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div><code><img src="./assets/previewHTML/validation.png" alt="" srcset=""></code>
-										</div>
-									</div>
+								<!-- THÊM HÌNH ẢNH CỦA SẢN PHẨM-->
+								<div class="content" tab-id="item-2">
+									<iframe src="./dropzone.html" frameborder="0" width="100%" height="750px"></iframe>
 								</div>
 							</div>
 						</div>
