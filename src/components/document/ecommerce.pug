@@ -53,6 +53,14 @@
 									label Ngày đăng
 									.input-group.shadow-sm
 										input.form-control.date-picker
+								.w-100
+								.form-group.col-lg-4
+									.input-custom
+										label Sản phẩm chưa có Tiếng Anh
+										._checkbox-normal.color-2
+											label
+												input(name="lock-language" data-lock="en" type="checkbox")
+									label.mt-2.text-danger Lưu ý*: Chỉ chọn sau khi hoàn tất nhập liệu xong Tiếng Việt
 						.block-subTab.mt-5
 							.tab-container
 								.block-list-tab
@@ -64,19 +72,11 @@
 										.block-form
 											.form-row
 												.form-group.col-lg-4
-													.input-custom
-														label Sản phẩm chưa có Tiếng Anh
-														._checkbox-normal.color-2
-															label
-																input(name="lock-language" data-lock="en" type="checkbox")
-													label.mt-2.text-danger Lưu ý*: Chỉ chọn sau khi hoàn tất nhập liệu xong Tiếng Việt
-												.w-100
-												.form-group.col-lg-4
 													label Đường dẫn sản phẩm
 													.input-group.shadow-sm
 														.input-group-prepend.url-default
 															span.input-group-text
-														input.form-control.copyValue(data-copy="url-product" type='text')
+														input.form-control(type='text')
 												.form-group.col-lg-4
 													label Đường dẫn mới
 													.input-group.shadow-sm
@@ -85,7 +85,7 @@
 												.form-group.col-lg-4
 													label Tên sản phẩm
 													.input-group.shadow-sm
-														input.form-control.copyValue(data-copy="name-product" type='text')
+														input.form-control(type='text')
 												.w-100
 												.form-group.col-lg-8
 													label Mô tả
@@ -109,7 +109,7 @@
 													.input-group.shadow-sm
 														.input-group-prepend.url-default
 															span.input-group-text
-														input.form-control.copyValue(data-past="url-product" type='text')
+														input.form-control(type='text')
 												.form-group.col-lg-4
 													label Đường dẫn mới 
 														|
@@ -122,7 +122,7 @@
 														|
 														span.text-success.fw-700 (English)
 													.input-group.shadow-sm
-														input.form-control.copyValue(data-past="name-product" type='text')
+														input.form-control(type='text')
 												.w-100
 												.form-group.col-lg-8
 													label Mô tả 

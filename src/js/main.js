@@ -873,32 +873,27 @@ function fixedLisTab() {
 
 // KHÓA 1 NGÔN NGỮ KHI SẢN PHẨM CHƯA CÓ TIẾNG ANH (HOẶC TIẾNG VIỆT)
 function lockOneLanguageWhenCheckBox() {
-	function CopyValue() {
-		$('[data-copy]').each(function() {
-			let name = $(this).attr('data-copy')
-			let value = $(this).val();
-			$(`[data-past=${name}]`).val(value)
-		})
-	}
+	// CHECK BAN ĐẦU
+	function checkWhenDocumentReady() {
+		const dataLock = $('input[name="lock-language"]').attr('data-lock');
 
-	$('input[name="lock-language"]').on('change', function() {
-		const dataLock = $(this).attr('data-lock');
-		if ($(this)[0].checked === true) {
+		if ($('input[name="lock-language"]')[0].checked === true) {
 			$('[data-lock-language]').each(function() {
 				if (dataLock === $(this).attr('data-lock-language')) {
 					$(this).css({
 						'pointer-events': 'none',
 						'opacity': '0.5'
 					})
-					$(this).find('input, textarea , select , checkbox').not('.copyValue').val('');
 					$(this).find('input, textarea , select , checkbox').attr('readonly', true);
+					// COPY DATA
+					for (let i = 0; i < $(this).find("input[type!='hidden']").length; i++) {
+						const dataCopy = $('[data-lock-language]').not(this).find("input[type!='hidden']")[i].value;
+						$(this).find("input[type!='hidden']")[i].value = dataCopy
+					}
 				} else {
 					$(this).find('input, textarea , select , checkbox').attr('readonly', true);
 				}
 			});
-			// call here
-			CopyValue()
-
 		} else {
 			$('[data-lock-language]').each(function() {
 				if (dataLock === $(this).attr('data-lock-language')) {
@@ -913,7 +908,50 @@ function lockOneLanguageWhenCheckBox() {
 				}
 			})
 		}
-	});
+	}
+	// CHECK KHI CLICKS
+	function checkWhenClick() {
+		$('input[name="lock-language"]').on('change', function() {
+			const dataLock = $(this).attr('data-lock');
+			if ($(this)[0].checked === true) {
+				$('[data-lock-language]').each(function() {
+					if (dataLock === $(this).attr('data-lock-language')) {
+						$(this).css({
+							// 'pointer-events': 'none',
+							'opacity': '0.5'
+						})
+						$(this).find('input, textarea , select , checkbox').attr('readonly', true);
+						// COPY DATA
+						for (let i = 0; i < $(this).find("input[type!='hidden']").length; i++) {
+							const dataCopy = $('[data-lock-language]').not(this).find("input[type!='hidden']")[i].value;
+							$(this).find("input[type!='hidden']")[i].value = dataCopy
+						}
+					} else {
+						$(this).find('input, textarea , select , checkbox').attr('readonly', true);
+					}
+				});
+			} else {
+				$('[data-lock-language]').each(function() {
+					if (dataLock === $(this).attr('data-lock-language')) {
+						$(this).css({
+							'pointer-events': 'visible',
+							'opacity': '1'
+						})
+						$(this).find('input, textarea , select , checkbox').val('');
+						$(this).find('input, textarea , select , checkbox').attr('readonly', false);
+					} else {
+						$(this).find('input, textarea , select , checkbox').attr('readonly', false);
+					}
+				})
+			}
+		});
+	}
+	// CHECK BAN ĐẦU
+	if ($('input[name="lock-language"]').length > 0) {
+		checkWhenDocumentReady();
+	}
+	// CHECK KHI CLICK
+	checkWhenClick();
 }
 
 const editHTMLWithGrapesJS = () => {
