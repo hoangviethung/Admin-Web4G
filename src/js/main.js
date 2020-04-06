@@ -901,7 +901,7 @@ function lockOneLanguageWhenCheckBox() {
 						'pointer-events': 'visible',
 						'opacity': '1'
 					})
-					$(this).find('input, textarea , select , checkbox').val('');
+					$(this).find('textarea , select , checkbox').val('');
 					$(this).find('input, textarea , select , checkbox').attr('readonly', false);
 				} else {
 					$(this).find('input, textarea , select , checkbox').attr('readonly', false);
@@ -917,7 +917,7 @@ function lockOneLanguageWhenCheckBox() {
 				$('[data-lock-language]').each(function() {
 					if (dataLock === $(this).attr('data-lock-language')) {
 						$(this).css({
-							// 'pointer-events': 'none',
+							'pointer-events': 'none',
 							'opacity': '0.5'
 						})
 						$(this).find('input, textarea , select , checkbox').attr('readonly', true);
@@ -937,7 +937,7 @@ function lockOneLanguageWhenCheckBox() {
 							'pointer-events': 'visible',
 							'opacity': '1'
 						})
-						$(this).find('input, textarea , select , checkbox').val('');
+						$(this).find('textarea , select , checkbox').val('');
 						$(this).find('input, textarea , select , checkbox').attr('readonly', false);
 					} else {
 						$(this).find('input, textarea , select , checkbox').attr('readonly', false);
