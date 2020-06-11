@@ -688,11 +688,21 @@ function CKEditorReplace() {
 }
 
 function DatePickerInit() {
-	$(".date-picker").flatpickr({
-		enableTime: true,
-		dateFormat: "Y-m-d H:i",
-		time_24hr: true,
-		defaultDate: new Date(),
+	$(".date-picker").each(function() {
+		if ($(this).val().length > 0) {
+			$(this).flatpickr({
+				enableTime: true,
+				dateFormat: "Y-m-d H:i",
+				time_24hr: true,
+			})
+		} else {
+			$(this).flatpickr({
+				enableTime: true,
+				dateFormat: "Y-m-d H:i",
+				time_24hr: true,
+				defaultDate: new Date()
+			})
+		}
 	})
 }
 
