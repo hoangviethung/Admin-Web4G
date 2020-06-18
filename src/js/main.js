@@ -691,13 +691,13 @@ function DatePickerInit() {
 	$(".date-picker").each(function() {
 		if ($(this).val().length > 0) {
 			$(this).flatpickr({
-				enableTime: true,
+				// enableTime: true,
 				dateFormat: "Y-m-d H:i",
 				time_24hr: true,
 			})
 		} else {
 			$(this).flatpickr({
-				enableTime: true,
+				// enableTime: true,
 				dateFormat: "Y-m-d H:i",
 				time_24hr: true,
 				defaultDate: new Date()
@@ -972,7 +972,7 @@ const editHTMLWithGrapesJS = () => {
 	const mainCSS = window.location.origin + "/Content/resources/css/main.min.css";
 	const coreJS = window.location.origin + "/Content/resources/js/core.min.js";
 	const mainJS = window.location.origin + "/Content/resources/js/main.min.js";
-	let templates;
+	let templates, ckeditor;
 	$("body").append(`
 		<div class="d-none">
 			<div class="template-select-popup" id="template-select-popup">
@@ -989,10 +989,13 @@ const editHTMLWithGrapesJS = () => {
 		</div>
 	`);
 
-	const ckeditor = CKEDITOR.replace('grapesjs-ckeditor', {
-		allowedContent: true,
-		filebrowserBrowseUrl: '/Admin/HomeAdmin/CkfinderPopup',
-	})
+
+	if($('#grapesjs-ckeditor').length>0){
+		ckeditor = CKEDITOR.replace('grapesjs-ckeditor', {
+			allowedContent: true,
+			filebrowserBrowseUrl: '/Admin/HomeAdmin/CkfinderPopup',
+		})
+	}
 
 	const openPopupTemplate = () => {
 		const url = $("#btn-grapesjs-popup-select").attr("data-url")
