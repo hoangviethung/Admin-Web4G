@@ -409,35 +409,47 @@ function toggleAsideMenu() {
 
 // ACTIVE ITEM MENU BY URL
 function activeMenuByUrl() {
-	const url = window.location.pathname;
-	// TEST COOKIE //
-	// document.cookie = "SiteId=1; expires=Thu, 04 Feb 2020 12:00:00 UTC; path=/";
-	if (document.cookie.indexOf('SiteId') >= 0) {
-		document.cookie.split('; ').forEach(item => {
-			if (item.indexOf('SiteId') === 0) {
+	// const url = window.location.pathname;
+	// // TEST COOKIE //
+	// // document.cookie = "SiteId=1; expires=Thu, 04 Feb 2020 12:00:00 UTC; path=/";
+	// if (document.cookie.indexOf('SiteId') >= 0) {
+	// 	document.cookie.split('; ').forEach(item => {
+	// 		if (item.indexOf('SiteId') === 0) {
 
-				$('[data-siteid="' + item.split('=')[1] + '"]').addClass('acitve');
-				$('[data-siteid="' + item.split('=')[1] + '"]').find('.list-link-level--1').slideDown();
+	// 			$('[data-siteid="' + item.split('=')[1] + '"]').addClass('acitve');
+	// 			$('[data-siteid="' + item.split('=')[1] + '"]').find('.list-link-level--1').slideDown();
 
-				const listLinkChild = $('[data-siteid="' + item.split('=')[1] + '"] a');
-				listLinkChild.each(function() {
-					let allHref = $(this).attr('href');
-					if (allHref.includes(url)) {
-						$(this).parents('.list-link-level--2').slideDown();
-						$(this).parents('.list-link-level--2').siblings('.name-link-level--1').addClass('active');
-					}
-				})
-			}
-		})
-	} else {
-		const listLink = $('.aside-list a');
-		listLink.each(function() {
-			let allHref = $(this).attr('href');
-			if (allHref.includes(url)) {
-				$(this).parents('.aside-item').addClass('active');
-				$(this).parents('.list-link').slideToggle();
-			}
-		})
+	// 			const listLinkChild = $('[data-siteid="' + item.split('=')[1] + '"] a');
+	// 			listLinkChild.each(function() {
+	// 				let allHref = $(this).attr('href');
+	// 				if (allHref.includes(url)) {
+	// 					$(this).parents('.list-link-level--2').slideDown();
+	// 					$(this).parents('.list-link-level--2').siblings('.name-link-level--1').addClass('active');
+	// 				}
+	// 			})
+	// 		}
+	// 	})
+	// } else {
+	// 	const listLink = $('.aside-list a');
+	// 	listLink.each(function() {
+	// 		let allHref = $(this).attr('href');
+	// 		if (allHref.includes(url)) {
+	// 			$(this).parents('.aside-item').addClass('active');
+	// 			$(this).parents('.list-link').slideToggle();
+	// 		}
+	// 	})
+	// }
+
+	const url = window.location.pathname.split('/').pop();
+	if (url == "") {
+		url = "index.html";
+	}
+	const link = $('.aside-list a[href="' + url + '"]');
+	const href = link.attr('href');
+	if (href === url) {
+		link.addClass('active');
+		link.parent().parent().slideDown();
+		link.parent().parent().parent().parent().slideDown();
 	}
 }
 
@@ -990,7 +1002,7 @@ const editHTMLWithGrapesJS = () => {
 	`);
 
 
-	if($('#grapesjs-ckeditor').length>0){
+	if ($('#grapesjs-ckeditor').length > 0) {
 		ckeditor = CKEDITOR.replace('grapesjs-ckeditor', {
 			allowedContent: true,
 			filebrowserBrowseUrl: '/Admin/HomeAdmin/CkfinderPopup',
