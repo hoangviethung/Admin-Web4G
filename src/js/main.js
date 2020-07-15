@@ -1177,6 +1177,18 @@ const editHTMLWithGrapesJS = () => {
 
 }
 
+//SEO
+const renderSEO = () => {
+	$(".SEO input.title").change( () => {
+		let temp = $(".SEO input.title").val()
+		$(".SEO .tab-content h3").html(`${temp}`)
+	})
+	$(".SEO input.desc").change( () => {
+		let temp = $(".SEO input.desc").val()
+		$(".SEO .tab-content p.desc-subtab").html(`${temp}`)
+	})
+}
+
 // CHẠY KHI DOCUMENT SẴN SÀNG
 document.addEventListener('DOMContentLoaded', () => {
 	multipleSelect();
@@ -1213,6 +1225,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	fixedLisTab();
 	lockOneLanguageWhenCheckBox();
 	editHTMLWithGrapesJS();
+	//SEO
+	renderSEO();
 });
 
 // CHẠY KHI WINDOWN SCROLL
