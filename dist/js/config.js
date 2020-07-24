@@ -4,5 +4,8 @@
  */
 CKEDITOR.editorConfig = function(config) {
 	config.uiColor = '#AADC6E';
-	// config.extraPlugins = 'insert';
+	config.section = {
+		'block-content': 'Content Block',
+		'block-info': 'Info Block',
+	}
 };
