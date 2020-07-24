@@ -55,7 +55,9 @@ export const server = () => {
 
 	watch([
 		'src/js/ckeditor.js',
-		'src/js/plugins/**/**'
+		'src/js/plugins/**/**',
+		'src/js/config.js',
+		'src/js/build-config.js'
 	], {
 		delay: 750
 	}, series(jsTask3));
