@@ -729,6 +729,7 @@ function CKEditorReplace() {
 		let itemId = item.getAttribute("id");
 		const editor = CKEDITOR.replace(itemId, {
 			allowedContent: true,
+			extraPlugins: 'section',
 			filebrowserBrowseUrl: "/Admin/HomeAdmin/CkfinderPopup",
 		});
 	});
