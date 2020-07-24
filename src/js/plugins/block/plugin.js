@@ -18,7 +18,8 @@
      * Plugin
      */
     CKEDITOR.plugins.add('block', {
-        requires: 'api,dialog,widget',
+        // requires: 'api,dialog,widget',
+        requires: '',
         icons: 'block',
         hidpi: true,
         lang: 'de,en',
@@ -92,7 +93,8 @@
          */
         var id = ev.data.definition.contents[0].elements[0];
         id.onLoad = function () {
-            var dialog = this.getDialog();
+			var dialog = this.getDialog();
+			console.log(ev.editor.config)
             this.getInputElement().$.addEventListener('change', function () {
                 dialog.getContentElement('info', 'content').setValue(get(ev.editor.config.blockApi, this.value));
             });
@@ -125,6 +127,7 @@
      */
     function get(url, id) {
         if (typeof url === 'function' && !!id) {
+			console.log(CKEDITOR.api)
             return CKEDITOR.api.xhr.get(url(id)) || '';
         }
 
