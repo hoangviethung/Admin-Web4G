@@ -1,4 +1,3 @@
-// Script Cho TAB CHÍNH
 class MainTAB {
 	selector;
 	titleList;
@@ -37,9 +36,9 @@ class MainTAB {
 					}
 				});
 				(targetDOM.style.display = "block"),
-				setTimeout(() => {
-					targetDOM.classList.add("show");
-				}, 50);
+					setTimeout(() => {
+						targetDOM.classList.add("show");
+					}, 50);
 			});
 		});
 	}
@@ -54,7 +53,6 @@ class MainTAB {
 	}
 }
 
-// Script Cho TAB CON
 class SubTAB {
 	selector;
 	titleList;
@@ -93,9 +91,9 @@ class SubTAB {
 					}
 				});
 				(targetDOM.style.display = "block"),
-				setTimeout(() => {
-					targetDOM.classList.add("show");
-				}, 50);
+					setTimeout(() => {
+						targetDOM.classList.add("show");
+					}, 50);
 			});
 		});
 	}
@@ -116,7 +114,6 @@ function createFormData(selector, fieldName) {
 	return formData;
 }
 
-// AJAX FORMS FANCYBOX
 function ajaxFancybox() {
 	// TẤT CẢ DATA CẦN CÓ TRONG 1 BUTTONS KHI MUỐN HIỆN POPUP
 	var itemId;
@@ -124,7 +121,7 @@ function ajaxFancybox() {
 	var dataFieldName;
 	var dataURL;
 	// POPUP THÔNG BÁO
-	$(".btn-popup[fancybox=fancybox-notification]").on("click", function() {
+	$(".btn-popup[fancybox=fancybox-notification]").on("click", function () {
 		// GET DATA
 		itemId = $(this).attr("dataId");
 		dataFieldName = $(this).attr("dataFieldName");
@@ -141,16 +138,16 @@ function ajaxFancybox() {
 			opts: {
 				hash: false,
 				closeExisting: true,
-				beforeShow: function() {
+				beforeShow: function () {
 					// SUBMIT DELETE
-					$(".submit-delete").on("click", function() {
+					$(".submit-delete").on("click", function () {
 						const data = {};
 						data[dataFieldName] = itemId;
 						$.ajax({
 							type: "POST",
 							url: dataURL,
 							data: data,
-							success: function(res) {
+							success: function (res) {
 								if (res.Code === 200) {
 									location.reload();
 								} else {
@@ -160,7 +157,7 @@ function ajaxFancybox() {
 						});
 					});
 				},
-				afterClose: function() {
+				afterClose: function () {
 					$(fancyboxId).remove();
 				},
 			},
@@ -168,7 +165,7 @@ function ajaxFancybox() {
 	});
 
 	// PUP FORM THAY ĐỔI MẬT KHẨU USER
-	$('.btn-popup[fancybox="fancybox-forms"]').on("click", function() {
+	$('.btn-popup[fancybox="fancybox-forms"]').on("click", function () {
 		const fieldName = {
 			id: $(this).attr("dataiD"),
 			name: $(this).attr("dataFieldName"),
@@ -183,12 +180,12 @@ function ajaxFancybox() {
 			type: "GET",
 			url: dataURL,
 			// HIỆN MÀN HÌNH LOADING
-			beforeSend: function() {
+			beforeSend: function () {
 				$(".block-loading").addClass("active");
 				$("body").addClass("no-scroll");
 			},
 			// TEST IN FRONR END
-			error: function() {
+			error: function () {
 				// const resCode = 200;
 				// const res = `
 				// 	<div class="modal-POPUP fancybox-content" id="fancybox-forms">
@@ -282,7 +279,7 @@ function ajaxFancybox() {
 				// });
 			},
 
-			success: function(res) {
+			success: function (res) {
 				// XUẤT HTML VÙA GET ĐƯỢC RA NGOÀI
 				$("body").append(res);
 				var form = $(".modal-POPUP form")
@@ -298,9 +295,9 @@ function ajaxFancybox() {
 					opts: {
 						hash: false,
 						closeExisting: true,
-						beforeShow: function() {
+						beforeShow: function () {
 							// SUBMIT CHANGE PASSWORD
-							$(".submit-form").on("click", function(e) {
+							$(".submit-form").on("click", function (e) {
 								e.preventDefault();
 								$(".modal-POPUP form").valid();
 								const FormElement = document.querySelector(".modal-POPUP form");
@@ -313,7 +310,7 @@ function ajaxFancybox() {
 										data: data,
 										processData: false,
 										contentType: false,
-										success: function(res) {
+										success: function (res) {
 											if (res.Code === 200) {
 												location.reload();
 											} else {
@@ -326,14 +323,14 @@ function ajaxFancybox() {
 								}
 							});
 						},
-						afterClose: function() {
+						afterClose: function () {
 							$("#fancybox-forms").remove();
 						},
 					},
 				});
 			},
 
-			complete: function() {
+			complete: function () {
 				$(".block-loading").removeClass("active");
 				$("body").removeClass("no-scroll");
 			},
@@ -341,9 +338,8 @@ function ajaxFancybox() {
 	});
 }
 
-// AJAX CHECKBOX
 function ajaxCheckBox() {
-	$('._checkbox-custom input[type="checkbox"]').on("change", function() {
+	$('._checkbox-custom input[type="checkbox"]').on("change", function () {
 		const url = $(this).attr("data-url");
 		let IsActive = $(this).attr("IsActive");
 		if ($(this).attr("IsActive") === "false") {
@@ -363,14 +359,12 @@ function ajaxCheckBox() {
 	});
 }
 
-// TẠO THÊM 1 DÒNG MỚI TABLE INPUT
 function createRowTableInput() {
-	$(".table-input table thead tr th .submit").on("click", function() {
+	$(".table-input table thead tr th .submit").on("click", function () {
 		const newRow = $(this).parents("thead").siblings("tbody").find("tr").last();
 	});
 }
 
-// GET URL PAGE
 function setUrlTypeLink() {
 	const url = window.location.protocol + "//" + window.location.host + "/";
 	$(".url-default span.input-group-text").html(url);
@@ -379,7 +373,7 @@ function setUrlTypeLink() {
 		$(".url-default span.input-group-text").html(url + dataUrl.slice(1));
 	}
 
-	$(".chooseUrlPage").on("change", function() {
+	$(".chooseUrlPage").on("change", function () {
 		const valueUrl = $(".chooseUrlPage option:selected").attr("data-url");
 		$(".url-default").siblings("input").attr("data-url", valueUrl);
 		$(".url-default span.input-group-text").html(url + valueUrl.slice(1));
@@ -408,7 +402,7 @@ function initializationClassAsideMenu() {
 }
 
 function toggleAsideMenu() {
-	$(".aside-list .aside-item .name-link-level--1").on("click", function() {
+	$(".aside-list .aside-item .name-link-level--1").on("click", function () {
 		// THIS IS 'NOT THIS'
 		const _notthis = $(".aside-list .aside-item .name-link-level--1").not(this);
 		// SHOW SUB MENU ==> ADD CLASS ACTIVE
@@ -421,7 +415,7 @@ function toggleAsideMenu() {
 		$(".aside-list .aside-item .name-link-level--2").removeClass("active");
 	});
 
-	$(".aside-list .aside-item .name-link-level--2").on("click", function() {
+	$(".aside-list .aside-item .name-link-level--2").on("click", function () {
 		// THIS IS 'NOT THIS'
 		const _notthis = $(".aside-list .aside-item .name-link-level--2").not(this);
 		// SHOW SUB MENU AND ADD CLASS ACTIVE
@@ -432,7 +426,6 @@ function toggleAsideMenu() {
 	});
 }
 
-// ACTIVE ITEM MENU BY URL
 function activeMenuByUrl() {
 	const url = window.location.pathname;
 	// TEST COOKIE //
@@ -446,7 +439,7 @@ function activeMenuByUrl() {
 					.slideDown();
 
 				const listLinkChild = $('[data-siteid="' + item.split("=")[1] + '"] a');
-				listLinkChild.each(function() {
+				listLinkChild.each(function () {
 					let allHref = $(this).attr("href");
 					if (allHref.includes(url)) {
 						$(this).parents(".list-link-level--2").slideDown();
@@ -460,7 +453,7 @@ function activeMenuByUrl() {
 		});
 	} else {
 		const listLink = $(".aside-list a");
-		listLink.each(function() {
+		listLink.each(function () {
 			let allHref = $(this).attr("href");
 			if (allHref.includes(url)) {
 				$(this).parents(".aside-item").addClass("active");
@@ -470,13 +463,12 @@ function activeMenuByUrl() {
 	}
 }
 
-// TOGGLE ASIDE GỌN PHÓNG TÓ
 function closeAsideMenu() {
 	if ($(window).width() < 1024) {
 		$("body, aside").addClass("active");
 	}
 
-	$(".block-logo .button-close").on("click", function() {
+	$(".block-logo .button-close").on("click", function () {
 		if ($(window).width() > 1024) {
 			$(this).toggleClass("active");
 			$("body, aside").toggleClass("active");
@@ -484,16 +476,14 @@ function closeAsideMenu() {
 	});
 }
 
-// HEADER
 function dropdownHeader() {
-	$(".item-click-dropdown").on("click", function() {
+	$(".item-click-dropdown").on("click", function () {
 		$(this).siblings(".content-dropdown").slideToggle();
 	});
 }
 
-// CONTROL SVG
 function SVG() {
-	jQuery("img.svg").each(function() {
+	jQuery("img.svg").each(function () {
 		var $img = jQuery(this);
 		var imgID = $img.attr("id");
 		var imgClass = $img.attr("class");
@@ -501,7 +491,7 @@ function SVG() {
 
 		jQuery.get(
 			imgURL,
-			function(data) {
+			function (data) {
 				// Get the SVG tag, ignore the rest
 				var $svg = jQuery(data).find("svg");
 
@@ -538,14 +528,14 @@ function SVG() {
 }
 
 function checkboxAllRow() {
-	$(".role-row").each(function() {
+	$(".role-row").each(function () {
 		const row = $(this);
 		if (row.find("input[type=checkbox]").length > 0) {
 			row.addClass("role-checkbox");
 		}
 	});
 
-	$(".role-checkbox").each(function() {
+	$(".role-checkbox").each(function () {
 		const row = $(this);
 		const inputCheckAll = row.find(".check-all");
 		const inputView = row.find(".view");
@@ -590,7 +580,7 @@ function checkboxAllRow() {
 			inputCheckAll.attr("checked", "checked");
 		}
 
-		inputCheckAll.on("change", function(e) {
+		inputCheckAll.on("change", function (e) {
 			Object.keys(getRowState()).forEach((key) => {
 				if (e.currentTarget.checked) {
 					if (key === "view") {
@@ -633,7 +623,7 @@ function checkboxAllRow() {
 		row
 			.find("input[type=checkbox]")
 			.not(".check-all")
-			.on("change", function(e) {
+			.on("change", function (e) {
 				const rowState = getRowState();
 				let check = true;
 				Object.values(rowState).forEach((value, index) => {
@@ -656,21 +646,21 @@ function checkboxAllRow() {
 function multipCheckBoxByAttr() {
 	// CHECK TẤT CẢ
 	function checkAll() {
-		$(".check-all[data-checkbox-group]").each(function(index) {
+		$(".check-all[data-checkbox-group]").each(function (index) {
 			const _this = $(this);
 			// LẤY HẾT TẤT CẢ TÊN NHÓM CHECK
 			const nameAllGroup = _this.attr("data-checkbox-group");
 			// CHỌN CHÍNH XÁC TÊN NHÓM
 			const thisNameGroup = $("[data-checkbox-group=" + nameAllGroup + "]");
 			// HÀM CHECK ALL
-			_this.on("change", function(e) {
+			_this.on("change", function (e) {
 				if (e.currentTarget.checked) {
-					thisNameGroup.each(function() {
+					thisNameGroup.each(function () {
 						$(this).attr("checked", "checked");
 						$(this)[0].checked = true;
 					});
 				} else {
-					thisNameGroup.each(function() {
+					thisNameGroup.each(function () {
 						$(this).removeAttr("checked", "checked");
 						$(this)[0].checked = false;
 					});
@@ -680,10 +670,10 @@ function multipCheckBoxByAttr() {
 	}
 	// KIỂM TRA TRẠNG THÁI NHÓM CHECK
 	function getState() {
-		$("[data-checkbox-group]").each(function() {
+		$("[data-checkbox-group]").each(function () {
 			const _this = $(this);
 			// HÀM CHECK TRANG THÁI
-			_this.on("change", function() {
+			_this.on("change", function () {
 				let temp = 0;
 				// LẤY HẾT TẤT CẢ TÊN NHÓM CHECK
 				const nameAllGroup = _this.attr("data-checkbox-group");
@@ -694,7 +684,7 @@ function multipCheckBoxByAttr() {
 				// TỔNG SỐ LƯỢNG CÁC Ô CHECKBOX
 				const quantity = thisNameGroup.length;
 				// LẤY SỐ LƯỢNG CÁC Ô ĐÃ CHECK
-				thisNameGroup.each(function() {
+				thisNameGroup.each(function () {
 					if ($(this)[0].checked === true) {
 						temp++;
 					}
@@ -723,20 +713,92 @@ function multipleSelect() {
 	});
 }
 
-function CKEditorReplace() {
-	let CkEditorList = document.querySelectorAll(".ck-editor");
-	CkEditorList.forEach((item) => {
-		let itemId = item.getAttribute("id");
-		const editor = CKEDITOR.replace(itemId, {
+function initCKEditor__GrapesJs() {
+	const coreCSS = window.location.origin + "/Content/resources/css/core.min.css";
+	const mainCSS = window.location.origin + "/Content/resources/css/main.min.css";
+	const coreJS = window.location.origin + "/Content/resources/js/core.min.js";
+	const mainJS = window.location.origin + "/Content/resources/js/main.min.js";
+
+	// OPTIONS
+	const defaultOpts = {
+		container: [".grapes-html"],
+		fromElement: true,
+		height: "100%",
+		width: "100%",
+		noticeOnUnload: false,
+		assetManager: false,
+		storageManager: false,
+		panels: {
+			defaults: [],
+		},
+		forceClass: false,
+		draggable: false,
+		canvas: {
+			styles: [coreCSS, mainCSS],
+			scripts: [coreJS, mainJS],
+		},
+	};
+
+	// INIT GRAPESJS
+	const GrapesEditor = grapesjs.init(defaultOpts);
+
+	// INIT CKEDITOR
+	const CkEditorList = document.querySelectorAll(".ck-editor");
+	CkEditorList.forEach((itemCKeditor) => {
+		let itemID = itemCKeditor.getAttribute("id");
+		const CKeditor = CKEDITOR.replace(itemID, {
+			height: 500,
 			allowedContent: true,
-			extraPlugins: 'section, block',
 			filebrowserBrowseUrl: "/Admin/HomeAdmin/CkfinderPopup",
 		});
+		CKeditor.ui.addButton('grapesJS', {
+			label: "Chỉnh sửa HTML",
+			command: 'grapesJS',
+			toolbar: 'insert',
+			icon: '../assets/images/icons/html.svg'
+		});
+		CKeditor.addCommand("grapesJS", {
+			exec: function (item__CKeditor) {
+				// OPPEN GRAPES
+				openPopup();
+				// DATA HERE!!!
+				const dataCKEditor = item__CKeditor.getData();
+				// SET DATA CỦA CKEDITOR VÀO GRAPE
+				GrapesEditor.setComponents(dataCKEditor);
+				// SUBMIT GRAPESJS
+				$('.btn-submit-grapesJS').on('click', function (e) {
+					e.preventDefault();
+					const dataGrapesHTML = GrapesEditor.getHtml();
+					item__CKeditor.setData(dataGrapesHTML);
+					closePopup();
+				});
+			}
+		});
 	});
+
+	// CLOSE GRAPES
+	$('.btn-close-grapesJS').on('click', function (e) {
+		closePopup();
+	})
+
+	// ALL SMALL FUNTION
+	function openPopup() {
+		$('.main__inner').addClass('overlay');
+		$('.popup__grapesJS').addClass('show');
+		$('body').addClass('no-scroll');
+	}
+
+	// CLOSE POPUP
+	function closePopup() {
+		$('.popup__grapesJS').removeClass('show');
+		$('.main__inner').removeClass('overlay');
+		$('body').removeClass('no-scroll');
+		$('.btn-submit-grapesJS').unbind();
+	}
 }
 
 function DatePickerInit() {
-	$(".date-picker").each(function() {
+	$(".date-picker").each(function () {
 		if ($(this).val().length > 0) {
 			$(this).flatpickr({
 				// enableTime: true,
@@ -755,7 +817,7 @@ function DatePickerInit() {
 }
 
 function getFileNameWhenChooseFileUpload() {
-	$("input[type=file]").on("change", function(e) {
+	$("input[type=file]").on("change", function (e) {
 		const thisInputFile = $(this);
 		const fileName = e.originalEvent.srcElement.files[0].name;
 		const fileNameExtension = fileName.split(".")[
@@ -775,7 +837,7 @@ function getFileNameWhenChooseFileUpload() {
 		}
 	});
 
-	$(".btn-upload").on("click", function(e) {
+	$(".btn-upload").on("click", function (e) {
 		e.preventDefault();
 		const thisButton = $(this);
 		const url = thisButton.attr("data-url");
@@ -790,7 +852,7 @@ function getFileNameWhenChooseFileUpload() {
 			cache: false,
 			contentType: false,
 			processData: false,
-			success: function(data, textStatus, jqXHR) {
+			success: function (data, textStatus, jqXHR) {
 				debugger;
 			},
 		});
@@ -935,14 +997,13 @@ function fixedLisTab() {
 	});
 }
 
-// KHÓA 1 NGÔN NGỮ KHI SẢN PHẨM CHƯA CÓ TIẾNG ANH (HOẶC TIẾNG VIỆT)
 function lockOneLanguageWhenCheckBox() {
 	// CHECK BAN ĐẦU
 	function checkWhenDocumentReady() {
 		const dataLock = $('input[name="lock-language"]').attr("data-lock");
 
 		if ($('input[name="lock-language"]')[0].checked === true) {
-			$("[data-lock-language]").each(function() {
+			$("[data-lock-language]").each(function () {
 				if (dataLock === $(this).attr("data-lock-language")) {
 					$(this).css({
 						"pointer-events": "none",
@@ -967,7 +1028,7 @@ function lockOneLanguageWhenCheckBox() {
 				}
 			});
 		} else {
-			$("[data-lock-language]").each(function() {
+			$("[data-lock-language]").each(function () {
 				if (dataLock === $(this).attr("data-lock-language")) {
 					$(this).css({
 						"pointer-events": "visible",
@@ -987,10 +1048,10 @@ function lockOneLanguageWhenCheckBox() {
 	}
 	// CHECK KHI CLICKS
 	function checkWhenClick() {
-		$('input[name="lock-language"]').on("change", function() {
+		$('input[name="lock-language"]').on("change", function () {
 			const dataLock = $(this).attr("data-lock");
 			if ($(this)[0].checked === true) {
-				$("[data-lock-language]").each(function() {
+				$("[data-lock-language]").each(function () {
 					if (dataLock === $(this).attr("data-lock-language")) {
 						$(this).css({
 							"pointer-events": "none",
@@ -1015,7 +1076,7 @@ function lockOneLanguageWhenCheckBox() {
 					}
 				});
 			} else {
-				$("[data-lock-language]").each(function() {
+				$("[data-lock-language]").each(function () {
 					if (dataLock === $(this).attr("data-lock-language")) {
 						$(this).css({
 							"pointer-events": "visible",
@@ -1042,228 +1103,6 @@ function lockOneLanguageWhenCheckBox() {
 	checkWhenClick();
 }
 
-const editHTMLWithGrapesJS = () => {
-	const GrapesJS = $("#grapes-html");
-	const dataFolder = $("#ImageFolder").val();
-	const hiddenInput = $("#grapesjs-input-hidden");
-	const coreCSS =
-		window.location.origin + "/Content/resources/css/core.min.css";
-	const mainCSS =
-		window.location.origin + "/Content/resources/css/main.min.css";
-	const coreJS = window.location.origin + "/Content/resources/js/core.min.js";
-	const mainJS = window.location.origin + "/Content/resources/js/main.min.js";
-	let templates, ckeditor;
-	$("body").append(`
-		<div class="d-none">
-			<div class="template-select-popup" id="template-select-popup">
-				<div class="block-title">
-					<h3>Chọn template</h3>
-				</div>
-				<div class="form-group form-select">
-					<select id="select-template"></select>
-				</div>
-				<div class="form-group form-button">
-					<span class="btn btn-success" id="btn-get-template">Chọn</span>
-				</div>
-			</div>
-		</div>
-	`);
-
-	if ($("#grapesjs-ckeditor").length > 0) {
-		ckeditor = CKEDITOR.replace("grapesjs-ckeditor", {
-			allowedContent: true,
-			filebrowserBrowseUrl: "/Admin/HomeAdmin/CkfinderPopup",
-		});
-	}
-
-	const openPopupTemplate = () => {
-		const url = $("#btn-grapesjs-popup-select").attr("data-url");
-		$.ajax({
-			url: url,
-			type: "get",
-			success: function(res) {
-				templates = res;
-				let optionsHTML = "<option disabled>-- Chọn giao diện --</option>";
-				templates.forEach((template) => {
-					optionsHTML += `<option value="${template.Id}">${template.Name}</option>`;
-				});
-				$("#template-select-popup")
-					.find(".form-select select")
-					.html(optionsHTML);
-			},
-		});
-		$.fancybox.open({
-			type: "inline",
-			src: "#template-select-popup",
-			opts: {
-				hash: false,
-				touch: false,
-			},
-		});
-	};
-
-	const defaultOpts = {
-		container: "#grapes-html",
-		fromElement: true,
-		height: "700px",
-		width: "100%",
-		noticeOnUnload: false,
-		assetManager: false,
-		storageManager: false,
-		panels: {
-			defaults: [],
-		},
-		forceClass: false,
-		draggable: false,
-		canvas: {
-			styles: [coreCSS, mainCSS],
-			scripts: [coreJS, mainJS],
-		},
-	};
-
-	GrapesJS.find("[data-src]").each(function() {
-		const src = $(this).attr("data-src");
-		$(this).addClass("temporary-data-src");
-		$(this).attr("src", src);
-		$(this).attr("data-src", "");
-	});
-
-	let editor = grapesjs.init(defaultOpts);
-
-	function uploadFile(e) {
-		var files = e.dataTransfer ? e.dataTransfer.files : e.target.files;
-		let formData = new FormData();
-		Array.from(files).forEach((file, index) => {
-			formData.append(`file[${index}]`, file);
-		});
-		formData.append("folder", dataFolder);
-
-		$.ajax({
-			url: "/file-upload",
-			data: formData,
-			type: "POST",
-			processData: false,
-			contentType: false,
-			success: function(res) {
-				// const imagesList = res.map(item => {
-				// 	return item = {
-				// 		src: item.Link,
-				// 		name: item.Name,
-				// 	}
-				// })
-				// editor.AssetManager.add(imagesList);
-
-				var iframe = document.getElementById("upload");
-				iframe.src = iframe.src;
-			},
-		});
-	}
-	editor.on("run:open-assets", () => {
-		if (editor.uploaderModified) {
-			return;
-		} else {
-			const modal = editor.Modal;
-			const modalBody = modal.getContentEl();
-			const uploader = $(modalBody).find(".gjs-am-file-uploader");
-			const insideFormHtml = $(uploader).find("form").html();
-			$(uploader).html(`<div id="gjs-form-upload">${insideFormHtml}</div>`);
-			const uploadForm = $(uploader).find("#gjs-form-upload");
-			const uploadInput = $(uploader).find("#gjs-am-uploadFile");
-			$.ajax({
-				url: "/get-files",
-				data: {
-					folder: dataFolder,
-				},
-				success: function(res) {
-					if (typeof res == "object") {
-						const imagesList = res.map((item) => {
-							return (item = {
-								src: item.Link,
-								name: item.Name,
-							});
-						});
-						editor.AssetManager.add(imagesList);
-					}
-				},
-			});
-			uploadForm.ondrop = function(e) {
-				this.className = "";
-				e.preventDefault();
-				uploadFile(e);
-				return;
-			};
-			$(uploadInput).change(uploadFile);
-			editor.uploaderModified = true;
-		}
-	});
-
-	$("#btn-grapesjs-import-html").on("click", function(e) {
-		e.preventDefault();
-		ckeditor.insertHtml(editor.getHtml());
-		$("#grapesjs-popup").addClass("active");
-	});
-	$("#btn-grapesjs-popup-discard").on("click", function(e) {
-		e.preventDefault();
-		ckeditor.setData("");
-		$("#grapesjs-popup").removeClass("active");
-	});
-	$("#btn-grapesjs-popup-save").on("click", function(e) {
-		const data = ckeditor.getData();
-		editor.destroy();
-		ckeditor.setData("");
-		$("#grapesjs-popup").removeClass("active");
-		$("#grapes-html").html(data);
-		editor = grapesjs.init(defaultOpts);
-	});
-	$("#btn-grapesjs-popup-select").on("click", openPopupTemplate);
-
-	$("body").on("click", "#btn-get-template", function(e) {
-		ckeditor.setData("");
-		const id = Number($("#template-select-popup select").val());
-		const item = templates.filter((template) => template.Id === id);
-		setTimeout(() => {
-			const storeHTML = document.createElement("div");
-			$(storeHTML).html(item[0].Text);
-
-			$(storeHTML)
-				.find("[data-src]")
-				.each(function() {
-					const src = $(this).attr("data-src");
-					$(this).addClass("temporary-data-src");
-					$(this).attr("src", src);
-					$(this).attr("data-src", "");
-				});
-			const htmlIsInserted = $(storeHTML).html();
-			ckeditor.insertHtml(htmlIsInserted);
-
-			$.fancybox.close(true);
-		}, 150);
-	});
-
-	$("#btn-grapesjs-save-html").on("click", function(e) {
-		e.preventDefault();
-		const storeHTML = document.createElement("div");
-		const htmlEdited = editor.getHtml();
-		$(storeHTML).html(htmlEdited);
-		$(storeHTML)
-			.find(".temporary-data-src")
-			.each(function() {
-				const src = $(this).attr("src");
-				$(this).attr("data-src", src);
-				$(this).attr("src", "");
-				$(this).removeClass("temporary-data-src");
-			});
-		const newHTML = $(storeHTML).html();
-		$("#grapesjs-html").val(newHTML);
-		$(hiddenInput).val(newHTML);
-		$("#grapesjs-form").submit();
-	});
-};
-// Credit từ David Walsh: https://davidwalsh.name/javascript-debounce-function
-
-// debounce sẽ return fn và fn sẽ không chạy cho đến khi debounce không được thực thi
-// trong khoản thời gian delay. Nếu immediate là true, thì fn sẽ được thực thi ngay lặp tức
-// rồi mới được debounced cho những lần tiếp theo.
 function debounce(fn, delay, immediate) {
 	let timeout;
 
@@ -1279,7 +1118,7 @@ function debounce(fn, delay, immediate) {
 
 		// Function later này sẽ được gọi sau khi delay được chạy xong. 
 		// Nghĩa là mình return executedFn, khi executedFn được thực thi thì sau khoản delay, later sẽ được thực thi.
-		let later = function() {
+		let later = function () {
 			// Gán null cho timeout => cho thấy delay đã chạy xong
 			timeout = null;
 
@@ -1303,8 +1142,7 @@ function debounce(fn, delay, immediate) {
 	}
 }
 
-//SEO
-const renderSEO = () => {
+function renderSEO() {
 	const title = $(".SEO input.title");
 	const desc = $(".SEO input.desc");
 	const keyupHandletitle = (e) => {
@@ -1322,45 +1160,30 @@ const renderSEO = () => {
 	desc.keyup(debouncedesc);
 };
 
-// CHẠY KHI DOCUMENT SẴN SÀNG
 document.addEventListener("DOMContentLoaded", () => {
 	multipleSelect();
 	notifyAdmin();
-	// TAB
-	const blockMainTab = new MainTAB(".block-main .tab-container");
-	const blockSubTab = new SubTAB(".block-subTab .tab-container");
-	// SVG CONTROL
 	SVG();
-	// HEADER
 	activeMenuByUrl();
 	dropdownHeader();
-	// ASIDE
 	initializationClassAsideMenu();
 	toggleAsideMenu();
 	closeAsideMenu();
-	// AJAX
 	ajaxFancybox();
 	ajaxCheckBox();
-	// CHECK ALL ROW
 	checkboxAllRow();
-	// CHECK ALL BY ATTR
 	multipCheckBoxByAttr();
-	// URL Default
 	setUrlTypeLink();
-	// TẠO THÊM 1 DÒNG MỚI TABLE INPUT
 	createRowTableInput();
-	// CKEditor
-	CKEditorReplace();
-	// Date time picker
 	DatePickerInit();
-	// lấy file name khi chọn file upload
 	getFileNameWhenChooseFileUpload();
 	fixedLisTab();
 	lockOneLanguageWhenCheckBox();
-	editHTMLWithGrapesJS();
-	//SEO
 	renderSEO();
+	initCKEditor__GrapesJs();
+	const blockMainTab = new MainTAB(".block-main .tab-container");
+	const blockSubTab = new SubTAB(".block-subTab .tab-container");
 });
 
 // CHẠY KHI WINDOWN SCROLL
-window.addEventListener("scroll", () => {});
+window.addEventListener("scroll", () => { });

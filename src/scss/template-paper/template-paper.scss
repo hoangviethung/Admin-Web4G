@@ -1,10 +1,10 @@
 #template-paper {
-	margin-top   : 45px;
+	margin-top: 45px;
 	margin-bottom: 200px;
 
 	ul {
 		list-style: none;
-		padding   : 0;
+		padding: 0;
 	}
 
 	.header-docForm {
@@ -14,7 +14,7 @@
 	}
 
 	.logo {
-		width : 120px;
+		width: 120px;
 		height: 120px;
 	}
 
@@ -22,7 +22,7 @@
 		margin-top: 30px;
 
 		.title {
-			text-align : center;
+			text-align: center;
 			font-weight: 700;
 
 			.title-big {
@@ -30,30 +30,30 @@
 			}
 
 			.title-small {
-				font-size : 20px;
+				font-size: 20px;
 				font-style: italic;
 			}
 		}
 
 		.box-right {
-			margin-left  : auto;
+			margin-left: auto;
 			padding-right: 15px;
 
 			span {
-				position    : relative;
-				display     : inline-block;
+				position: relative;
+				display: inline-block;
 				padding-left: 5px;
-				font-weight : 700;
+				font-weight: 700;
 
 				&.title {
 					padding-right: 50px;
-					width        : 180px;
+					width: 180px;
 
 					&:after {
-						content : ':';
+						content: ":";
 						position: absolute;
-						right   : 0;
-						top     : 0;
+						right: 0;
+						top: 0;
 					}
 				}
 			}
@@ -63,42 +63,42 @@
 			padding-left: 170px;
 
 			span {
-				position    : relative;
-				width       : 80%;
-				font-size   : 20px;
-				font-weight : 700;
+				position: relative;
+				width: 80%;
+				font-size: 20px;
+				font-weight: 700;
 				padding-left: 5px;
-				margin-left : auto;
+				margin-left: auto;
 
 				&.title {
 					width: 190px;
 
 					&:after {
-						content : ':';
+						content: ":";
 						position: absolute;
-						right   : 0;
-						top     : 0;
+						right: 0;
+						top: 0;
 					}
 				}
 			}
 		}
 
 		.kinh-gui-small {
-			display    : flex;
-			flex-wrap  : wrap;
-			margin-top : 50px;
+			display: flex;
+			flex-wrap: wrap;
+			margin-top: 50px;
 			font-weight: 700;
 
 			p {
-				flex           : 0 0 10%;
-				display        : inline-block;
-				width          : 100px;
-				font-style     : italic;
+				flex: 0 0 10%;
+				display: inline-block;
+				width: 100px;
+				font-style: italic;
 				text-decoration: underline;
 			}
 
 			span {
-				flex       : 0 0 90%;
+				flex: 0 0 90%;
 				margin-left: auto;
 			}
 
@@ -146,7 +146,7 @@
 				p {
 					&:nth-child(2) {
 						font-style: italic;
-						font-size : 14px;
+						font-size: 14px;
 					}
 
 					&.bold {
@@ -162,19 +162,19 @@
 
 		.bang-thong-tin-don-hang {
 			table {
-				width : 100%;
+				width: 100%;
 				border: 1px solid #000000;
 
 				thead {
 					tr {
 						th {
 							border-right: 1px solid #000000;
-							padding     : 5px;
-							text-align  : center;
+							padding: 5px;
+							text-align: center;
 
 							p {
 								&:last-child {
-									font-size : 13px;
+									font-size: 13px;
 									font-style: italic;
 								}
 							}
@@ -187,8 +187,8 @@
 						border-top: 1px solid #000000;
 
 						td {
-							padding     : 20px;
-							text-align  : center;
+							padding: 20px;
+							text-align: center;
 							border-right: 1px solid #000000;
 
 							p {
@@ -203,19 +203,19 @@
 		}
 
 		.mot-so-luu-y {
-			margin-top : 30px;
+			margin-top: 30px;
 			font-weight: 700;
 			line-height: 30px;
 		}
 
 		.tong-chi-phi {
-			width          : 100%;
-			display        : flex;
-			padding-right  : 15px;
+			width: 100%;
+			display: flex;
+			padding-right: 15px;
 			justify-content: space-between;
-			margin-top     : 15px;
-			margin-left    : 50%;
-			font-weight    : 700;
+			margin-top: 15px;
+			margin-left: 50%;
+			font-weight: 700;
 		}
 
 		.date {
@@ -244,13 +244,13 @@
 		}
 
 		.giao-hang-theo {
-			margin-top : 10px;
+			margin-top: 10px;
 			font-weight: 700;
 
 			h5 {
 				text-align: center;
-				padding   : 10px;
-				border    : 1px solid #000000;
+				padding: 10px;
+				border: 1px solid #000000;
 			}
 		}
 
@@ -258,31 +258,31 @@
 			margin-top: 40px;
 
 			.ten-chi-phi {
-				position    : relative;
+				position: relative;
 				padding-left: 35px;
 
 				&:after {
-					content         : '';
-					position        : absolute;
-					left            : 0;
-					top             : 0;
-					width           : 26px;
-					height          : 26px;
+					content: "";
+					position: absolute;
+					left: 0;
+					top: 0;
+					width: 26px;
+					height: 26px;
 					background-image: url(../img/icons/checked.svg);
 				}
 			}
 
 			ul {
-				display        : flex;
+				display: flex;
 				justify-content: space-between;
 
 				&.tong-tien {
-					width      : 50%;
-					padding    : 0 15px;
+					width: 50%;
+					padding: 0 15px;
 					font-weight: 700;
 					margin-left: auto;
 					padding-top: 10px;
-					border-top : 1px solid #000000;
+					border-top: 1px solid #000000;
 				}
 			}
 
@@ -296,7 +296,7 @@
 
 			h3 {
 				text-decoration: underline;
-				margin-bottom  : 10px;
+				margin-bottom: 10px;
 			}
 
 			span {
@@ -304,31 +304,30 @@
 			}
 
 			.item {
-				margin-bottom  : 5px;
-				display        : flex;
+				margin-bottom: 5px;
+				display: flex;
 				justify-content: space-between;
 			}
 		}
 
 		.routing {
-
 			h3 {
-				font-weight    : 700;
+				font-weight: 700;
 				text-decoration: underline;
-				margin-bottom  : 10px;
+				margin-bottom: 10px;
 			}
 
 			table {
-				width : 100%;
+				width: 100%;
 				border: 1px solid #000000;
 
 				thead {
 					tr {
 						th {
-							font-size      : 13px;
-							border-right   : 1px solid #000000;
-							padding        : 5px;
-							text-align     : center;
+							font-size: 13px;
+							border-right: 1px solid #000000;
+							padding: 5px;
+							text-align: center;
 							text-decoration: underline;
 						}
 					}
@@ -340,9 +339,9 @@
 					border-top: 1px solid #000000;
 
 					td {
-						padding     : 5px;
+						padding: 5px;
 						border-right: 1px solid #000000;
-						text-align  : center;
+						text-align: center;
 					}
 				}
 			}
@@ -352,19 +351,19 @@
 			margin-top: 30px;
 
 			.item {
-				display    : flex;
+				display: flex;
 				font-weight: 700;
 
 				p {
-					position    : relative;
-					width       : 200px;
+					position: relative;
+					width: 200px;
 					margin-right: 10px;
 
 					&:after {
-						content : ':';
+						content: ":";
 						position: absolute;
-						right   : 0;
-						top     : 0;
+						right: 0;
+						top: 0;
 					}
 				}
 			}
@@ -372,59 +371,59 @@
 
 		.ten-muc-luc {
 			margin-top: 10px;
-			display   : flex;
+			display: flex;
 
 			p {
-				font-weight    : 700;
+				font-weight: 700;
 				text-decoration: underline;
-				margin-right   : 10px;
+				margin-right: 10px;
 
 				&:nth-child(2) {
-					font-weight    : 400;
+					font-weight: 400;
 					text-decoration: unset;
 				}
 			}
 		}
 
 		.noi-dung-muc-luc {
-			font-size   : 14px;
-			margin-top  : 10px;
+			font-size: 14px;
+			margin-top: 10px;
 			padding-left: 30px;
 
 			.muc-a {
-				display  : flex;
+				display: flex;
 				flex-wrap: wrap;
 
 				p {
-					position       : relative;
-					flex           : 0 0 10%;
-					display        : inline-block;
-					width          : 100px;
+					position: relative;
+					flex: 0 0 10%;
+					display: inline-block;
+					width: 100px;
 					text-decoration: underline;
-					font-weight    : 700;
+					font-weight: 700;
 
 					&:after {
-						content : ':';
+						content: ":";
 						position: absolute;
-						right   : 0;
-						top     : 0;
+						right: 0;
+						top: 0;
 					}
 				}
 
 				span {
-					flex        : 0 0 90%;
-					margin-left : auto;
+					flex: 0 0 90%;
+					margin-left: auto;
 					padding-left: 10px;
 				}
 			}
 
 			.muc-c {
 				.ten-cac-dieu-khoan {
-					display  : flex;
+					display: flex;
 					flex-wrap: wrap;
 
 					.left {
-						flex     : 0 0 30px;
+						flex: 0 0 30px;
 						max-width: 30px;
 					}
 
@@ -438,37 +437,37 @@
 				}
 
 				.noi-dung-chi-tiet-dieu-khoan {
-					margin-top  : 20px;
+					margin-top: 20px;
 					padding-left: 30px;
 
 					.item {
-						display      : flex;
-						flex-wrap    : wrap;
+						display: flex;
+						flex-wrap: wrap;
 						margin-bottom: 10px;
 
 						.left {
-							position : relative;
-							flex     : 0 0 30%;
+							position: relative;
+							flex: 0 0 30%;
 							max-width: 30%;
 
 							&:after {
-								content : '*';
+								content: "*";
 								position: absolute;
-								left    : -10px;
-								top     : 0;
+								left: -10px;
+								top: 0;
 							}
 
 							&:before {
-								content : ':';
+								content: ":";
 								position: absolute;
-								right   : 0;
-								top     : 0;
+								right: 0;
+								top: 0;
 							}
 						}
 
 						.right {
-							flex        : 0 0 70%;
-							max-width   : 70%;
+							flex: 0 0 70%;
+							max-width: 70%;
 							padding-left: 10px;
 						}
 					}
@@ -488,61 +487,60 @@
 			margin-top: 20px;
 
 			.item {
-				display      : flex;
-				flex-wrap    : wrap;
+				display: flex;
+				flex-wrap: wrap;
 				margin-bottom: 10px;
 
 				p {
-					position   : relative;
-					flex       : 0 0 200px;
-					width      : 200px;
+					position: relative;
+					flex: 0 0 200px;
+					width: 200px;
 					font-weight: 700;
 
 					&:after {
-						content : ':';
+						content: ":";
 						position: absolute;
-						right   : 0;
-						top     : 0;
+						right: 0;
+						top: 0;
 					}
 				}
 
 				span {
-					flex        : 0 0 700px;
-					max-width   : 700px;
+					flex: 0 0 700px;
+					max-width: 700px;
 					padding-left: 20px;
 				}
 			}
 		}
 
 		.thong-tin-chi-tiet-loading {
-			width : 70%;
+			width: 70%;
 			margin: 0 auto;
 
-
 			.item {
-				display      : flex;
-				flex-wrap    : wrap;
+				display: flex;
+				flex-wrap: wrap;
 				margin-bottom: 10px;
 
 				p {
-					position   : relative;
-					flex       : 0 0 30%;
-					width      : 30%;
+					position: relative;
+					flex: 0 0 30%;
+					width: 30%;
 					font-weight: 700;
 
 					&:after {
-						content : ':';
+						content: ":";
 						position: absolute;
-						right   : 0;
-						top     : 0;
+						right: 0;
+						top: 0;
 					}
 				}
 
 				span {
-					flex        : 0 70%;
-					max-width   : 70%;
+					flex: 0 70%;
+					max-width: 70%;
 					padding-left: 20px;
-					margin-left : auto;
+					margin-left: auto;
 				}
 			}
 		}
@@ -559,7 +557,6 @@
 			}
 
 			tr {
-
 				td,
 				th {
 					padding: 10px;
@@ -598,13 +595,13 @@
 				}
 
 				th {
-					border-top   : 1px solid #000000;
-					border-right : 1px solid #000000;
-					border-left  : 1px solid #000000;
+					border-top: 1px solid #000000;
+					border-right: 1px solid #000000;
+					border-left: 1px solid #000000;
 					border-bottom: 0;
 
-					font-size  : 14px;
-					font-style : italic;
+					font-size: 14px;
+					font-style: italic;
 					font-weight: 400;
 
 					&.bold {
@@ -614,9 +611,9 @@
 
 				td {
 					border-bottom: 1px solid #000000;
-					border-right : 1px solid #000000;
-					border-left  : 1px solid #000000;
-					border-top   : 0;
+					border-right: 1px solid #000000;
+					border-left: 1px solid #000000;
+					border-top: 0;
 
 					&.border-top {
 						border-top: 1px solid #000000;
@@ -624,7 +621,7 @@
 
 					&.bold {
 						font-weight: 700;
-						font-size  : 20px;
+						font-size: 20px;
 					}
 				}
 			}
@@ -635,15 +632,14 @@
 				width: 100%;
 
 				img {
-					width : 50px;
+					width: 50px;
 					height: 50px;
 				}
 
 				tr {
-
 					td,
 					th {
-						padding       : 10px;
+						padding: 10px;
 						vertical-align: top;
 					}
 
@@ -664,19 +660,19 @@
 
 						&.bold {
 							font-weight: 700;
-							font-size  : 20px;
+							font-size: 20px;
 						}
 
 						h3 {
-							font-size : 40px;
-							color     : #000000;
+							font-size: 40px;
+							color: #000000;
 							text-align: center;
 						}
 
 						span {
-							display  : block;
+							display: block;
 							font-size: 13px;
-							color    : #000000;
+							color: #000000;
 						}
 
 						p {
@@ -687,11 +683,11 @@
 					}
 
 					th {
-						border-right : 1px solid #000000;
-						border-left  : 1px solid #000000;
+						border-right: 1px solid #000000;
+						border-left: 1px solid #000000;
 						border-bottom: 1px solid #000000;
-						color        : #000000;
-						font-size    : 13px;
+						color: #000000;
+						font-size: 13px;
 
 						&.no-border-bottom {
 							border-bottom: none;
@@ -701,26 +697,26 @@
 			}
 
 			.bottom-box {
-				display        : flex;
+				display: flex;
 				justify-content: space-between;
-				flex-wrap      : wrap;
-				padding-top    : 200px;
-				padding-bottom : 40px;
-				border-right   : 1px solid #000000;
-				border-left    : 1px solid #000000;
+				flex-wrap: wrap;
+				padding-top: 200px;
+				padding-bottom: 40px;
+				border-right: 1px solid #000000;
+				border-left: 1px solid #000000;
 
 				.text-1,
 				.text-2,
 				.ngay-thang-nam {
-					flex      : 0 0 33.333333%;
-					max-width : 33.333333%;
+					flex: 0 0 33.333333%;
+					max-width: 33.333333%;
 					text-align: center;
-					padding   : 0 30px;
+					padding: 0 30px;
 				}
 
 				.ngay-thang-nam {
 					padding-right: 40px;
-					text-align   : right;
+					text-align: right;
 				}
 			}
 		}
@@ -730,10 +726,9 @@
 				width: 100%;
 
 				tr {
-
 					td,
 					th {
-						padding       : 10px;
+						padding: 10px;
 						vertical-align: top;
 
 						&.vertical-center {
@@ -766,7 +761,7 @@
 
 						&.bold {
 							font-weight: 700;
-							font-size  : 20px;
+							font-size: 20px;
 						}
 
 						&.w-50 {
@@ -774,8 +769,8 @@
 						}
 
 						h3 {
-							font-size : 40px;
-							color     : #000000;
+							font-size: 40px;
+							color: #000000;
 							text-align: center;
 
 							&.text-left {
@@ -784,8 +779,8 @@
 						}
 
 						h4 {
-							font-size : 20px;
-							color     : #000000;
+							font-size: 20px;
+							color: #000000;
 							text-align: center;
 
 							&.text-left {
@@ -794,9 +789,9 @@
 						}
 
 						span {
-							display  : block;
+							display: block;
 							font-size: 13px;
-							color    : #000000;
+							color: #000000;
 						}
 
 						p {
@@ -827,11 +822,11 @@
 					}
 
 					th {
-						border-right : 1px solid #000000;
-						border-left  : 1px solid #000000;
+						border-right: 1px solid #000000;
+						border-left: 1px solid #000000;
 						border-bottom: 1px solid #000000;
-						color        : #000000;
-						font-size    : 13px;
+						color: #000000;
+						font-size: 13px;
 
 						&.no-border-bottom {
 							border-bottom: none;
@@ -841,12 +836,12 @@
 			}
 
 			.ngay-thang-nam {
-				padding-top   : 200px;
-				padding-right : 40px;
+				padding-top: 200px;
+				padding-right: 40px;
 				padding-bottom: 40px;
-				text-align    : right;
-				border-right  : 1px solid #000000;
-				border-left   : 1px solid #000000;
+				text-align: right;
+				border-right: 1px solid #000000;
+				border-left: 1px solid #000000;
 			}
 		}
 	}

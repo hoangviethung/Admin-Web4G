@@ -1,9 +1,8 @@
-@import 'abstracts/main';
-@import 'globals/main';
+@import "globals/main";
 
 // LAYOUT
-@import '_layout/main';
+@import "_layout/main";
 
-//
-@import 'template-paper/template-paper';
-@import 'template-paper/SEO';
+// TEMAPLATE
+@import "template-paper/template-paper";
+@import "template-paper/SEO";
