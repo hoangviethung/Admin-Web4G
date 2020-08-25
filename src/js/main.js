@@ -508,8 +508,7 @@ function SVG() {
 				$svg = $svg.removeAttr("xmlns:a");
 
 				// Check if the viewport is set, if the viewport is not set the SVG wont't scale.
-				if (
-					!$svg.attr("viewBox") &&
+				if (!$svg.attr("viewBox") &&
 					$svg.attr("height") &&
 					$svg.attr("width")
 				) {
@@ -1175,12 +1174,21 @@ function getApiUrl() {
 					input.removeClass('hidden');
 					$(this).addClass('hidden');
 					btn.addClass('hidden');
+				} else {
+					console.log('res.Code is not 200');
 				}
 			}
 		});
 	});
 }
 
+function renderHtmlGrapes() {
+	const isRender = $(".ck-editor");
+	const template = "<!-- POPUP GRAPESJS HERE !!!--><div class='popup__grapesJS'><div class='grapesJS__wrapper mb-3' style='height:500px ; width: 100%'><div class='grapes-html'></div></div><div class='btn btn-danger btn-close-grapesJS mb-3'>hủy bỏ</div><div class='btn btn-success btn-submit-grapesJS mb-3'>xác nhận</div></div>";
+	if (isRender) {
+		$(template).insertAfter(".main__inner");
+	}
+}
 document.addEventListener("DOMContentLoaded", () => {
 	multipleSelect();
 	notifyAdmin();
@@ -1201,6 +1209,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	fixedLisTab();
 	lockOneLanguageWhenCheckBox();
 	renderSEO();
+	renderHtmlGrapes();
 	initCKEditor__GrapesJs();
 	getApiUrl();
 	const blockMainTab = new MainTAB(".block-main .tab-container");

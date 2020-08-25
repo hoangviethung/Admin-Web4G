@@ -16,9 +16,9 @@
 			"vendors/linearicons.css",
 			"bower_components/fancybox/dist/jquery.fancybox.css",
 			"bower_components/select2/dist/css/select2.css",
-			"bower_components/flatpickr/dist/flatpickr.css",
 			"bower_components/flatpickr/dist/themes/material_blue.css",
-			"node_modules/grapesjs/dist/css/grapes.min.css"
+			"node_modules/grapesjs/dist/css/grapes.min.css",
+			"node_modules/flatpickr/dist/flatpickr.css"
 		],
 
 		"js": [
@@ -28,9 +28,9 @@
 			"bower_components/dropzone/dist/dropzone.js",
 			"bower_components/select2/dist/js/select2.js",
 			"bower_components/moment/moment.js",
-			"bower_components/flatpickr/dist/flatpickr.js",
 			"bower_components/remarkable-bootstrap-notify/dist/bootstrap-notify.js",
-			"node_modules/grapesjs/dist/grapes.js"
+			"node_modules/grapesjs/dist/grapes.js",
+			"node_modules/flatpickr/dist/flatpickr.js"
 		]
 	}
 }
