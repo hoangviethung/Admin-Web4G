@@ -1160,6 +1160,27 @@ function renderSEO() {
 	desc.keyup(debouncedesc);
 };
 
+function getApiUrl() {
+	$('.btn-get-url').on('click', function () {
+		const url = $(this).attr('data-url');
+		const input = $(this).siblings('.input-group').find('.input-get-url');
+		const btn = $(this);
+		$.ajax({
+			type: "GET",
+			url: url,
+			data: "data",
+			success: function (res) {
+				if (res.Code === 200) {
+					input.val(res.Url);
+					input.removeClass('hidden');
+					$(this).addClass('hidden');
+					btn.addClass('hidden');
+				}
+			}
+		});
+	});
+}
+
 document.addEventListener("DOMContentLoaded", () => {
 	multipleSelect();
 	notifyAdmin();
@@ -1181,6 +1202,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	lockOneLanguageWhenCheckBox();
 	renderSEO();
 	initCKEditor__GrapesJs();
+	getApiUrl();
 	const blockMainTab = new MainTAB(".block-main .tab-container");
 	const blockSubTab = new SubTAB(".block-subTab .tab-container");
 });

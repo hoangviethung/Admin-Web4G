@@ -159,8 +159,9 @@
 						<div class="tab-container">
 							<div class="block-list-tab">
 								<ul class="list-tab">
-									<li class="item acitve" toggle-for="item-1">Template View Data</li>
-									<li class="item acitve" toggle-for="item-2">Template Table Input</li>
+									<li class="item" toggle-for="item-1">Template View Data</li>
+									<li class="item" toggle-for="item-2">Template Table Input</li>
+									<li class="item" toggle-for="item-3">Template Table Input Get Url</li>
 								</ul>
 							</div>
 							<div class="tab-content">
@@ -290,6 +291,67 @@
 														<div class="form-group">
 															<div class="input-group shadow-sm">
 																<input class="form-control" placeholder="Input Type Text">
+															</div>
+														</div>
+													</td>
+													<td>
+														<div class="form-group">
+															<div class="input-group shadow-sm">
+																<input class="form-control" placeholder="Input Type Text">
+															</div>
+														</div>
+													</td>
+													<td>
+														<div class="form-group">
+															<div class="input-group shadow-sm">
+																<select class="form-control">
+																	<option>Select 1</option>
+																	<option>Select 2</option>
+																	<option>Select 3</option>
+																</select>
+															</div>
+														</div>
+													</td>
+													<td class="text-center">
+														<!-- XÓA (HIỆN POPUP)-->
+														<button class="btn btn-outline-danger btn-popup" fancybox="fancybox-notification" dataFieldName="testID" dataId="item-1" fancyboxId="#fancybox-notification" dataUrl="/testUrl">Xóa</button>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<!-- Template Table Input-->
+								<div class="content" tab-id="item-3">
+									<div class="block-table table-input col-lg-12 mt-4">
+										<table class="table table-bordered m-0">
+											<thead>
+												<tr>
+													<th>#</th>
+													<th class="text-center">Tên</th>
+													<th class="text-center">Đường dẫn hình</th>
+													<th class="text-center">Alt</th>
+													<th class="text-center">Thứ tự</th>
+													<th class="text-center">
+														<button class="btn btn-outline-success btn-popup">THÊM</button>
+													</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>1</td>
+													<td>
+														<div class="form-group">
+															<div class="input-group shadow-sm">
+																<input class="form-control" placeholder="Input Type Text">
+															</div>
+														</div>
+													</td>
+													<td class="ta-c">
+														<div class="form-group">
+															<button class="btn btn-info btn-get-url" data-url="./api/get-url.json">Get url</button>
+															<div class="input-group shadow-sm">
+																<input class="form-control hidden input-get-url" readonly placeholder="Input Type Text">
 															</div>
 														</div>
 													</td>

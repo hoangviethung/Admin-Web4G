@@ -12,8 +12,9 @@
 			.tab-container
 				.block-list-tab
 					ul.list-tab
-						li.item(toggle-for="item-1").acitve Template View Data
-						li.item(toggle-for="item-2").acitve Template Table Input
+						li.item(toggle-for="item-1") Template View Data
+						li.item(toggle-for="item-2") Template Table Input
+						li.item(toggle-for="item-3") Template Table Input Get Url
 				.tab-content
 					// Template View Data
 					.content(tab-id="item-1")
@@ -110,6 +111,45 @@
 											.form-group
 												.input-group.shadow-sm
 													input.form-control(placeholder="Input Type Text")
+										td
+											.form-group
+												.input-group.shadow-sm
+													input.form-control(placeholder="Input Type Text")
+										td
+											.form-group
+												.input-group.shadow-sm
+													select.form-control
+														option Select 1
+														option Select 2
+														option Select 3
+										td.text-center
+											// XÓA (HIỆN POPUP)
+											button.btn.btn-outline-danger.btn-popup(fancybox="fancybox-notification" dataFieldName="testID" dataId="item-1" fancyboxId="#fancybox-notification" dataUrl="/testUrl") Xóa
+					// Template Table Input
+					.content(tab-id="item-3")
+						.block-table.table-input.col-lg-12.mt-4
+							table.table.table-bordered.m-0
+								thead
+									tr
+										th #
+										th.text-center Tên
+										th.text-center Đường dẫn hình
+										th.text-center Alt
+										th.text-center Thứ tự
+										th.text-center
+											button.btn.btn-outline-success.btn-popup THÊM
+								tbody
+									tr
+										td 1
+										td
+											.form-group
+												.input-group.shadow-sm
+													input.form-control(placeholder="Input Type Text")
+										td.ta-c
+											.form-group
+												button.btn.btn-info.btn-get-url(data-url="./api/get-url.json") Get url
+												.input-group.shadow-sm
+													input.form-control.hidden.input-get-url(readonly placeholder="Input Type Text")
 										td
 											.form-group
 												.input-group.shadow-sm
