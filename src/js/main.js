@@ -750,6 +750,7 @@ function initCKEditor__GrapesJs() {
 			allowedContent: true,
 			filebrowserBrowseUrl: "/Admin/HomeAdmin/CkfinderPopup",
 		});
+		console.log(CKeditor);
 		CKeditor.ui.addButton('grapesJS', {
 			label: "Chỉnh sửa HTML",
 			command: 'grapesJS',
@@ -807,6 +808,22 @@ function DatePickerInit() {
 		} else {
 			$(this).flatpickr({
 				// enableTime: true,
+				dateFormat: "Y-m-d H:i",
+				time_24hr: true,
+				defaultDate: new Date(),
+			});
+		}
+	});
+	$(".datetime-picker").each(function () {
+		if ($(this).val().length > 0) {
+			$(this).flatpickr({
+				enableTime: true,
+				dateFormat: "Y-m-d H:i",
+				time_24hr: true,
+			});
+		} else {
+			$(this).flatpickr({
+				enableTime: true,
 				dateFormat: "Y-m-d H:i",
 				time_24hr: true,
 				defaultDate: new Date(),
