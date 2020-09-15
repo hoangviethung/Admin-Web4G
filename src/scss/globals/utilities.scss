@@ -1130,3 +1130,27 @@ span.flatpickr-weekday {
         }
     }
 }
+
+.ckfinder-popup-button {
+    position: absolute;
+    width: 15%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    outline: none;
+    border-radius: 5px;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    border: none;
+    &::before {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 30px;
+        width: 30px;
+        background: url(../assets/images/icons/library.svg);
+        background-repeat: no-repeat;
+        content: '';
+        transform: translate(-50%, -50%);
+    }
+}
