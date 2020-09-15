@@ -100,7 +100,7 @@
 										th.text-center Thứ tự
 										th.text-center
 											button.btn.btn-outline-success.btn-popup THÊM
-								tbody
+								tbody#table-sortable
 									tr
 										td 1
 										td
@@ -125,31 +125,16 @@
 										td.text-center
 											// XÓA (HIỆN POPUP)
 											button.btn.btn-outline-danger.btn-popup(fancybox="fancybox-notification" dataFieldName="testID" dataId="item-1" fancyboxId="#fancybox-notification" dataUrl="/testUrl") Xóa
-					// Template Table Input
-					.content(tab-id="item-3")
-						.block-table.table-input.col-lg-12.mt-4
-							table.table.table-bordered.m-0
-								thead
 									tr
-										th #
-										th.text-center Tên
-										th.text-center Đường dẫn hình
-										th.text-center Alt
-										th.text-center Thứ tự
-										th.text-center
-											button.btn.btn-outline-success.btn-popup THÊM
-								tbody
-									tr
-										td 1
+										td 2
 										td
 											.form-group
 												.input-group.shadow-sm
 													input.form-control(placeholder="Input Type Text")
-										td.ta-c
+										td
 											.form-group
-												button.btn.btn-info.btn-get-url(data-url="./api/get-url.json") Get url
 												.input-group.shadow-sm
-													input.form-control.hidden.input-get-url(readonly placeholder="Input Type Text")
+													input.form-control(placeholder="Input Type Text")
 										td
 											.form-group
 												.input-group.shadow-sm
