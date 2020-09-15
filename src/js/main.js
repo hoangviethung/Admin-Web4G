@@ -814,19 +814,34 @@ function initCKEditor__GrapesJs() {
             }
         });
     });
-
+    const btnCreate = document.querySelector(".btn-create-row");
+    if (btnCreate) {
+        $(btnCreate).on('click', function(e) {
+            e.preventDefault();
+            // Init Ckfinder popup button
+            const CkfinderPopup = document.querySelectorAll(".ck-finder-input");
+            CkfinderPopup.forEach((element, index) => {
+                element.classList.add("ck-input-" + index)
+                var button = document.createElement('button');
+                button.type = 'button'
+                button.classList.add("ckfinder-popup-button")
+                button.setAttribute("data-id", index)
+                element.parentElement.appendChild(button)
+            })
+        });
+    }
     // Init Ckfinder popup button
-	const CkfinderPopup = document.querySelectorAll(".ck-finder-input");
-	CkfinderPopup.forEach((element, index) => {
-		element.classList.add("ck-input-" + index)
-		var button = document.createElement('button');
-		button.type = 'button'
-		button.classList.add("ckfinder-popup-button")
-		button.setAttribute("data-id", index)
-		element.parentElement.appendChild(button)
-	})
+    const CkfinderPopup = document.querySelectorAll(".ck-finder-input");
+    CkfinderPopup.forEach((element, index) => {
+        element.classList.add("ck-input-" + index)
+        var button = document.createElement('button');
+        button.type = 'button'
+        button.classList.add("ckfinder-popup-button")
+        button.setAttribute("data-id", index)
+        element.parentElement.appendChild(button)
+    })
 
-	var popupWindowOptions = [
+    var popupWindowOptions = [
         'location=no',
         'menubar=no',
         'toolbar=no',
@@ -838,28 +853,28 @@ function initCKEditor__GrapesJs() {
         'scrollbars=yes',
         'width=800',
         'height=600'
-    ].join( ',' );
+    ].join(',');
 
-	$(".ckfinder-popup-button").on('click', function() {
-		var elementId = $(this).attr("data-id")
-		
-		window.CKFinder = {
-			_popupOptions: {
-				'popup-config': { // Config ID for first popup
-					chooseFiles: true,
-					onInit: function( finder ) {
-						finder.on( 'files:choose', function( evt ) {
-							var file = evt.data.files.first();
-							document.getElementsByClassName("ck-input-" + elementId )[0].value = file.getUrl()
-							console.log(document.getElementsByClassName("ck-input-" + elementId ))
-						} );
-					}
-				}
-			}
-		};
-		// Note that config ID is passed in configId parameter
-        window.open( '/Admin/HomeAdmin/CkfinderPopup?popup=1&configId=popup-config', 'CKFinderPopup1', popupWindowOptions );
-	})
+    $(".ckfinder-popup-button").on('click', function() {
+        var elementId = $(this).attr("data-id")
+
+        window.CKFinder = {
+            _popupOptions: {
+                'popup-config': { // Config ID for first popup
+                    chooseFiles: true,
+                    onInit: function(finder) {
+                        finder.on('files:choose', function(evt) {
+                            var file = evt.data.files.first();
+                            document.getElementsByClassName("ck-input-" + elementId)[0].value = file.getUrl()
+                            console.log(document.getElementsByClassName("ck-input-" + elementId))
+                        });
+                    }
+                }
+            }
+        };
+        // Note that config ID is passed in configId parameter
+        window.open('/Admin/HomeAdmin/CkfinderPopup?popup=1&configId=popup-config', 'CKFinderPopup1', popupWindowOptions);
+    })
 
     // CLOSE GRAPES
     $('.btn-close-grapesJS').on('click', function(e) {
