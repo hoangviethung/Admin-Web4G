@@ -440,7 +440,7 @@ function activeMenuByUrl() {
                 const listLinkChild = $('[data-siteid="' + item.split("=")[1] + '"] a');
                 listLinkChild.ech(function() {
                     let allHref = $(this).attr("href");
-                    if (allHref.includes(url)) {
+                    if (url.includes(allHref)) {
                         $(this).parents(".list-link-level--2").slideDown();
                         $(this)
                             .parents(".list-link-level--2")
@@ -451,12 +451,14 @@ function activeMenuByUrl() {
             }
         });
     } else {
-        const listLink = $(".aside-list a");
-        listLink.each(function() {
-            let allHref = $(this).attr("href");
-            if (allHref.includes(url)) {
-                $(this).parents(".aside-item").addClass("active");
-                $(this).parents(".list-link").slideToggle();
+        const listLink = document.querySelectorAll(".aside-list a");
+        listLink.forEach((element) => {
+            let allHref = $(element).attr("href");
+            if (url.includes(allHref)) {
+                console.log($(element).parents());
+                $(element).parents().parents().slideDown();
+                $(element).parents().addClass("active");
+                // $(this).parents(".list-link").slideToggle();
             }
         });
     }
@@ -815,32 +817,27 @@ function initCKEditor__GrapesJs() {
         });
     });
     const btnCreate = document.querySelector(".btn-create-row");
+    let checkClick
     if (btnCreate) {
         $(btnCreate).on('click', function(e) {
             e.preventDefault();
-            // Init Ckfinder popup button
-            const CkfinderPopup = document.querySelectorAll(".ck-finder-input");
-            CkfinderPopup.forEach((element, index) => {
-                element.classList.add("ck-input-" + index)
-                var button = document.createElement('button');
-                button.type = 'button'
-                button.classList.add("ckfinder-popup-button")
-                button.setAttribute("data-id", index)
-                element.parentElement.appendChild(button)
-            })
+            getPopupImg();
         });
     }
-    // Init Ckfinder popup button
-    const CkfinderPopup = document.querySelectorAll(".ck-finder-input");
-    CkfinderPopup.forEach((element, index) => {
-        element.classList.add("ck-input-" + index)
-        var button = document.createElement('button');
-        button.type = 'button'
-        button.classList.add("ckfinder-popup-button")
-        button.setAttribute("data-id", index)
-        element.parentElement.appendChild(button)
-    })
 
+    function getPopupImg() {
+        // Init Ckfinder popup button
+        const CkfinderPopup = document.querySelectorAll(".ck-finder-input");
+        CkfinderPopup.forEach((element, index) => {
+            element.classList.add("ck-input-" + index)
+            var button = document.createElement('button');
+            button.type = 'button'
+            button.classList.add("ckfinder-popup-button")
+            button.setAttribute("data-id", index)
+            element.parentElement.appendChild(button)
+        })
+    }
+    getPopupImg();
     var popupWindowOptions = [
         'location=no',
         'menubar=no',
@@ -857,7 +854,6 @@ function initCKEditor__GrapesJs() {
 
     $(".ckfinder-popup-button").on('click', function() {
         var elementId = $(this).attr("data-id")
-
         window.CKFinder = {
             _popupOptions: {
                 'popup-config': { // Config ID for first popup
@@ -1334,7 +1330,7 @@ function tableDrap() {
         stop: function(event, ui) {
             const listStt = document.querySelectorAll("#table-sortable tr");
             listStt.forEach((element, index) => {
-                $(element).children("td").eq(0).text(index + 1);
+                $(element).children("td").eq(0).children("input").eq(2).val(index);
             });
         }
     });

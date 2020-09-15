@@ -102,7 +102,10 @@
 											button.btn.btn-outline-success.btn-popup.btn-create-row THÊM
 								tbody#table-sortable
 									tr
-										td 1
+										td
+											input(hidden)
+											input(hidden)
+											input(value="0" readonly)
 										td
 											.form-group
 												.input-group.shadow-sm
@@ -126,7 +129,10 @@
 											// XÓA (HIỆN POPUP)
 											button.btn.btn-outline-danger.btn-popup(fancybox="fancybox-notification" dataFieldName="testID" dataId="item-1" fancyboxId="#fancybox-notification" dataUrl="/testUrl") Xóa
 									tr
-										td 2
+										td
+											input(hidden)
+											input(hidden)
+											input(value="0" readonly)
 										td
 											.form-group
 												.input-group.shadow-sm
