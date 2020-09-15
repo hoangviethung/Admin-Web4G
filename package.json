@@ -47,6 +47,7 @@
 	"dependencies": {
 		"ckeditor4": "^4.13.1",
 		"grapesjs": "^0.16.3",
+		"jquery-ui": "^1.12.1",
 		"lazysizes": "^5.2.0"
 	}
 }

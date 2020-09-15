@@ -99,9 +99,33 @@
 										th.text-center Thứ tự
 										th.text-center
 											button.btn.btn-outline-success.btn-popup THÊM
-								tbody
+								tbody#table-sortable
 									tr
 										td 1
+										td
+											.form-group
+												.input-group.shadow-sm
+													input.form-control(placeholder="Input Type Text")
+										td
+											.form-group
+												.input-group.shadow-sm
+													input.form-control(placeholder="Input Type Text")
+										td
+											.form-group
+												.input-group.shadow-sm
+													input.form-control(placeholder="Input Type Text")
+										td
+											.form-group
+												.input-group.shadow-sm
+													select.form-control
+														option Select 1
+														option Select 2
+														option Select 3
+										td.text-center
+											// XÓA (HIỆN POPUP)
+											button.btn.btn-outline-danger.btn-popup(fancybox="fancybox-notification" dataFieldName="testID" dataId="item-1" fancyboxId="#fancybox-notification" dataUrl="/testUrl") Xóa
+									tr
+										td 2
 										td
 											.form-group
 												.input-group.shadow-sm

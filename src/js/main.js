@@ -756,6 +756,12 @@ function initCKEditor__GrapesJs() {
             toolbar: 'insert',
             icon: '../assets/images/icons/html.svg'
         });
+        CKeditor.ui.addButton('TempInput', {
+            label: "Chỉnh sửa HTML Input",
+            command: 'TempInput',
+            toolbar: 'insert',
+            icon: '../assets/images/icons/temp.svg'
+        });
         CKeditor.addCommand("grapesJS", {
             exec: function(item__CKeditor) {
                 // OPPEN GRAPES
@@ -770,6 +776,41 @@ function initCKEditor__GrapesJs() {
                     const dataGrapesHTML = GrapesEditor.getHtml();
                     item__CKeditor.setData(dataGrapesHTML);
                     closePopup();
+                });
+            }
+        });
+        CKeditor.addCommand("TempInput", {
+            exec: function(item__CKeditor) {
+                // OPPEN GRAPES
+                openPopupTempInput();
+                // DATA HERE!!!
+                // const dataCKEditor = item__CKeditor.getData();
+                // SET DATA CỦA CKEDITOR VÀO GRAPE
+                // GrapesEditor.setComponents(dataCKEditor);
+                // SUBMIT GRAPESJS
+                $('.btn-submit-TempInput').on('click', function(e) {
+                    e.preventDefault();
+                    // SUBMIT GRAPESJS
+                    const formData = new FormData();
+                    $(".popup__TempInput .form-group input").each(function() {
+                        const name = $(this).attr("name");
+                        const value = $(this).val();
+                        formData.append(name, value);
+                    });
+                    $(".popup__TempInput form .form-group textarea").each(function() {
+                        const name = $(this).attr("name");
+                        const value = $(this).val();
+                        formData.append(name, value);
+                    });
+                    const data1 = formData.get("img1");
+                    const data2 = formData.get("img2");
+                    const data3 = formData.get("img3");
+                    const data4 = formData.get("img4");
+                    const data5 = formData.get("text1");
+                    const data6 = formData.get("text2");
+                    const dataSrc = "<div class='__main--detail--news'><div class='img-for-detail-post'> <img src='" + data1 + "' alt='something'></div><div class='detail-content--post'><p>" + data5 + "</p></div><div class='img-for-detail-post-2'><div class='row'><div class='col-8'><img src='" + data2 + "' alt='something'></div><div class='col-4'><img src='" + data3 + "' alt='something'><img src='" + data4 + "' alt='something'></div></div></div><div class='detail-content--post'><p>" + data6 + "</p></div></div>";
+                    item__CKeditor.setData(dataSrc);
+                    closePopupTempInput();
                 });
             }
         });
@@ -794,7 +835,27 @@ function initCKEditor__GrapesJs() {
         $('body').removeClass('no-scroll');
         $('.btn-submit-grapesJS').unbind();
     }
+    // CLOSE GRAPES
+    $('.btn-close-TempInput').on('click', function(e) {
+        closePopupTempInput();
+    })
+
+    // ALL SMALL FUNTION
+    function openPopupTempInput() {
+        $('.main__inner').addClass('overlay');
+        $('.popup__TempInput').addClass('show');
+        $('body').addClass('no-scroll');
+    }
+
+    // CLOSE POPUP
+    function closePopupTempInput() {
+        $('.popup__TempInput').removeClass('show');
+        $('.main__inner').removeClass('overlay');
+        $('body').removeClass('no-scroll');
+        $('.btn-submit-TempInput').unbind();
+    }
 }
+
 
 function DatePickerInit() {
     $(".date-picker").each(function() {
@@ -1160,12 +1221,26 @@ function renderSEO() {
 };
 
 function renderHtmlGrapes() {
-	const isRender= $(".ck-editor");
-	const template ="<!-- POPUP GRAPESJS HERE !!!--><div class='popup__grapesJS'><div class='grapesJS__wrapper mb-3' style='height:500px ; width: 100%'><div class='grapes-html'></div></div><div class='btn btn-danger btn-close-grapesJS mb-3'>hủy bỏ</div><div class='btn btn-success btn-submit-grapesJS mb-3'>xác nhận</div></div>";
-	if(isRender){
-		$(template).insertAfter(".main__inner");
-	}
+    const isRender = $(".ck-editor");
+    const template = "<!-- POPUP GRAPESJS HERE !!!--><div class='popup__grapesJS'><div class='grapesJS__wrapper mb-3' style='height:500px ; width: 100%'><div class='grapes-html'></div></div><div class='btn btn-danger btn-close-grapesJS mb-3'>hủy bỏ</div><div class='btn btn-success btn-submit-grapesJS mb-3'>xác nhận</div></div>";
+    const template1 = "<div class='popup__TempInput'><form action=''><div class='form-row'><div class='form-group col-md-6'><input class='form-control' type='text' placeholder='Hình ảnh 1' name='img1'></div><div class='form-group col-md-6'><input class='form-control' type='text' placeholder='Hình ảnh 2' name='img2'></div></div><div class='form-row'><div class='form-group col-md-6'><input class='form-control' type='text' placeholder='Hình ảnh 3' name='img3'></div><div class='form-group col-md-6'><input class='form-control' type='text' placeholder='Hình ảnh 4' name='img4'></div></div><div class='form-row'><div class='form-group col-md-12'><textarea class='form-control' rows='3' placeholder='Nhập nội dung' name='text1'></textarea></div><div class='form-group col-md-12'><textarea name='text2' class='form-control' rows='3' placeholder='Nhập nội dung'></textarea></div></div></form><div class='btn btn-danger btn-close-TempInput mb-3 mr-3'>hủy bỏ</div><div class='btn btn-success btn-submit-TempInput mb-3'>xác nhận</div></div>";
+    if (isRender) {
+        $(template).insertAfter(".main__inner");
+        $(template1).insertAfter(".main__inner");
+    }
 }
+
+function tableDrap() {
+    $("#table-sortable").sortable({
+        stop: function(event, ui) {
+            const listStt = document.querySelectorAll("#table-sortable tr");
+            listStt.forEach((element, index) => {
+                $(element).children("td").eq(0).text(index + 1);
+            });
+        }
+    });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     multipleSelect();
     notifyAdmin();
@@ -1181,13 +1256,15 @@ document.addEventListener("DOMContentLoaded", () => {
     multipCheckBoxByAttr();
     setUrlTypeLink();
     createRowTableInput();
-    DatePickerInit();
+    // DatePickerInit();
     getFileNameWhenChooseFileUpload();
     fixedLisTab();
     lockOneLanguageWhenCheckBox();
-	renderSEO();
-	renderHtmlGrapes();
+    renderSEO();
+    renderHtmlGrapes();
     initCKEditor__GrapesJs();
+    tableDrap();
+    // initCKEditor__TemplateInput();
     const blockMainTab = new MainTAB(".block-main .tab-container");
     const blockSubTab = new SubTAB(".block-subTab .tab-container");
 });
