@@ -455,10 +455,8 @@ function activeMenuByUrl() {
         listLink.forEach((element) => {
             let allHref = $(element).attr("href");
             if (url.includes(allHref)) {
-                console.log($(element).parents());
                 $(element).parents().parents().slideDown();
-                $(element).parents().addClass("active");
-                // $(this).parents(".list-link").slideToggle();
+                $(element).addClass("active");
             }
         });
     }
@@ -466,9 +464,9 @@ function activeMenuByUrl() {
 
 function closeAsideMenu() {
     if ($(window).width() < 1024) {
+        console.log(1);
         $("body, aside").addClass("active");
     }
-
     $(".block-logo .button-close").on("click", function() {
         if ($(window).width() > 1024) {
             $(this).toggleClass("active");
