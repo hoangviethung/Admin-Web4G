@@ -814,61 +814,6 @@ function initCKEditor__GrapesJs() {
             }
         });
     });
-    const btnCreate = document.querySelector(".btn-create-row");
-    let checkClick
-    if (btnCreate) {
-        $(btnCreate).on('click', function(e) {
-            e.preventDefault();
-            getPopupImg();
-        });
-    }
-
-    function getPopupImg() {
-        // Init Ckfinder popup button
-        const CkfinderPopup = document.querySelectorAll(".ck-finder-input");
-        CkfinderPopup.forEach((element, index) => {
-            element.classList.add("ck-input-" + index)
-            var button = document.createElement('button');
-            button.type = 'button'
-            button.classList.add("ckfinder-popup-button")
-            button.setAttribute("data-id", index)
-            element.parentElement.appendChild(button)
-        })
-    }
-    getPopupImg();
-    var popupWindowOptions = [
-        'location=no',
-        'menubar=no',
-        'toolbar=no',
-        'dependent=yes',
-        'minimizable=no',
-        'modal=yes',
-        'alwaysRaised=yes',
-        'resizable=yes',
-        'scrollbars=yes',
-        'width=800',
-        'height=600'
-    ].join(',');
-
-    $(".ckfinder-popup-button").on('click', function() {
-        var elementId = $(this).attr("data-id")
-        window.CKFinder = {
-            _popupOptions: {
-                'popup-config': { // Config ID for first popup
-                    chooseFiles: true,
-                    onInit: function(finder) {
-                        finder.on('files:choose', function(evt) {
-                            var file = evt.data.files.first();
-                            document.getElementsByClassName("ck-input-" + elementId)[0].value = file.getUrl()
-                            console.log(document.getElementsByClassName("ck-input-" + elementId))
-                        });
-                    }
-                }
-            }
-        };
-        // Note that config ID is passed in configId parameter
-        window.open('/Admin/HomeAdmin/CkfinderPopup?popup=1&configId=popup-config', 'CKFinderPopup1', popupWindowOptions);
-    })
 
     // CLOSE GRAPES
     $('.btn-close-grapesJS').on('click', function(e) {
@@ -910,6 +855,81 @@ function initCKEditor__GrapesJs() {
     }
 }
 
+function initCkfinder() {
+    document.querySelectorAll(".btn-create-row").forEach((element) => {
+        $(element).on('click', function(e) {
+            var target = e.target || e.srcElement;
+            // Array position
+            var position = $(target).parents("table").find("tbody tr").length;
+            var $tbody = $(target).parents("table").find("tbody")
+            $.ajax({
+                url: target.getAttribute("data-url"),
+                data: {
+                    pos: position
+                },
+                type: "GET",
+                beforeSend: function () {
+                },
+                success: function (html) {
+                    $tbody.append(html);
+                    $(".album_images form").remove();
+                    var form = $("form")
+                        .removeData("validator") /* added by the raw jquery.validate plugin */
+                        .removeData("unobtrusiveValidation");  /* added by the jquery unobtrusive plugin*/
+                    
+                    $.validator.unobtrusive.parse(form);
+                    createCkFinderButton();
+                }
+            })
+        });
+    })
+
+    var popupWindowOptions = [
+        'location=no',
+        'menubar=no',
+        'toolbar=no',
+        'dependent=yes',
+        'minimizable=no',
+        'modal=yes',
+        'alwaysRaised=yes',
+        'resizable=yes',
+        'scrollbars=yes',
+        'width=800',
+        'height=600'
+    ].join(',');
+
+    $(document).on('click', ".ckfinder-popup-button", function() {
+        var elementId = $(this).attr("data-id")
+        window.CKFinder = {
+            _popupOptions: {
+                'popup-config': { // Config ID for first popup
+                    chooseFiles: true,
+                    onInit: function(finder) {
+                        finder.on('files:choose', function(evt) {
+                            var file = evt.data.files.first();
+                            document.getElementsByClassName("ck-input-" + elementId)[0].value = file.getUrl()
+                            console.log(document.getElementsByClassName("ck-input-" + elementId))
+                        });
+                    }
+                }
+            }
+        };
+        // Note that config ID is passed in configId parameter
+        window.open('/Admin/HomeAdmin/CkfinderPopup?popup=1&configId=popup-config', 'CKFinderPopup1', popupWindowOptions);
+    })
+}
+
+function createCkFinderButton() {
+    // Init Ckfinder popup button
+    document.querySelectorAll(".ck-finder-input").forEach((element, index) => {
+        element.classList.add("ck-input-" + index)
+        var button = document.createElement('button');
+        button.type = 'button'
+        button.classList.add("ckfinder-popup-button")
+        button.setAttribute("data-id", index)
+        element.parentElement.appendChild(button)
+    })
+}
 
 function DatePickerInit() {
     $(".date-picker").each(function() {
@@ -1356,6 +1376,8 @@ document.addEventListener("DOMContentLoaded", () => {
     renderSEO();
     renderHtmlGrapes();
     initCKEditor__GrapesJs();
+    createCkFinderButton();
+    initCkfinder();
     getApiUrl();
     tableDrap();
     // initCKEditor__TemplateInput();
