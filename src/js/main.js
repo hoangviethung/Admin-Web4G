@@ -140,7 +140,7 @@ function ajaxFancybox() {
                 closeExisting: true,
                 beforeShw: function() {
                     // SUBMIT DELETE
-                    $(".submit-delete").on("cick", function() {
+                    $(".submit-delete").on("click", function() {
                         const data = {};
                         data[dataFieldName] = itemId;
                         $.ajax({
@@ -868,15 +868,14 @@ function initCkfinder() {
                     pos: position
                 },
                 type: "GET",
-                beforeSend: function () {
-                },
-                success: function (html) {
+                beforeSend: function() {},
+                success: function(html) {
                     $tbody.append(html);
                     $(".album_images form").remove();
                     var form = $("form")
                         .removeData("validator") /* added by the raw jquery.validate plugin */
-                        .removeData("unobtrusiveValidation");  /* added by the jquery unobtrusive plugin*/
-                    
+                        .removeData("unobtrusiveValidation"); /* added by the jquery unobtrusive plugin*/
+
                     $.validator.unobtrusive.parse(form);
                     createCkFinderButton();
                 }
